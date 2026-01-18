@@ -1,0 +1,7 @@
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+
+overrides:
+  h3@<=1.15.4: '>=1.15.5'
+  tar@<=7.5.2: '>=7.5.3'
