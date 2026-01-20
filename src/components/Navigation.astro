@@ -2,10 +2,27 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<ul class="menu max-sm:min-h-full w-80 p-4 md:p-1 md:w-max md:menu-horizontal bg-base-100 border border-base-content/30 md:rounded-box md:justify-center z-10">
+<ul class="menu max-sm:min-h-full w-73 p-4 md:p-1 md:w-max md:menu-horizontal bg-base-100 border border-base-content/30 md:rounded-box md:justify-center z-10">
     <li><a href="/"><Icon name="tabler:home" /> Accueil</a></li>
-    <li><a href="/"><Icon name="tabler:book-2" /> Les Cours</a></li>
-    <li><a href="/"><Icon name="tabler:clock" /> Volume Horaire</a></li>
-    <li><a href="/"><Icon name="tabler:bed-flat" /> L'internat</a></li>
-    <li><a href="/etudiants"><Icon name="tabler:flower" /> Les Étudiants</a></li>
+    <li>
+        <details>
+          <summary><Icon name="tabler:book-2" />Cours</summary>
+          <ul class="p-2 bg-base-100 w-60 z-1">
+            <li><a>LIPPS</a></li>
+            <li><a>HEC</a></li>
+            <li><a>IPP</a></li>
+            <li><a>UPS</a></li>
+            <li><a href="/"><Icon name="tabler:clock" /> Volume Horaire</a></li>
+          </ul>
+        </details>
+      </li>
+          <li>
+        <details>
+          <summary><Icon name="tabler:bed-flat" /> Internat</summary>
+          <ul class="p-2 bg-base-100 w-60 z-1">
+            <li><a>???</a></li>
+          </ul>
+        </details>
+      </li>
+    <li><a href="/etudiants"><Icon name="tabler:flower" /> Étudiants</a></li>
 </ul>

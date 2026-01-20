@@ -4,7 +4,7 @@ const { nom = "Ulysse", photo = "/uly.jpg", annee = "L1", spe = "sante" } = Astr
 import { Icon } from "astro-icon/components";
 ---
 
-<article class="card w-full bg-base-100 border border-base-content/30 card-lg shadow-sm" data-annee={ annee } data-spe={ spe }>
+<article class="card w-full bg-base-100 border border-base-content/30 card-lg" data-annee={ annee } data-spe={ spe }>
   <div class="card-body">
     <div class="flex">
         <img src={ photo } alt={ nom } class="w-14 h-14 rounded-full"/>
@@ -21,7 +21,9 @@ import { Icon } from "astro-icon/components";
             }
         </div>
     </div>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <content>
+      <slot />
+    </content>
     <div class="justify-end card-actions">
       <button class="btn btn-primary">
         <Icon name="tabler:mail" /> Contacter { nom }

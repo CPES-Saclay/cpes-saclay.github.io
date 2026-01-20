@@ -5,7 +5,7 @@ import CarteEleve from "../components/CarteEleve.astro";
 
 <Default>
     <h1 class="text-2xl font-bold">Rencontrez nos étudiants</h1>
-    <p>Ce site n'a pas répondu à toute vos questions ? Nos étudiants sont à votre disposition pour vous fournir d'avantage d'informations sur le CPES et vous partager</p>
+    <p>Ce site n'a pas répondu à toutes vos questions ? Nos étudiants sont à votre disposition pour vous fournir davantage d'informations sur le CPES et vous partager</p>
     <div class="flex max-sm:justify-center gap-1 w-full mt-2">
         <div id="annee" class="filter" aria-label="Filter Années">
             <input class="btn filter-reset" type="radio" name="annee" aria-label="X" value="all" checked />
@@ -21,8 +21,12 @@ import CarteEleve from "../components/CarteEleve.astro";
     </div>
 
     <div class="cards grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
-        <CarteEleve nom="Guilhem" photo="https://media.licdn.com/dms/image/v2/D4E03AQHSvRbIQtDNEA/profile-displayphoto-scale_200_200/B4EZnzly4XJgAY-/0/1760728397261?e=1770249600&v=beta&t=HxeX93x7IOUMJFcMwf9blaTuTlXzSomVYbUcpoE-B3U" annee="L1" spe="sante" />
-        <CarteEleve nom="Lia" photo="https://media.licdn.com/dms/image/v2/D5603AQGRD3Nee2R5ag/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1724714534056?e=1770249600&v=beta&t=eAqnM__kCa7hpW9SZGqQH9l9Ym_vCT2xavt0xzDfxaw" annee="L3" spe="sante" />
+        <CarteEleve nom="Guilhem" photo="https://media.licdn.com/dms/image/v2/D4E03AQHSvRbIQtDNEA/profile-displayphoto-scale_200_200/B4EZnzly4XJgAY-/0/1760728397261?e=1770249600&v=beta&t=HxeX93x7IOUMJFcMwf9blaTuTlXzSomVYbUcpoE-B3U" annee="L1" spe="sante">
+            Le contenu de cette carte est écrit en html; et on peut donc y écrire <span class="font-bold animate-ping">tout et n'importe quoi</span>...
+        </CarteEleve>
+        <CarteEleve nom="Lia" photo="https://media.licdn.com/dms/image/v2/D5603AQGRD3Nee2R5ag/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1724714534056?e=1770249600&v=beta&t=eAqnM__kCa7hpW9SZGqQH9l9Ym_vCT2xavt0xzDfxaw" annee="L3" spe="sante">
+            Les bouttons pour sélectionner l'année et la spécialité fonctionnent, testez les !
+        </CarteEleve>
     </div>
 
     <script is:inline>

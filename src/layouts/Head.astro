@@ -1,9 +1,16 @@
+---
+import ClientRouter from "astro/components/ClientRouter.astro";
+
+const { title = "Accueil" } = Astro.props;
+---
+
 <head>
+    <ClientRouter />
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>CPES Paris Saclay</title>
+    <title>CPES Paris Saclay - {title}</title>
     <meta name="robots" content="noindex">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
