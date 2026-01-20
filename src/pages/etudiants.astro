@@ -4,18 +4,20 @@ import CarteEleve from "../components/CarteEleve.astro";
 ---
 
 <Default>
-    <div class="flex">
-        <form id="annee" class="filter" aria-label="Filter Années">
-            <input class="btn bg-yellow-200 border-yellow-300 text-yellow-700" type="radio" name="annee" value="L1" aria-label="L1" />
-            <input class="btn btn-warning" type="radio" name="annee" value="L2" aria-label="L2" />
-            <input class="btn btn-error" type="radio" name="annee" value="L3" aria-label="L3" />
-            <input class="btn btn-square" type="reset" value="×" />
-        </form>
-        <form id="spe" class="filter" aria-label="Filter Spé">
+    <h1 class="text-2xl font-bold">Rencontrez nos étudiants</h1>
+    <p>Ce site n'a pas répondu à toute vos questions ? Nos étudiants sont à votre disposition pour vous fournir d'avantage d'informations sur le CPES et vous partager</p>
+    <div class="flex max-sm:justify-center gap-1 w-full mt-2">
+        <div id="annee" class="filter" aria-label="Filter Années">
+            <input class="btn filter-reset" type="radio" name="annee" aria-label="X" value="all" checked />
+            <input class="w-fit btn bg-yellow-200 border-yellow-300 text-yellow-700" type="radio" name="annee" value="L1" aria-label="L1" />
+            <input class="w-fit btn btn-warning" type="radio" name="annee" value="L2" aria-label="L2" />
+            <input class="w-fit btn btn-error" type="radio" name="annee" value="L3" aria-label="L3" />
+        </div>
+        <div id="spe" class="filter" aria-label="Filter Spé">
+            <input class="btn filter-reset" type="radio" name="spe" aria-label="X" value="all" checked />
             <input class="btn btn-success" type="radio" name="spe" value="sante" aria-label="🧬 Santé" />
             <input class="btn btn-info" type="radio" name="spe" value="socio" aria-label="📊 Société" />
-            <input class="btn btn-square" type="reset" value="×" />
-        </form>
+        </div>
     </div>
 
     <div class="cards grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
@@ -45,7 +47,6 @@ import CarteEleve from "../components/CarteEleve.astro";
 
         [anneeForm, speForm].forEach((form) => {
             form.addEventListener("change", applyFilters);
-            form.addEventListener("reset", () => requestAnimationFrame(applyFilters));
         });
 
         // initial state

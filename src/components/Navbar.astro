@@ -1,13 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
+import Navigation from "./Navigation.astro"
 ---
 
-<div id="navbar" class="p-4 md:px-8 hidden md:flex fixed top-0 left-0 w-full transition-all duration-500 ease-in-out z-10">
-    <ul class="menu w-full lg:menu-horizontal bg-base-100 border border-base-content/30 rounded-box justify-center z-10">
-        <li><a href="/"><Icon name="tabler:home" /> Accueil</a></li>
-        <li><a href="/"><Icon name="tabler:book-2" /> Les Cours</a></li>
-        <li><a href="/"><Icon name="tabler:clock" /> Volume Horaire</a></li>
-        <li><a href="/"><Icon name="tabler:bed-flat" /> L'internat</a></li>
-        <li><a href="/etudiants"><Icon name="tabler:flower" /> Les Étudiants</a></li>
-    </ul>
+<div id="navbar" class="p-4 md:px-8 hidden md:flex justify-center fixed top-0 left-0 w-full transition-all duration-500 ease-in-out z-10">
+    <Navigation />
+</div>
+<div id="mobileNavbar" class="p-4 md:px-8 flex items-center justify-end md:hidden fixed top-0 left-0 w-full transition-all duration-500 ease-in-out z-10">
+    <label for="mobile_drawer" class="btn drawer-button">
+        <Icon name="tabler:menu" />
+    </label>
 </div>
