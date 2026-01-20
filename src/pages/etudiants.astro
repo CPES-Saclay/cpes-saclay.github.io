@@ -1,0 +1,58 @@
+---
+import Default from "../layouts/Default.astro";
+import CarteEleve from "../components/CarteEleve.astro";
+---
+
+<Default>
+    <div class="flex">
+        <form id="annee" class="filter" aria-label="Filter Années">
+            <input class="btn bg-yellow-200 border-yellow-300" type="radio" name="annee" value="L1" aria-label="L1" />
+            <input class="btn btn-warning" type="radio" name="annee" value="L2" aria-label="L2" />
+            <input class="btn btn-error" type="radio" name="annee" value="L3" aria-label="L3" />
+            <input class="btn btn-square" type="reset" value="×" />
+        </form>
+        <form id="spe" class="filter" aria-label="Filter Spé">
+            <input class="btn btn-success" type="radio" name="spe" value="sante" aria-label="🧬 Santé" />
+            <input class="btn btn-info" type="radio" name="spe" value="socio" aria-label="📊 Société" />
+            <input class="btn btn-square" type="reset" value="×" />
+        </form>
+    </div>
+
+    <div class="cards grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+        <CarteEleve annee="L1" spe="sante" />
+        <CarteEleve annee="L2" spe="sante" />
+        <CarteEleve annee="L3" spe="sante" />
+        <CarteEleve annee="L1" spe="socio" />
+        <CarteEleve annee="L2" spe="socio" />
+        <CarteEleve annee="L3" spe="socio" />
+    </div>
+
+    <script is:inline>
+        const anneeForm = document.getElementById("annee");
+        const speForm = document.getElementById("spe");
+        const cards = document.querySelectorAll(".cards .card");
+
+        function getSelected(form, name) {
+            return form.querySelector(`input[name="${name}"]:checked`)?.value ?? "all";
+        }
+
+        function applyFilters() {
+            const annee = getSelected(anneeForm, "annee");
+            const spe = getSelected(speForm, "spe");
+
+            cards.forEach((card) => {
+                const matchesAnnee = annee === "all" || card.dataset.annee === annee;
+                const matchesSpe = spe === "all" || card.dataset.spe === spe;
+                card.hidden = !(matchesAnnee && matchesSpe);
+            });
+        }
+
+        [anneeForm, speForm].forEach((form) => {
+            form.addEventListener("change", applyFilters);
+            form.addEventListener("reset", () => requestAnimationFrame(applyFilters));
+        });
+
+        // initial state
+        applyFilters();
+    </script>
+</Default>

@@ -1,8 +1,83 @@
 ---
+import Card from "./Card.astro"
 ---
 <div class="bento-wrapper">
     <div class="bento-grid grid grid-cols-1 md:grid-cols-8 gap-4 grid-flow-dense auto-rows-auto">
-        <slot/>
+        <Card
+            href="projects"
+            title="Instagram"
+            description="Check out my latest work and experiments."
+            color="bg-purple-100 border-purple-300 dark:bg-purple-900 dark:border-purple-700"
+            icon="tabler:accessible-filled"
+            icon_color="bg-[#9146FF] dark:bg-[#9146FF] text-white"
+            width="4"
+            height="4"
+          />
+          <Card
+            href="about"
+            title="Youtube"
+            icon="tabler:brand-youtube"
+            width="2"
+            height="2"
+            description="Who I am."
+          />
+          <Card
+            href="https://github.com/funasitien"
+            title="BlueSky"
+            icon="tabler:brand-bluesky"
+            width="2"
+            height="2"
+            description="@funasitien"
+          />
+
+          <Card
+            href="blog"
+            title="GitHub"
+            icon="tabler:brand-github"
+            width="2"
+            height="4"
+            description="Read my thoughts on tech, life, and everything in between."
+          />
+          <Card
+            href="stack"
+            title="Tech Stack"
+            icon="tabler:stack-2"
+            width="2"
+            height="2"
+            description="Tools I use."
+          />
+          <Card
+            href="gallery"
+            title="Photography"
+            icon="tabler:camera"
+            width="4"
+            height="2"
+            description="Capturing moments."
+          />
+          <Card
+            href="contact"
+            title="Contact"
+            icon="tabler:mail"
+            width="2"
+            height="4"
+            description="Get in touch."
+          />
+          <Card
+            href="contact"
+            title="Marcel"
+            icon="tabler:mail"
+            width="2"
+            height="2"
+            description="Get in touch."
+          />
+          <Card
+            href="/contact"
+            title="Contact"
+            icon="tabler:mail"
+            width="4"
+            height="2"
+            description="Get in touch."
+          />
     </div>
 </div>
 
