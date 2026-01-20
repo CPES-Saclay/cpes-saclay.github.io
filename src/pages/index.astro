@@ -1,7 +1,6 @@
 ---
 import DefaultLayout from "../layouts/Home.astro";
 import BentoGrid from "../components/BentoGrid.astro";
-import Card from "../components/Card.astro";
 import Hero1 from "../components/Hero1.astro";
 import Partenaires from "../components/Partenaires.astro";
 ---
@@ -102,29 +101,4 @@ import Partenaires from "../components/Partenaires.astro";
     </div>
     <Hero1 />
     <Partenaires />
-  <script is:inline>
-    document
-          .getElementById("navbar")
-          .classList.replace("top-0", "top-[-100px]");
-
-    window.onscroll = function () {
-      scrollFunction();
-    };
-
-    function scrollFunction() {
-      if (
-        document.body.scrollTop > 20 ||
-        document.documentElement.scrollTop > 20
-      ) {
-        document.getElementById("navbar").classList.add();
-        document
-          .getElementById("navbar")
-          .classList.replace("top-[-100px]", "top-0");
-      } else {
-        document
-          .getElementById("navbar")
-          .classList.replace("top-0", "top-[-100px]");
-      }
-    }
-  </script>
 </DefaultLayout>

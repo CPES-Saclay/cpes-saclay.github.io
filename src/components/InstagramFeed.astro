@@ -1,0 +1,42 @@
+---
+const { count = 4 } = Astro.props;
+
+const token = import.meta.env.INSTAGRAM_ACCESS_TOKEN;
+const userId = import.meta.env.INSTAGRAM_USER_ID;
+
+let posts = [];
+
+if (token && userId) {
+    try {
+        const url = `https://graph.instagram.com/${userId}/media?fields=id,caption,media_url,permalink,thumbnail_url,media_type&limit=${count}&access_token=${token}`;
+        const res = await fetch(url);
+        if (res.ok) {
+            const json = await res.json();
+            posts = json.data || [];
+        } else {
+            console.warn("Instagram fetch failed", await res.text());
+        }
+    } catch (err) {
+        console.warn("Instagram fetch error", err);
+    }
+} else {
+    console.warn("INSTAGRAM_ACCESS_TOKEN or INSTAGRAM_USER_ID not set", token, userId);
+}
+
+---
+<section>
+    <h3 class="text-lg font-semibold mb-2">Instagram</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+        {posts.length === 0 ? (
+            <div class="col-span-2 msd:col-span-4 text-sm text-gray-500">No instagram posts available.</div>
+        ) : (
+            posts.map((post) => (
+                <a href={post.permalink} target="_blank" rel="noopener noreferrer" class="block">
+                    <div class="w-full h-48 bg-gray-100 overflow-hidden rounded">
+                        <img src={post.media_url} alt={post.caption ?? "Instagram post"} class="object-cover w-full h-full" />
+                    </div>
+                </a>
+            ))
+        )}
+    </div>
+</section>

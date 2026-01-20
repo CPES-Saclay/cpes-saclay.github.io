@@ -1,5 +1,6 @@
 ---
 import Card from "./Card.astro"
+import InstagramFeed from "./InstagramFeed.astro"
 ---
 <div class="bento-wrapper">
     <div class="bento-grid grid grid-cols-1 md:grid-cols-8 gap-4 grid-flow-dense auto-rows-auto">
@@ -8,11 +9,13 @@ import Card from "./Card.astro"
             title="Instagram"
             description="Check out my latest work and experiments."
             color="bg-purple-100 border-purple-300 dark:bg-purple-900 dark:border-purple-700"
-            icon="tabler:accessible-filled"
+            icon="/instagram.avif"
             icon_color="bg-[#9146FF] dark:bg-[#9146FF] text-white"
             width="4"
-            height="4"
-          />
+            height="6"
+          >
+          <InstagramFeed />
+         </Card>
           <Card
             href="about"
             title="Youtube"
@@ -45,14 +48,6 @@ import Card from "./Card.astro"
             width="2"
             height="2"
             description="Tools I use."
-          />
-          <Card
-            href="gallery"
-            title="Photography"
-            icon="tabler:camera"
-            width="4"
-            height="2"
-            description="Capturing moments."
           />
           <Card
             href="contact"

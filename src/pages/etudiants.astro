@@ -6,7 +6,7 @@ import CarteEleve from "../components/CarteEleve.astro";
 <Default>
     <div class="flex">
         <form id="annee" class="filter" aria-label="Filter Années">
-            <input class="btn bg-yellow-200 border-yellow-300" type="radio" name="annee" value="L1" aria-label="L1" />
+            <input class="btn bg-yellow-200 border-yellow-300 text-yellow-700" type="radio" name="annee" value="L1" aria-label="L1" />
             <input class="btn btn-warning" type="radio" name="annee" value="L2" aria-label="L2" />
             <input class="btn btn-error" type="radio" name="annee" value="L3" aria-label="L3" />
             <input class="btn btn-square" type="reset" value="×" />
@@ -19,12 +19,8 @@ import CarteEleve from "../components/CarteEleve.astro";
     </div>
 
     <div class="cards grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
-        <CarteEleve annee="L1" spe="sante" />
-        <CarteEleve annee="L2" spe="sante" />
-        <CarteEleve annee="L3" spe="sante" />
-        <CarteEleve annee="L1" spe="socio" />
-        <CarteEleve annee="L2" spe="socio" />
-        <CarteEleve annee="L3" spe="socio" />
+        <CarteEleve nom="Guilhem" photo="https://media.licdn.com/dms/image/v2/D4E03AQHSvRbIQtDNEA/profile-displayphoto-scale_200_200/B4EZnzly4XJgAY-/0/1760728397261?e=1770249600&v=beta&t=HxeX93x7IOUMJFcMwf9blaTuTlXzSomVYbUcpoE-B3U" annee="L1" spe="sante" />
+        <CarteEleve nom="Lia" photo="https://media.licdn.com/dms/image/v2/D5603AQGRD3Nee2R5ag/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1724714534056?e=1770249600&v=beta&t=eAqnM__kCa7hpW9SZGqQH9l9Ym_vCT2xavt0xzDfxaw" annee="L3" spe="sante" />
     </div>
 
     <script is:inline>

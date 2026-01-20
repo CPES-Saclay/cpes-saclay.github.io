@@ -18,6 +18,8 @@ const colSpanMap: Record<string, string> = {
   "2": "md:col-span-2",
   "3": "md:col-span-3",
   "4": "md:col-span-4",
+  "6": "md:col-span-6",
+  "8": "md:col-span-8",
 };
 
 const rowSpanMap: Record<string, string> = {
@@ -25,22 +27,26 @@ const rowSpanMap: Record<string, string> = {
   "2": "md:row-span-2",
   "3": "md:row-span-3",
   "4": "md:row-span-4",
+  "6": "md:row-span-6",
+  "8": "md:row-span-8",
 };
 
 const colClass = colSpanMap[width] || "md:col-span-2";
 const rowClass = rowSpanMap[height] || "md:row-span-2";
 const sizeClass = `col-span-1 ${colClass} row-span-1 ${rowClass}`;
 ---
-<a href={href} class={`border-2 ${color} ${sizeClass} p-4 rounded-box h-full hover:scale-105 transition-transform duration-300`}>
+<a href="" class={`border-2 ${color} ${sizeClass} p-4 rounded-box h-full hover:scale-105 transition-transform duration-300`}>
     <div class="flex mb-2">
-        <div class={`h-7 w-7 flex items-center justify-center p-1 mr-1 rounded ${icon_color}`}>
-            {
-                icon.includes("/") ?
-                <img src={icon} alt={title} class="h-full w-auto" /> :
-                <Icon name={icon} class="text-3xl" />
-            }
-        </div>
-        <h2 class="text-lg font-bold">{title}</h2>
+        {
+            icon.includes("/") ?
+            <img src={icon} alt={title} class="h-8 w-8 rounded" />
+            :
+            <div class={`h-7 w-7 flex items-center justify-center p-1 mr-1 rounded ${icon_color}`}>
+              <Icon name={icon} class="text-3xl" />
+            </div>
+            
+        }
+      <h2 class="ml-2 text-lg font-bold">{title}</h2>
     </div>
-    {description ? <p>{description}</p> : "e"}
+   <slot />
 </a>

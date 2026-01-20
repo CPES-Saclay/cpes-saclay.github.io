@@ -1,18 +1,19 @@
 ---
 // Ulysse est le CPES originel
 const { nom = "Ulysse", photo = "/uly.jpg", annee = "L1", spe = "sante" } = Astro.props;
+import { Icon } from "astro-icon/components";
 ---
 
-<article class="card w-full bg-base-100 card-lg shadow-sm" data-annee={ annee } data-spe={ spe }>
+<article class="card w-full bg-base-100 border border-base-content/30 card-lg shadow-sm" data-annee={ annee } data-spe={ spe }>
   <div class="card-body">
     <div class="flex">
-        <img src={ photo } class="w-14 h-14 rounded-full"/>
+        <img src={ photo } alt={ nom } class="w-14 h-14 rounded-full"/>
         <div class="ml-2">
             <h2 class="card-title">{ nom }</h2>
             {
                 annee == "L3" ? <span class="badge badge-error">L3</span>
                 : annee == "L2" ? <span class="badge badge-warning">L2</span>
-                : <span class="badge bg-yellow-200 border-bg-yellow-300">L1</span>
+                : <span class="badge bg-yellow-200 border-bg-yellow-300 text-yellow-700">L1</span>
             }
             {
                 spe == "sante" ? <span class="badge badge-success">🧬 Spé Santé</span>
@@ -22,7 +23,9 @@ const { nom = "Ulysse", photo = "/uly.jpg", annee = "L1", spe = "sante" } = Astr
     </div>
     <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
     <div class="justify-end card-actions">
-      <button class="btn btn-primary">Buy Now</button>
+      <button class="btn btn-primary">
+        <Icon name="tabler:mail" /> Contacter { nom }
+      </button>
     </div>
   </div>
 </article>
