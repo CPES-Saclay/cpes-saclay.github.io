@@ -15,7 +15,7 @@ const { title = "Accueil" } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <script is:inline>
+    <script is:inline data-astro-rerun>
         // ☝️ This script prevent the FART effect.
         if (localStorage.getItem("theme") === null) {
             document.documentElement.setAttribute("data-theme", "light");
