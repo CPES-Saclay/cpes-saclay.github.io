@@ -1,10 +1,340 @@
 ---
-layout: '../layouts/Default.astro'
+layout: ../layouts/Default.astro
 proseMode: true
 showBreadcrumbs: true
-title: Formation
-description: Formation
+title: ✒️ Markdown 101
+description: Le markdown est un outil/language d'une simplicité enfantine ! Pas besoin de vous prendre la tête pour écrire une page.
 order: 1
 ---
 
-# Formation
+Le markdown est un outil/language d'une simplicité enfantine ! Pas besoin de vous prendre la tête pour écrire une page.
+
+> [!NOTE] Flemme d'écrire en Markdown ?
+> 
+> Vous pouvez toujours prendre votre texte, le mettre dans un fichier `.txt` et le renommer en `.md` - il fonctionnera sans problème (mais sans mise en forme)
+
+## 📌 Introduction
+
+Cette fiche va vous montrer comment mette en forme du contenu dans un fichier markdown (.md). Nous vous conseillons d'utiliser [Obsidian](https://obsidian.md/) pour avoir une prise en main plus facile - mais n'importe quel éditeur de texte est compatible. 
+
+Chaque demo sur cette fiche est composé en deux parties : le rendu et le code. Le rendu vous montre comment cela rend sur le site et le bloc de code vous montre comment l'implémenter. Exemple :
+
+1. Voici une liste ordonnée
+   - Avec un premier élément
+   - Un deuxième
+2. Et un intermédiaire
+
+```md
+1. Voici une liste ordonnée
+   - Avec un premier élément
+   - Un deuxième
+2. Et un intermédiaire
+```
+
+> [!warning] Les espaces comptes dans les blocs de code !
+> Ici, c'est le fait d'avoir 0, 3, 6 ou x espaces qui séparent les listes des sous-listes.
+
+Tout les fichiers Markdown qui compose fiches.me sont hébergés sur [notre GitHub](https://github.com/DreamCloud-Development/fiches.me).
+
+## 📝 Mise en forme Markdown
+
+> *Mise en forme classique sur tout site Markdown*
+
+### Titres
+
+Les titres sont les espaces de textes en grand. Il existe 6 niveaux de titres :
+
+# Titre de niveau  1
+
+## Titre de niveau 2
+
+### Titre de niveau 3
+
+#### Titre de niveau 4
+
+##### Titre de niveau 5
+
+###### Titre de niveau 6
+
+```md
+# Titre de niveau  1
+## Titre de niveau 2
+### Titre de niveau 3
+#### Titre de niveau 4
+##### Titre de niveau 5
+###### Titre de niveau 6
+```
+
+Les titres de niveau 1 à 3 s'affichent dans l'onglet **Table Des Matières**
+
+### Gras, Italique
+
+Vous pouvez très simplement mettre en **gras**, en *italique* ou en ***gras et en italique*** en utilisant des `*`. Entourez le texte que vous voulez modifier avec une astérisque le rend Italique et deux le rend gras.
+
+```md
+*Ceci est du texte en Italique*
+**Ceci est du texte en gras**
+***Ceci est du texte en gras et en italique***
+```
+
+### Autre modifications du texte 
+
+Il est possible de ~~barrer du texte~~, de le mettre dans `un bloc de code` avec la syntaxe suivante :
+
+```md
+Ceci est `dans un bloc`
+Ceci est ~~barré~~
+```
+
+### Listes
+
+Les listes s'écrivent comme dans un texte classique, avec des tirets. Il est aussi possible d'utiliser des nombres `1.`, `2.`, `3.` suivit d'un point.
+
+- Texte 1
+- Texte 2
+- Texte 3
+
+1. Texte 1
+2. Texte 2
+3. Texte 3
+
+```md
+- Texte 1
+- Texte 2
+- Texte 3
+
+1. Texte 1
+2. Texte 2
+3. Texte 3
+```
+
+Vous pouvez aussi ajouter trois espaces pour créer des sous listes (fonctionne aussi avec les nombres)
+
+- Une Liste
+   - une sous liste
+   - une sous liste
+      - Une super sous liste
+   - Texte liste
+
+```md
+- Une Liste
+   - une sous liste
+   - une sous liste
+      - Une super sous liste
+   - Texte liste
+```
+
+### Liens, Images
+
+Vous pouvez crée des [liens](#) avec le markdown en utilisant des parenthèse :
+
+```md
+[Texte du Lien](https://adresse.du.lien)
+```
+
+En ajoutant un `!` devant votre lien, il sera affiché en tant qu'image
+
+```md
+![Ceci est une image](https://cpes.fiches.me/logo.png)
+```
+
+![Ceci est une image](https://cpes.fiches.me/logo.png)
+
+### Tableaux
+
+Pour faire un tableau, il faut dessiner un tableau avec des tirets autour de son contenu. Exemple :
+
+| Fonction | -♾️ | 4          | +♾️ |
+| -------- | --- | ---------- | --- |
+| f'       | -   | 0          | +   |
+| f        | ↘   | f(0) = -50 | ↗   |
+
+```md
+| Fonction | -♾️ | 4          | +♾️ |
+| -------- | --- | ---------- | --- |
+| f'       | -   | 0          | +   |
+| f        | ↘   | f(0) = -50 | ↗   |
+```
+
+> [!question] Les tableaux sont infernaux ?
+> Obisdian vous permet en un clic de créer un tableau. Si vous avez du mal à les mettre en forme (ce qui vu la tête du truc est pas étonnant), pensez à utiliser un éditeur Markdown
+
+### Blocs de code
+
+Si vous voulez afficher du code sur plus d'une ligne, vous pouvez créer un bloc avec 3 guillemets .
+
+```python
+print("Ça marche !")
+# C'est avec ces guillemets => ```
+```
+
+Vous pouvez aussi ajouter le nom d'un langage de programation pour mettre le bloc en couleurs
+
+```python
+print("Ça marche !")
+# C'est avec ces guillemets => ```
+```
+
+## 💎 Mise en forme Obsidian
+
+> *Certaines fonctionnalités de Obsidian fonctionnent sur Fiches.me*
+
+### Tags
+
+Un tag est similaire à un hashtag : #hashtag. Il s'écrit comme il se met en forme
+
+#markdown #fiche #français
+
+### Admonitions
+
+Les admonitions sont des blocs d'informations, des alertes affichés en couleur. Tout le contenu du bloc doit être devant un symbole `>` et vous devez ajouter `[!NOM]` devant la première ligne pour définir le type (voir le nom) de votre Admonition.
+
+#### Listes des Admonitions
+
+> [!SUCCESS]
+> Aliases: “success”, “check”, “done”
+
+```markdown
+> [!SUCCESS]
+> Useful information that users should know, even when skimming content.
+```
+
+---
+
+> [!INFO]
+> Useful information that users should know, even when skimming content.
+
+```markdown
+> [!INFO]
+> Useful information that users should know, even when skimming content.
+```
+
+---
+
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+```markdown
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+```
+
+---
+
+> [!Todo]
+> Aliases: “abstract”, “summary”, “tldr”
+
+```markdown
+> [!Todo]
+> Useful information that users should know, even when skimming content.
+```
+
+---
+
+> [!ABSTRACT]
+> Aliases: “abstract”, “summary”, “tldr”
+
+```markdown
+> [!ABSTRACT]
+> Useful information that users should know, even when skimming content.
+```
+
+---
+
+> [!TIP]
+> Aliases: “tip”, “hint”, “important”
+
+```markdown
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+```
+
+---
+
+> [!QUESTION]
+> Aliases: “question”, “help”, “faq”
+
+```markdown
+> [!QUESTION]
+> Useful information that users should know, even when skimming content.
+```
+
+---
+
+> [!WARNING]
+> Aliases: “warning”, “attention”, “caution”
+
+```markdown
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+```
+
+---
+
+> [!Failure]
+> Aliases: “failure”, “missing”, “fail”
+
+```markdown
+> [!Failure]
+> Key information users need to know to achieve their goal.
+```
+
+---
+
+> [!BUG]
+> Key information users need to know to achieve their goal.
+
+```markdown
+> [!BUG]
+> Key information users need to know to achieve their goal.
+```
+
+---
+
+> [!DANGER]
+> Aliases: “danger”, “error”
+
+```markdown
+> [!DANGER]
+> Advises about risks or negative outcomes of certain actions.
+```
+
+This one work also with ![ERROR]
+
+---
+
+> [!EXAMPLE]
+> Key information users need to know to achieve their goal.
+
+```markdown
+> [!EXAMPLE]
+> Key information users need to know to achieve their goal.
+```
+
+---
+
+> [!QUOTE]
+> Aliases: “quote”, “cite”
+
+```markdown
+> [!QUOTE]
+> Advises about risks or negative outcomes of certain actions.
+```
+
+#### Changer le titre d'une Admonition
+
+Vous pouvez modifier le titre d'une Admonition en ajoutant du texte devant le tag `[!nom]` :
+
+> [!QUOTE] Once A Man Said
+> Markdown is the best programation language of the world
+
+```markdown
+> [!QUOTE] Once A Man Said
+> Markdown is the best programation language of the world
+```
+
+
+### Coches
+
+- [ ] Classicisme
+- [x] Checked
