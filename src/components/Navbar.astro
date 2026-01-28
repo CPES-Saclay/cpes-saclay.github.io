@@ -1,11 +1,15 @@
 ---
 import { Icon } from "astro-icon/components";
 import Navigation from "./Navigation.astro"
+import { getLangFromUrl } from '../i18n/index';
+
+const lang = getLangFromUrl(Astro.url);
+const homeUrl = lang === 'en' ? '/en/' : '/';
 ---
 
 <div id="navbar" class="fixed top-0 left-0 w-full transition-all duration-500 ease-in-out z-10 bg-primary shadow-sm">
     <div class="container mx-auto px-6 py-8 flex justify-between">
-        <a href="/">
+        <a href={homeUrl}>
             <img src="/assets/logo_cpes-paris-saclay.svg" alt="Logo du CPES Paris-Saclay" class="h-14 lg:h-18 dark:invert"/>
         </a>
         <div class="hidden lg:flex lg:items-center">
