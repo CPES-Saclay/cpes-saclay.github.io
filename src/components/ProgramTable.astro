@@ -1,0 +1,69 @@
+---
+---
+
+<div class="table-wrapper">
+  <slot />
+</div>
+
+<style>
+  .table-wrapper {
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+
+  .table-wrapper :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .table-wrapper :global(th),
+  .table-wrapper :global(td) {
+    padding: 0.75rem 0.5rem;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+
+  .table-wrapper :global(th) {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  .table-wrapper :global(td:first-child) {
+    text-align: left;
+    font-weight: 500;
+  }
+
+  .table-wrapper :global(tr:nth-child(even)) {
+    background-color: #fafafa;
+  }
+
+  .table-wrapper :global(tr:hover) {
+    background-color: #f0f0f0;
+  }
+
+  .table-wrapper :global(a) {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-bottom: 1px dotted transparent;
+  }
+
+  .table-wrapper :global(a:hover) {
+    color: #004499;
+    border-bottom-color: #004499;
+  }
+
+  @media (max-width: 768px) {
+    .table-wrapper :global(table) {
+      font-size: 0.8rem;
+    }
+    
+    .table-wrapper :global(th),
+    .table-wrapper :global(td) {
+      padding: 0.5rem 0.25rem;
+    }
+  }
+</style>

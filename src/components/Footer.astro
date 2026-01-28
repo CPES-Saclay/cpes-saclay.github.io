@@ -10,8 +10,8 @@ const t = useTranslations(lang);
   <div class="bg-[url('/assets/footer_cpes.jpg')] bg-no-repeat bg-center bg-cover md:h-64 h-48">
     <div class="bg-black/10 h-full">
       <div class="text-white container mx-auto px-6 w-full flex flex-col items-left justify-center h-full">
-        <p class="text-2xl md:text-4xl font-bold">Texte à compléter</p>
-        <p class="mt-2 text-xl">Texte à compléter</p>
+        <p class="text-2xl md:text-4xl font-bold">{t('footerTitre1')}</p>
+        <p class="mt-2 text-xl">{t('footerTitre2')}</p>
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@ const t = useTranslations(lang);
       <div class="flex flex-col items-start gap-4">
         <img src="/assets/logo_cpes-paris-saclay.svg" alt="Logo du CPES Paris-Saclay" class="h-14 md:h-18 mt-2.5 dark:invert"/>
         <p class="text-sm mb-4">
-            Texte à compléter
+            {t('footerDescription')}
         </p>
       </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
@@ -79,7 +79,7 @@ const t = useTranslations(lang);
   </div>
   <div class="bg-error fixed text-white uppercase bottom-0 left-0 right-0 text-center py-3 px-4">
     <p class="text-sm">
-      Ce site internet n'est EN AUCUN CAS officiel et représentatif des CPES. Il sert uniquement de maquette.
+      {t('alerteSite')}
     </p>
   </div>
 </footer>

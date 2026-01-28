@@ -1,4 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/index';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="bg-base-200 flex items-center justify-center p-5 md:p-10">
@@ -8,9 +12,9 @@
       class="w-auto md:w-160 h-40 md:h-90 object-cover rounded-box"
     />
     <div>
-      <h1 class="text-3xl md:text-5xl font-bold">Titre</h1>
+      <h1 class="text-3xl md:text-5xl font-bold">{t('heroTitre')}</h1>
       <p class="py-6">
-        Texte à compléter
+        {t('footerDescription')}
       </p>
     </div>
   </div>

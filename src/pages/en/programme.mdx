@@ -2,7 +2,1067 @@
 layout: ../../layouts/Default.astro
 proseMode: true
 showBreadcrumbs: true
-title: A propos
-description: A propos
-order: 1
+title: "Detailed Program"
+description: "Discover the CPES course content: Mathematics, Computer Science, Data Science and specializations."
+order: 3
 ---
+
+import CourseDetail from '../../components/CourseDetail.astro';
+import ProgramTable from '../../components/ProgramTable.astro';
+
+# Program Overview
+
+## Teaching
+
+Classes are taught at the heart of the Paris-Saclay campus by professors from the Lycée International de Palaiseau Paris-Saclay and partner higher education and research institutions.
+
+The program is organized into blocks, spread over three years, with a progressive increase in teaching carried out by higher education and research institutions (ESR):
+
+- **Core fundamentals blocks**: Mathematics (52.5 ECTS) and Computer Science (25.5 ECTS)
+- **Applied and specialization domains block**:
+  - Data Science and Statistics (34 ECTS) and Social Sciences (16 ECTS)
+  - The CPES offers two specialization tracks: a Health track and a Society track (17 ECTS)
+- **Transversal block**: English (12 ECTS), research introduction, immersion and projects (9 ECTS) and projects (14 ECTS)
+
+### ECTS Credits Distribution
+
+| Domain | ECTS |
+|:--------|:----:|
+| **Mathematics** (including data science) | 86.5 |
+| **Computer Science** | 25.5 |
+| **Health or Society Track** | 17 |
+| **Projects** | 14 |
+| **Social sciences, English, etc.** | 37 |
+| **Total** | **180** |
+
+---
+
+## 📅 First Year - Bachelor 1 (60 ECTS)
+
+*Location: 80% Lycée International de Palaiseau / 20% Partners (Faculty of Sciences of Orsay, ENS Paris-Saclay, Institut Polytechnique de Paris)*
+
+### Summary Table
+
+<ProgramTable>
+
+| **Subjects** | **Semester 1** | **Semester 2** | **Weekly Hours** | **Number of Weeks** | **Total Hours** | **Lectures** | **Labs/TD** | **ECTS** |
+|:-------------|:--------------:|:--------------:|:----------------:|:------------------:|:---------------:|:------------:|:-----------:|:--------:|
+| **Core fundamentals block** |  |  |  |  |  |  |  |  |
+| [Mathematics 1](#mathematiques-1) | X | X | 8 | 30 | 240 | 180 | 60 | 18 |
+| [Computer Science 1](#informatique-1) | X | X | 6 | 30 | 180 | 90 | 90 | 12 |
+| **Block total** |  |  |  |  | **420** | **270** | **150** | **30** |
+| **Applied and specialization domains block** |  |  |  |  |  |  |  |  |
+| [Economics, social policies and health](#economie-politiques-sociales-et-sante) | X | X | 3 | 30 | 90 | 90 | - | 6 |
+| [Introduction to AI](#decouverte-de-lia) | X | - | 2 | 12 | 24 | - | 24 | 2 |
+| [Introduction to data science](#introduction-a-la-science-des-donnees) | - | X | 2 | 12 | 27 | 3 | 24 | 2 |
+| [Introduction to statistics](#introduction-a-la-statistique) | - | X | 2 | 12 | 24 | 24 | - | 2 |
+| [Health Track](#parcours-sante) or [Society Track](#parcours-societe) | X | X | 4 | 24 | 96 | 96 | - | 7 |
+| [Institut Polytechnique Paris Project](#projet-institut-polytechnique-paris) | - | X | 2 | 15 | 30 | - | 30 | 3 |
+| **Block total** |  |  |  |  | **291** | **231** | **78** | **22** |
+| **Transversal block** |  |  |  |  |  |  |  |  |
+| [English](#anglais) | X | X | 2 | 30 | 60 | 60 | - | 4 |
+| [Culture / Sports / LV2](#culture-sport-lv2) | X | X | 2 | 24 | 48 | 48 | - | 4 |
+| [SPOC Critical Thinking: Science in Societies](#spoc-sens-critique) | - | - | - | - | - | - | - | 0 |
+| **Block total** |  |  |  |  | **108** | **108** | **0** | **8** |
+| **Total Y1** |  |  |  |  | **819** | **591** | **228** | **60** |
+
+</ProgramTable>
+
+---
+
+### 📘 Bachelor 1 - Core fundamentals block (30 ECTS)
+
+<CourseDetail
+  id="mathematiques-1"
+  annee="Bachelor 1"
+  semestre="First and second semester"
+  intitule="Mathematics 1"
+  description={`
+<p>This mathematics course focuses on three main themes: algebra, analysis and probabilities, based on the scientific preparatory classes curriculum.</p>
+<p>It aims to reinforce high school foundations and standardize levels between those who took the advanced math option and others, while introducing new concepts such as vector spaces, matrices and complex numbers for those who have not covered them before, numerical series and probabilities on finite universes.</p>
+
+<p><strong>2 parallel instructors:</strong></p>
+
+<p><strong>First instructor:</strong></p>
+<ul>
+  <li><strong>Ch1 - Fundamentals</strong>
+    <ul>
+      <li>Mathematical logic and reasoning methods</li>
+      <li>Membership and inclusion: notion of sets and operations on sets</li>
+      <li>Applications and functions: equality of functions, direct image, identity and indicator function, composed restrictions and extensions, injections surjections and bijections, inverse applications</li>
+    </ul>
+  </li>
+  <li><strong>Ch2 - Limits and continuity</strong>
+    <ul>
+      <li>Limits at infinity and at a point of a function, sequential characterization of limits</li>
+      <li>Notion of closure and closed intervals in R, continuity at a point and on an interval</li>
+      <li>Sequential characterization of continuity, left and right limits and continuity</li>
+      <li>Properties of operations on limits and order relations (bounded on a neighborhood, sign, comparison of limits, squeeze theorem, upper bound, monotone limit theorem)</li>
+      <li>Classic theorems (IVT and its corollary, continuity on a segment, bijection theorem)</li>
+    </ul>
+  </li>
+  <li><strong>Ch3 - Matrices</strong></li>
+  <li><strong>Ch4 - Differentiability</strong></li>
+  <li><strong>Ch5 - Linear systems</strong></li>
+  <li><strong>Ch6 - Geometry in 2 and 3 dimensions</strong></li>
+  <li><strong>Ch7 - R vector spaces</strong></li>
+  <li><strong>Ch8 - Complex numbers</strong></li>
+</ul>
+
+<p><strong>Second instructor:</strong></p>
+<ul>
+  <li><strong>Chapter 1</strong> - Sum and product</li>
+  <li><strong>Chapter 2</strong> - Arithmetic-geometric sequences and induction reasoning</li>
+  <li><strong>Chapter 3</strong> - Order in R</li>
+  <li><strong>Chapter 4</strong> - Sequence limits</li>
+  <li><strong>Chapter 5</strong> - Numerical series</li>
+  <li><strong>Chapter 6</strong> - Introduction to probabilities</li>
+  <li><strong>Chapter 7</strong> - Random variables</li>
+  <li><strong>Chapter 8</strong> - Sum of random variables</li>
+  <li><strong>Chapter 09</strong> - Primitives and integral calculus</li>
+  <li><strong>Chapter 10</strong> - Local comparison of functions</li>
+</ul>
+  `}
+  duree="30 weeks"
+  heures="8 hours per week, 240 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures + Tutorials"
+  credits="18 ECTS"
+/>
+
+<CourseDetail
+  id="informatique-1"
+  annee="Bachelor 1"
+  semestre="First and second semester"
+  intitule="Computer Science 1"
+  description={`
+<p>This course covers the basics of Python programming, with an approach focused on different programming paradigms, algorithmics and data structures (lists, trees, graphs).</p>
+<p>It includes formal logic, as well as databases. Students also learn algorithm validation and testing, recursion, and proofs by induction.</p>
+  `}
+  duree="30 weeks"
+  heures="6 hours per week, 180 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures + Tutorials"
+  credits="12 ECTS"
+/>
+
+---
+
+### 📗 Bachelor 1 - Applied and specialization domains block (22 ECTS)
+
+<CourseDetail
+  id="economie-politiques-sociales-et-sante"
+  annee="Bachelor 1"
+  semestre="First and second semester"
+  intitule="Economics, social policies and health"
+  description={`
+<p><strong>Foundations of economics and major schools of economic thought</strong></p>
+<p>This module offers a structured overview of the main fields of economics, combining historical, theoretical and applied approaches. Students explore the foundations of economics, the functions of the economy and the major schools of economic thought.</p>
+
+<p><strong>Introduction to microeconomics</strong></p>
+<p>Study of consumer microeconomic equilibrium and mechanisms governing individual economic choices.</p>
+
+<p><strong>Environmental economics</strong></p>
+<p>Exploration of interactions between economic activity and environment, and analysis of issues related to sustainability and resource management.</p>
+
+<p><strong>Market functioning and public intervention</strong></p>
+<p>Analysis of the role of markets in the economy and conditions for state intervention to regulate economic activity.</p>
+  `}
+  duree="30 weeks"
+  heures="3 hours per week, 90 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures"
+  credits="6 ECTS"
+/>
+
+<CourseDetail
+  id="decouverte-de-lia"
+  annee="Bachelor 1"
+  semestre="First semester"
+  intitule="Introduction to AI"
+  description={`
+<p>The AI discovery course offers a fun and visual introduction to artificial intelligence - more precisely to statistical learning - through robot control.</p>
+<p>The objective, based on practical work, is to develop intuition about learning algorithms (supervised, unsupervised, reinforcement learning), to gradually arrive at mathematical formulations.</p>
+<p>The implementation will be an opportunity to manipulate neural networks, computer vision and language processing. The necessary Python programming basics will be introduced progressively.</p>
+  `}
+  duree="12 weeks"
+  heures="2 hours per week, 24 hours per year"
+  etablissement="Faculté des Sciences d'Orsay (Université Paris-Saclay)"
+  mode="Tutorials"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="introduction-a-la-science-des-donnees"
+  annee="Bachelor 1"
+  semestre="Second semester"
+  intitule="Introduction to data science"
+  description={`
+<p>This introduction to data science course presents the basics of data collection, processing, analysis and visualization (including image analysis).</p>
+<p>It covers the fundamentals of descriptive statistics and probability theory, based on Python.</p>
+<p>Through an image analysis and classification project, students learn to follow the complete processing chain of a data project, from problem formulation to communicating results, with a strong practical component.</p>
+  `}
+  duree="12 weeks"
+  heures="2 hours per week, 27 hours per year"
+  etablissement="Faculté des Sciences d'Orsay (Université Paris-Saclay)"
+  mode="Lectures + Tutorials"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="introduction-a-la-statistique"
+  annee="Bachelor 1"
+  semestre="Second semester"
+  intitule="Introduction to Statistics"
+  description={`
+<p>The introduction to Statistics course presents fundamental concepts of descriptive and inferential statistics, allowing to collect, organize, analyze and interpret numerical data.</p>
+<p>It introduces students to the main methods for summarizing data, assessing relationships between variables, and performing estimations and hypothesis testing.</p>
+  `}
+  duree="12 weeks"
+  heures="2 hours per week, 24 hours per year"
+  etablissement="École Normale Supérieure (ENS) Paris-Saclay (Université Paris-Saclay)"
+  mode="Lectures"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="parcours-sante"
+  annee="Bachelor 1"
+  semestre="First and second semester"
+  intitule="Health Track"
+  description={`
+<p>This Biology course is based on the first-year BCPST preparatory class curriculum.</p>
+<p>It covers the study of living organisms at multiple scales: molecular, cellular, organism and ecosystem. It also addresses cell organization, metabolism (respiration, nutrition) and genetics (DNA structure, genetic information transmission).</p>
+  `}
+  duree="24 weeks"
+  heures="4 hours per week, 96 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures"
+  credits="7 ECTS (elective)"
+/>
+
+<CourseDetail
+  id="parcours-societe"
+  annee="Bachelor 1"
+  semestre="First and second semester"
+  intitule="Society Track"
+  description={`
+<p><strong>Approaches in sociology and the sociologist's work</strong></p>
+<p>Presentation of sociology, its methods and approaches to analyze society.</p>
+
+<p><strong>Health and well-being</strong></p>
+<p>Study of health and well-being issues, with a focus on risk management, illustrated by the example of health risks.</p>
+
+<p><strong>History of sociological thought</strong></p>
+<ul>
+  <li><strong>Durkheim:</strong> social bonds, relevance of his work, extensions, individualism, sociology of work, changes in work and employment.</li>
+  <li><strong>Marx:</strong> class conflict, conflictuality, social movements and social changes.</li>
+  <li><strong>Weber:</strong> rationality and evolution of social structure.</li>
+</ul>
+
+<p><strong>Sociology of work and social protection</strong></p>
+<p>Analysis of work transformations and social protection policies, including pensions, unemployment and health.</p>
+  `}
+  duree="24 weeks"
+  heures="4 hours per week, 96 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures"
+  credits="7 ECTS (elective)"
+/>
+
+<CourseDetail
+  id="projet-institut-polytechnique-paris"
+  annee="Bachelor 1"
+  semestre="Second semester"
+  intitule="Institut Polytechnique Paris Project"
+  description={`
+<p>This course introduces students to fundamental methods of statistical analysis, data processing and data visualization in Python.</p>
+<p>Practical work is based on the most widely used numerical libraries (numpy, pandas, scikit‑learn) and includes a paired project applied to real datasets. The most advanced students can experiment with implementing simplified deep learning models.</p>
+<p>This module combines statistical rigor, scientific programming practice and implementation of modern machine learning tools.</p>
+  `}
+  duree="15 weeks"
+  heures="2 hours per week, 30 hours per year"
+  etablissement="Telecom Paris - Institut Polytechnique Paris"
+  mode="Tutorials"
+  credits="3 ECTS"
+/>
+
+---
+
+### 📙 Bachelor 1 - Transversal block (8 ECTS)
+
+<CourseDetail
+  id="anglais"
+  annee="Bachelor 1"
+  semestre="First and second semester"
+  intitule="English"
+  description={`
+<p>This course follows an action-oriented approach in the 5 skills (oral and written comprehension, written expression, continuous oral expression and interaction) with work on vowel sound pronunciation.</p>
+<p>Interaction is done through written and/or audiovisual documents focused on environmental and sustainable development issues and a communication scenario within a year-long project framework. Intercultural communication can be addressed within the project.</p>
+  `}
+  duree="30 weeks"
+  heures="2 hours per week, 60 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures"
+  credits="4 ECTS"
+/>
+
+<CourseDetail
+  id="culture-sport-lv2"
+  annee="Bachelor 1"
+  semestre="First and second semester"
+  intitule="Culture / Sports / Second Language (LV2)"
+  description={`
+<p>Physical, Sports and Artistic Activities of student's choice or language teaching.</p>
+  `}
+  duree="24 weeks"
+  heures="2 hours per week, 48 hours per year"
+  etablissement="Faculté des Sciences d'Orsay (Université Paris-Saclay)"
+  mode="Lectures"
+  credits="4 ECTS"
+/>
+
+<CourseDetail
+  id="spoc-sens-critique"
+  annee="Bachelor 1"
+  semestre="First and second semester"
+  intitule="SPOC Critical Thinking: Science in Societies"
+  description={`
+<p>The SPOC Critical Thinking / Science in Societies is an online course designed to raise students' awareness of the issues of science-society interactions by developing their critical thinking.</p>
+<p>It consists of five sessions of fun exercises based on audio, video and textual resources. Each session is linked on one hand to a theme considering a specific field of scientific knowledge, and on the other hand to a questioning investigating a specific aspect of science/society interactions.</p>
+  `}
+  duree="N/A"
+  heures="N/A"
+  etablissement="Faculté des Sciences d'Orsay (Université Paris-Saclay)"
+  mode="Small Private Online Course (SPOC)"
+  credits="0 ECTS"
+/>
+
+---
+
+## 📅 Second Year - Bachelor 2 (60 ECTS)
+
+*Location: 50% Lycée International de Palaiseau / 50% Partners*
+
+### Summary Table
+
+<ProgramTable>
+
+| **Subjects** | **Semester 3** | **Semester 4** | **Weekly Hours** | **Number of Weeks** | **Total Hours** | **Lectures** | **Labs/TD** | **ECTS** |
+|:-------------|:--------------:|:--------------:|:----------------:|:------------------:|:---------------:|:------------:|:-----------:|:--------:|
+| **Core fundamentals block** |  |  |  |  |  |  |  |  |
+| [Mathematics 2](#mathematiques-2) | X | X | 7 | 30 | 210 | 150 | 60 | 14 |
+| [Mathematics - Markov Chains](#mathematiques-chaines-de-markov) | X | - | 4 | 12 | 48 | 24 | 24 | 3 |
+| [Computer Science 2](#informatique-2) | X | X | 4 | 30 | 120 | 90 | 30 | 7 |
+| [Principles of language interpretation](#principes-interpretation-langages) | - | X | 3.5 | 12 | 42 | 18 | 24 | 3 |
+| **Block total** |  |  |  |  | **420** | **282** | **138** | **27** |
+| **Applied and specialization domains block** |  |  |  |  |  |  |  |  |
+| [Economics, social policies and health](#economie-politiques-sociales-et-sante-l2) | X | X | 2 | 30 | 60 | 60 | - | 4 |
+| [Health Track](#parcours-sante-l2) or [Society Track](#parcours-societe-l2) | X | X | 3 | 30 | 90 | 90 | - | 6 |
+| [HEC Electives](#electifs-hec) | X | - | 3 | 6 | 18 | 18 | - | 1 |
+| [Data Science 1](#sciences-des-donnees-1) | X | - | 2 | 15 | 30 | - | 30 | 2 |
+| [Data Science 2](#sciences-des-donnees-2) | - | X | 2.33 | 12 | 28 | 24 | 4 | 2 |
+| [Statistics 2](#statistiques-2) | - | X | 4 | 12 | 48 | 24 | 24 | 3 |
+| [Societal issues in Health and Biology](#enjeux-societaux-sante-biologie) | X | - | 3 | 10 | 30 | 30 | - | 2 |
+| [Data Modeling for social science and business](#data-modeling) | - | X | 3 | 6 | 18 | 18 | - | 1 |
+| [Startup and sustainability](#startup-durabilite) | - | X | 3 | 6 | 18 | 18 | - | 1 |
+| [Introduction to R and R-Studio](#introduction-r-rstudio) | - | X | 2 | 12 | 24 | 24 | - | 2 |
+| **Block total** |  |  |  |  | **364** | **306** | **58** | **24** |
+| **Transversal block** |  |  |  |  |  |  |  |  |
+| [Solidarity Project](#projet-solidaire) | X | X | 1 | 20 | 20 | - | 20 | 2 |
+| [English](#anglais-l2) | X | X | 2 | 30 | 60 | 60 | - | 4 |
+| [Entrepreneurship Methods](#methodes-entrepreneur-hec) | X | - | 6 | 3 | 18 | 18 | - | 1 |
+| [Culture / Sports / LV2](#culture-sport-lv2-l2) | X | - | 2 | 12 | 24 | 24 | - | 1 |
+| [SPOC Energy Transition](#spoc-transition-energetique) | X | - | 1 | 12 | 12 | 12 | - | 1 |
+| **Block total** |  |  |  |  | **134** | **114** | **20** | **9** |
+| **Total Y2** |  |  |  |  | **918** | **702** | **216** | **60** |
+
+</ProgramTable>
+
+---
+
+### 📘 Bachelor 2 - Core fundamentals block (27 ECTS)
+
+<CourseDetail
+  id="mathematiques-2"
+  annee="Bachelor 2"
+  semestre="First and second semester"
+  intitule="Mathematics 2"
+  description={`
+<p>This mathematics course covers the fundamentals of linear algebra (vector spaces, linear transformations, matrices, determinants), Euclidean and Hermitian spaces, as well as the study of polynomials and sequences and series of real-valued or vector-valued functions.</p>
+<p>It addresses uniform convergence, series convergence criteria, function series expansions (Taylor, Fourier), and integration (Riemann integral, generalized integrals).</p>
+  `}
+  duree="30 weeks"
+  heures="7 hours per week, 210 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures + Tutorials"
+  credits="14 ECTS"
+/>
+
+<CourseDetail
+  id="mathematiques-chaines-de-markov"
+  annee="Bachelor 2"
+  semestre="First semester"
+  intitule="Mathematics - Markov Chains"
+  description={`
+<p>The course covers the formal definition, construction of a Markov chain, fundamental properties such as the Markov property, absorbing states, and communication classes.</p>
+<p>It also includes key theorems such as the ergodic theorem, convergence to a stationary distribution, and absorption times. This course prepares for in-depth analysis of chains and their various applications in probabilities, statistics and more generally in data science.</p>
+  `}
+  duree="12 weeks"
+  heures="4 hours per week, 48 hours per year"
+  etablissement="École Normale Supérieure (ENS) Paris-Saclay (Université Paris-Saclay)"
+  mode="Lectures + Tutorials"
+  credits="3 ECTS"
+/>
+
+<CourseDetail
+  id="informatique-2"
+  annee="Bachelor 2"
+  semestre="First and second semester"
+  intitule="Computer Science 2"
+  description={`
+<p>The second-year computer science program focuses on the Python language, with an in-depth study of programming methods, including recursion, induction and sequential and hierarchical data structures.</p>
+<p>Students also study advanced algorithmics (exhaustive exploration, graphs, problem decomposition), formal logic as well as resource management such as memory and files.</p>
+  `}
+  duree="30 weeks"
+  heures="4 hours per week, 120 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures + Tutorials"
+  credits="7 ECTS"
+/>
+
+<CourseDetail
+  id="principes-interpretation-langages"
+  annee="Bachelor 2"
+  semestre="Second semester"
+  intitule="Principles of language interpretation"
+  description={`
+<p>This course is an introduction to the principles of language interpretation. The following points are studied:</p>
+<ul>
+  <li>The different phases of language interpretation: lexical, syntactic, semantic analysis and execution</li>
+  <li>Regular expressions, finite automata</li>
+  <li>Algebraic grammars, word recognition by the CYK algorithm, LL descending analysis</li>
+  <li>Abstract syntax trees</li>
+  <li>Simple semantic rules for scope, typing and evaluation</li>
+</ul>
+  `}
+  duree="12 weeks"
+  heures="3.5 hours per week, 42 hours per year"
+  etablissement="Faculté des Sciences d'Orsay (Université Paris-Saclay)"
+  mode="Lectures + Tutorials"
+  credits="3 ECTS"
+/>
+
+---
+
+### 📗 Bachelor 2 - Applied and specialization domains block (24 ECTS)
+
+<CourseDetail
+  id="economie-politiques-sociales-et-sante-l2"
+  annee="Bachelor 2"
+  semestre="First and second semester"
+  intitule="Economics, social policies and health"
+  description={`
+<p><strong>Theme 1: Businesses, governance and organizations</strong></p>
+<ul>
+  <li>Chapter 1: The enterprise: developments since the beginning of the 19th century</li>
+  <li>Chapter 2: Corporate governance and transformations of financial structures</li>
+</ul>
+
+<p><strong>Theme 2: Economic policies</strong></p>
+<ul>
+  <li>Chapter 3: Modeling Keynesian policy (IS/LM and AS/AD)</li>
+  <li>Chapter 4: Debate on the role and necessity of public intervention</li>
+</ul>
+  `}
+  duree="30 weeks"
+  heures="2 hours per week, 60 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures"
+  credits="4 ECTS"
+/>
+
+<CourseDetail
+  id="parcours-sante-l2"
+  annee="Bachelor 2"
+  semestre="First and second semester"
+  intitule="Health Track"
+  description={`
+<p>This course, based on the second-year BCPST preparatory class curriculum, deepens human biology, physiology and health, also integrating genomics, development and cellular communication.</p>
+<p>It develops understanding of major physiological processes (immunity, reproduction, nervous system, hormonal regulation), the impact of environmental factors and addresses evolution and phylogeny.</p>
+<p>Practical work and document studies aim to strengthen analysis of major organism functions in relation to health.</p>
+  `}
+  duree="30 weeks"
+  heures="3 hours per week, 90 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures"
+  credits="6 ECTS (elective)"
+/>
+
+<CourseDetail
+  id="parcours-societe-l2"
+  annee="Bachelor 2"
+  semestre="First and second semester"
+  intitule="Society Track"
+  description={`
+<p><strong>Theme 1: Socialization</strong></p>
+<p>History and main theoretical approaches to socialization. Study of fundamental concepts and exploration of the diversity of agents, forms and processes of socialization through concrete applications of theory.</p>
+
+<p><strong>Theme 2: Deviance</strong></p>
+<p>Examination of theoretical foundations of deviance analysis, with particular emphasis on interactionist sociology. Study of the medical world through the prism of deviance theories: patient pathways, hospital organization and history of psychiatry.</p>
+
+<p><strong>Theme 3: Social stratification</strong></p>
+<p>Analysis of the structure and evolution of contemporary society, based on an update of recent work and literature on social stratification.</p>
+
+<p><strong>Theme 4: Social relationships and inequalities</strong></p>
+<p>Study of social relationships and dynamics of domination in social space, antagonistic forces structuring conflicts, as well as associated issues and perspectives. Analysis of inequalities and poverty, including their spatial dimension (access to housing, trajectories, appropriation of physical space) and their implications for health.</p>
+
+<p><strong>Theme 5: Introduction to political sociology</strong></p>
+<p>Introduction to the sociology of social movements</p>
+  `}
+  duree="30 weeks"
+  heures="3 hours per week, 90 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures"
+  credits="6 ECTS (elective)"
+/>
+
+<CourseDetail
+  id="electifs-hec"
+  annee="Bachelor 2"
+  semestre="First semester"
+  intitule="HEC Electives"
+  description={`
+<p>Students must choose one course from:</p>
+<ul>
+  <li>Politics, crises, communication</li>
+  <li>Beliefs, data and emotions: how to build a sustainable business</li>
+  <li>Social issues and social policies</li>
+  <li>Labor law</li>
+  <li>The challenges of energy transition</li>
+  <li>The pharmaceutical industry: its challenges in health, its risks and opportunities</li>
+</ul>
+  `}
+  duree="6 weeks"
+  heures="3 hours per week, 18 hours per year"
+  etablissement="HEC Paris"
+  mode="Lectures"
+  credits="1 ECTS"
+/>
+
+<CourseDetail
+  id="sciences-des-donnees-1"
+  annee="Bachelor 2"
+  semestre="First semester"
+  intitule="Data Science 1"
+  description={`
+<p>This course deepens fundamental techniques of data processing, analysis and modeling. It introduces advanced statistical methods, basic machine learning algorithms, as well as computer tools for managing and exploiting large datasets.</p>
+<p>Emphasis is placed on practical implementation and critical interpretation of results in various contexts.</p>
+  `}
+  duree="15 weeks"
+  heures="2 hours per week, 30 hours per year"
+  etablissement="Ecole Polytechnique - Institut Polytechnique Paris"
+  mode="Tutorials"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="sciences-des-donnees-2"
+  annee="Bachelor 2"
+  semestre="Second semester"
+  intitule="Data Science 2"
+  description={`
+<p>This course offers an advanced approach to statistical methods, supervised and unsupervised learning techniques, and management of large databases.</p>
+<p>It emphasizes rigorous application of models, critical evaluation of results, and interpretation of complex data. Students develop strong programming skills and use specialized software to address real-world problems in various fields.</p>
+  `}
+  duree="12 weeks"
+  heures="2.33 hours per week, 28 hours per year"
+  etablissement="Ecole Polytechnique - Institut Polytechnique Paris"
+  mode="Lectures + Tutorials"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="statistiques-2"
+  annee="Bachelor 2"
+  semestre="Second semester"
+  intitule="Statistics 2"
+  description={`
+<p>The objective of this course is to deepen statistical inference methods, including point and interval estimation, hypothesis testing, and analysis of variance (ANOVA). It also addresses simple linear models, multivariate statistics, and basic stochastic processes.</p>
+<p>This course combines theory and practical applications using statistical software, to enable students to design, analyze and interpret quantitative studies in biology or economics.</p>
+  `}
+  duree="12 weeks"
+  heures="4 hours per week, 48 hours per year"
+  etablissement="École Normale Supérieure (ENS) Paris-Saclay (Université Paris-Saclay)"
+  mode="Lectures + Tutorials"
+  credits="3 ECTS"
+/>
+
+<CourseDetail
+  id="enjeux-societaux-sante-biologie"
+  annee="Bachelor 2"
+  semestre="Second semester"
+  intitule="Societal issues in Health and Biology"
+  description={`
+<p>The objective of this course is to acquire basic knowledge in biology, enabling students to understand biological problems and the nature of the data they will encounter.</p>
+<p>The following concepts are developed:</p>
+<ul>
+  <li>Living organisms: from cell to organism</li>
+  <li>Unity of the living world: Replication, transcription and translation</li>
+  <li>Genome and sequencing</li>
+  <li>Regulation of gene expression</li>
+  <li>Evolution in biology</li>
+  <li>Metabolism and its regulation</li>
+</ul>
+  `}
+  duree="10 weeks"
+  heures="3 hours per week, 30 hours per year"
+  etablissement="Faculté des Sciences d'Orsay (Université Paris-Saclay)"
+  mode="Lectures"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="data-modeling"
+  annee="Bachelor 2"
+  semestre="Second semester"
+  intitule="Data Modeling for social science and business"
+  description={`
+<p>This course offers a practical introduction to data modeling applied to social sciences and management, focused on advanced use of Excel.</p>
+<p>Students learn to organize, analyze and effectively represent data, while learning the logic of formulas (HLOOKUP, VLOOKUP, SUMIF, SUMIFS) and pivot tables.</p>
+  `}
+  duree="6 weeks"
+  heures="3 hours per week, 18 hours per year"
+  etablissement="HEC Paris"
+  mode="Lectures"
+  credits="1 ECTS"
+/>
+
+<CourseDetail
+  id="startup-durabilite"
+  annee="Bachelor 2"
+  semestre="Second semester"
+  intitule="Startup and sustainability"
+  description={`
+<p>This course explores the links between entrepreneurship and sustainable development, analyzing how startups integrate social and environmental issues into their business models.</p>
+  `}
+  duree="6 weeks"
+  heures="3 hours per week, 18 hours per year"
+  etablissement="HEC Paris"
+  mode="Lectures"
+  credits="1 ECTS"
+/>
+
+<CourseDetail
+  id="introduction-r-rstudio"
+  annee="Bachelor 2"
+  semestre="Second semester"
+  intitule="Introduction to R and R-Studio for data analysis"
+  description={`
+<p>This introductory course to R and R-Studio offers a first introduction to the R language and its work environment. Students learn to manipulate datasets, perform basic statistical analyses and produce clear and reproducible visualizations.</p>
+<p>The course is based on datasets related to biology.</p>
+  `}
+  duree="12 weeks"
+  heures="2 hours per week, 24 hours per year"
+  etablissement="Faculté des Sciences d'Orsay (Université Paris-Saclay)"
+  mode="Lectures"
+  credits="2 ECTS"
+/>
+
+---
+
+### 📙 Bachelor 2 - Transversal block (9 ECTS)
+
+<CourseDetail
+  id="projet-solidaire"
+  annee="Bachelor 2"
+  semestre="First and second semester"
+  intitule="Solidarity Project"
+  description={`
+<p>The Solidarity Project aims - over the first two years of training - to introduce students to project management with a social, civic or associative dimension. Through the implementation of concrete and sustainable actions serving a community, students develop practical skills in project management, teamwork and communication.</p>
+  `}
+  duree="20 weeks"
+  heures="1 hour per week, 20 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="-"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="anglais-l2"
+  annee="Bachelor 2"
+  semestre="First and second semester"
+  intitule="English"
+  description={`
+<p>This course follows an action-oriented approach in the 5 skills (oral and written comprehension, written expression, continuous oral expression and interaction) with work on vowel sound pronunciation.</p>
+<p>Interaction is done through written and/or audiovisual documents focused on environmental and sustainable development issues and a communication scenario within a year-long project framework. Intercultural communication can be addressed within the project.</p>
+  `}
+  duree="30 weeks"
+  heures="2 hours per week, 60 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures"
+  credits="4 ECTS"
+/>
+
+<CourseDetail
+  id="methodes-entrepreneur-hec"
+  annee="Bachelor 2"
+  semestre="First and second semester"
+  intitule="Entrepreneurship Methods HEC"
+  description={`
+<p>This course introduces students to the main methods and tools used by entrepreneurs.</p>
+<p>Students learn to transform an idea into a viable project, structure a business model and manage the development of an innovative startup in a competitive environment.</p>
+  `}
+  duree="3 weeks"
+  heures="6 hours per week, 18 hours per year"
+  etablissement="HEC Paris"
+  mode="Lectures"
+  credits="1 ECTS"
+/>
+
+<CourseDetail
+  id="culture-sport-lv2-l2"
+  annee="Bachelor 2"
+  semestre="First semester"
+  intitule="Culture / Sports / Second Language (LV2)"
+  description={`
+<p>Physical, Sports and Artistic Activities of student's choice or language teaching.</p>
+  `}
+  duree="12 weeks"
+  heures="2 hours per week, 24 hours per year"
+  etablissement="Université Paris-Saclay"
+  mode="Lectures and/or Tutorials"
+  credits="1 ECTS"
+/>
+
+<CourseDetail
+  id="spoc-transition-energetique"
+  annee="Bachelor 2"
+  semestre="First and second semester"
+  intitule="SPOC Energy Transition"
+  description={`
+<p>The main objective of this SPOC is to help understand the mechanisms and consequences related to climate change and biodiversity erosion as well as their relationships with our lifestyles and consumption patterns.</p>
+<p>More generally, it aims to provide a cross-cutting vision to understand global changes, particularly in relation to the UN's sustainable development goals and the concept of planetary boundaries.</p>
+  `}
+  duree="12 weeks"
+  heures="1 hour per week, 12 hours per year"
+  etablissement="Université Paris-Saclay"
+  mode="Small Private Online Course (SPOC)"
+  credits="1 ECTS"
+/>
+
+---
+
+## 📅 Third Year - Bachelor 3 (60 ECTS)
+
+*Location: 30% Lycée International de Palaiseau / 70% Partners*
+
+### Summary Table
+
+<ProgramTable>
+
+| **Subjects** | **Semester 5** | **Semester 6** | **Weekly Hours** | **Number of Weeks** | **Total Hours** | **Lectures** | **Labs/TD** | **ECTS** |
+|:-------------|:--------------:|:--------------:|:----------------:|:------------------:|:---------------:|:------------:|:-----------:|:--------:|
+| **Core fundamentals block** |  |  |  |  |  |  |  |  |
+| [Mathematics 3](#mathematiques-3) | X | X | 4 | 30 | 120 | 90 | 30 | 7 |
+| [Measures, Integration, Probabilities](#mesures-integration-probabilites) | X | - | 3 | 12 | 36 | 24 | 12 | 3.5 |
+| [Information theory, optimization](#theorie-information-optimisation) | - | X | 3 | 12 | 36 | 24 | 12 | 3.5 |
+| [Ordinary differential equations](#equations-differentielles-ordinaires) | X | - | 3 | 12 | 36 | 24 | 12 | 3.5 |
+| [Databases](#bases-de-donnees) | - | X | 3.5 | 12 | 42 | 24 | 18 | 3.5 |
+| **Block total** |  |  |  |  | **270** | **186** | **84** | **21** |
+| **Applied and specialization domains block** |  |  |  |  |  |  |  |  |
+| [Economics, social policies and health](#economie-politiques-sociales-et-sante-l3) | X | X | 2 | 30 | 60 | 60 | - | 4 |
+| [Quantitative sociology](#sociologie-quantitative) | X | - | 2 | 12 | 24 | 24 | - | 2 |
+| [Computational sociology](#sociologie-computationnelle) | - | X | 2 | 12 | 24 | 24 | - | 2 |
+| [Health Track](#parcours-sante-l3) or [Society Track](#parcours-societe-l3) | X | X | 2 | 30 | 60 | 60 | - | 4 |
+| [Data analysis for social sciences and biology](#analyse-donnees-sciences-sociales-biologie) | - | X | 3 | 12 | 36 | 24 | 12 | 3 |
+| [Introduction to clinical and epidemiological research](#recherche-clinique-epidemiologique) | X | X | 4 | 24 | 96 | 96 | - | 6 |
+| **Block total** |  |  |  |  | **300** | **288** | **12** | **21** |
+| **Transversal block** |  |  |  |  |  |  |  |  |
+| [Capstone Project](#projet-capstone) | X | X | 6 | 24 | 144 | - | 144 | 12 |
+| [English](#anglais-l3) | X | X | 2 | 30 | 60 | 60 | - | 4 |
+| [Culture / Sports / LV2](#culture-sport-lv2-l3) | X | X | 2 | 24 | 48 | 48 | - | 2 |
+| **Block total** |  |  |  |  | **252** | **108** | **144** | **18** |
+| **Total Y3** |  |  |  |  | **822** | **582** | **240** | **60** |
+
+</ProgramTable>
+
+---
+
+### 📘 Bachelor 3 - Core fundamentals block (21 ECTS)
+
+<CourseDetail
+  id="mathematiques-3"
+  annee="Bachelor 3"
+  semestre="First and second semester"
+  intitule="Mathematics 3"
+  description={`
+<p>This third mathematics course offers an in-depth introduction to the topology of normed vector spaces, duality and the study of quadratic and Hermitian forms. It also offers an introduction to differentiable optimization, as well as fundamental algebraic structures: groups, rings and fields.</p>
+  `}
+  duree="30 weeks"
+  heures="4 hours per week, 120 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures + Tutorials"
+  credits="7 ECTS"
+/>
+
+<CourseDetail
+  id="mesures-integration-probabilites"
+  annee="Bachelor 3"
+  semestre="First semester"
+  intitule="Measures, integration, probabilities"
+  description={`
+<p>This course introduces the foundations of measure and integration theory, with particular attention to the construction of sigma-algebras, the notion of measurability and the Lebesgue integral. It explores functional spaces and their properties, in connection with modern analysis tools.</p>
+<p>Applications to probabilities (Kolmogorov axiomatics) illustrate the scope of these concepts in modeling random phenomena and in rigorous treatment of random variables.</p>
+  `}
+  duree="12 weeks"
+  heures="3 hours per week, 36 hours per year"
+  etablissement="École Normale Supérieure (ENS) Paris-Saclay (Université Paris-Saclay)"
+  mode="Lectures + Tutorials"
+  credits="3.5 ECTS"
+/>
+
+<CourseDetail
+  id="theorie-information-optimisation"
+  annee="Bachelor 3"
+  semestre="First semester"
+  intitule="Information theory, optimization"
+  description={`
+<p>This course offers an introduction to signal theory, in particular to the discrete Fourier transform and the Nyquist-Shannon theorem, which allow analyzing and reconstructing digital signals.</p>
+<p>It then addresses the foundations of discrete optimization and convex optimization, with or without constraints, emphasizing analytical and algorithmic resolution methods.</p>
+  `}
+  duree="12 weeks"
+  heures="3 hours per week, 36 hours per year"
+  etablissement="École Normale Supérieure (ENS) Paris-Saclay (Université Paris-Saclay)"
+  mode="Lectures + Tutorials"
+  credits="3.5 ECTS"
+/>
+
+<CourseDetail
+  id="equations-differentielles-ordinaires"
+  annee="Bachelor 3"
+  semestre="First semester"
+  intitule="Ordinary differential equations"
+  description={`
+<p>This course deals with solving ordinary differential equations (ODE) of orders 1 and 2, as well as linear differential systems of order 1 and their extension to ODEs of order n. It addresses the Cauchy-Lipschitz theorem, qualitative analysis of solutions and offers an introduction to stochastic differential equations (SDE).</p>
+<p>The program provides essential knowledge for understanding and manipulating the main tools of differential analysis.</p>
+  `}
+  duree="12 weeks"
+  heures="3 hours per week, 36 hours per year"
+  etablissement="École Normale Supérieure (ENS) Paris-Saclay (Université Paris-Saclay)"
+  mode="Lectures + Tutorials"
+  credits="3.5 ECTS"
+/>
+
+<CourseDetail
+  id="bases-de-donnees"
+  annee="Bachelor 3"
+  semestre="Second semester"
+  intitule="Databases"
+  description={`
+<p>This course deepens the principles of using relational Database Management Systems (DBMS). It is structured around three major technical axes:</p>
+<ul>
+  <li><strong>Integrity and Constraints:</strong> In-depth study of data models, updates and management of SQL and non-SQL constraints.</li>
+  <li><strong>Procedural Programming (PL/SQL):</strong> Learning the PL/SQL language to automate processing through use of cursors, triggers and management of database exceptions and errors.</li>
+  <li><strong>Web Architecture and Program Mode:</strong> Interfacing between databases and web applications (Internet architecture, HTML, PHP). The course addresses issues of DBMS access in "program mode", level independence and data confidentiality (encapsulation).</li>
+</ul>
+  `}
+  duree="12 weeks"
+  heures="3 hours per week, 36 hours per year"
+  etablissement="Faculté des Sciences d'Orsay (Université Paris-Saclay)"
+  mode="Lectures + Tutorials"
+  credits="3.5 ECTS"
+/>
+
+---
+
+### 📗 Bachelor 3 - Applied and specialization domains block (21 ECTS)
+
+<CourseDetail
+  id="economie-politiques-sociales-et-sante-l3"
+  annee="Bachelor 3"
+  semestre="First and second semester"
+  intitule="Economics, social policies and health"
+  description={`
+<p>This course analyzes the design and evaluation of public policies: who decides, with what objectives, and how to measure their effects using micro and macro-econometric tools. It also addresses behavioral economics applied to public policies and offers a critical assessment of interventions.</p>
+<p>The second part explores economic and financial globalization: opening of trade since the 19th century, analysis of international trade, regionalization and governance, as well as the constitution and functioning of the global capital market.</p>
+  `}
+  duree="30 weeks"
+  heures="2 hours per week, 60 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures"
+  credits="4 ECTS"
+/>
+
+<CourseDetail
+  id="sociologie-quantitative"
+  annee="Bachelor 3"
+  semestre="First semester"
+  intitule="Quantitative sociology"
+  description={`
+<p>The objective of this course is to introduce students to the analysis of social phenomena using quantitative data. It combines sociological concepts and statistical tools to measure behaviors, inequalities and social dynamics.</p>
+<p>Students learn to collect and process data, use analysis methods such as descriptive statistics and regression, and interpret results for concrete applications such as social mobility or inequalities.</p>
+  `}
+  duree="12 weeks"
+  heures="2 hours per week, 24 hours per year"
+  etablissement="ENSAE - Institut Polytechnique Paris"
+  mode="Lectures"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="sociologie-computationnelle"
+  annee="Bachelor 3"
+  semestre="Second semester"
+  intitule="Computational sociology"
+  description={`
+<p>This computational sociology course explores quantitative and computer methods applied to the study of social phenomena. It introduces fundamental concepts of modeling, social network analysis, and processing of large databases from human interactions.</p>
+<p>The course highlights the use of digital tools for collecting, analyzing and visualizing social data.</p>
+  `}
+  duree="12 weeks"
+  heures="2 hours per week, 24 hours per year"
+  etablissement="ENSAE - Institut Polytechnique Paris"
+  mode="Lectures"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="parcours-sante-l3"
+  annee="Bachelor 3"
+  semestre="First semester"
+  intitule="Health Track"
+  description={`
+<p>This module offers a multidisciplinary approach to understanding fundamental mechanisms of living organisms:</p>
+<ul>
+  <li><strong>Microbiology:</strong> diversity of microorganisms (organization, ecology, metabolism), observation and culture in laboratory.</li>
+  <li><strong>Immunology:</strong> roles of molecular and cellular actors of the immune system, vaccine strategies and principles of antivirals.</li>
+  <li><strong>Cell differentiation:</strong> notion of stem cell, stages and control of differentiation (genetic, paracrine, hormonal), role in development and cell renewal.</li>
+  <li><strong>Neurosciences:</strong> anatomo-functional organization of the central and peripheral nervous system, complex functions (stress, motor skills), and pathologies, particularly neurodegenerative.</li>
+</ul>
+  `}
+  duree="30 weeks"
+  heures="2 hours per week, 60 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures"
+  credits="4 ECTS (elective)"
+/>
+
+<CourseDetail
+  id="parcours-societe-l3"
+  annee="Bachelor 3"
+  semestre="Second semester"
+  intitule="Society Track"
+  description={`
+<p>This module explores major contemporary issues through four key themes:</p>
+<ul>
+  <li><strong>Sociology of risk:</strong> analysis of perceptions and social constructions of risk, prevention policies and behaviors in face of uncertainty.</li>
+  <li><strong>Sociology of the family:</strong> study of family forms, transformations of roles and intergenerational relationships in varied contexts.</li>
+  <li><strong>Sociology of sexuality:</strong> approach to norms, representations and practices, in connection with social and cultural developments.</li>
+  <li><strong>Sociology of social movements:</strong> understanding collective mobilizations, their actors, strategies and impact on social change.</li>
+</ul>
+  `}
+  duree="30 weeks"
+  heures="2 hours per week, 60 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures"
+  credits="4 ECTS (elective)"
+/>
+
+<CourseDetail
+  id="analyse-donnees-sciences-sociales-biologie"
+  annee="Bachelor 3"
+  semestre="Second semester"
+  intitule="Data analysis for social sciences and biology"
+  description={`
+<p>This Data Analysis for social sciences and biology course introduces fundamental data science methods adapted to the specific contexts of these disciplines. It addresses data collection, cleaning, visualization and statistical analysis, with a focus on exploiting databases and computer tools.</p>
+<p>The course relies on R and Python to develop students' analytical and programming skills.</p>
+  `}
+  duree="12 weeks"
+  heures="3 hours per week, 36 hours per year"
+  etablissement="École Normale Supérieure (ENS) Paris-Saclay (Université Paris-Saclay)"
+  mode="Lectures + Tutorials"
+  credits="3 ECTS"
+/>
+
+<CourseDetail
+  id="recherche-clinique-epidemiologique"
+  annee="Bachelor 3"
+  semestre="First semester"
+  intitule="Introduction to clinical and epidemiological research"
+  description={`
+<p>This introduction to clinical and epidemiological research presents essential methodological foundations for designing, conducting and analyzing studies in public health and clinical settings. It covers key principles of epidemiology, different types of observational and interventional studies, as well as statistical methods suitable for analyzing clinical data.</p>
+<p>Particular attention is paid to scientific rigor, research ethics and critical interpretation of results, with a practical approach promoting application of concepts in various biomedical contexts.</p>
+  `}
+  duree="24 weeks"
+  heures="4 hours per week, 96 hours per year"
+  etablissement="Faculté des Sciences d'Orsay (Université Paris-Saclay)"
+  mode="Lectures"
+  credits="6 ECTS"
+/>
+
+---
+
+### 🏆 Bachelor 3 - Transversal block (18 ECTS)
+
+<CourseDetail
+  id="projet-capstone"
+  annee="Bachelor 3"
+  semestre="First and second semester"
+  intitule="Capstone Project"
+  description={`
+<p>The Capstone project is a synthesis project that concludes the training. It allows students to mobilize all acquired skills to solve a concrete problem in data science. This project can take the form of an in-depth data analysis, development of a predictive model or design of an innovative solution to address a real issue.</p>
+<p>Carried out over several months, it promotes autonomy, creativity and practical application of statistical methods, programming and data visualization.</p>
+  `}
+  duree="24 weeks"
+  heures="6 hours per week, 144 hours per year"
+  etablissement="HEC Paris"
+  mode="Tutorials"
+  credits="12 ECTS"
+/>
+
+<CourseDetail
+  id="anglais-l3"
+  annee="Bachelor 3"
+  semestre="First and second semester"
+  intitule="English"
+  description={`
+<p>This English course aims to consolidate and deepen the five language skills (oral and written comprehension, written expression, continuous oral expression and interaction) in an action-oriented approach. Emphasis is placed on fluency and accuracy, with work on pronunciation and intonation.</p>
+<p>Activities are based on varied documents and collaborative projects around current themes such as environment, sustainable development and intercultural communication, to prepare students for professional and academic exchanges in international contexts.</p>
+  `}
+  duree="30 weeks"
+  heures="2 hours per week, 60 hours per year"
+  etablissement="Lycée International de Palaiseau Paris-Saclay"
+  mode="Lectures"
+  credits="4 ECTS"
+/>
+
+<CourseDetail
+  id="culture-sport-lv2-l3"
+  annee="Bachelor 3"
+  semestre="First and second semester"
+  intitule="Culture / Sports / Second Language (LV2)"
+  description={`
+<p>Physical, Sports and Artistic Activities of student's choice or language teaching.</p>
+  `}
+  duree="24 weeks"
+  heures="2 hours per week, 48 hours per year"
+  etablissement="Université Paris-Saclay"
+  mode="Lectures and/or Tutorials"
+  credits="4 ECTS"
+/>
+
+---
+
+## 📊 Indicative Weekly Schedule
+
+| Subject | Bachelor 1 | Bachelor 2 | Bachelor 3 |
+| :--- | :---: | :---: | :---: |
+| **Mathematics (LIPPS)** | 8h | 7h | 4h |
+| **Computer Science (LIPPS)** | 6h | 4h | - |
+| **Data Science** | 2h | 5h | 6h |
+| **Econ / Socio / Health** | 3h | 2h | 3h |
+| **Specialization (Health/Society)** | 4h | 3h | 6h |
+| **English** | 2h | 2h | 2h |
+| **Projects / Research** | 1h | 4h | 6h |
+
+*This volume is average and may vary by semester and projects.*

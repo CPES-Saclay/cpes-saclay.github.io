@@ -5,25 +5,38 @@ import Partenaires from "../components/Partenaires.astro";
 ---
 
 <DefaultLayout>
-    <div
-      class="flex flex-col lg:flex-row place-items-center md:mx-16 mt-10 gap-16"
-    >
-      <div class="flex flex-col lg:flex-1 lg:min-w-0 min-w-full">
-        <p class="text-3xl font-bold pt-2">Cycle Pluridisciplinaire d'Études Supérieures</p>
-        <p class="text-xl pt-2">
-          Texte à compléter
-        </p>
-        <div class="flex flex-col md:flex-row gap-4 pt-4">
-          <a href="about" class="btn btn-primary max-sm:w-full">En savoir plus</a>
-          <a href="contact" class="btn btn-secondary max-sm:w-full"
-            >Nous contacter</a
-          >
+    <div class="prose prose-lg max-w-none mx-4 md:mx-16 my-10">
+        <h1>CPES Paris-Saclay</h1>
+        <p class="text-2xl font-bold">Sciences des Données, Société et Santé</p>
+
+        <h2>Une formation d'excellence au cœur du plateau de Saclay</h2>
+
+        <p>Le Cycle Pluridisciplinaire d'Études Supérieures (CPES) est une formation de haut niveau en 3 ans, délivrant un diplôme valant <strong>grade de Licence</strong>.</p>
+
+        <p>Ouvert en septembre 2023 au Lycée International de Palaiseau Paris-Saclay (LIPPS), ce cursus est le fruit d'une collaboration inédite entre cinq établissements prestigieux :</p>
+        <ul>
+            <li><strong>Lycée International de Palaiseau Paris-Saclay (LIPPS)</strong></li>
+            <li><strong>Université Paris-Saclay</strong></li>
+            <li><strong>Institut Polytechnique de Paris</strong></li>
+            <li><strong>HEC Paris</strong></li>
+            <li><strong>ENS Paris-Saclay</strong></li>
+        </ul>
+
+        <h2>Pourquoi choisir ce CPES ?</h2>
+
+        <p>C'est une formation d'avenir, conçue pour répondre aux besoins croissants en expertise de la donnée (Data Science) dans tous les secteurs. Elle offre :</p>
+        <ul>
+            <li><strong>Une pédagogie hybride</strong> : Le meilleur des classes prépas (encadrement) et de l'université/grandes écoles (recherche, projets).</li>
+            <li><strong>Une formation par la recherche</strong> : Dès la L1, avec des visites de labos, des conférences et des projets concrets.</li>
+            <li><strong>Une ouverture pluridisciplinaire</strong> : Mathématiques, Informatique, mais aussi Économie, Sociologie ou Biologie selon votre parcours.</li>
+        </ul>
+
+        <div class="flex flex-col md:flex-row gap-4 my-8">
+            <a href="a-propos" class="btn btn-primary max-sm:w-full">En savoir plus sur la formation</a>
+            <a href="contact" class="btn btn-secondary max-sm:w-full">Nous contacter</a>
         </div>
-      </div>
     </div>
-    <div class="my-10 alert alert-warning">
-      Info parcoursup/renseignement primordial
-    </div>
+    
     <Hero1 />
     <Partenaires />
 </DefaultLayout>

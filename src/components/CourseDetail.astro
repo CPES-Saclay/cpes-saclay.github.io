@@ -1,0 +1,211 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/index';
+
+export interface Props {
+  id?: string;
+  numero?: string;
+  annee: string;
+  semestre: string;
+  intitule: string;
+  description: string;
+  duree: string;
+  heures: string;
+  etablissement: string;
+  mode: string;
+  credits: string;
+}
+
+const { id, numero, annee, semestre, intitule, description, duree, heures, etablissement, mode, credits } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<details class="course-detail" id={id}>
+  <summary class="course-summary">
+    <span class="course-title">{intitule}</span>
+    <span class="course-credits">{credits}</span>
+  </summary>
+  <div class="course-content">
+    <div class="course-header">
+      {numero && <p><strong>No.</strong> {numero}</p>}
+      <p><strong>{t('annee')} :</strong> {annee}</p>
+      <p><strong>{t('semestre')} :</strong> {semestre}</p>
+      <p><strong>{t('intitule')} :</strong> {intitule}</p>
+    </div>
+    
+    <div class="course-description">
+      <h4>{t('descriptionCours')}</h4>
+      <div set:html={description} />
+    </div>
+    
+    <div class="course-info">
+      <p><strong>{t('duree')} :</strong> {duree}</p>
+      <p><strong>{t('heuresCours')} :</strong> {heures}</p>
+      <p><strong>{t('etablissement')} :</strong> {etablissement}</p>
+      <p><strong>{t('modeEnseignement')} :</strong> {mode}</p>
+      <p><strong>{t('credits')} :</strong> {credits}</p>
+    </div>
+  </div>
+</details>
+
+<style>
+  .course-detail {
+    margin: 1rem 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    scroll-margin-top: 100px;
+  }
+
+  .course-summary {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #f8f9fa, #ffffff);
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+    list-style: none;
+  }
+
+  .course-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .course-summary::marker {
+    display: none;
+  }
+
+  .course-summary:hover {
+    background: linear-gradient(to right, #e9ecef, #f8f9fa);
+  }
+
+  .course-summary::before {
+    content: '▶';
+    display: inline-block;
+    margin-right: 0.75rem;
+    transition: transform 0.2s ease;
+    color: #666;
+  }
+
+  .course-detail[open] .course-summary::before {
+    transform: rotate(90deg);
+  }
+
+  .course-title {
+    flex: 1;
+    font-size: 1.05rem;
+    color: #2c3e50;
+  }
+
+  .course-credits {
+    font-size: 0.9rem;
+    color: #0066cc;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    background: #e3f2fd;
+    border-radius: 12px;
+  }
+
+  .course-content {
+    padding: 1.5rem;
+    background: #fafafa;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .course-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  .course-header p {
+    margin: 0.5rem 0;
+    color: #555;
+  }
+
+  .course-description {
+    margin: 1.5rem 0;
+  }
+
+  .course-description h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .course-description :global(p) {
+    line-height: 1.6;
+    color: #444;
+    margin: 0.75rem 0;
+  }
+
+  .course-description :global(ul) {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .course-description :global(li) {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+  }
+
+  .course-info {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid #e0e0e0;
+  }
+
+  .course-info p {
+    margin: 0.5rem 0;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    .course-summary {
+      padding: 0.75rem 1rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .course-title {
+      font-size: 0.95rem;
+    }
+
+    .course-content {
+      padding: 1rem;
+    }
+  }
+</style>
+
+<script>
+  // Automatically open course details when navigating via anchor link
+  document.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element && element.tagName === 'DETAILS') {
+        element.open = true;
+      }
+    }
+  });
+
+  // Handle clicks on anchor links to open details
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
+      const hash = target.getAttribute('href');
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element && element.tagName === 'DETAILS') {
+          setTimeout(() => {
+            (element as HTMLDetailsElement).open = true;
+          }, 100);
+        }
+      }
+    }
+  });
+</script>

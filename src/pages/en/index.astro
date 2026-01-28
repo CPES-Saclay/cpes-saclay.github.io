@@ -1,5 +1,42 @@
 ---
-import Index from "../index.astro";
+import DefaultLayout from "../../layouts/Default.astro";
+import Hero1 from "../../components/Hero1.astro";
+import Partenaires from "../../components/Partenaires.astro";
 ---
 
-<Index />
+<DefaultLayout>
+    <div class="prose prose-lg max-w-none mx-4 md:mx-16 my-10">
+        <h1>CPES Paris-Saclay</h1>
+        <p class="text-2xl font-bold">Data Science, Society and Health</p>
+
+        <h2>An excellence program at the heart of the Saclay plateau</h2>
+
+        <p>The Multidisciplinary Cycle of Higher Education (CPES) is a high-level 3-year program, delivering a diploma equivalent to a <strong>Bachelor's degree</strong> (Licence).</p>
+
+        <p>Launched in September 2023 at the Lycée International de Palaiseau Paris-Saclay (LIPPS), this curriculum is the result of an unprecedented collaboration between five prestigious institutions:</p>
+        <ul>
+            <li><strong>Lycée International de Palaiseau Paris-Saclay (LIPPS)</strong></li>
+            <li><strong>Université Paris-Saclay</strong></li>
+            <li><strong>Institut Polytechnique de Paris</strong></li>
+            <li><strong>HEC Paris</strong></li>
+            <li><strong>ENS Paris-Saclay</strong></li>
+        </ul>
+
+        <h2>Why choose this CPES?</h2>
+
+        <p>It's a future-oriented program, designed to meet the growing needs for data science expertise across all sectors. It offers:</p>
+        <ul>
+            <li><strong>A hybrid pedagogy</strong>: The best of preparatory classes (personalized support) and university/grandes écoles (research, projects).</li>
+            <li><strong>Research-based training</strong>: From the 1st year, with lab visits, conferences and concrete projects.</li>
+            <li><strong>Multidisciplinary openness</strong>: Mathematics, Computer Science, but also Economics, Sociology or Biology depending on your track.</li>
+        </ul>
+
+        <div class="flex flex-col md:flex-row gap-4 my-8">
+            <a href="a-propos" class="btn btn-primary max-sm:w-full">Learn more about the program</a>
+            <a href="contact" class="btn btn-secondary max-sm:w-full">Contact us</a>
+        </div>
+    </div>
+    
+    <Hero1 />
+    <Partenaires />
+</DefaultLayout>
