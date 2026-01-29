@@ -132,5 +132,11 @@ button:active,
 }
 
 table {
-  @apply table table-zebra
+  @apply table table-zebra;
+  padding: 0;
+  margin: 0;
+}
+
+table tr, table thead tr {
+  border-bottom-color: (var(--color-secondary) / 0.1) !important;
 }
