@@ -1,0 +1,311 @@
+---
+layout: ../../layouts/Default.astro
+proseMode: true
+showBreadcrumbs: true
+title: "L1"
+description: "Découvrez le contenu des cours du CPES en première année : Mathématiques, Informatique, Sciences des Données et spécialisations."
+order: 3
+---
+
+import CourseDetail from '../../components/CourseDetail.astro';
+import TableBorder from '../../components/TableBorder.astro';
+
+# 📅 Première année - Licence 1 (60 ECTS)
+
+*Lieu : 80% Lycée International de Palaiseau / 20% Partenaires (Faculté des Sciences d'Orsay, ENS Paris-Saclay, Institut Polytechnique de Paris)*
+
+## Tableau récapitulatif
+
+<TableBorder>
+
+| **Matières** | **Semestre 1** | **Semestre 2** | **Heures hebdomadaires** | **Nombre de semaines** | **Total heures** | **Cours** | **TD/TP** | **ECTS** |
+|:-------------|:--------------:|:--------------:|:------------------------:|:----------------------:|:----------------:|:---------:|:---------:|:--------:|
+| **Bloc des fondamentaux** |  |  |  |  |  |  |  |  |
+| [Mathématiques 1](#mathematiques-1) | X | X | 8 | 30 | 240 | 180 | 60 | 18 |
+| [Informatique 1](#informatique-1) | X | X | 6 | 30 | 180 | 90 | 90 | 12 |
+| **Total bloc** |  |  |  |  | **420** | **270** | **150** | **30** |
+| **Bloc des domaines applicatifs et de spécialisation** |  |  |  |  |  |  |  |  |
+| [Économie, politiques sociales et santé](#economie-politiques-sociales-et-sante) | X | X | 3 | 30 | 90 | 90 | - | 6 |
+| [Découverte de l'IA](#decouverte-de-lia) | X | - | 2 | 12 | 24 | - | 24 | 2 |
+| [Introduction à la science des données](#introduction-a-la-science-des-donnees) | - | X | 2 | 12 | 27 | 3 | 24 | 2 |
+| [Introduction à la statistique](#introduction-a-la-statistique) | - | X | 2 | 12 | 24 | 24 | - | 2 |
+| [Parcours Santé](#parcours-sante) ou [Parcours Société](#parcours-societe) | X | X | 4 | 24 | 96 | 96 | - | 7 |
+| [Projet Institut Polytechnique Paris](#projet-institut-polytechnique-paris) | - | X | 2 | 15 | 30 | - | 30 | 3 |
+| **Total bloc** |  |  |  |  | **291** | **231** | **78** | **22** |
+| **Bloc transverse** |  |  |  |  |  |  |  |  |
+| [Anglais](#anglais) | X | X | 2 | 30 | 60 | 60 | - | 4 |
+| [Culture / Sport / LV2](#culture-sport-lv2) | X | X | 2 | 24 | 48 | 48 | - | 4 |
+| [SPOC Sens critique : Sciences en sociétés](#spoc-sens-critique) | - | - | - | - | - | - | - | 0 |
+| **Total bloc** |  |  |  |  | **108** | **108** | **0** | **8** |
+| **Total L1** |  |  |  |  | **819** | **591** | **228** | **60** |
+
+</TableBorder>
+
+---
+### 📘 Licence 1 - Bloc des fondamentaux (30 ECTS)
+
+<CourseDetail
+  id="mathematiques-1"
+  annee="Licence 1"
+  semestre="Premier et second semestre"
+  intitule="Mathématiques 1"
+  description={`
+<p>Ce cours de mathématiques se concentre sur trois grandes thématiques : l'algèbre, l'analyse et les probabilités et s'appuie sur le programme des prépas scientifiques.</p>
+<p>Il vise à renforcer les bases du lycée et homogénéiser les niveaux entre ceux qui ont fait l'option maths expertes et les autres, tout en introduisant des notions nouvelles comme les espaces vectoriels, les matrices et les nombres complexes pour ceux ne les ayant pas abordés auparavant, les séries numériques et les probabilités sur un univers fini.</p>
+
+<p><strong>2 enseignants en parallèle :</strong></p>
+
+<p><strong>Premier enseignant :</strong></p>
+<ul>
+  <li><strong>Chp1 - Fondamentaux</strong>
+    <ul>
+      <li>Logique mathématique et modes de raisonnement</li>
+      <li>Appartenance et inclusion : notion d'ensembles et d'opérations sur les ensembles</li>
+      <li>Application et fonctions : égalité de fonctions, image directe, fonction identité et indicatrice, composées restrictions et prolongements, injections surjections et bijections, applications réciproques</li>
+    </ul>
+  </li>
+  <li><strong>Chp2 - Limites et continuité</strong>
+    <ul>
+      <li>Limites à l'infini et en un point d'une fonction, caractérisation séquentielle de la limite</li>
+      <li>Notion d'adhérence et de fermé des intervalles dans R, continuité en un point et sur un intervalle</li>
+      <li>Caractérisation séquentielle de la continuité, limites et continuités à gauche et à droite</li>
+      <li>Propriétés d'opérations sur les limites et relations d'ordre (bornée sur un voisinage, signe, comparaison de limites, théorème des gendarmes, majoration, théorème de la limite monotone)</li>
+      <li>Théorèmes classiques (TVI et son corollaire, continuité sur un segment, théorème de la bijection)</li>
+    </ul>
+  </li>
+  <li><strong>Chp3 - Matrices</strong></li>
+  <li><strong>Chp4 - Dérivabilité</strong></li>
+  <li><strong>Chp5 - Systèmes linéaires</strong></li>
+  <li><strong>Chp6 - Géométrie en dimensions 2 et 3</strong></li>
+  <li><strong>Chp7 - R espaces vectoriels</strong></li>
+  <li><strong>Chp8 - Nombres complexes</strong></li>
+</ul>
+
+<p><strong>Second enseignant :</strong></p>
+<ul>
+  <li><strong>Chapitre 1</strong> - Somme et produit</li>
+  <li><strong>Chapitre 2</strong> - Suites arithmético-géométriques et raisonnement par récurrence</li>
+  <li><strong>Chapitre 3</strong> - L'ordre dans R</li>
+  <li><strong>Chapitre 4</strong> - Limites de suites</li>
+  <li><strong>Chapitre 5</strong> - Les séries numériques</li>
+  <li><strong>Chapitre 6</strong> - Introduction aux probabilités</li>
+  <li><strong>Chapitre 7</strong> - Variable aléatoire</li>
+  <li><strong>Chapitre 8</strong> - Somme de variables aléatoires</li>
+  <li><strong>Chapitre 09</strong> - Primitives et calcul intégral</li>
+  <li><strong>Chapitre 10</strong> - Comparaison locale de fonctions</li>
+</ul>
+  `}
+  duree="30 semaines"
+  heures="8 heures par semaine, soit 240 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="Cours magistral + Travaux dirigés"
+  credits="18 ECTS"
+/>
+
+<CourseDetail
+  id="informatique-1"
+  annee="Licence 1"
+  semestre="Premier et second semestre"
+  intitule="Informatique 1"
+  description={`
+<p>Ce cours couvre les bases de la programmation en Python, avec une approche axée sur les différents paradigmes de programmation, l'algorithmique et les structures de données (listes, arbres, graphes).</p>
+<p>Il inclut la logique formelle, ainsi que les bases de données. Les élèves apprennent aussi la validation, le test des algorithmes, la récursivité, et les preuves par induction.</p>
+  `}
+  duree="30 semaines"
+  heures="6 heures par semaine, soit 180 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="Cours magistral + Travaux dirigés"
+  credits="12 ECTS"
+/>
+
+---
+
+#### 📗 Licence 1 - Bloc des domaines applicatifs et de spécialisation (22 ECTS)
+
+<CourseDetail
+  id="economie-politiques-sociales-et-sante"
+  annee="Licence 1"
+  semestre="Premier et second semestre"
+  intitule="Économie, politiques sociales et santé"
+  description={`
+<p><strong>Fondements de l'économie et grands courants de la pensée économique</strong></p>
+<p>Ce module propose une vue d'ensemble structurée des principaux domaines de l'économie, combinant approches historiques, théoriques et appliquées. Les étudiantes et étudiants explorent les fondements de l'économie, les fonctions de l'économie ainsi que les grands courants de la pensée économique.</p>
+
+<p><strong>Introduction à la microéconomie</strong></p>
+<p>Étude de l'équilibre microéconomique du consommateur et des mécanismes qui régissent les choix économiques individuels.</p>
+
+<p><strong>Économie de l'environnement</strong></p>
+<p>Exploration des interactions entre activité économique et environnement, et analyse des enjeux liés à la durabilité et à la gestion des ressources.</p>
+
+<p><strong>Fonctionnement des marchés et intervention publique</strong></p>
+<p>Analyse du rôle des marchés dans l'économie et des conditions d'intervention de l'État pour réguler l'activité économique.</p>
+  `}
+  duree="30 semaines"
+  heures="3 heures par semaine, soit 90 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="Cours magistral"
+  credits="6 ECTS"
+/>
+
+<CourseDetail
+  id="decouverte-de-lia"
+  annee="Licence 1"
+  semestre="Premier semestre"
+  intitule="Découverte de l'IA"
+  description={`
+<p>Le cours de découverte de l'IA propose une initiation ludique et visuelle à l'intelligence artificielle - plus précisément à l'apprentissage statistique - via le pilotage de robots.</p>
+<p>L'optique, sur la base de travaux pratiques, est de développer une intuition sur les algorithmes d'apprentissage (supervisés, non supervisés, par renforcement), pour parvenir progressivement aux formulations mathématiques.</p>
+<p>La mise en œuvre sera l'occasion de manipuler réseaux de neurones, vision artificielle et traitement du langage. Les rudiments de programmation Python nécessaires seront introduits au fil de l'eau.</p>
+  `}
+  duree="12 semaines"
+  heures="2 heures par semaine, soit 24 heures sur l'année"
+  etablissement="Faculté des sciences d'Orsay (Université Paris-Saclay)"
+  mode="Travaux dirigés"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="introduction-a-la-science-des-donnees"
+  annee="Licence 1"
+  semestre="Second semestre"
+  intitule="Introduction à la science des données"
+  description={`
+<p>Ce cours d'introduction à la science des données présente les bases de la collecte, du traitement, de l'analyse et de la visualisation des données (y compris l'analyse d'images).</p>
+<p>Il couvre les fondamentaux des statistiques descriptives et de la théorie des probabilités, en s'appuyant sur Python.</p>
+<p>Au travers d'un projet d'analyse et de classification d'images, les étudiants apprennent ainsi à suivre la chaîne complète de traitement d'un projet data, de la problématique à la communication des résultats, avec une forte composante pratique.</p>
+  `}
+  duree="12 semaines"
+  heures="2 heures par semaine, soit 27 heures sur l'année"
+  etablissement="Faculté des sciences d'Orsay (Université Paris-Saclay)"
+  mode="Cours magistral + Travaux dirigés"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="introduction-a-la-statistique"
+  annee="Licence 1"
+  semestre="Second semestre"
+  intitule="Introduction à la Statistique"
+  description={`
+<p>Le cours d'introduction à la Statistique présente les notions fondamentales de la statistique descriptive et inférentielle, permettant de collecter, organiser, analyser et interpréter des données numériques.</p>
+<p>Il initie les étudiants aux principales méthodes pour résumer des données, évaluer des relations entre variables, et effectuer des estimations et tests d'hypothèses.</p>
+  `}
+  duree="12 semaines"
+  heures="2 heures par semaine, soit 24 heures sur l'année"
+  etablissement="École Normale Supérieure (ENS) Paris-Saclay (Université Paris-Saclay)"
+  mode="Cours magistral"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="parcours-sante"
+  annee="Licence 1"
+  semestre="Premier et second semestre"
+  intitule="Parcours Santé"
+  description={`
+<p>Ce cours de Biologie s'appuie sur le programme de première année des classes préparatoires de BCPST.</p>
+<p>Il porte sur l'étude du vivant à plusieurs échelles : moléculaire, cellulaire, organisme et écosystème. Il aborde aussi l'organisation des cellules, le métabolisme (respiration, nutrition) ainsi que la génétique (structure de l'ADN, transmission de l'information génétique).</p>
+  `}
+  duree="24 semaines"
+  heures="4 heures par semaine, soit 96 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="Cours magistral"
+  credits="7 ECTS (électif)"
+/>
+
+<CourseDetail
+  id="parcours-societe"
+  annee="Licence 1"
+  semestre="Premier et second semestre"
+  intitule="Parcours Société"
+  description={`
+<p><strong>Les démarches en sociologie et le travail du sociologue</strong></p>
+<p>Présentation de la sociologie, de ses méthodes et de ses approches pour analyser la société.</p>
+
+<p><strong>Santé et bien‑être</strong></p>
+<p>Étude des enjeux de santé et de bien-être, avec un focus sur la gestion des risques, illustrée par l'exemple du risque sanitaire.</p>
+
+<p><strong>Histoire de la pensée sociologique</strong></p>
+<ul>
+  <li><strong>Durkheim :</strong> le lien social, actualité de ses travaux, prolongements, individualisme, sociologie du travail, mutations du travail et de l'emploi.</li>
+  <li><strong>Marx :</strong> conflit de classe, conflictualité, mouvements sociaux et changements sociaux.</li>
+  <li><strong>Weber :</strong> rationalité et évolution de la structure sociale.</li>
+</ul>
+
+<p><strong>Sociologie du travail et protection sociale</strong></p>
+<p>Analyse des transformations du travail et des politiques de protection sociale, notamment retraites, chômage et santé.</p>
+  `}
+  duree="24 semaines"
+  heures="4 heures par semaine, soit 96 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="Cours magistral"
+  credits="7 ECTS (électif)"
+/>
+
+<CourseDetail
+  id="projet-institut-polytechnique-paris"
+  annee="Licence 1"
+  semestre="Second semestre"
+  intitule="Projet Institut Polytechnique Paris"
+  description={`
+<p>Ce cours initie les étudiantes et étudiants aux méthodes fondamentales d'analyse statistique, de traitement de données et de visualisation de données en Python.</p>
+<p>Les travaux pratiques s'appuient sur les bibliothèques numériques les plus utilisées (numpy, pandas, scikit‑learn) et incluent un projet en binôme appliqué à des jeux de données réels. Les plus avancés peuvent expérimenter la mise en œuvre de modèles de deep learning simplifiés.</p>
+<p>Ce module articule rigueur statistique, pratique de la programmation scientifique et mise en œuvre d'outils modernes d'apprentissage automatique.</p>
+  `}
+  duree="15 semaines"
+  heures="2 heures par semaine, soit 30 heures sur l'année"
+  etablissement="Telecom Paris - Institut Polytechnique Paris"
+  mode="Travaux dirigés"
+  credits="3 ECTS"
+/>
+
+---
+
+##### 📙 Licence 1 - Bloc transverse (8 ECTS)
+
+<CourseDetail
+  id="anglais"
+  annee="Licence 1"
+  semestre="Premier et second semestre"
+  intitule="Anglais"
+  description={`
+<p>Ce cours s'inscrit dans une approche actionnelle dans les 5 compétences (compréhension orale et écrite, expression écrite, expression orale en continu et interaction) avec un travail sur la prononciation des sons voyelles.</p>
+<p>L'interaction se fait à travers des documents écrits et/ou audiovisuels centrés sur la problématique de l'environnement et du développement durable et un scénario de communication dans le cadre d'un projet tout au long de l'année. La communication interculturelle pourra être abordée dans le cadre du projet.</p>
+  `}
+  duree="30 semaines"
+  heures="2 heures par semaine, soit 60 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="Cours magistral"
+  credits="4 ECTS"
+/>
+
+<CourseDetail
+  id="culture-sport-lv2"
+  annee="Licence 1"
+  semestre="Premier et second semestre"
+  intitule="Culture / Sport / Langue Vivante 2 (LV2)"
+  description={`
+<p>Activités Physiques Sportives et Artistiques au choix de l'étudiant ou enseignement linguistique.</p>
+  `}
+  duree="24 semaines"
+  heures="2 heures par semaine, soit 48 heures sur l'année"
+  etablissement="Faculté des sciences d'Orsay (Université Paris-Saclay)"
+  mode="Cours magistral"
+  credits="4 ECTS"
+/>
+
+<CourseDetail
+  id="spoc-sens-critique"
+  annee="Licence 1"
+  semestre="Premier et second semestre"
+  intitule="SPOC Sens critique : Sciences en sociétés"
+  description={`
+<p>Le SPOC Sens critique / sciences en sociétés est un enseignement en ligne destiné à sensibiliser les étudiants aux enjeux des interactions sciences et sociétés en développant leur sens critique.</p>
+<p>Il est constitué de cinq séances d'exercices ludiques portant sur des ressources audio, vidéo et textuelles. Chaque séance est rattachée d'une part à un thème envisageant un champ spécifique de connaissances scientifiques, d'autre part à un questionnement interrogeant un aspect spécifique des interactions sciences/sociétés.</p>
+  `}
+  duree="N/A"
+  heures="N/A"
+  etablissement="Faculté des sciences d'Orsay (Université Paris-Saclay)"
+  mode="Small Private Online Course (SPOC)"
+  credits="0 ECTS"
+/>

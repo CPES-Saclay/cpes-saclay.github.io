@@ -1,0 +1,422 @@
+---
+layout: ../../layouts/Default.astro
+proseMode: true
+showBreadcrumbs: true
+title: "L2"
+description: "Découvrez le contenu des cours du CPES en deuxième année : Mathématiques, Informatique, Sciences des Données et spécialisations."
+order: 3
+---
+
+import CourseDetail from '../../components/CourseDetail.astro';
+import TableBorder from '../../components/TableBorder.astro';
+
+# 📅 Deuxième année - Licence 2 (60 ECTS)
+
+*Lieu : 50% Lycée International de Palaiseau / 50% Partenaires*
+
+## Tableau récapitulatif
+
+<TableBorder>
+
+| **Matières** | **Semestre 3** | **Semestre 4** | **Heures hebdomadaires** | **Nombre de semaines** | **Total heures** | **Cours** | **TD/TP** | **ECTS** |
+|:-------------|:--------------:|:--------------:|:------------------------:|:----------------------:|:----------------:|:---------:|:---------:|:--------:|
+| **Bloc des fondamentaux** |  |  |  |  |  |  |  |  |
+| [Mathématiques 2](#mathematiques-2) | X | X | 7 | 30 | 210 | 150 | 60 | 14 |
+| [Mathématiques - Chaînes de Markov](#mathematiques-chaines-de-markov) | X | - | 4 | 12 | 48 | 24 | 24 | 3 |
+| [Informatique 2](#informatique-2) | X | X | 4 | 30 | 120 | 90 | 30 | 7 |
+| [Principes d'interprétation des langages](#principes-interpretation-langages) | - | X | 3.5 | 12 | 42 | 18 | 24 | 3 |
+| **Total bloc** |  |  |  |  | **420** | **282** | **138** | **27** |
+| **Bloc des domaines applicatifs et de spécialisation** |  |  |  |  |  |  |  |  |
+| [Économie, politiques sociales et santé](#economie-politiques-sociales-et-sante-l2) | X | X | 2 | 30 | 60 | 60 | - | 4 |
+| [Parcours Santé](#parcours-sante-l2) ou [Parcours Société](#parcours-societe-l2) | X | X | 3 | 30 | 90 | 90 | - | 6 |
+| [Électifs HEC](#electifs-hec) | X | - | 3 | 6 | 18 | 18 | - | 1 |
+| [Sciences des données 1](#sciences-des-donnees-1) | X | - | 2 | 15 | 30 | - | 30 | 2 |
+| [Sciences des données 2](#sciences-des-donnees-2) | - | X | 2.33 | 12 | 28 | 24 | 4 | 2 |
+| [Statistiques 2](#statistiques-2) | - | X | 4 | 12 | 48 | 24 | 24 | 3 |
+| [Enjeux sociétaux en Santé et Biologie](#enjeux-societaux-sante-biologie) | X | - | 3 | 10 | 30 | 30 | - | 2 |
+| [Data Modeling for social science and business](#data-modeling) | - | X | 3 | 6 | 18 | 18 | - | 1 |
+| [Startup et durabilité](#startup-durabilite) | - | X | 3 | 6 | 18 | 18 | - | 1 |
+| [Introduction à R et à R-Studio](#introduction-r-rstudio) | - | X | 2 | 12 | 24 | 24 | - | 2 |
+| **Total bloc** |  |  |  |  | **364** | **306** | **58** | **24** |
+| **Bloc transverse** |  |  |  |  |  |  |  |  |
+| [Projet solidaire](#projet-solidaire) | X | X | 1 | 20 | 20 | - | 20 | 2 |
+| [Anglais](#anglais-l2) | X | X | 2 | 30 | 60 | 60 | - | 4 |
+| [Méthodes de l'entrepreneur](#methodes-entrepreneur-hec) | X | - | 6 | 3 | 18 | 18 | - | 1 |
+| [Culture / Sport / LV2](#culture-sport-lv2-l2) | X | - | 2 | 12 | 24 | 24 | - | 1 |
+| [SPOC Transition énergétique](#spoc-transition-energetique) | X | - | 1 | 12 | 12 | 12 | - | 1 |
+| **Total bloc** |  |  |  |  | **134** | **114** | **20** | **9** |
+| **Total L2** |  |  |  |  | **918** | **702** | **216** | **60** |
+
+</TableBorder>
+
+---
+
+### 📘 Licence 2 - Bloc des fondamentaux (27 ECTS)
+
+<CourseDetail
+  id="mathematiques-2"
+  annee="Licence 2"
+  semestre="Premier et second semestre"
+  intitule="Mathématiques 2"
+  description={`
+<p>Ce cours de deuxième année approfondit l'algèbre (espaces vectoriels, matrices, groupes symétriques), l'analyse (intégration, suites et séries, équations différentielles) et les probabilités.</p>
+<p>L'objectif est de consolider et étendre les connaissances de première année en mettant l'accent sur la rigueur, la modélisation et la résolution de problèmes complexes.</p>
+  `}
+  duree="30 semaines"
+  heures="7 heures par semaine, soit 210 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="Cours magistral + Travaux dirigés"
+  credits="14 ECTS"
+/>
+
+<CourseDetail
+  id="mathematiques-chaines-de-markov"
+  annee="Licence 2"
+  semestre="Premier semestre"
+  intitule="Mathématiques - Chaînes de Markov"
+  description={`
+<p>Le cours couvre la définition formelle, la construction d'une chaîne de Markov, les propriétés fondamentales telles que la Markovianité, les états absorbants, et les classes de communication.</p>
+<p>Il inclut également des théorèmes clés comme le théorème ergodique, la convergence vers une distribution stationnaire, et les temps d'absorption. Ce cours prépare à l'analyse approfondie des chaînes et à leurs applications variées en probabilités, statistiques et plus généralement en science des données.</p>
+  `}
+  duree="12 semaines"
+  heures="4 heures par semaine, soit 48 heures sur l'année"
+  etablissement="École Normale Supérieure (ENS) Paris-Saclay (Université Paris-Saclay)"
+  mode="Cours magistral + Travaux dirigés"
+  credits="3 ECTS"
+/>
+
+<CourseDetail
+  id="informatique-2"
+  annee="Licence 2"
+  semestre="Premier et second semestre"
+  intitule="Informatique 2"
+  description={`
+<p>Le programme d'informatique de deuxième année se concentre sur le langage Python, avec un approfondissement des méthodes de programmation, notamment la récursivité, l'induction et les structures de données séquentielles et hiérarchiques.</p>
+<p>Les étudiants étudient également l'algorithmique avancée (exploration exhaustive, graphes, décomposition de problèmes), la logique formelle ainsi que la gestion des ressources comme la mémoire et les fichiers.</p>
+  `}
+  duree="30 semaines"
+  heures="4 heures par semaine, soit 120 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="Cours magistral + Travaux dirigés"
+  credits="7 ECTS"
+/>
+
+<CourseDetail
+  id="principes-interpretation-langages"
+  annee="Licence 2"
+  semestre="Second semestre"
+  intitule="Principes d'interprétation des langages"
+  description={`
+<p>Ce cours est une introduction aux principes d'interprétation des langages. Les points suivants sont étudiés :</p>
+<ul>
+  <li>Les différentes phases de l'interprétation des langages : analyses lexicale, syntaxique, sémantiques et exécution</li>
+  <li>Les expressions régulières, automates finis</li>
+  <li>Les grammaires algébriques, reconnaissance des mots par l'algorithme CYK, analyse descendante LL</li>
+  <li>Les arbres de syntaxe abstraite</li>
+  <li>Les règles sémantiques simples pour la portée, le typage et l'évaluation</li>
+</ul>
+  `}
+  duree="12 semaines"
+  heures="3,5 heures par semaine, soit 42 heures sur l'année"
+  etablissement="Faculté des sciences d'Orsay (Université Paris-Saclay)"
+  mode="Cours magistral + Travaux dirigés"
+  credits="3 ECTS"
+/>
+
+---
+
+#### 📗 Licence 2 - Bloc des domaines applicatifs et de spécialisation (24 ECTS)
+
+<CourseDetail
+  id="economie-politiques-sociales-et-sante-l2"
+  annee="Licence 2"
+  semestre="Premier et second semestre"
+  intitule="Économie, politiques sociales et santé"
+  description={`
+<p><strong>Thème 1 : Entreprises, gouvernance et organisations</strong></p>
+<ul>
+  <li>Chapitre 1 : L'entreprise : évolutions depuis le début du XIXᵉ siècle</li>
+  <li>Chapitre 2 : Gouvernance des entreprises et transformations des structures financières</li>
+</ul>
+
+<p><strong>Thème 2 : Politiques économiques</strong></p>
+<ul>
+  <li>Chapitre 3 : Modélisation de la politique keynésienne (IS/LM et AS/AD)</li>
+  <li>Chapitre 4 : Débat sur le rôle et la nécessité de l'intervention publique</li>
+</ul>
+  `}
+  duree="30 semaines"
+  heures="2 heures par semaine, soit 60 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="Cours magistral"
+  credits="4 ECTS"
+/>
+
+<CourseDetail
+  id="parcours-sante-l2"
+  annee="Licence 2"
+  semestre="Premier et second semestre"
+  intitule="Parcours Santé"
+  description={`
+<p>Ce cours qui s'appuie sur le programme de deuxième année des classes préparatoires de BCPST approfondit la biologie humaine, la physiologie et la santé, intégrant aussi la génomique, le développement et la communication cellulaire.</p>
+<p>Il développe la compréhension des grands processus physiologiques (immunité, reproduction, système nerveux, régulation hormonale), l'impact des facteurs environnementaux et aborde l'évolution et la phylogénie.</p>
+<p>Les travaux pratiques et études de documents visent à renforcer l'analyse des grandes fonctions de l'organisme en lien avec la santé.</p>
+  `}
+  duree="30 semaines"
+  heures="3 heures par semaine, soit 90 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="Cours magistral"
+  credits="6 ECTS (électif)"
+/>
+
+<CourseDetail
+  id="parcours-societe-l2"
+  annee="Licence 2"
+  semestre="Premier et second semestre"
+  intitule="Parcours Société"
+  description={`
+<p><strong>Thème 1 : La socialisation</strong></p>
+<p>Histoire et principales approches théoriques de la socialisation. Étude des concepts fondamentaux et exploration de la diversité des agents, des formes et des processus de socialisation à travers des applications concrètes de la théorie.</p>
+
+<p><strong>Thème 2 : La déviance</strong></p>
+<p>Examen des fondements théoriques de l'analyse de la déviance, avec un accent particulier sur la sociologie interactionniste. Étude du monde médical à travers le prisme des théories de la déviance : parcours de malades, organisation hospitalière et histoire de la psychiatrie.</p>
+
+<p><strong>Thème 3 : La stratification sociale</strong></p>
+<p>Analyse de la structure et de l'évolution de la société contemporaine, en s'appuyant sur une actualisation des travaux et de la littérature récente sur la stratification sociale.</p>
+
+<p><strong>Thème 4 : Rapports sociaux et inégalités</strong></p>
+<p>Étude des rapports sociaux et des dynamiques de domination dans l'espace social, des forces antagonistes structurant les conflits, ainsi que des enjeux et perspectives associés. Analyse des inégalités et de la pauvreté, y compris leur dimension spatiale (accès au logement, trajectoires, appropriation de l'espace physique) et leurs implications sur la santé.</p>
+
+<p><strong>Thème 5 : Introduction à la sociologie politique</strong></p>
+<p>Introduction à la sociologie des mouvements sociaux</p>
+  `}
+  duree="30 semaines"
+  heures="3 heures par semaine, soit 90 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="Cours magistral"
+  credits="6 ECTS (électif)"
+/>
+
+<CourseDetail
+  id="electifs-hec"
+  annee="Licence 2"
+  semestre="Premier semestre"
+  intitule="Électifs HEC"
+  description={`
+<p>Les étudiants doivent choisir un cours entre :</p>
+<ul>
+  <li>Politique, crises, communication</li>
+  <li>Convictions, données et émotions : comment construire un business durable</li>
+  <li>Questions sociales et politiques sociales</li>
+  <li>Droit du travail</li>
+  <li>Les défis de la transition énergétique</li>
+  <li>L'industrie pharmaceutique : ses enjeux dans la santé, ses risques et ses opportunités</li>
+</ul>
+  `}
+  duree="6 semaines"
+  heures="3 heures par semaine, soit 18 heures sur l'année"
+  etablissement="HEC Paris"
+  mode="Cours magistral"
+  credits="1 ECTS"
+/>
+
+<CourseDetail
+  id="sciences-des-donnees-1"
+  annee="Licence 2"
+  semestre="Premier semestre"
+  intitule="Sciences des données 1"
+  description={`
+<p>Ce cours approfondit les techniques fondamentales de traitement, d'analyse et de modélisation des données. Il introduit les méthodes statistiques avancées, les algorithmes d'apprentissage automatique de base, ainsi que les outils informatiques pour la gestion et l'exploitation de grands ensembles de données.</p>
+<p>L'accent est mis sur la mise en œuvre pratique et l'interprétation critique des résultats dans des contextes variés.</p>
+  `}
+  duree="15 semaines"
+  heures="2 heures par semaine, soit 30 heures sur l'année"
+  etablissement="Ecole Polytechnique - Institut Polytechnique Paris"
+  mode="Travaux dirigés"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="sciences-des-donnees-2"
+  annee="Licence 2"
+  semestre="Second semestre"
+  intitule="Sciences des données 2"
+  description={`
+<p>Ce cours propose une approche avancée des méthodes statistiques, des techniques d'apprentissage supervisé et non supervisé, et de la gestion de bases de données volumineuses.</p>
+<p>Il met l'accent sur l'application rigoureuse des modèles, l'évaluation critique des résultats, et l'interprétation des données complexes. Les étudiants développent des compétences solides en programmation et utilisent des logiciels spécialisés pour traiter des problématiques réelles dans divers domaines.</p>
+  `}
+  duree="12 semaines"
+  heures="2,33 heures par semaine, soit 28 heures sur l'année"
+  etablissement="Ecole Polytechnique - Institut Polytechnique Paris"
+  mode="Cours magistral + Travaux dirigés"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="statistiques-2"
+  annee="Licence 2"
+  semestre="Second semestre"
+  intitule="Statistiques 2"
+  description={`
+<p>L'objectif de ce cours est d'approfondir les méthodes d'inférence statistique, incluant l'estimation ponctuelle et par intervalle, les tests d'hypothèses, et l'analyse de la variance (ANOVA). Il aborde aussi les modèles linéaires simples, les statistiques multivariées, et les processus stochastiques de base.</p>
+<p>Ce cours combine théorie et applications pratiques avec l'utilisation de logiciels statistiques, pour permettre aux étudiants de concevoir, analyser et interpréter des études quantitatives en biologie ou en économie.</p>
+  `}
+  duree="12 semaines"
+  heures="4 heures par semaine, soit 48 heures sur l'année"
+  etablissement="École Normale Supérieure (ENS) de Paris-Saclay (Université Paris-Saclay)"
+  mode="Cours magistral + Travaux dirigés"
+  credits="3 ECTS"
+/>
+
+<CourseDetail
+  id="enjeux-societaux-sante-biologie"
+  annee="Licence 2"
+  semestre="Second semestre"
+  intitule="Enjeux Sociétaux Santé-Biologie"
+  description={`
+<p>L'objectif de ce cours est d'acquérir les connaissances de base en biologie, permettant aux étudiants de comprendre les problématiques biologiques et la nature des données auxquelles ils seront confrontés.</p>
+<p>Les notions suivantes sont développées :</p>
+<ul>
+  <li>Le vivant : de la cellule à l'organisme</li>
+  <li>Unité du monde vivant : Réplication, transcription et traduction</li>
+  <li>Génome et séquençage</li>
+  <li>Régulation de l'expression génétique</li>
+  <li>Évolution en biologie</li>
+  <li>Le métabolisme et sa régulation</li>
+</ul>
+  `}
+  duree="10 semaines"
+  heures="3 heures par semaine, soit 30 heures sur l'année"
+  etablissement="Faculté des sciences d'Orsay (Université Paris-Saclay)"
+  mode="Cours magistral"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="data-modeling"
+  annee="Licence 2"
+  semestre="Second semestre"
+  intitule="Data Modeling for social science and business"
+  description={`
+<p>Ce cours propose une initiation pratique à la modélisation de données appliquée aux sciences sociales et au management, centrée sur l'utilisation avancée d'Excel.</p>
+<p>Les étudiants apprennent à organiser, analyser et représenter efficacement des données, tout en s'initiant à la logique des formules (RechercheH, RechercheV, Somme.si, Somme.si.ens) et des tableaux croisés dynamiques.</p>
+  `}
+  duree="6 semaines"
+  heures="3 heures par semaine, soit 18 heures sur l'année"
+  etablissement="HEC Paris"
+  mode="Cours magistral"
+  credits="1 ECTS"
+/>
+
+<CourseDetail
+  id="startup-durabilite"
+  annee="Licence 2"
+  semestre="Second semestre"
+  intitule="Startup et durabilité"
+  description={`
+<p>Ce cours explore les liens entre entrepreneuriat et développement durable, en analysant comment les startups intègrent les enjeux sociaux et environnementaux dans leurs modèles économiques.</p>
+  `}
+  duree="6 semaines"
+  heures="3 heures par semaine, soit 18 heures sur l'année"
+  etablissement="HEC Paris"
+  mode="Cours magistral"
+  credits="1 ECTS"
+/>
+
+<CourseDetail
+  id="introduction-r-rstudio"
+  annee="Licence 2"
+  semestre="Second semestre"
+  intitule="Introduction à R et à R-Studio pour l'analyse de données"
+  description={`
+<p>Ce cours d'introduction à R et à R-Studio propose une première initiation au langage R et à son environnement de travail. Les étudiants apprennent à manipuler des jeux de données, réaliser des analyses statistiques de base et produire des visualisations claires et reproductibles.</p>
+<p>Le cours s'appuie sur des jeux de données relatifs à la biologie.</p>
+  `}
+  duree="12 semaines"
+  heures="2 heures par semaine, soit 24 heures sur l'année"
+  etablissement="Faculté des sciences d'Orsay (Université Paris-Saclay)"
+  mode="Cours magistral"
+  credits="2 ECTS"
+/>
+
+---
+
+##### 📙 Licence 2 - Bloc transverse (9 ECTS)
+
+<CourseDetail
+  id="projet-solidaire"
+  annee="Licence 2"
+  semestre="Premier et second semestre"
+  intitule="Projet solidaire"
+  description={`
+<p>Le Projet solidaire vise - sur les deux premières années de la formation - à initier les étudiants à la conduite du projet à dimension sociale, citoyenne ou associative. À travers la mise en place d'actions concrètes et durables au service d'une communauté, les étudiants développent des compétences pratiques en gestion de projet, en travail d'équipe et en communication.</p>
+  `}
+  duree="20 semaines"
+  heures="1 heure par semaine, soit 20 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="-"
+  credits="2 ECTS"
+/>
+
+<CourseDetail
+  id="anglais-l2"
+  annee="Licence 2"
+  semestre="Premier et second semestre"
+  intitule="Anglais"
+  description={`
+<p>Ce cours s'inscrit dans une approche actionnelle dans les 5 compétences (compréhension orale et écrite, expression écrite, expression orale en continu et en interaction) avec un travail sur la prononciation des sons voyelles.</p>
+<p>L'interaction se fait à travers des documents écrits et/ou audiovisuels centrés sur la problématique de l'environnement et du développement durable et un scénario de communication dans le cadre d'un projet tout au long de l'année. La communication interculturelle pourra être abordée dans le cadre du projet.</p>
+  `}
+  duree="30 semaines"
+  heures="2 heures par semaine, soit 60 heures sur l'année"
+  etablissement="Lycée international de Palaiseau Paris-Saclay"
+  mode="Cours magistral"
+  credits="4 ECTS"
+/>
+
+<CourseDetail
+  id="methodes-entrepreneur-hec"
+  annee="Licence 2"
+  semestre="Premier et second semestre"
+  intitule="Méthodes Entrepreneur HEC"
+  description={`
+<p>Ce cours initie les étudiants aux principales méthodes et outils mobilisés par les entrepreneurs.</p>
+<p>Les étudiants apprennent à transformer une idée en projet viable, à structurer un business model et à piloter le développement d'une startup innovante dans un environnement compétitif.</p>
+  `}
+  duree="3 Semaines"
+  heures="6 heures par semaine, soit 18 heures sur l'année"
+  etablissement="HEC Paris"
+  mode="Cours magistral"
+  credits="1 ECTS"
+/>
+
+<CourseDetail
+  id="culture-sport-lv2-l2"
+  annee="Licence 2"
+  semestre="Premier semestre"
+  intitule="Culture / Sport / Langue Vivante 2 (LV2)"
+  description={`
+<p>Activités Physiques Sportives et Artistiques au choix de l'étudiant ou enseignement linguistique.</p>
+  `}
+  duree="12 semaines"
+  heures="2 heures par semaine, soit 24 heures sur l'année"
+  etablissement="Université Paris-Saclay"
+  mode="Cours magistral et/ou Travaux dirigés"
+  credits="1 ECTS"
+/>
+
+<CourseDetail
+  id="spoc-transition-energetique"
+  annee="Licence 2"
+  semestre="Premier et second semestre"
+  intitule="SPOC Transition écologique"
+  description={`
+<p>Le principal objectif de ce SPOC est de faire comprendre les mécanismes et conséquences liés au réchauffement climatique et à l'érosion de la biodiversité ainsi que leurs relations avec nos modes de vie et de consommation.</p>
+<p>Plus généralement, il vise à apporter une vision transversale pour appréhender les changements globaux, notamment en lien avec les objectifs de développement durable de l'ONU et le concept de limites planétaires.</p>
+  `}
+  duree="12 semaines"
+  heures="1 heure par semaine, soit 12 heures sur l'année"
+  etablissement="Université Paris-Saclay"
+  mode="Small Private Online Course (SPOC)"
+  credits="1 ECTS"
+/>
