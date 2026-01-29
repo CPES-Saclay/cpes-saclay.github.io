@@ -135,6 +135,7 @@ table {
   @apply table table-zebra;
   padding: 0;
   margin: 0;
+  max-width: 100%;
 }
 
 table tr, table thead tr {
