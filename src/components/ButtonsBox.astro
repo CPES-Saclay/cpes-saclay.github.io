@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    title?: string;
+    links: Array<{
+        href: string;
+        icon?: string;
+        title: string;
+    }>;
+}
+
+const { links, title } = Astro.props as Props;
+---
+<div class="flex flex-col gap-5">
+    {title && <span class="font-semibold text-secondary text-xl md:text-2xl lg:text-3xl leading-tight">{title}</span>}
+    <div class="flex flex-col gap-3 md:gap-4 md:flex-wrap md:flex-row justify-start items-center">
+        {links.map(({ href, icon, title }) => (
+            <a href={href} class="flex bg-secondary text-primary px-5 py-3 flex-row items-center text-[18px] gap-2 hover:font-medium hover:cursor-pointer hover:bg-primary hover:text-secondary border border-secondary transition-all duration-200 no-underline w-full md:w-max justify-center">
+                {icon && <Icon name={icon} />} {title}
+            </a>
+        ))}
+    </div>
+</div>
