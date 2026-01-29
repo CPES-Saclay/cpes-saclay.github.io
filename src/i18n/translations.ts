@@ -56,6 +56,10 @@ export const translations = {
     footerTitre2: "Texte à compléter",
     footerDescription: "Texte à compléter",
     heroTitre: "Titre",
+
+    // Error pages
+    notFoundTitle: "404 - Page non trouvée",
+    notFoundDescription: "",
   },
   en: {
     home: "Home",
@@ -107,5 +111,9 @@ export const translations = {
     footerTitre2: "Text to be completed",
     footerDescription: "Text to be completed",
     heroTitre: "Title",
+
+    // Error pages
+    notFoundTitle: "404 - Page not found",
+    notFoundDescription: "",
   }
 } as const;

@@ -131,3 +131,6 @@ button:active,
   transition: all 0.3s ease !important;
 }
 
+table {
+  @apply table table-zebra
+}

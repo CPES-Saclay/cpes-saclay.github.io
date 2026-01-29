@@ -17,7 +17,7 @@ const lang = Astro.url.pathname.startsWith('/en') ? 'en' : 'fr';
 ---
 
 <!DOCTYPE html data-theme="dark">
-<html lang={lang}>
+<html lang={lang} class="scroll-smooth">
   <Head title={pageTitle} description={pageDescription} />
   <body class="w-screen overflow-x-hidden">
     <div class="drawer">

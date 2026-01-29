@@ -1,10 +1,13 @@
 ---
 import DefaultLayout from "../layouts/Default.astro";
+import { getLangFromUrl, useTranslations } from '../i18n';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <DefaultLayout>
     <div class="flex flex-col justify-center items-center mt-12 gap-3">
-      <h1 class="text-5xl font-bold text-center" data-i18n="titre404">Page non trouvée</h1>
-      <p class="text-xl text-center" data-i18n="message404">La page que vous recherchez n'existe pas.</p>
+      <h1 class="text-5xl font-bold text-center">{t("notFoundTitle")}</h1>
+      <p class="text-xl text-center">{t("notFoundDescription")}</p>
     </div>
 </DefaultLayout>
