@@ -12,6 +12,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+pnpm-lock.yaml
+pnpm-workspace.yaml
 
 
 # environment variables
@@ -24,3 +26,5 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 static/uly.jpg
+
+dist/
