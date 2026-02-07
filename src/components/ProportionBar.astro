@@ -1,0 +1,50 @@
+---
+import { getLangFromUrl } from '../i18n/index';
+
+export interface Props {
+  lipps: number;
+  esr: number;
+}
+
+const { lipps, esr } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+const lippsLabel = 'LIPPS';
+const esrLabel = 'ESR';
+
+const lippsLegend = lang === 'fr'
+  ? 'Lycée International de Palaiseau Paris-Saclay'
+  : 'Lycée International de Palaiseau Paris-Saclay';
+
+const esrLegend = lang === 'fr'
+  ? 'Établissements Supérieurs de Recherche'
+  : 'Higher Education & Research Institutions';
+---
+
+<div class="w-full max-w-[600px] md:mt-6">  
+  <div class="flex w-full h-12 overflow-hidden">
+    <div 
+      class="flex items-center justify-center bg-[#ff3300] text-white font-bold text-sm"
+      style={`width: ${lipps}%`}
+    >
+      {lippsLabel} {lipps}%
+    </div>
+    <div 
+      class="flex items-center justify-center bg-[#0026ff] text-white font-bold text-sm"
+      style={`width: ${esr}%`}
+    >
+      {esrLabel} {esr}%
+    </div>
+  </div>
+  
+  <div class="flex flex-col gap-1 mt-3 text-xs text-base-content/70">
+    <div class="flex items-center gap-2 text-secondary">
+      <span class="w-3 h-3 rounded-full bg-[#ff3300] shrink-0"></span>
+      <span><strong>{lippsLabel}</strong> : {lippsLegend}</span>
+    </div>
+    <div class="flex items-center gap-2 text-secondary">
+      <span class="w-3 h-3 rounded-full bg-[#0026ff] shrink-0"></span>
+      <span><strong>{esrLabel}</strong> : {esrLegend}</span>
+    </div>
+  </div>
+</div>

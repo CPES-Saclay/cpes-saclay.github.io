@@ -1,83 +1,193 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/index';
+import { useTranslations } from '../i18n/index';
 
-export interface Props {
-  id?: string;
-  numero?: string;
-  annee: string;
-  semestre: string;
+export interface MatiereData {
+  id: string;
   intitule: string;
-  description: string;
-  duree: string;
-  heures: string;
+  semestre1: boolean;
+  semestre2: boolean;
+  heuresHebdo: number | null;
+  nombreSemaines: number | null;
+  totalHeures: number | null;
+  heuresCours: number | null;
+  heuresTdTp: number | null;
+  ects: number;
   etablissement: string;
+  entite?: string;
   mode: string;
-  credits: string;
+  description: string[];
+  electif?: boolean;
+  contenu?: {
+    enseignant1?: {
+      titre: string;
+      chapitres: Array<{ titre: string; details?: string[] }>;
+    };
+    enseignant2?: {
+      titre: string;
+      chapitres: Array<{ titre: string; details?: string[] }>;
+    };
+    sections?: Array<{ titre: string; details?: string[] }>;
+    choix?: string[];
+  };
 }
 
-const { id, numero, annee, semestre, intitule, description, duree, heures, etablissement, mode, credits } = Astro.props;
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+export interface Props {
+  matiere: MatiereData;
+  annee: string;
+  lang: string;
+  showAnneeBadge?: boolean;
+  electif?: boolean;
+}
+
+const { matiere, annee, lang, showAnneeBadge, electif = false } = Astro.props;
+const t = useTranslations(lang as 'fr' | 'en');
+
+const getSemestreText = (s1: boolean, s2: boolean): string => {
+  if (lang === 'fr') {
+    if (s1 && s2) return 'Tout au long de l\'année';
+    if (s1) return 'Premier semestre';
+    if (s2) return 'Second semestre';
+    return 'Non spécifié';
+  } else {
+    if (s1 && s2) return 'Throughout the year';
+    if (s1) return 'First semester';
+    if (s2) return 'Second semester';
+    return 'Not specified';
+  }
+};
+
+const getDureeText = (semaines: number | null): string => {
+  if (!semaines) return lang === 'fr' ? 'Non spécifiée' : 'Not specified';
+  return lang === 'fr' ? `${semaines} semaines` : `${semaines} weeks`;
+};
+
+const getHeuresText = (hebdo: number | null, total: number | null): string => {
+  if (!hebdo || !total) return lang === 'fr' ? 'Non spécifiées' : 'Not specified';
+  return lang === 'fr' 
+    ? `${hebdo} heures par semaine, soit ${total} heures sur l'année`
+    : `${hebdo} hours per week, ${total} hours per year`;
+};
+
+const generateDescriptionHtml = (matiere: MatiereData): string => {
+  let html = '';
+  matiere.description.forEach(para => {
+    html += `<p>${para}</p>`;
+  });
+  if (matiere.contenu) {
+    if (matiere.contenu.enseignant1) {
+      html += `<p><strong>${matiere.contenu.enseignant1.titre} :</strong></p><ul>`;
+      matiere.contenu.enseignant1.chapitres.forEach(chap => {
+        html += `<li><strong>${chap.titre}</strong>`;
+        if (chap.details && chap.details.length > 0) {
+          html += '<ul>';
+          chap.details.forEach(detail => {
+            html += `<li>${detail}</li>`;
+          });
+          html += '</ul>';
+        }
+        html += '</li>';
+      });
+      html += '</ul>';
+    }
+    
+    if (matiere.contenu.enseignant2) {
+      html += `<p><strong>${matiere.contenu.enseignant2.titre} :</strong></p><ul>`;
+      matiere.contenu.enseignant2.chapitres.forEach(chap => {
+        html += `<li><strong>${chap.titre}</strong>`;
+        if (chap.details && chap.details.length > 0) {
+          html += '<ul>';
+          chap.details.forEach(detail => {
+            html += `<li>${detail}</li>`;
+          });
+          html += '</ul>';
+        }
+        html += '</li>';
+      });
+      html += '</ul>';
+    }
+    if (matiere.contenu.sections) {
+      matiere.contenu.sections.forEach(section => {
+        html += `<p><strong>${section.titre}</strong></p>`;
+        if (section.details && section.details.length > 0) {
+          html += '<ul>';
+          section.details.forEach(detail => {
+            html += `<li>${detail}</li>`;
+          });
+          html += '</ul>';
+        }
+      });
+    }
+    if (matiere.contenu.choix) {
+      html += '<ul>';
+      matiere.contenu.choix.forEach(choix => {
+        html += `<li>${choix}</li>`;
+      });
+      html += '</ul>';
+    }
+  }
+  return html;
+};
+
+const descriptionHtml = generateDescriptionHtml(matiere);
 ---
 
-
-<div id={id} class="collapse collapse-arrow border border-base-200 rounded-box bg-base-300 mb-4">
+<div id={matiere.id} class="collapse collapse-arrow rounded-box bg-secondary/5 mb-4">
   <input type="checkbox" />
-  
-  <div class="collapse-title flex flex-col md:flex-row items-center justify-between gap-4 p-4 font-medium">
-    <span class="text-base text-base-content">{intitule}</span>
-    <div class="mr-8">
-      <span class="badge badge-success text-white">{etablissement}</span>
-      <span class="badge badge-info text-white">{credits}</span>
+  <div class="collapse-title flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 font-medium">
+    <span class="text-secondary">{matiere.intitule}</span>
+    <div class="mr-8 flex flex-wrap gap-1">
+      {showAnneeBadge && <span class="bg-(--annee) px-1.5 py-1 text-xs md:text-[15px] text-primary leading-none">L{annee.slice(-1)}</span>}
+      {matiere.entite && <span class="border-(--entite) border text-(--entite) px-1.5 py-1 text-xs md:text-[15px] leading-none">{matiere.entite}</span>}
+      <span class="border-(--etablissement) border text-(--etablissement) px-1.5 py-1 text-xs md:text-[15px] leading-none">{matiere.etablissement}</span>
+
+      <span class="bg-(--ects) px-1.5 py-1 text-xs md:text-[15px] text-primary leading-none">{matiere.ects} ECTS</span>
     </div>
   </div>
-  <div class="collapse-content bg-base-200">
-    <div class="mb-4 pb-4 border-b border-base-300 text-sm text-base-content/80">
-      {numero && <p class="mb-1"><strong class="font-medium">No.</strong> {numero}</p>}
-      <p class="mb-1"><strong class="font-medium">{t('annee')} :</strong> {annee}</p>
-      <p class="mb-1"><strong class="font-medium">{t('semestre')} :</strong> {semestre}</p>
-      <p class="mb-1"><strong class="font-medium">{t('intitule')} :</strong> {intitule}</p>
+  
+  <div class="collapse-content">
+    <div class="mb-4 mt-3 pb-4 text-sm text-secondary grid grid-cols-1 lg:grid-cols-2 gap-4">
+        {electif && <span class="border-secondary uppercase text-secondary border px-1.5 py-1 text-[15px] leading-none w-fit">{t('electif')}</span>}
+        <span><strong class="font-medium">{t('annee')} :</strong> {annee}</span>
+        <span><strong class="font-medium">{t('periode')} :</strong> {getSemestreText(matiere.semestre1, matiere.semestre2)}</span>
+        <span><strong class="font-medium">{t('intitule')} :</strong> {matiere.intitule}</span>
+        <span><strong class="font-medium">{t('duree')} :</strong> {getDureeText(matiere.nombreSemaines)}</span>
+        <span><strong class="font-medium">{t('heuresCours')} :</strong> {getHeuresText(matiere.heuresHebdo, matiere.totalHeures)}</span>
+        <span><strong class="font-medium">{t('etablissement')} :</strong> {matiere.etablissement}</span>
+        <span><strong class="font-medium">{t('modeEnseignement')} :</strong> {matiere.mode}</span>
+        <span><strong class="font-medium">{t('credits')} :</strong> {matiere.ects} ECTS</span>
     </div>
-
     <div class="mb-6">
-      <h4 class="text-lg font-semibold mb-2 text-base-content">{t('descriptionCours')}</h4>
-      <div class="prose max-w-none text-base-content/90" set:html={description} />
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-base-300 text-sm text-base-content/80">
-      <p><strong class="font-medium">{t('duree')} :</strong> {duree}</p>
-      <p><strong class="font-medium">{t('heuresCours')} :</strong> {heures}</p>
-      <p><strong class="font-medium">{t('etablissement')} :</strong> {etablissement}</p>
-      <p><strong class="font-medium">{t('modeEnseignement')} :</strong> {mode}</p>
-      <p class="sm:col-span-2"><strong class="font-medium">{t('credits')} :</strong> {credits}</p>
+      <span><strong class="font-medium">{t('descriptionCours')}</strong></span>
+      <div class="prose max-w-none text-base-content/90" set:html={descriptionHtml} />
     </div>
   </div>
 </div>
 
-<!-- Styling migrated to Tailwind + daisyUI classes -->
-
 <script>
-  // Automatically open course details when navigating via anchor link
   document.addEventListener('DOMContentLoaded', () => {
     const hash = window.location.hash;
     if (hash) {
       const element = document.querySelector(hash);
-      if (element && element.tagName === 'DETAILS') {
-        element.open = true;
+      if (element) {
+        const checkbox = element.querySelector('input[type="checkbox"]') as HTMLInputElement;
+        if (checkbox) {
+          checkbox.checked = true;
+        }
       }
     }
   });
-
-  // Handle clicks on anchor links to open details
   document.addEventListener('click', (e) => {
     const target = e.target as HTMLElement;
     if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
       const hash = target.getAttribute('href');
       if (hash) {
         const element = document.querySelector(hash);
-        if (element && element.tagName === 'DETAILS') {
+        if (element) {
           setTimeout(() => {
-            (element as HTMLDetailsElement).open = true;
+            const checkbox = element.querySelector('input[type="checkbox"]') as HTMLInputElement;
+            if (checkbox) {
+              checkbox.checked = true;
+            }
           }, 100);
         }
       }

@@ -1,0 +1,32 @@
+---
+layout: ../../../layouts/Default.astro
+proseMode: true
+showBreadcrumbs: true
+title: "Detailed educational program for the Paris-Saclay CPES"
+breadcrumbTitle: "Program"
+description: "Discover the course content of the CPES: Mathematics, Computer Science, Data Science, and specializations."
+order: 3
+---
+
+import CourseDetail from '../../../components/CourseDetail.astro';
+import TableBorder from '../../../components/TableBorder.astro';
+import ButtonsBox from '../../../components/ButtonsBox.astro';
+
+# Detailed educational program for the Paris-Saclay CPES
+
+<ButtonsBox
+    title='Detailed program by year'
+    links={[
+        { href: "/en/programme/l1", title: "First year" },
+        { href: "/en/programme/l2", title: "Second year" },
+        { href: "/en/programme/l3", title: "Third year" },
+    ]}
+/>
+
+<ButtonsBox
+    title='Other views of the program'
+    links={[
+        { href: "/en/programme/par-operateur", title: "By operator" },
+        { href: "/en/programme/par-matiere", title: "By discipline" },
+    ]}
+/>

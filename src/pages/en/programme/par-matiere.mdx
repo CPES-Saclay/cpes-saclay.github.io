@@ -1,0 +1,26 @@
+---
+layout: ../../../layouts/Default.astro
+proseMode: true
+showBreadcrumbs: true
+title: "Programme by discipline"
+description: "Discover CPES courses organized by discipline: Mathematics, Computer Science, Economics, Society Specialization, Health Specialization."
+order: 3.2
+---
+
+import ProgrammeMatiere from '../../../components/ProgrammeMatiere.astro';
+import ButtonsBox from '../../../components/ButtonsBox.astro';
+
+# Programme by Discipline
+
+Description to be completed.
+
+<ButtonsBox
+    title='Other programme views'
+    links={[
+        { href: "/en/programme", title: "Overview" },
+        { href: "/en/programme/by-partner", title: "By operator" },
+        { href: "/en/formation/lycee-international-de-palaiseau", title: "L1" },
+        { href: "/en/formation/universite-paris-saclay", title: "L2" },
+        { href: "/en/formation/ens-paris-saclay", title: "L3" },
+    ]}
+/>

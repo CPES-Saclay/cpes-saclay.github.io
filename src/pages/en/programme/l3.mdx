@@ -1,0 +1,32 @@
+---
+layout: ../../../layouts/Default.astro
+proseMode: true
+showBreadcrumbs: true
+title: "Detailed educational program for the third year of the Paris-Saclay CPES"
+breadcrumbTitle: "L3"
+description: "Discover the content of the courses in the third year of CPES: Mathematics, Computer Science, Data Science, and specializations."
+---
+import ProgrammeAnnee from '../../../components/ProgrammeAnnee.astro';
+import ProportionBar from '../../../components/ProportionBar.astro';
+import ButtonsBox from '../../../components/ButtonsBox.astro';
+
+
+# Detailed educational program for the third year of the Paris-Saclay CPES
+
+Description of the challenges of the third year, etc.
+
+## Distribution of courses in L3
+<ProportionBar lipps={20} esr={80} />
+
+<ProgrammeAnnee annee="L3" />
+
+###### Other views of the program
+<ButtonsBox
+    links={[
+        { href: "/en/programme", title: "Overview" },
+        { href: "/en/programme/par-matiere", title: "By discipline" },
+        { href: "/en/programme/par-operateur", title: "By operator" },
+        { href: "/en/programme/l2", title: "L2" },
+        { href: "/en/programme/l3", title: "L3" },
+    ]}
+/>

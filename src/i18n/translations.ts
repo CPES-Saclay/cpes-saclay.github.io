@@ -41,9 +41,8 @@ export const translations = {
     titre404: "Page non trouvée",
     mentionsLegales: "Mentions légales",
     politiqueConfidentialite: "Politique de confidentialité",
-    // CourseDetail labels
     annee: "Année",
-    semestre: "Semestre",
+    periode: "Période",
     intitule: "Intitulé",
     descriptionCours: "Description du cours",
     duree: "Durée",
@@ -56,8 +55,7 @@ export const translations = {
     footerTitre2: "Texte à compléter",
     footerDescription: "Texte à compléter",
     heroTitre: "Titre",
-
-    // Error pages
+    electif: "Électif",
     notFoundTitle: "404 - Page non trouvée",
     notFoundDescription: "",
   },
@@ -96,23 +94,21 @@ export const translations = {
     titre404: "Page not found",
     mentionsLegales: "Legal notice",
     politiqueConfidentialite: "Privacy Policy",
-    // CourseDetail labels
     annee: "Year",
-    semestre: "Semester",
+    periode: "Period",
     intitule: "Title",
-    descriptionCours: "Course Description",
+    descriptionCours: "Course description",
     duree: "Duration",
-    heuresCours: "Course Hours",
+    heuresCours: "Course hours",
     etablissement: "Institution",
-    modeEnseignement: "Teaching Method",
+    modeEnseignement: "Teaching method",
     credits: "Credits",
     alerteSite: "This website is IN NO WAY official or representative of the CPES. It serves only as a mockup.",
     footerTitre1: "Text to be completed",
     footerTitre2: "Text to be completed",
     footerDescription: "Text to be completed",
     heroTitre: "Title",
-
-    // Error pages
+    electif: "Elective",
     notFoundTitle: "404 - Page not found",
     notFoundDescription: "",
   }

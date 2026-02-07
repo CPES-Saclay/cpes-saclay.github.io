@@ -2,12 +2,30 @@
 import DefaultLayout from "../../layouts/Default.astro";
 import Hero1 from "../../components/Hero1.astro";
 import Partenaires from "../../components/Partenaires.astro";
+import ButtonsBox from "../../components/ButtonsBox.astro";
 ---
 
 <DefaultLayout>
     <div class="prose prose-lg max-w-none mx-4 md:mx-16 my-10">
         <h1>CPES Paris-Saclay</h1>
         <p class="text-2xl font-bold">Data Science, Society and Health</p>
+
+        <ButtonsBox
+            title='Detailed program by year'
+            links={[
+                { href: "/en/programme/l1", title: "First year" },
+                { href: "/en/programme/l2", title: "Second year" },
+                { href: "/en/programme/l3", title: "Third year" },
+            ]}
+        />
+
+        <ButtonsBox
+            title='Other views of the program'
+            links={[
+                { href: "/en/programme/par-operateur", title: "By operator" },
+                { href: "/en/programme/par-matiere", title: "By discipline" },
+            ]}
+        />
 
         <h2>An excellence program at the heart of the Saclay plateau</h2>
 

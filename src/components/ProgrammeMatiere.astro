@@ -1,0 +1,149 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/index';
+import CourseDetail from './CourseDetail.astro';
+
+import programmeFr from '../data/programme-fr.json';
+import programmeEn from '../data/programme-en.json';
+
+export interface Props {
+  discipline?: string;
+}
+
+const { discipline } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const programme = lang === 'fr' ? programmeFr : programmeEn;
+const disciplinesConfig = {
+  'mathematiques': {
+    nom: lang === 'fr' ? 'Mathématiques' : 'Mathematics',
+    patterns: [
+      'math', 'algèbre', 'algebra', 'analyse', 'geometry', 'géométrie', 'probabilité', 'probability',
+    ]
+  },
+  'informatique': {
+    nom: lang === 'fr' ? 'Informatique' : 'Computer Science',
+    patterns: [
+      'informatique'
+    ]
+  },
+  'economie': {
+    nom: lang === 'fr' ? 'Économie et Gestion' : 'Economics & Management',
+    patterns: [
+      'économie', 'economy', 'economic', 'microéconomie', 'microeconom', 'macroéconomie',
+    ]
+  },
+  'societe': {
+    nom: lang === 'fr' ? 'Spécialité Société' : 'Society Specialization',
+    patterns: [
+      'société', 'society', 'social', 'politique', 'politic', 'droit', 'law', 'legal',
+    ]
+  },
+  'sante': {
+    nom: lang === 'fr' ? 'Spécialité Santé' : 'Health Specialization',
+    patterns: [
+      'santé', 'health', 'médecine', 'medicine', 'médical', 'medical', 'biologie', 'biology',
+    ]
+  },
+  'langues': {
+    nom: lang === 'fr' ? 'Langues' : 'Languages',
+    patterns: [
+      'langue', 'language', 'anglais', 'english', 'français', 'french', 'allemand', 'german',
+      'espagnol', 'spanish', 'chinois', 'chinese', 'communication', 'rédaction', 'writing',
+      'expression', 'oral', 'débat', 'debate', 'rhétorique', 'rhetoric'
+    ]
+  },
+  'transverse': {
+    nom: lang === 'fr' ? 'Compétences Transverses' : 'Cross-disciplinary Skills',
+    patterns: [
+      'projet', 'project', 'stage', 'internship', 'capstone', 'recherche', 'research',
+    ]
+  }
+};
+
+function getDisciplineKey(matiere: any): string {
+  const searchText = `${matiere.intitule} ${matiere.id} ${(matiere.description || []).join(' ')}`.toLowerCase();
+  for (const [key, config] of Object.entries(disciplinesConfig)) {
+    if (config.patterns.some(pattern => searchText.includes(pattern.toLowerCase()))) {
+      return key;
+    }
+  }
+  
+  return 'transverse';
+}
+
+interface CourseWithYear {
+  matiere: any;
+  annee: string;
+  anneeKey: string;
+}
+
+const allCourses: CourseWithYear[] = [];
+
+for (const [anneeKey, anneeData] of Object.entries(programme)) {
+  const anneeLabel = lang === 'fr' ? `Licence ${anneeKey.slice(1)}` : `Bachelor ${anneeKey.slice(1)}`;
+  
+  for (const [blocKey, blocData] of Object.entries((anneeData as any).blocs)) {
+    for (const matiere of (blocData as any).matieres) {
+      allCourses.push({
+        matiere,
+        annee: anneeLabel,
+        anneeKey
+      });
+    }
+  }
+}
+
+const coursesByDiscipline: Record<string, CourseWithYear[]> = {};
+
+for (const course of allCourses) {
+  const disciplineKey = getDisciplineKey(course.matiere);
+  if (!coursesByDiscipline[disciplineKey]) {
+    coursesByDiscipline[disciplineKey] = [];
+  }
+  coursesByDiscipline[disciplineKey].push(course);
+}
+
+const ordreDisciplines = ['mathematiques', 'informatique', 'economie', 'societe', 'sante', 'langues', 'transverse'];
+
+const disciplinesToShow = discipline 
+  ? ordreDisciplines.filter(d => d === discipline)
+  : ordreDisciplines;
+---
+
+<section class="programme-par-matiere">
+  {disciplinesToShow.map(disciplineKey => {
+    const config = disciplinesConfig[disciplineKey as keyof typeof disciplinesConfig];
+    const courses = coursesByDiscipline[disciplineKey] || [];
+    courses.sort((a, b) => {
+      if (a.anneeKey !== b.anneeKey) {
+        return a.anneeKey.localeCompare(b.anneeKey);
+      }
+      return b.matiere.ects - a.matiere.ects;
+    });
+    
+    return (
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+          {config.nom}
+          <span class="badge badge-lg badge-outline">{courses.length} {lang === 'fr' ? 'cours' : 'courses'}</span>
+        </h2>
+        
+        {courses.length > 0 ? (
+          courses.map(course => (
+            <CourseDetail 
+              matiere={course.matiere}
+              annee={course.annee}
+              lang={lang}
+              showAnneeBadge={true}
+            />
+          ))
+        ) : (
+          <p class="text-base-content/60 italic">
+            {lang === 'fr' ? 'Aucun cours dans cette discipline.' : 'No courses in this discipline.'}
+          </p>
+        )}
+      </div>
+    );
+  })}
+</section>

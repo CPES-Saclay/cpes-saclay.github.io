@@ -1,0 +1,26 @@
+---
+layout: ../../layouts/Default.astro
+proseMode: true
+showBreadcrumbs: true
+title: "Programme par discipline"
+description: "Découvrez les cours du CPES organisés par discipline : Mathématiques, Informatique, Économie, Spécialité Société, Spécialité Santé."
+order: 3.2
+---
+
+import ProgrammeParMatiere from '../../components/ProgrammeMatiere.astro';
+import ButtonsBox from '../../components/ButtonsBox.astro';
+
+# Programme par discipline
+
+Description à compléter...
+
+<ButtonsBox
+    title='Autres vues du programme'
+    links={[
+        { href: "/programme", title: "Vue d'ensemble" },
+        { href: "/programme/par-operateur", title: "Par opérateur" },
+        { href: "/programme/l1", title: "L1" },
+        { href: "/programme/l2", title: "L2" },
+        { href: "/programme/l3", title: "L3" },
+    ]}
+/>

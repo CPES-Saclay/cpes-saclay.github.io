@@ -101,6 +101,10 @@
   --astro-code-token-string-expression: var(--color-success);
   --astro-code-token-punctuation: #8b949e;
   --astro-code-token-link: var(--color-info);
+  --ects: #0077ff;
+  --annee: #f83660;
+  --etablissement: var(--color-secondary);
+  --entite: var(--color-secondary);
 }
 
 button:focus,
@@ -132,12 +136,34 @@ button:active,
 }
 
 table {
-  @apply table table-zebra;
+  @apply table;
   padding: 0;
   margin: 0;
   max-width: 100%;
 }
 
+table thead tr{
+  border-bottom-color: var(--color-secondary) !important;
+  border-width: 3px !important;
+}
+
 table tr, table thead tr {
   border-bottom-color: (var(--color-secondary) / 0.1) !important;
+}
+
+.prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  @apply text-3xl font-bold pt-16 pb-7 my-0 text-secondary;
+}
+
+.prose .intermediate-title {
+  @apply text-2xl font-semibold pt-0 pb-5 my-0 text-secondary;
+}
+
+@media (max-width: 640px) {
+  .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    @apply text-2xl;
+  }
+  .prose .intermediate-title {
+    @apply text-xl;
+  }
 }

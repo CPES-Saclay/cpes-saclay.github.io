@@ -1,0 +1,1159 @@
+{
+  "L1": {
+    "titre": "Première année",
+    "ects": 60,
+    "blocs": {
+      "fondamentaux": {
+        "nom": "Bloc des fondamentaux",
+        "ects": 30,
+        "totalHeures": 420,
+        "totalCours": 270,
+        "totalTdTp": 150,
+        "matieres": [
+          {
+            "id": "mathematiques-1",
+            "intitule": "Mathématiques 1",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 8,
+            "nombreSemaines": 30,
+            "totalHeures": 240,
+            "heuresCours": 180,
+            "heuresTdTp": 60,
+            "ects": 18,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Ce cours de mathématiques se concentre sur trois grandes thématiques : l'algèbre, l'analyse et les probabilités et s'appuie sur le programme des prépas scientifiques.",
+              "Il vise à renforcer les bases du lycée et homogénéiser les niveaux entre ceux qui ont fait l'option maths expertes et les autres, tout en introduisant des notions nouvelles comme les espaces vectoriels, les matrices et les nombres complexes pour ceux ne les ayant pas abordés auparavant, les séries numériques et les probabilités sur un univers fini."
+            ],
+            "contenu": {
+              "enseignant1": {
+                "titre": "Premier enseignant",
+                "chapitres": [
+                  {
+                    "titre": "Chp1 - Fondamentaux",
+                    "details": [
+                      "Logique mathématique et modes de raisonnement",
+                      "Appartenance et inclusion : notion d'ensembles et d'opérations sur les ensembles",
+                      "Application et fonctions : égalité de fonctions, image directe, fonction identité et indicatrice, composées restrictions et prolongements, injections surjections et bijections, applications réciproques"
+                    ]
+                  },
+                  {
+                    "titre": "Chp2 - Limites et continuité",
+                    "details": [
+                      "Limites à l'infini et en un point d'une fonction, caractérisation séquentielle de la limite",
+                      "Notion d'adhérence et de fermé des intervalles dans R, continuité en un point et sur un intervalle",
+                      "Caractérisation séquentielle de la continuité, limites et continuités à gauche et à droite",
+                      "Propriétés d'opérations sur les limites et relations d'ordre (bornée sur un voisinage, signe, comparaison de limites, théorème des gendarmes, majoration, théorème de la limite monotone)",
+                      "Théorèmes classiques (TVI et son corollaire, continuité sur un segment, théorème de la bijection)"
+                    ]
+                  },
+                  { "titre": "Chp3 - Matrices" },
+                  { "titre": "Chp4 - Dérivabilité" },
+                  { "titre": "Chp5 - Systèmes linéaires" },
+                  { "titre": "Chp6 - Géométrie en dimensions 2 et 3" },
+                  { "titre": "Chp7 - R espaces vectoriels" },
+                  { "titre": "Chp8 - Nombres complexes" }
+                ]
+              },
+              "enseignant2": {
+                "titre": "Second enseignant",
+                "chapitres": [
+                  { "titre": "Chapitre 1 - Somme et produit" },
+                  { "titre": "Chapitre 2 - Suites arithmético-géométriques et raisonnement par récurrence" },
+                  { "titre": "Chapitre 3 - L'ordre dans R" },
+                  { "titre": "Chapitre 4 - Limites de suites" },
+                  { "titre": "Chapitre 5 - Les séries numériques" },
+                  { "titre": "Chapitre 6 - Introduction aux probabilités" },
+                  { "titre": "Chapitre 7 - Variable aléatoire" },
+                  { "titre": "Chapitre 8 - Somme de variables aléatoires" },
+                  { "titre": "Chapitre 9 - Primitives et calcul intégral" },
+                  { "titre": "Chapitre 10 - Comparaison locale de fonctions" }
+                ]
+              }
+            }
+          },
+          {
+            "id": "informatique-1",
+            "intitule": "Informatique 1",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 6,
+            "nombreSemaines": 30,
+            "totalHeures": 180,
+            "heuresCours": 90,
+            "heuresTdTp": 90,
+            "ects": 12,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Ce cours couvre les bases de la programmation en Python, avec une approche axée sur les différents paradigmes de programmation, l'algorithmique et les structures de données (listes, arbres, graphes).",
+              "Il inclut la logique formelle, ainsi que les bases de données. Les élèves apprennent aussi la validation, le test des algorithmes, la récursivité, et les preuves par induction."
+            ]
+          }
+        ]
+      },
+      "applicatifs": {
+        "nom": "Bloc des domaines applicatifs et de spécialisation",
+        "ects": 22,
+        "totalHeures": 291,
+        "totalCours": 231,
+        "totalTdTp": 78,
+        "matieres": [
+          {
+            "id": "economie-politiques-sociales-et-sante",
+            "intitule": "Économie, politiques sociales et santé",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 3,
+            "nombreSemaines": 30,
+            "totalHeures": 90,
+            "heuresCours": 90,
+            "heuresTdTp": 0,
+            "ects": 6,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Ce module propose une vue d'ensemble structurée des principaux domaines de l'économie, combinant approches historiques, théoriques et appliquées."
+            ],
+            "contenu": {
+              "sections": [
+                {
+                  "titre": "Fondements de l'économie et grands courants de la pensée économique",
+                  "details": ["Les étudiantes et étudiants explorent les fondements de l'économie, les fonctions de l'économie ainsi que les grands courants de la pensée économique."]
+                },
+                {
+                  "titre": "Introduction à la microéconomie",
+                  "details": ["Étude de l'équilibre microéconomique du consommateur et des mécanismes qui régissent les choix économiques individuels."]
+                },
+                {
+                  "titre": "Économie de l'environnement",
+                  "details": ["Exploration des interactions entre activité économique et environnement, et analyse des enjeux liés à la durabilité et à la gestion des ressources."]
+                },
+                {
+                  "titre": "Fonctionnement des marchés et intervention publique",
+                  "details": ["Analyse du rôle des marchés dans l'économie et des conditions d'intervention de l'État pour réguler l'activité économique."]
+                }
+              ]
+            }
+          },
+          {
+            "id": "decouverte-de-lia",
+            "intitule": "Découverte de l'IA",
+            "semestre1": true,
+            "semestre2": false,
+            "heuresHebdo": 2,
+            "nombreSemaines": 12,
+            "totalHeures": 24,
+            "heuresCours": 0,
+            "heuresTdTp": 24,
+            "ects": 2,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Travaux dirigés",
+            "description": [
+              "Le cours de découverte de l'IA propose une initiation ludique et visuelle à l'intelligence artificielle - plus précisément à l'apprentissage statistique - via le pilotage de robots.",
+              "L'optique, sur la base de travaux pratiques, est de développer une intuition sur les algorithmes d'apprentissage (supervisés, non supervisés, par renforcement), pour parvenir progressivement aux formulations mathématiques.",
+              "La mise en œuvre sera l'occasion de manipuler réseaux de neurones, vision artificielle et traitement du langage. Les rudiments de programmation Python nécessaires seront introduits au fil de l'eau."
+            ]
+          },
+          {
+            "id": "introduction-a-la-science-des-donnees",
+            "intitule": "Introduction à la science des données",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 12,
+            "totalHeures": 27,
+            "heuresCours": 3,
+            "heuresTdTp": 24,
+            "ects": 2,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Ce cours d'introduction à la science des données présente les bases de la collecte, du traitement, de l'analyse et de la visualisation des données (y compris l'analyse d'images).",
+              "Il couvre les fondamentaux des statistiques descriptives et de la théorie des probabilités, en s'appuyant sur Python.",
+              "Au travers d'un projet d'analyse et de classification d'images, les étudiants apprennent ainsi à suivre la chaîne complète de traitement d'un projet data, de la problématique à la communication des résultats, avec une forte composante pratique."
+            ]
+          },
+          {
+            "id": "introduction-a-la-statistique",
+            "intitule": "Introduction à la Statistique",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 12,
+            "totalHeures": 24,
+            "heuresCours": 24,
+            "heuresTdTp": 0,
+            "ects": 2,
+            "etablissement": "ENS Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Le cours d'introduction à la Statistique présente les notions fondamentales de la statistique descriptive et inférentielle, permettant de collecter, organiser, analyser et interpréter des données numériques.",
+              "Il initie les étudiants aux principales méthodes pour résumer des données, évaluer des relations entre variables, et effectuer des estimations et tests d'hypothèses."
+            ]
+          },
+          {
+            "id": "parcours-sante",
+            "intitule": "Parcours Santé",
+            "electif": true,
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 4,
+            "nombreSemaines": 24,
+            "totalHeures": 96,
+            "heuresCours": 96,
+            "heuresTdTp": 0,
+            "ects": 7,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Ce cours de Biologie s'appuie sur le programme de première année des classes préparatoires de BCPST.",
+              "Il porte sur l'étude du vivant à plusieurs échelles : moléculaire, cellulaire, organisme et écosystème. Il aborde aussi l'organisation des cellules, le métabolisme (respiration, nutrition) ainsi que la génétique (structure de l'ADN, transmission de l'information génétique)."
+            ]
+          },
+          {
+            "id": "parcours-societe",
+            "intitule": "Parcours Société",
+            "electif": true,
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 4,
+            "nombreSemaines": 24,
+            "totalHeures": 96,
+            "heuresCours": 96,
+            "heuresTdTp": 0,
+            "ects": 7,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Présentation de la sociologie, de ses méthodes et de ses approches pour analyser la société."
+            ],
+            "contenu": {
+              "sections": [
+                {
+                  "titre": "Les démarches en sociologie et le travail du sociologue",
+                  "details": ["Présentation de la sociologie, de ses méthodes et de ses approches pour analyser la société."]
+                },
+                {
+                  "titre": "Santé et bien‑être",
+                  "details": ["Étude des enjeux de santé et de bien-être, avec un focus sur la gestion des risques, illustrée par l'exemple du risque sanitaire."]
+                },
+                {
+                  "titre": "Histoire de la pensée sociologique",
+                  "details": [
+                    "Durkheim : le lien social, actualité de ses travaux, prolongements, individualisme, sociologie du travail, mutations du travail et de l'emploi.",
+                    "Marx : conflit de classe, conflictualité, mouvements sociaux et changements sociaux.",
+                    "Weber : rationalité et évolution de la structure sociale."
+                  ]
+                },
+                {
+                  "titre": "Sociologie du travail et protection sociale",
+                  "details": ["Analyse des transformations du travail et des politiques de protection sociale, notamment retraites, chômage et santé."]
+                }
+              ]
+            }
+          },
+          {
+            "id": "projet-institut-polytechnique-paris",
+            "intitule": "Projet Institut Polytechnique Paris",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 15,
+            "totalHeures": 30,
+            "heuresCours": 0,
+            "heuresTdTp": 30,
+            "ects": 3,
+            "etablissement": "Institut Polytechnique de Paris",
+            "entite": "Telecom Paris",
+            "mode": "Travaux dirigés",
+            "description": [
+              "Ce cours initie les étudiantes et étudiants aux méthodes fondamentales d'analyse statistique, de traitement de données et de visualisation de données en Python.",
+              "Les travaux pratiques s'appuient sur les bibliothèques numériques les plus utilisées (numpy, pandas, scikit‑learn) et incluent un projet en binôme appliqué à des jeux de données réels. Les plus avancés peuvent expérimenter la mise en œuvre de modèles de deep learning simplifiés.",
+              "Ce module articule rigueur statistique, pratique de la programmation scientifique et mise en œuvre d'outils modernes d'apprentissage automatique."
+            ]
+          }
+        ]
+      },
+      "transverse": {
+        "nom": "Bloc transverse",
+        "ects": 8,
+        "totalHeures": 108,
+        "totalCours": 108,
+        "totalTdTp": 0,
+        "matieres": [
+          {
+            "id": "anglais",
+            "intitule": "Anglais",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 30,
+            "totalHeures": 60,
+            "heuresCours": 60,
+            "heuresTdTp": 0,
+            "ects": 4,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Ce cours s'inscrit dans une approche actionnelle dans les 5 compétences (compréhension orale et écrite, expression écrite, expression orale en continu et interaction) avec un travail sur la prononciation des sons voyelles.",
+              "L'interaction se fait à travers des documents écrits et/ou audiovisuels centrés sur la problématique de l'environnement et du développement durable et un scénario de communication dans le cadre d'un projet tout au long de l'année. La communication interculturelle pourra être abordée dans le cadre du projet."
+            ]
+          },
+          {
+            "id": "culture-sport-lv2",
+            "intitule": "Culture / Sport / Langue Vivante 2 (LV2)",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 24,
+            "totalHeures": 48,
+            "heuresCours": 48,
+            "heuresTdTp": 0,
+            "ects": 4,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Activités Physiques Sportives et Artistiques au choix de l'étudiant ou enseignement linguistique."
+            ]
+          },
+          {
+            "id": "spoc-sens-critique",
+            "intitule": "SPOC Sens critique : Sciences en sociétés",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": null,
+            "nombreSemaines": null,
+            "totalHeures": null,
+            "heuresCours": null,
+            "heuresTdTp": null,
+            "ects": 0,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Small Private Online Course (SPOC)",
+            "description": [
+              "Le SPOC Sens critique / sciences en sociétés est un enseignement en ligne destiné à sensibiliser les étudiants aux enjeux des interactions sciences et sociétés en développant leur sens critique.",
+              "Il est constitué de cinq séances d'exercices ludiques portant sur des ressources audio, vidéo et textuelles. Chaque séance est rattachée d'une part à un thème envisageant un champ spécifique de connaissances scientifiques, d'autre part à un questionnement interrogeant un aspect spécifique des interactions sciences/sociétés."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "L2": {
+    "titre": "Deuxième année",
+    "ects": 60,
+    "lieu": "50% Lycée International de Palaiseau / 50% Partenaires",
+    "blocs": {
+      "fondamentaux": {
+        "nom": "Bloc des fondamentaux",
+        "ects": 27,
+        "totalHeures": 420,
+        "totalCours": 282,
+        "totalTdTp": 138,
+        "matieres": [
+          {
+            "id": "mathematiques-2",
+            "intitule": "Mathématiques 2",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 7,
+            "nombreSemaines": 30,
+            "totalHeures": 210,
+            "heuresCours": 150,
+            "heuresTdTp": 60,
+            "ects": 14,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Ce cours de deuxième année approfondit l'algèbre (espaces vectoriels, matrices, groupes symétriques), l'analyse (intégration, suites et séries, équations différentielles) et les probabilités.",
+              "L'objectif est de consolider et étendre les connaissances de première année en mettant l'accent sur la rigueur, la modélisation et la résolution de problèmes complexes."
+            ]
+          },
+          {
+            "id": "mathematiques-chaines-de-markov",
+            "intitule": "Mathématiques - Chaînes de Markov",
+            "semestre1": true,
+            "semestre2": false,
+            "heuresHebdo": 4,
+            "nombreSemaines": 12,
+            "totalHeures": 48,
+            "heuresCours": 24,
+            "heuresTdTp": 24,
+            "ects": 3,
+            "etablissement": "ENS Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Le cours couvre la définition formelle, la construction d'une chaîne de Markov, les propriétés fondamentales telles que la Markovianité, les états absorbants, et les classes de communication.",
+              "Il inclut également des théorèmes clés comme le théorème ergodique, la convergence vers une distribution stationnaire, et les temps d'absorption. Ce cours prépare à l'analyse approfondie des chaînes et à leurs applications variées en probabilités, statistiques et plus généralement en science des données."
+            ]
+          },
+          {
+            "id": "informatique-2",
+            "intitule": "Informatique 2",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 4,
+            "nombreSemaines": 30,
+            "totalHeures": 120,
+            "heuresCours": 90,
+            "heuresTdTp": 30,
+            "ects": 7,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Le programme d'informatique de deuxième année se concentre sur le langage Python, avec un approfondissement des méthodes de programmation, notamment la récursivité, l'induction et les structures de données séquentielles et hiérarchiques.",
+              "Les étudiants étudient également l'algorithmique avancée (exploration exhaustive, graphes, décomposition de problèmes), la logique formelle ainsi que la gestion des ressources comme la mémoire et les fichiers."
+            ]
+          },
+          {
+            "id": "principes-interpretation-langages",
+            "intitule": "Principes d'interprétation des langages",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 3.5,
+            "nombreSemaines": 12,
+            "totalHeures": 42,
+            "heuresCours": 18,
+            "heuresTdTp": 24,
+            "ects": 3,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Ce cours est une introduction aux principes d'interprétation des langages."
+            ],
+            "contenu": {
+              "sections": [
+                { "titre": "Les différentes phases de l'interprétation des langages : analyses lexicale, syntaxique, sémantiques et exécution" },
+                { "titre": "Les expressions régulières, automates finis" },
+                { "titre": "Les grammaires algébriques, reconnaissance des mots par l'algorithme CYK, analyse descendante LL" },
+                { "titre": "Les arbres de syntaxe abstraite" },
+                { "titre": "Les règles sémantiques simples pour la portée, le typage et l'évaluation" }
+              ]
+            }
+          }
+        ]
+      },
+      "applicatifs": {
+        "nom": "Bloc des domaines applicatifs et de spécialisation",
+        "ects": 24,
+        "totalHeures": 364,
+        "totalCours": 306,
+        "totalTdTp": 58,
+        "matieres": [
+          {
+            "id": "economie-politiques-sociales-et-sante-l2",
+            "intitule": "Économie, politiques sociales et santé",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 30,
+            "totalHeures": 60,
+            "heuresCours": 60,
+            "heuresTdTp": 0,
+            "ects": 4,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [],
+            "contenu": {
+              "sections": [
+                {
+                  "titre": "Thème 1 : Entreprises, gouvernance et organisations",
+                  "details": [
+                    "Chapitre 1 : L'entreprise : évolutions depuis le début du XIXᵉ siècle",
+                    "Chapitre 2 : Gouvernance des entreprises et transformations des structures financières"
+                  ]
+                },
+                {
+                  "titre": "Thème 2 : Politiques économiques",
+                  "details": [
+                    "Chapitre 3 : Modélisation de la politique keynésienne (IS/LM et AS/AD)",
+                    "Chapitre 4 : Débat sur le rôle et la nécessité de l'intervention publique"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "parcours-sante-l2",
+            "intitule": "Parcours Santé",
+            "electif": true,
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 3,
+            "nombreSemaines": 30,
+            "totalHeures": 90,
+            "heuresCours": 90,
+            "heuresTdTp": 0,
+            "ects": 6,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Ce cours qui s'appuie sur le programme de deuxième année des classes préparatoires de BCPST approfondit la biologie humaine, la physiologie et la santé, intégrant aussi la génomique, le développement et la communication cellulaire.",
+              "Il développe la compréhension des grands processus physiologiques (immunité, reproduction, système nerveux, régulation hormonale), l'impact des facteurs environnementaux et aborde l'évolution et la phylogénie.",
+              "Les travaux pratiques et études de documents visent à renforcer l'analyse des grandes fonctions de l'organisme en lien avec la santé."
+            ]
+          },
+          {
+            "id": "parcours-societe-l2",
+            "intitule": "Parcours Société",
+            "electif": true,
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 3,
+            "nombreSemaines": 30,
+            "totalHeures": 90,
+            "heuresCours": 90,
+            "heuresTdTp": 0,
+            "ects": 6,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [],
+            "contenu": {
+              "sections": [
+                {
+                  "titre": "Thème 1 : La socialisation",
+                  "details": ["Histoire et principales approches théoriques de la socialisation. Étude des concepts fondamentaux et exploration de la diversité des agents, des formes et des processus de socialisation à travers des applications concrètes de la théorie."]
+                },
+                {
+                  "titre": "Thème 2 : La déviance",
+                  "details": ["Examen des fondements théoriques de l'analyse de la déviance, avec un accent particulier sur la sociologie interactionniste. Étude du monde médical à travers le prisme des théories de la déviance : parcours de malades, organisation hospitalière et histoire de la psychiatrie."]
+                },
+                {
+                  "titre": "Thème 3 : La stratification sociale",
+                  "details": ["Analyse de la structure et de l'évolution de la société contemporaine, en s'appuyant sur une actualisation des travaux et de la littérature récente sur la stratification sociale."]
+                },
+                {
+                  "titre": "Thème 4 : Rapports sociaux et inégalités",
+                  "details": ["Étude des rapports sociaux et des dynamiques de domination dans l'espace social, des forces antagonistes structurant les conflits, ainsi que des enjeux et perspectives associés. Analyse des inégalités et de la pauvreté, y compris leur dimension spatiale (accès au logement, trajectoires, appropriation de l'espace physique) et leurs implications sur la santé."]
+                },
+                {
+                  "titre": "Thème 5 : Introduction à la sociologie politique",
+                  "details": ["Introduction à la sociologie des mouvements sociaux"]
+                }
+              ]
+            }
+          },
+          {
+            "id": "electifs-hec",
+            "intitule": "Électifs HEC",
+            "semestre1": true,
+            "semestre2": false,
+            "heuresHebdo": 3,
+            "nombreSemaines": 6,
+            "totalHeures": 18,
+            "heuresCours": 18,
+            "heuresTdTp": 0,
+            "ects": 1,
+            "etablissement": "HEC Paris",
+            "mode": "Cours magistral",
+            "description": ["Les étudiants doivent choisir un cours entre :"],
+            "contenu": {
+              "choix": [
+                "Politique, crises, communication",
+                "Convictions, données et émotions : comment construire un business durable",
+                "Questions sociales et politiques sociales",
+                "Droit du travail",
+                "Les défis de la transition énergétique",
+                "L'industrie pharmaceutique : ses enjeux dans la santé, ses risques et ses opportunités"
+              ]
+            }
+          },
+          {
+            "id": "sciences-des-donnees-1",
+            "intitule": "Sciences des données 1",
+            "semestre1": true,
+            "semestre2": false,
+            "heuresHebdo": 2,
+            "nombreSemaines": 15,
+            "totalHeures": 30,
+            "heuresCours": 0,
+            "heuresTdTp": 30,
+            "ects": 2,
+            "etablissement": "Institut Polytechnique de Paris",
+            "entite": "École Polytechnique",
+            "mode": "Travaux dirigés",
+            "description": [
+              "Ce cours approfondit les techniques fondamentales de traitement, d'analyse et de modélisation des données. Il introduit les méthodes statistiques avancées, les algorithmes d'apprentissage automatique de base, ainsi que les outils informatiques pour la gestion et l'exploitation de grands ensembles de données.",
+              "L'accent est mis sur la mise en œuvre pratique et l'interprétation critique des résultats dans des contextes variés."
+            ]
+          },
+          {
+            "id": "sciences-des-donnees-2",
+            "intitule": "Sciences des données 2",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 2.33,
+            "nombreSemaines": 12,
+            "totalHeures": 28,
+            "heuresCours": 24,
+            "heuresTdTp": 4,
+            "ects": 2,
+            "etablissement": "Institut Polytechnique de Paris",
+            "entite": "École Polytechnique",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Ce cours propose une approche avancée des méthodes statistiques, des techniques d'apprentissage supervisé et non supervisé, et de la gestion de bases de données volumineuses.",
+              "Il met l'accent sur l'application rigoureuse des modèles, l'évaluation critique des résultats, et l'interprétation des données complexes. Les étudiants développent des compétences solides en programmation et utilisent des logiciels spécialisés pour traiter des problématiques réelles dans divers domaines."
+            ]
+          },
+          {
+            "id": "statistiques-2",
+            "intitule": "Statistiques 2",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 4,
+            "nombreSemaines": 12,
+            "totalHeures": 48,
+            "heuresCours": 24,
+            "heuresTdTp": 24,
+            "ects": 3,
+            "etablissement": "ENS Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "L'objectif de ce cours est d'approfondir les méthodes d'inférence statistique, incluant l'estimation ponctuelle et par intervalle, les tests d'hypothèses, et l'analyse de la variance (ANOVA). Il aborde aussi les modèles linéaires simples, les statistiques multivariées, et les processus stochastiques de base.",
+              "Ce cours combine théorie et applications pratiques avec l'utilisation de logiciels statistiques, pour permettre aux étudiants de concevoir, analyser et interpréter des études quantitatives en biologie ou en économie."
+            ]
+          },
+          {
+            "id": "enjeux-societaux-sante-biologie",
+            "intitule": "Enjeux Sociétaux Santé-Biologie",
+            "semestre1": true,
+            "semestre2": false,
+            "heuresHebdo": 3,
+            "nombreSemaines": 10,
+            "totalHeures": 30,
+            "heuresCours": 30,
+            "heuresTdTp": 0,
+            "ects": 2,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "L'objectif de ce cours est d'acquérir les connaissances de base en biologie, permettant aux étudiants de comprendre les problématiques biologiques et la nature des données auxquelles ils seront confrontés."
+            ],
+            "contenu": {
+              "sections": [
+                { "titre": "Le vivant : de la cellule à l'organisme" },
+                { "titre": "Unité du monde vivant : Réplication, transcription et traduction" },
+                { "titre": "Génome et séquençage" },
+                { "titre": "Régulation de l'expression génétique" },
+                { "titre": "Évolution en biologie" },
+                { "titre": "Le métabolisme et sa régulation" }
+              ]
+            }
+          },
+          {
+            "id": "data-modeling",
+            "intitule": "Data Modeling for social science and business",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 3,
+            "nombreSemaines": 6,
+            "totalHeures": 18,
+            "heuresCours": 18,
+            "heuresTdTp": 0,
+            "ects": 1,
+            "etablissement": "HEC Paris",
+            "mode": "Cours magistral",
+            "description": [
+              "Ce cours propose une initiation pratique à la modélisation de données appliquée aux sciences sociales et au management, centrée sur l'utilisation avancée d'Excel.",
+              "Les étudiants apprennent à organiser, analyser et représenter efficacement des données, tout en s'initiant à la logique des formules (RechercheH, RechercheV, Somme.si, Somme.si.ens) et des tableaux croisés dynamiques."
+            ]
+          },
+          {
+            "id": "startup-durabilite",
+            "intitule": "Startup et durabilité",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 3,
+            "nombreSemaines": 6,
+            "totalHeures": 18,
+            "heuresCours": 18,
+            "heuresTdTp": 0,
+            "ects": 1,
+            "etablissement": "HEC Paris",
+            "mode": "Cours magistral",
+            "description": [
+              "Ce cours explore les liens entre entrepreneuriat et développement durable, en analysant comment les startups intègrent les enjeux sociaux et environnementaux dans leurs modèles économiques."
+            ]
+          },
+          {
+            "id": "introduction-r-rstudio",
+            "intitule": "Introduction à R et à R-Studio pour l'analyse de données",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 12,
+            "totalHeures": 24,
+            "heuresCours": 24,
+            "heuresTdTp": 0,
+            "ects": 2,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Ce cours d'introduction à R et à R-Studio propose une première initiation au langage R et à son environnement de travail. Les étudiants apprennent à manipuler des jeux de données, réaliser des analyses statistiques de base et produire des visualisations claires et reproductibles.",
+              "Le cours s'appuie sur des jeux de données relatifs à la biologie."
+            ]
+          }
+        ]
+      },
+      "transverse": {
+        "nom": "Bloc transverse",
+        "ects": 9,
+        "totalHeures": 134,
+        "totalCours": 114,
+        "totalTdTp": 20,
+        "matieres": [
+          {
+            "id": "projet-solidaire",
+            "intitule": "Projet solidaire",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 1,
+            "nombreSemaines": 20,
+            "totalHeures": 20,
+            "heuresCours": 0,
+            "heuresTdTp": 20,
+            "ects": 2,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "-",
+            "description": [
+              "Le Projet solidaire vise - sur les deux premières années de la formation - à initier les étudiants à la conduite du projet à dimension sociale, citoyenne ou associative. À travers la mise en place d'actions concrètes et durables au service d'une communauté, les étudiants développent des compétences pratiques en gestion de projet, en travail d'équipe et en communication."
+            ]
+          },
+          {
+            "id": "anglais-l2",
+            "intitule": "Anglais",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 30,
+            "totalHeures": 60,
+            "heuresCours": 60,
+            "heuresTdTp": 0,
+            "ects": 4,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Ce cours s'inscrit dans une approche actionnelle dans les 5 compétences (compréhension orale et écrite, expression écrite, expression orale en continu et en interaction) avec un travail sur la prononciation des sons voyelles.",
+              "L'interaction se fait à travers des documents écrits et/ou audiovisuels centrés sur la problématique de l'environnement et du développement durable et un scénario de communication dans le cadre d'un projet tout au long de l'année. La communication interculturelle pourra être abordée dans le cadre du projet."
+            ]
+          },
+          {
+            "id": "methodes-entrepreneur-hec",
+            "intitule": "Méthodes Entrepreneur HEC",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 6,
+            "nombreSemaines": 3,
+            "totalHeures": 18,
+            "heuresCours": 18,
+            "heuresTdTp": 0,
+            "ects": 1,
+            "etablissement": "HEC Paris",
+            "mode": "Cours magistral",
+            "description": [
+              "Ce cours initie les étudiants aux principales méthodes et outils mobilisés par les entrepreneurs.",
+              "Les étudiants apprennent à transformer une idée en projet viable, à structurer un business model et à piloter le développement d'une startup innovante dans un environnement compétitif."
+            ]
+          },
+          {
+            "id": "culture-sport-lv2-l2",
+            "intitule": "Culture / Sport / Langue Vivante 2 (LV2)",
+            "semestre1": true,
+            "semestre2": false,
+            "heuresHebdo": 2,
+            "nombreSemaines": 12,
+            "totalHeures": 24,
+            "heuresCours": 24,
+            "heuresTdTp": 0,
+            "ects": 1,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Cours magistral et/ou Travaux dirigés",
+            "description": [
+              "Activités Physiques Sportives et Artistiques au choix de l'étudiant ou enseignement linguistique."
+            ]
+          },
+          {
+            "id": "spoc-transition-energetique",
+            "intitule": "SPOC Transition écologique",
+            "semestre1": true,
+            "semestre2": false,
+            "heuresHebdo": 1,
+            "nombreSemaines": 12,
+            "totalHeures": 12,
+            "heuresCours": 12,
+            "heuresTdTp": 0,
+            "ects": 1,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Small Private Online Course (SPOC)",
+            "description": [
+              "Le principal objectif de ce SPOC est de faire comprendre les mécanismes et conséquences liés au réchauffement climatique et à l'érosion de la biodiversité ainsi que leurs relations avec nos modes de vie et de consommation.",
+              "Plus généralement, il vise à apporter une vision transversale pour appréhender les changements globaux, notamment en lien avec les objectifs de développement durable de l'ONU et le concept de limites planétaires."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "L3": {
+    "titre": "Troisième année",
+    "ects": 60,
+    "lieu": "30% Lycée International de Palaiseau / 70% Partenaires",
+    "blocs": {
+      "fondamentaux": {
+        "nom": "Bloc des fondamentaux",
+        "ects": 21,
+        "totalHeures": 270,
+        "totalCours": 186,
+        "totalTdTp": 84,
+        "matieres": [
+          {
+            "id": "mathematiques-3",
+            "intitule": "Mathématiques 3",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 4,
+            "nombreSemaines": 30,
+            "totalHeures": 120,
+            "heuresCours": 90,
+            "heuresTdTp": 30,
+            "ects": 7,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Ce troisième cours de mathématiques offre une introduction approfondie à la topologie des espaces vectoriels normés, à la dualité et à l'étude des formes quadratiques et hermitiennes. Il propose également une initiation à l'optimisation différentiable, ainsi qu'aux structures algébriques fondamentales : groupes, anneaux et corps."
+            ]
+          },
+          {
+            "id": "mesures-integration-probabilites",
+            "intitule": "Mesures, intégration, probabilités",
+            "semestre1": true,
+            "semestre2": false,
+            "heuresHebdo": 3,
+            "nombreSemaines": 12,
+            "totalHeures": 36,
+            "heuresCours": 24,
+            "heuresTdTp": 12,
+            "ects": 3.5,
+            "etablissement": "ENS Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Ce cours introduit les fondements de la théorie de la mesure et de l'intégration, avec une attention particulière portée à la construction des tribus, à la notion de mesurabilité et à l'intégrale de Lebesgue. Il explore les espaces fonctionnels et leurs propriétés, en lien avec les outils de l'analyse moderne.",
+              "Des applications aux probabilités (axiomatique de Kolmogorov) permettent d'illustrer la portée de ces concepts dans la modélisation de phénomènes aléatoires et dans le traitement rigoureux de variables aléatoires."
+            ]
+          },
+          {
+            "id": "theorie-information-optimisation",
+            "intitule": "Théorie de l'information, optimisation",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 3,
+            "nombreSemaines": 12,
+            "totalHeures": 36,
+            "heuresCours": 24,
+            "heuresTdTp": 12,
+            "ects": 3.5,
+            "etablissement": "ENS Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Ce cours propose une introduction à la théorie du signal, en particulier à la transformée de Fourier discrète et au théorème de Nyquist-Shannon, qui permettent d'analyser et de reconstruire des signaux numériques.",
+              "Il aborde ensuite les fondements de l'optimisation discrète et de l'optimisation convexe, avec ou sans contraintes, en mettant l'accent sur les méthodes analytiques et algorithmiques de résolution."
+            ]
+          },
+          {
+            "id": "equations-differentielles-ordinaires",
+            "intitule": "Équations différentielles ordinaires",
+            "semestre1": true,
+            "semestre2": false,
+            "heuresHebdo": 3,
+            "nombreSemaines": 12,
+            "totalHeures": 36,
+            "heuresCours": 24,
+            "heuresTdTp": 12,
+            "ects": 3.5,
+            "etablissement": "ENS Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Ce cours traite de la résolution des équations différentielles ordinaires (EDO) d'ordre 1 et 2, ainsi que des systèmes différentiels linéaires d'ordre 1 et de leur prolongement aux EDO d'ordre n. Il aborde le théorème de Cauchy-Lipschitz, l'analyse qualitative des solutions et propose une introduction aux équations différentielles stochastiques (EDS).",
+              "Le programme permet d'acquérir les connaissances essentielles à la compréhension et à la manipulation des principaux outils de l'analyse différentielle."
+            ]
+          },
+          {
+            "id": "bases-de-donnees",
+            "intitule": "Base de données",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 3.5,
+            "nombreSemaines": 12,
+            "totalHeures": 42,
+            "heuresCours": 24,
+            "heuresTdTp": 18,
+            "ects": 3.5,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Ce cours approfondit les principes d'utilisation des Systèmes de Gestion de Bases de Données (SGBD) relationnels."
+            ],
+            "contenu": {
+              "sections": [
+                {
+                  "titre": "Intégrité et Contraintes",
+                  "details": ["Étude approfondie des modèles de données, des mises à jour et de la gestion des contraintes SQL et non-SQL."]
+                },
+                {
+                  "titre": "Programmation Procédurale (PL/SQL)",
+                  "details": ["Apprentissage du langage PL/SQL pour automatiser les traitements via l'utilisation de curseurs, de triggers (déclencheurs) et la gestion des exceptions et erreurs de bases de données."]
+                },
+                {
+                  "titre": "Architecture Web et Mode Programme",
+                  "details": ["Interfaçage entre les bases de données et les applications web (architecture Internet, HTML, PHP). Le cours traite des problématiques d'accès au SGBD en \"mode programme\", de l'indépendance des niveaux et de la confidentialité des données (encapsulation)."]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "applicatifs": {
+        "nom": "Bloc des domaines applicatifs et de spécialisation",
+        "ects": 21,
+        "totalHeures": 300,
+        "totalCours": 288,
+        "totalTdTp": 12,
+        "matieres": [
+          {
+            "id": "economie-politiques-sociales-et-sante-l3",
+            "intitule": "Économie, politiques sociales et santé",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 30,
+            "totalHeures": 60,
+            "heuresCours": 60,
+            "heuresTdTp": 0,
+            "ects": 4,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Ce cours analyse la conception et l'évaluation des politiques publiques : qui décide, avec quels objectifs, et comment mesurer leurs effets grâce aux outils de la micro et macro-économétrie. Il aborde également l'économie comportementale appliquée aux politiques publiques et propose un bilan critique des interventions.",
+              "La seconde partie explore la mondialisation économique et financière : ouverture des échanges depuis le XIXᵉ siècle, analyse des échanges internationaux, régionalisation et gouvernance, ainsi que la constitution et le fonctionnement du marché mondial des capitaux."
+            ]
+          },
+          {
+            "id": "sociologie-quantitative",
+            "intitule": "Sociologie quantitative",
+            "semestre1": true,
+            "semestre2": false,
+            "heuresHebdo": 2,
+            "nombreSemaines": 12,
+            "totalHeures": 24,
+            "heuresCours": 24,
+            "heuresTdTp": 0,
+            "ects": 2,
+            "etablissement": "Institut Polytechnique de Paris",
+            "entite": "ENSAE",
+            "mode": "Cours magistral",
+            "description": [
+              "L'objectif de ce cours est d'initier les étudiants à l'analyse des phénomènes sociaux à partir de données quantitatives. Il combine concepts sociologiques et outils statistiques pour mesurer comportements, inégalités et dynamiques sociales.",
+              "Les étudiants apprennent à collecter et traiter des données, à utiliser des méthodes d'analyse comme les statistiques descriptives et la régression, et à interpréter les résultats pour des applications concrètes telles que les mobilités sociales ou les inégalités."
+            ]
+          },
+          {
+            "id": "sociologie-computationnelle",
+            "intitule": "Sociologie computationnelle",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 12,
+            "totalHeures": 24,
+            "heuresCours": 24,
+            "heuresTdTp": 0,
+            "ects": 2,
+            "etablissement": "Institut Polytechnique de Paris",
+            "entite": "ENSAE",
+            "mode": "Cours magistral",
+            "description": [
+              "Cet enseignement de sociologie computationnelle explore les méthodes quantitatives et informatiques appliquées à l'étude des phénomènes sociaux. Il introduit les concepts fondamentaux de la modélisation, de l'analyse des réseaux sociaux, et du traitement de grandes bases de données issues des interactions humaines.",
+              "Le cours met en avant l'utilisation d'outils numériques pour la collecte, l'analyse et la visualisation des données sociales."
+            ]
+          },
+          {
+            "id": "parcours-sante-l3",
+            "intitule": "Parcours Santé",
+            "electif": true,
+            "semestre1": true,
+            "semestre2": false,
+            "heuresHebdo": 2,
+            "nombreSemaines": 30,
+            "totalHeures": 60,
+            "heuresCours": 60,
+            "heuresTdTp": 0,
+            "ects": 4,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Ce module propose une approche pluridisciplinaire pour comprendre les mécanismes fondamentaux du vivant."
+            ],
+            "contenu": {
+              "sections": [
+                {
+                  "titre": "Microbiologie",
+                  "details": ["Diversité des microorganismes (organisation, écologie, métabolisme), observation et culture en laboratoire."]
+                },
+                {
+                  "titre": "Immunologie",
+                  "details": ["Rôles des acteurs moléculaires et cellulaires du système immunitaire, stratégies vaccinales et principes des antiviraux."]
+                },
+                {
+                  "titre": "Différenciation cellulaire",
+                  "details": ["Notion de cellule souche, étapes et contrôle de la différenciation (génétique, paracrine, hormonal), rôle dans le développement et le renouvellement cellulaire."]
+                },
+                {
+                  "titre": "Neurosciences",
+                  "details": ["Organisation anatomo-fonctionnelle du système nerveux central et périphérique, fonctions complexes (stress, motricité), et pathologies, notamment neurodégénératives."]
+                }
+              ]
+            }
+          },
+          {
+            "id": "parcours-societe-l3",
+            "intitule": "Parcours Société",
+            "electif": true,
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 30,
+            "totalHeures": 60,
+            "heuresCours": 60,
+            "heuresTdTp": 0,
+            "ects": 4,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Ce module explore les grands enjeux contemporains à travers quatre thématiques clés."
+            ],
+            "contenu": {
+              "sections": [
+                {
+                  "titre": "Sociologie du risque",
+                  "details": ["Analyse des perceptions et des constructions sociales du risque, des politiques de prévention et des comportements face à l'incertitude."]
+                },
+                {
+                  "titre": "Sociologie de la famille",
+                  "details": ["Étude des formes familiales, des transformations des rôles et des relations intergénérationnelles dans des contextes variés."]
+                },
+                {
+                  "titre": "Sociologie de la sexualité",
+                  "details": ["Approche des normes, des représentations et des pratiques, en lien avec les évolutions sociales et culturelles."]
+                },
+                {
+                  "titre": "Sociologie des mouvements sociaux",
+                  "details": ["Compréhension des mobilisations collectives, de leurs acteurs, de leurs stratégies et de leur impact sur le changement social."]
+                }
+              ]
+            }
+          },
+          {
+            "id": "analyse-donnees-sciences-sociales-biologie",
+            "intitule": "Analyse des données pour les sciences sociales et la biologie",
+            "semestre1": false,
+            "semestre2": true,
+            "heuresHebdo": 3,
+            "nombreSemaines": 12,
+            "totalHeures": 36,
+            "heuresCours": 24,
+            "heuresTdTp": 12,
+            "ects": 3,
+            "etablissement": "ENS Paris-Saclay",
+            "mode": "Cours magistral + Travaux dirigés",
+            "description": [
+              "Ce cours d'Analyse des données pour les sciences sociales et la biologie introduit les méthodes fondamentales de la science des données adaptées aux contextes spécifiques de ces disciplines. Il aborde la collecte, le nettoyage, la visualisation et l'analyse statistique des données, avec un focus sur l'exploitation des bases de données et des outils informatiques.",
+              "Le cours s'appuie sur R et Python pour développer les compétences analytiques et programmatiques des étudiants."
+            ]
+          },
+          {
+            "id": "recherche-clinique-epidemiologique",
+            "intitule": "Introduction à la recherche clinique et épidémiologique",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 4,
+            "nombreSemaines": 24,
+            "totalHeures": 96,
+            "heuresCours": 96,
+            "heuresTdTp": 0,
+            "ects": 6,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Cette introduction à la recherche clinique et épidémiologique présente les fondements méthodologiques essentiels à la conception, la conduite et l'analyse des études en santé publique et clinique. Il couvre les principes clés de l'épidémiologie, les différents types d'études observationnelles et interventionnelles, ainsi que les méthodes statistiques adaptées à l'analyse des données cliniques.",
+              "Une attention particulière est portée à la rigueur scientifique, à l'éthique de la recherche et à l'interprétation critique des résultats, avec une approche pratique favorisant l'application des concepts dans des contextes biomédicaux variés."
+            ]
+          }
+        ]
+      },
+      "transverse": {
+        "nom": "Bloc transverse",
+        "ects": 18,
+        "totalHeures": 252,
+        "totalCours": 108,
+        "totalTdTp": 144,
+        "matieres": [
+          {
+            "id": "projet-capstone",
+            "intitule": "Projet Capstone",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 6,
+            "nombreSemaines": 24,
+            "totalHeures": 144,
+            "heuresCours": 0,
+            "heuresTdTp": 144,
+            "ects": 12,
+            "etablissement": "HEC Paris",
+            "mode": "Travaux dirigés",
+            "description": [
+              "Le projet Capstone est un projet de synthèse qui clôture la formation. Il permet aux étudiants de mobiliser l'ensemble des compétences acquises pour résoudre un problème concret en data science. Ce projet peut prendre la forme d'une analyse approfondie de données, du développement d'un modèle prédictif ou de la conception d'une solution innovante pour répondre à un enjeu réel.",
+              "Réalisé sur plusieurs mois, il favorise l'autonomie, la créativité et l'application pratique des méthodes statistiques, de la programmation et de la visualisation des données."
+            ]
+          },
+          {
+            "id": "anglais-l3",
+            "intitule": "Anglais",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 30,
+            "totalHeures": 60,
+            "heuresCours": 60,
+            "heuresTdTp": 0,
+            "ects": 4,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "Cours magistral",
+            "description": [
+              "Cet enseignement d'anglais vise à consolider et approfondir les cinq compétences langagières (compréhension orale et écrite, expression écrite, expression orale en continu et en interaction) dans une approche actionnelle. L'accent est mis sur la fluidité et la précision, avec un travail sur la prononciation et l'intonation.",
+              "Les activités s'appuient sur des documents variés et des projets collaboratifs autour de thématiques actuelles telles que l'environnement, le développement durable et la communication interculturelle, afin de préparer les étudiants à des échanges professionnels et académiques en contexte international."
+            ]
+          },
+          {
+            "id": "culture-sport-lv2-l3",
+            "intitule": "Culture / Sport / Langue Vivante 2 (LV2)",
+            "semestre1": true,
+            "semestre2": true,
+            "heuresHebdo": 2,
+            "nombreSemaines": 24,
+            "totalHeures": 48,
+            "heuresCours": 48,
+            "heuresTdTp": 0,
+            "ects": 2,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Cours magistral et/ou Travaux dirigés",
+            "description": [
+              "Activités Physiques Sportives et Artistiques au choix de l'étudiant ou enseignement linguistique."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

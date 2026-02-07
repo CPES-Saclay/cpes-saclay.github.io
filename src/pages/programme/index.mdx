@@ -6,12 +6,28 @@ title: "Programme détaillé"
 description: "Découvrez le contenu des cours du CPES : Mathématiques, Informatique, Sciences des Données et spécialisations."
 order: 3
 ---
-
-import CourseDetail from '../../components/CourseDetail.astro';
 import TableBorder from '../../components/TableBorder.astro';
 import ButtonsBox from '../../components/ButtonsBox.astro';
 
 # Programme de la formation
+
+<ButtonsBox
+    title='Programme détaillé par année'
+    links={[
+        { href: "/programme/l1", title: "Première année" },
+        { href: "/programme/l2", title: "Deuxième année" },
+        { href: "/programme/l3", title: "Troisième année" },
+    ]}
+/>
+
+<ButtonsBox
+    title='Autres vues du programme'
+    links={[
+        { href: "/programme/par-operateur", title: "Par opérateur" },
+        { href: "/programme/par-matiere", title: "Par discipline" },
+    ]}
+/>
+
 ## Les enseignements
 
 Les enseignements sont dispensés au cœur du campus Paris-Saclay par des professeurs du lycée international de Palaiseau Paris-Saclay et des établissements d'enseignement supérieur et de recherche partenaires.
@@ -24,15 +40,6 @@ La formation est organisée en blocs, répartis sur trois ans, avec une augmenta
   - Le CPES offre deux parcours de spécialisation : un parcours Santé et un parcours Société (17 ECTS)
 - **Bloc transverse** : Anglais (12 ECTS), ouverture à la recherche, immersion et projets (9 ECTS) et les projets (14 ECTS)
 
-
-<ButtonsBox
-    title='Programme détaillé par année'
-    links={[
-        { href: "/programme/l1", title: "Première année" },
-        { href: "/programme/l2", title: "Deuxième année" },
-        { href: "/programme/l3", title: "Troisième année" },
-    ]}
-/>
 
 ### Répartition des crédits ECTS
 

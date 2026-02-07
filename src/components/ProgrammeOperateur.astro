@@ -1,0 +1,123 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/index';
+import CourseDetail from './CourseDetail.astro';
+
+import programmeFr from '../data/programme-fr.json';
+import programmeEn from '../data/programme-en.json';
+
+export interface Props {
+  partenaire: 'hec' | 'ens' | 'ups' | 'lipps' | 'ipp';
+}
+
+const { partenaire = 'hec' } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const programme = lang === 'fr' ? programmeFr : programmeEn;
+
+const partenairesConfig = {
+  'hec': {
+    nom: 'HEC Paris',
+    patterns: ['HEC Paris', 'HEC']
+  },
+  'ens': {
+    nom: 'ENS Paris-Saclay',
+    patterns: ['ENS Paris-Saclay', 'ENS', 'École Normale Supérieure']
+  },
+  'ups': {
+    nom: 'Université Paris-Saclay',
+    patterns: ['Université Paris-Saclay', 'Faculté des sciences d\'Orsay', 'Faculté des Sciences d\'Orsay', 'Faculty of Sciences of Orsay', 'Paris-Saclay University']
+  },
+  'lipps': {
+    nom: 'Lycée International de Palaiseau Paris-Saclay',
+    patterns: ['Lycée International de Palaiseau', 'Lycée international de Palaiseau', 'LIPPS']
+  },
+  'ipp': {
+    nom: 'Institut Polytechnique de Paris',
+    patterns: ['Institut Polytechnique de Paris', 'Institut Polytechnique Paris', 'Polytechnique', 'Polytechnic Institute of Paris']
+  }
+};
+
+function matchPartenaire(etablissement: string, patterns: string[]): boolean {
+  return patterns.some(pattern => etablissement.includes(pattern));
+}
+
+const config = partenairesConfig[partenaire];
+
+interface CourseWithMeta {
+  matiere: any;
+  annee: string;
+  anneeKey: string;
+}
+
+const coursesByYear: Record<string, CourseWithMeta[]> = {
+  'L1': [],
+  'L2': [],
+  'L3': []
+};
+
+for (const [anneeKey, anneeData] of Object.entries(programme)) {
+  const anneeLabel = lang === 'fr' ? `Licence ${anneeKey.slice(1)}` : `Bachelor ${anneeKey.slice(1)}`;
+  
+  for (const [blocKey, blocData] of Object.entries((anneeData as any).blocs)) {
+    for (const matiere of (blocData as any).matieres) {
+      if (matchPartenaire(matiere.etablissement, config.patterns)) {
+        coursesByYear[anneeKey].push({
+          matiere,
+          annee: anneeLabel,
+          anneeKey
+        });
+      }
+    }
+  }
+}
+
+for (const year of Object.keys(coursesByYear)) {
+  coursesByYear[year].sort((a, b) => b.matiere.ects - a.matiere.ects);
+}
+
+const totalCours = Object.values(coursesByYear).flat().length;
+const totalEcts = Object.values(coursesByYear).flat().reduce((sum, c) => sum + c.matiere.ects, 0);
+
+const anneeLabels = {
+  'L1': lang === 'fr' ? 'Première année' : 'First year',
+  'L2': lang === 'fr' ? 'Deuxième année' : 'Second year',
+  'L3': lang === 'fr' ? 'Troisième année' : 'Third year'
+};
+---
+
+<div class="programme-partenaire">
+  {['L1', 'L2', 'L3'].map(anneeKey => {
+    const courses = coursesByYear[anneeKey];
+    const yearEcts = courses.reduce((sum, c) => sum + c.matiere.ects, 0);
+    
+    if (courses.length === 0) return null;
+    
+    return (
+      <div class="mb-12">
+        <div class="flex flex-col-reverse md:flex-row gap-1 md:gap-3 md:items-center mb-3">
+            <span class="text-secondary text-xl md:text-2xl font-semibold">{anneeLabels[anneeKey as keyof typeof anneeLabels]}</span>
+            <div class="flex gap-3 items-center">
+                <span class="bg-(--annee) px-1.5 py-1 text-[15px] text-primary leading-none">L{anneeKey.slice(1)}</span>
+                <span class="bg-(--ects) px-1.5 py-1 text-[15px] text-primary leading-none">{yearEcts} ECTS</span>
+            </div>
+        </div>
+        
+        {courses.map(course => (
+          <CourseDetail 
+            matiere={course.matiere}
+            annee={course.annee}
+            lang={lang}
+            showAnneeBadge={true}
+          />
+        ))}
+      </div>
+    );
+  })}
+  
+  {totalCours === 0 && (
+    <p class="text-base-content/60 italic">
+      {lang === 'fr' ? 'Aucun cours pour cet opérateur.' : 'No courses for this operator.'}
+    </p>
+  )}
+</div>

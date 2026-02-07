@@ -1,0 +1,73 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/index';
+import ProgrammeTable from './ProgrammeTable.astro';
+import CourseDetail from './CourseDetail.astro';
+import programmeFr from '../data/programme-fr.json';
+import programmeEn from '../data/programme-en.json';
+
+export interface Props {
+  annee: 'L1' | 'L2' | 'L3';
+  showTable?: boolean;
+  showCourses?: boolean;
+}
+
+const { annee, showTable = true, showCourses = true } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const programme = lang === 'fr' ? programmeFr : programmeEn;
+const data = programme[annee];
+
+const blocConfig = lang === 'fr' ? {
+  fondamentaux: { prefix: `Licence ${annee.slice(1)}`, suffix: 'Bloc des fondamentaux' },
+  applicatifs: { prefix: `Licence ${annee.slice(1)}`, suffix: 'Bloc des domaines applicatifs et de spécialisation' },
+  transverse: { prefix: `Licence ${annee.slice(1)}`, suffix: 'Bloc transverse' }
+} : {
+  fondamentaux: { prefix: `Bachelor ${annee.slice(1)}`, suffix: 'Core fundamentals block' },
+  applicatifs: { prefix: `Bachelor ${annee.slice(1)}`, suffix: 'Applied and specialization domains block' },
+  transverse: { prefix: `Bachelor ${annee.slice(1)}`, suffix: 'Transversal block' }
+};
+
+const anneeLabel = lang === 'fr' ? `Licence ${annee.slice(1)}` : `Bachelor ${annee.slice(1)}`;
+---
+<div>
+    {showTable && (
+        <>
+            <h4 class="pt-0 mt-0">{lang === 'fr' ? 'Tableau récapitulatif de la' : 'Summary table for the'} {data.titre.toLowerCase()} {lang === 'fr' ? 'du CPES Paris-Saclay' : 'of CPES Paris-Saclay'}</h4>
+            <ProgrammeTable annee={annee} />
+        </>
+    )}
+
+    {showCourses && (
+        <h4 class="mt-12 mb-6">
+        {lang === 'fr' ? 'Détails des cours de la' : 'Course details for'} {data.titre.toLowerCase()} {lang === 'fr' ? 'du CPES Paris-Saclay' : 'of CPES Paris-Saclay'}
+        </h4>
+    )}
+    
+    {showCourses && Object.entries(data.blocs).map(([blocKey, blocData]: [string, any]) => {
+        const config = blocConfig[blocKey as keyof typeof blocConfig];
+        const sortedMatieres = [...blocData.matieres].sort((a: any, b: any) => b.ects - a.ects);
+        return (
+        <>
+            <div class="flex flex-col-reverse md:flex-row gap-1 md:gap-3 md:items-center mb-3">
+                <span class="text-secondary text-xl md:text-2xl font-semibold">{config.suffix}</span>
+                <div class="flex gap-3 items-center">
+                    <span class="bg-(--annee) px-1.5 py-1 text-[15px] text-primary leading-none">L{annee.slice(1)}</span>
+                    <span class="bg-(--ects) px-1.5 py-1 text-[15px] text-primary leading-none">{blocData.ects} ECTS</span>
+                </div>
+            </div>
+            
+            {sortedMatieres.map((matiere: any) => (
+            <CourseDetail 
+                matiere={matiere}
+                annee={anneeLabel}
+                lang={lang}
+                electif={matiere.electif}
+            />
+            ))}
+
+            {blocKey !== 'transverse' && <div class="h-6" />}
+        </>
+        );
+    })}
+</div>

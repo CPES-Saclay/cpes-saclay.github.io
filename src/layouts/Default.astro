@@ -11,6 +11,7 @@ const frontmatter = Astro.props.frontmatter || {};
 const showBreadcrumbs = frontmatter.showBreadcrumbs ?? Astro.props.showBreadcrumbs ?? false;
 const proseMode = frontmatter.proseMode ?? Astro.props.proseMode ?? false;
 const pageTitle = frontmatter.title ?? Astro.props.title ?? null;
+const breadcrumbTitle = frontmatter.breadcrumbTitle ?? Astro.props.breadcrumbTitle ?? pageTitle;
 const pageIcon = frontmatter.icon ?? Astro.props.icon ?? null;
 const pageDescription = frontmatter.description ?? Astro.props.description ?? null;
 const lang = Astro.url.pathname.startsWith('/en') ? 'en' : 'fr';
@@ -25,7 +26,7 @@ const lang = Astro.url.pathname.startsWith('/en') ? 'en' : 'fr';
       <div class="drawer-content">
         <Navbar />
         <main class="pt-32 md:pt-40 pb-14 container mx-auto px-6 py-8 min-h-[35vh]">
-          {showBreadcrumbs && <div class="mb-6"><Breadcrumbs title={pageTitle} icon={pageIcon}/></div>}
+          {showBreadcrumbs && <div class="mb-6"><Breadcrumbs title={breadcrumbTitle} icon={pageIcon}/></div>}
           <div class:list={[
             proseMode && "prose prose-invert lg:prose-xl w-full max-w-none!",
             !proseMode && "w-full"

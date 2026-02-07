@@ -1,0 +1,42 @@
+---
+layout: ../../layouts/Default.astro
+proseMode: true
+showBreadcrumbs: true
+title: "Programme pédagogique détaillé pour chaque opérateur du CPES Paris-Saclay"
+breadcrumbTitle: "Par opérateur"
+description: ""
+order: 3.1
+---
+
+import ProgrammeOperateur from '../../components/ProgrammeOperateur.astro';
+import ButtonsBox from '../../components/ButtonsBox.astro';
+
+# Programme pédagogique détaillé pour chaque opérateur du CPES Paris-Saclay
+
+Description à compléter...
+
+## Lycée International de Palaiseau Paris-Saclay
+<ProgrammeOperateur partenaire="lipps" showTitle={false} />
+
+### Université Paris-Saclay
+<ProgrammeOperateur partenaire="ups" showTitle={false} />
+
+#### HEC Paris
+<ProgrammeOperateur partenaire="hec" showTitle={false} />
+
+##### ENS Paris-Saclay
+<ProgrammeOperateur partenaire="ens" showTitle={false} />
+
+###### Institut Polytechnique de Paris
+<ProgrammeOperateur partenaire="ipp" showTitle={false} />
+
+###### Autres vues du programme
+<ButtonsBox
+    links={[
+        { href: "/programme", title: "Vue d'ensemble" },
+        { href: "/programme/par-matiere", title: "Par discipline" },
+        { href: "/programme/l1", title: "L1" },
+        { href: "/programme/l2", title: "L2" },
+        { href: "/programme/l3", title: "L3" },
+    ]}
+/>

@@ -1,0 +1,151 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/index";
+import TableBorder from "./TableBorder.astro";
+
+import programmeFr from "../data/programme-fr.json";
+import programmeEn from "../data/programme-en.json";
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  annee: "L1" | "L2" | "L3";
+}
+
+const { annee } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const programme = lang === "fr" ? programmeFr : programmeEn;
+const data = programme[annee];
+
+const labels =
+  lang === "fr"
+    ? {
+        matieres: "Matières",
+        semestre1:
+          annee === "L1"
+            ? "Semestre 1"
+            : annee === "L2"
+              ? "Semestre 3"
+              : "Semestre 5",
+        semestre2:
+          annee === "L1"
+            ? "Semestre 2"
+            : annee === "L2"
+              ? "Semestre 4"
+              : "Semestre 6",
+        heuresHebdo: "Heures hebdomadaires",
+        nombreSemaines: "Nombre de semaines",
+        totalHeures: "Total heures",
+        cours: "Cours",
+        tdTp: "TD/TP",
+        ects: "ECTS",
+        totalBloc: "Total bloc",
+        total: `Total ${annee}`,
+      }
+    : {
+        matieres: "Subjects",
+        semestre1:
+          annee === "L1"
+            ? "Semester 1"
+            : annee === "L2"
+              ? "Semester 3"
+              : "Semester 5",
+        semestre2:
+          annee === "L1"
+            ? "Semester 2"
+            : annee === "L2"
+              ? "Semester 4"
+              : "Semester 6",
+        heuresHebdo: "Weekly hours",
+        nombreSemaines: "Number of weeks",
+        totalHeures: "Total hours",
+        cours: "Lectures",
+        tdTp: "Labs/TD",
+        ects: "ECTS",
+        totalBloc: "Block total",
+        total: `Total ${annee}`,
+      };
+
+const totalGeneral = {
+  heures: Object.values(data.blocs).reduce((acc: number, bloc: any) => acc + bloc.totalHeures, 0),
+  cours: Object.values(data.blocs).reduce((acc: number, bloc: any) => acc + bloc.totalCours, 0),
+  tdTp: Object.values(data.blocs).reduce((acc: number, bloc: any) => acc + bloc.totalTdTp, 0),
+  ects: Object.values(data.blocs).reduce((acc: number, bloc: any) => acc + bloc.ects, 0),
+};
+---
+
+<TableBorder>
+  <table class="table w-full text-sm">
+    <thead>
+      <tr class="bg-secondary">
+        <th class="text-left font-bold text-primary">{labels.matieres}</th>
+        <th class="text-center font-bold text-primary">{labels.semestre1}</th>
+        <th class="text-center font-bold text-primary">{labels.semestre2}</th>
+        <th class="text-center font-bold text-primary">{labels.heuresHebdo}</th>
+        <th class="text-center font-bold text-primary">{labels.nombreSemaines}</th>
+        <th class="text-center font-bold text-primary">{labels.totalHeures}</th>
+        <th class="text-center font-bold text-primary">{labels.cours}</th>
+        <th class="text-center font-bold text-primary">{labels.tdTp}</th>
+        <th class="text-center font-bold text-primary">{labels.ects}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        Object.entries(data.blocs).map(([blocKey, bloc]: [string, any]) => {
+          const sortedMatieres = [...bloc.matieres].sort((a: any, b: any) => b.ects - a.ects);
+          return (
+          <>
+            <tr class="bg-primary font-bold">
+              <td colspan="9" class="text-secondary">
+                {bloc.nom}
+              </td>
+            </tr>
+            {sortedMatieres.map((matiere: any) => (
+              <tr>
+                <td>
+                  <a href={`#${matiere.id}`} class="text-secondary no-underline decoration-0">{matiere.intitule}</a>
+                  {matiere.electif && (
+                    <span class="text-[9px] bg-secondary/10 px-1 py-0.5 text-secondary ml-1">
+                      ÉLECTIF
+                    </span>
+                  )}
+                </td>
+                <td>{matiere.semestre1 ? <Icon name="ri:check-line" class="text-secondary min-w-fit mx-auto text-lg"/> : ''}</td>
+                <td>{matiere.semestre2 ? <Icon name="ri:check-line" class="text-secondary min-w-fit mx-auto text-lg"/> : ''}</td>
+                <td class="text-center">{matiere.heuresHebdo ?? ""}</td>
+                <td class="text-center">{matiere.nombreSemaines ?? ""}</td>
+                <td class="text-center">{matiere.totalHeures ?? ""}</td>
+                <td class="text-center">{matiere.heuresCours ?? ""}</td>
+                <td class="text-center">{matiere.heuresTdTp ?? ""}</td>
+                <td class="text-center">{matiere.ects ?? ""}</td>
+              </tr>
+            ))}
+            
+            <tr class="font-semibold text-secondary">
+              <td>{labels.totalBloc}</td>
+              <td />
+              <td />
+              <td />
+              <td />
+              <td class="text-center font-bold">{bloc.totalHeures}</td>
+              <td class="text-center font-bold">{bloc.totalCours}</td>
+              <td class="text-center font-bold">{bloc.totalTdTp}</td>
+              <td class="text-center font-bold">{bloc.ects}</td>
+            </tr>
+          </>
+        );})
+    }
+      <tr class="bg-primary text-primary-content font-bold">
+        <td>{labels.total}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="text-center">{totalGeneral.heures}</td>
+        <td class="text-center">{totalGeneral.cours}</td>
+        <td class="text-center">{totalGeneral.tdTp}</td>
+        <td class="text-center">{totalGeneral.ects}</td>
+      </tr>
+    </tbody>
+  </table>
+</TableBorder>
