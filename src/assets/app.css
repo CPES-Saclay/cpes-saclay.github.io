@@ -1,6 +1,7 @@
 @import url('https://tetunori.github.io/fluent-emoji-webfont/dist/FluentEmojiColor.css');
 @import "tailwindcss";
 
+
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: false;

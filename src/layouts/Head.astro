@@ -21,11 +21,5 @@ const pageDescription = description || "Le Cycle Pluridisciplinaire d'Études Su
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
-    <script is:inline data-astro-rerun>
-        if (localStorage.getItem("theme") === null) {
-            document.documentElement.setAttribute("data-theme", "cpes-paris-saclay-light");
-        } else {
-        document.documentElement.setAttribute("data-theme",localStorage.getItem("theme"));
-        }
-    </script>
+    <script is:inline data-astro-rerun>var t=localStorage.getItem("theme");document.documentElement.setAttribute("data-theme",t||"cpes-paris-saclay-light");</script>
 </head>

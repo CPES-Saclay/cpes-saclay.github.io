@@ -23,4 +23,5 @@ export default defineConfig({
   },
   integrations: [icon(), mdx()],
   publicDir: 'static',
+  compressHTML: true
 });
