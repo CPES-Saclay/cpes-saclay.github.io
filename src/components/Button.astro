@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    href: string;
+    variant?: 'primary' | 'secondary' | 'outline';
+    icon?: string;
+    class?: string;
+}
+
+const { href, variant = 'primary', icon, class: className } = Astro.props;
+
+const variants = {
+    primary: 'bg-secondary text-primary hover:bg-primary hover:text-secondary border border-secondary',
+    outline: 'bg-primary text-secondary hover:bg-secondary hover:text-primary border border-primary'
+};
+---
+
+<a 
+    href={href} 
+    class:list={[
+        "inline-flex items-center justify-center px-6 py-3 text-[17px] font-medium transition-all duration-200 no-underline gap-2",
+        variants[variant],
+        className
+    ]}
+>
+    {icon && <Icon name={icon} class="text-lg" />}
+    <slot />
+</a>

@@ -1,0 +1,92 @@
+---
+import Button from "./Button.astro";
+
+interface Props {
+    title: string;
+    titleAccent?: string;
+    subtitle?: string;
+    tagline?: string;
+    description?: string;
+    stats?: Array<{
+        value: string;
+        label: string;
+    }>;
+    primaryButton?: {
+        text: string;
+        href: string;
+    };
+    secondaryButton?: {
+        text: string;
+        href: string;
+    };
+}
+
+const { 
+    title,
+    titleAccent,
+    subtitle,
+    tagline,
+    description,
+    stats,
+    primaryButton, 
+    secondaryButton,
+} = Astro.props;
+---
+
+<section class="w-full bg-base-100 border-b border-secondary/10">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24 lg:py-32">
+        {subtitle && (
+            <p class="text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-secondary/40 mb-6">
+                {subtitle}
+            </p>
+        )}
+
+        <h1 class="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.95] tracking-tight text-secondary">
+            {title}
+            {titleAccent && (
+                <span class="block text-secondary/15 mt-1">{titleAccent}</span>
+            )}
+        </h1>
+
+        {tagline && (
+            <p class="mt-6 text-sm md:text-base lg:text-lg font-medium text-secondary/60 tracking-wide">
+                {tagline}
+            </p>
+        )}
+
+        {description && (
+            <p class="mt-4 text-base md:text-lg text-secondary/40 leading-relaxed max-w-2xl">
+                {description}
+            </p>
+        )}
+
+        <div class="flex flex-col sm:flex-row gap-3 mt-10">
+            {primaryButton && (
+                <Button href={primaryButton.href} variant="primary" class="text-sm md:text-base px-8 py-3 font-semibold">
+                    {primaryButton.text}
+                    <svg class="w-4 h-4 ml-2 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </Button>
+            )}
+            {secondaryButton && (
+                <Button href={secondaryButton.href} variant="secondary" class="text-sm md:text-base px-8 py-3 font-semibold bg-transparent text-secondary/50 border-secondary/15 hover:text-secondary hover:border-secondary">
+                    {secondaryButton.text}
+                </Button>
+            )}
+        </div>
+
+        {stats && stats.length > 0 && (
+            <div class="mt-14 pt-8 border-t border-secondary/8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+                    {stats.map((stat) => (
+                        <div>
+                            <div class="text-3xl md:text-4xl font-black text-secondary">{stat.value}</div>
+                            <div class="text-xs text-secondary/35 font-medium uppercase tracking-wider mt-1">{stat.label}</div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        )}
+    </div>
+</section>
