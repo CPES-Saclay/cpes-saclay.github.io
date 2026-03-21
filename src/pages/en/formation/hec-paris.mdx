@@ -6,5 +6,16 @@ title: HEC Paris
 description: HEC Paris
 order: 1
 ---
+import ProgrammeOperateur from '../../../components/ProgrammeOperateur.astro';
+import PartenaireHeader from '../../../components/PartenaireHeader.astro';
+import Button from '../../../components/Button.astro';
 
 # HEC Paris
+
+<PartenaireHeader partenaire="hec" />
+A world-leading business school, HEC Paris contributes its expertise in entrepreneurship and strategy to the CPES through elective courses and the Capstone project.
+
+<Button href="https://www.hec.edu/en" target="_blank" rel="noopener noreferrer" variant="outline" icon="ri:external-link-line">Official website of HEC Paris</Button>
+
+## Detailed educational programme for HEC Paris
+<ProgrammeOperateur partenaire="hec" showTitle={false} />

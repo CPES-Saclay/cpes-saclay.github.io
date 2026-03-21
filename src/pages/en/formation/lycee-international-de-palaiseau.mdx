@@ -6,5 +6,18 @@ title: Lycée International de Palaiseau Paris-Saclay
 description: Lycée International de Palaiseau Paris-Saclay
 order: 1
 ---
+import ProgrammeOperateur from '../../../components/ProgrammeOperateur.astro';
+import PartenaireHeader from '../../../components/PartenaireHeader.astro';
+import Button from '../../../components/Button.astro';
 
 # Lycée International de Palaiseau Paris-Saclay
+
+<PartenaireHeader partenaire="lipps" />
+
+At the heart of the Paris-Saclay campus, LIPPS delivers the core courses in mathematics, computer science, economics and the specialisation tracks.
+
+<Button href="https://www.lipsp.fr/le-post-bac-au-lipps/" target="_blank" rel="noopener noreferrer" variant="outline" icon="ri:external-link-line">Official website of LIPPS</Button>
+
+## Detailed educational programme for the Lycée International de Palaiseau
+
+<ProgrammeOperateur partenaire="lipps" showTitle={false} />

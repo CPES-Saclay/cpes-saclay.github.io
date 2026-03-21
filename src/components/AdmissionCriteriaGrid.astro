@@ -1,0 +1,139 @@
+---
+import { getLangFromUrl } from '../i18n/index';
+const lang = getLangFromUrl(Astro.url);
+
+interface Critere {
+  element: string;
+  degre: 1 | 2 | 3 | 4;
+  label: string;
+}
+
+interface Section {
+  titre: string;
+  poids: number;
+  criteres: Critere[];
+}
+
+const sections: Section[] = lang === 'en'
+  ? [
+      {
+        titre: "Academic results",
+        poids: 72,
+        criteres: [
+          { element: "Results in mathematics", degre: 4, label: "Essential" },
+          { element: "Results in the Terminal speciality (excluding mathematics)", degre: 4, label: "Essential" },
+          { element: "Results in English", degre: 2, label: "Important" },
+          { element: "Results in science subjects", degre: 2, label: "Important" },
+          { element: "Results in written and oral expression", degre: 2, label: "Important" },
+          { element: "Results in other language subjects", degre: 1, label: "Complementary" },
+        ],
+      },
+      {
+        titre: "Work methods",
+        poids: 14,
+        criteres: [
+          { element: "Work method, autonomy, capacity to invest", degre: 3, label: "Very important" },
+        ],
+      },
+      {
+        titre: "Motivation",
+        poids: 10,
+        criteres: [
+          { element: "Coherence of the project, capacity to succeed", degre: 2, label: "Important" },
+        ],
+      },
+      {
+        titre: "Engagement and activities",
+        poids: 4,
+        criteres: [
+          { element: "Activities and areas of interest", degre: 1, label: "Complementary" },
+        ],
+      },
+    ]
+  : [
+      {
+        titre: "Résultats scolaires",
+        poids: 72,
+        criteres: [
+          { element: "Résultats en mathématiques", degre: 4, label: "Essentiel" },
+          { element: "Résultats de la spécialité de Terminale (hors mathématiques)", degre: 4, label: "Essentiel" },
+          { element: "Résultats en anglais", degre: 2, label: "Important" },
+          { element: "Résultats dans les disciplines scientifiques", degre: 2, label: "Important" },
+          { element: "Résultats en expression écrite et orale", degre: 2, label: "Important" },
+          { element: "Résultats dans les autres disciplines linguistiques", degre: 1, label: "Complémentaire" },
+        ],
+      },
+      {
+        titre: "Méthodes de travail",
+        poids: 14,
+        criteres: [
+          { element: "Méthode de travail, autonomie, capacité à s'investir", degre: 3, label: "Très important" },
+        ],
+      },
+      {
+        titre: "Motivation",
+        poids: 10,
+        criteres: [
+          { element: "Cohérence du projet, capacité à réussir", degre: 2, label: "Important" },
+        ],
+      },
+      {
+        titre: "Engagement et activités",
+        poids: 4,
+        criteres: [
+          { element: "Activités et centres d'intérêt", degre: 1, label: "Complémentaire" },
+        ],
+      },
+    ];
+
+const labelDistrib = lang === 'en' ? "Criteria breakdown" : "Répartition des critères";
+---
+
+<div class="not-prose my-10 flex flex-col gap-8">
+  <div>
+    <p class="text-xs font-semibold uppercase text-secondary mb-3">
+      {labelDistrib}
+    </p>
+    <div class="flex w-full h-7 overflow-hidden border border-secondary">
+      {sections.map((s, i) => (
+        <div
+          class="flex items-center justify-center text-xs font-bold overflow-hidden"
+          style={`width: ${s.poids}%; background: var(--color-secondary); color: var(--color-primary); ${i < sections.length - 1 ? 'border-right: 1px solid var(--color-primary);' : ''}`}
+        >
+          {`${s.poids}%`}
+        </div>
+      ))}
+    </div>
+    <div class="flex flex-wrap gap-x-5 gap-y-1 mt-2">
+      {sections.map(s => (
+        <span class="text-xs text-secondary/60">
+          <span class="font-semibold text-secondary">{s.poids}%</span> {s.titre}
+        </span>
+      ))}
+    </div>
+  </div>
+
+  {sections.map(section => (
+    <div class="border border-secondary">
+      <div class="flex items-baseline gap-3 px-5 py-4 bg-secondary text-primary">
+        <span class="text-2xl font-bold tabular-nums">{section.poids}%</span>
+        <span class="font-semibold text-base">{section.titre}</span>
+      </div>
+      <div class="divide-y divide-secondary/10">
+        {section.criteres.map(c => (
+          <div class="flex flex-col md:grid md:grid-cols-[1fr_auto] gap-1 md:gap-4 px-5 py-4 md:items-center">
+            <span class="text-sm font-medium text-secondary">{c.element}</span>
+            <div class="flex flex-row md:flex-col items-center md:items-end gap-2 md:gap-1 mt-1 md:mt-0">
+              <div class="flex gap-[3px]">
+                {[1, 2, 3, 4].map(i => (
+                  <div class={`w-[10px] h-[10px] border border-secondary ${i <= c.degre ? 'bg-secondary' : ''}`} />
+                ))}
+              </div>
+              <span class="text-xs text-secondary/50 whitespace-nowrap">{c.label}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>

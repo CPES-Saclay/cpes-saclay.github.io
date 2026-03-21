@@ -1,11 +1,23 @@
 ---
 layout: ../../../layouts/Default.astro
-icon: "tabler:building"
 proseMode: true
 showBreadcrumbs: true
 title: Université Paris-Saclay
 description: Université Paris-Saclay
 order: 1
 ---
+import ProgrammeOperateur from '../../../components/ProgrammeOperateur.astro';
+import PartenaireHeader from '../../../components/PartenaireHeader.astro';
+import Button from '../../../components/Button.astro';
 
 # Université Paris-Saclay
+
+<PartenaireHeader partenaire="ups" />
+
+France's top-ranked university in the Shanghai ranking, Université Paris-Saclay contributes to courses in data science and scientific open courses.
+
+<Button href="https://www.universite-paris-saclay.fr/formation/cycle-pluridisciplinaire-detudes-superieures" target="_blank" rel="noopener noreferrer" variant="outline" icon="ri:external-link-line">Université Paris-Saclay website</Button>
+
+## Detailed educational programme for Université Paris-Saclay
+
+<ProgrammeOperateur partenaire="ups" showTitle={false} />

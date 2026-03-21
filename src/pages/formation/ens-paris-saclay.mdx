@@ -7,8 +7,16 @@ description: ENS Paris-Saclay
 order: 1
 ---
 import ProgrammeOperateur from '../../components/ProgrammeOperateur.astro';
+import PartenaireHeader from '../../components/PartenaireHeader.astro';
+import Button from '../../components/Button.astro';
 
 # ENS Paris-Saclay
 
+<PartenaireHeader partenaire="ens" />
+École d'excellence en sciences fondamentales, elle apporte son expertise en mathématiques et en statistiques.  
+
+<Button href="https://ens-paris-saclay.fr/actualite/lens-paris-saclay-partenaire-du-nouveau-cpes-paris-saclay" target="_blank" rel="noopener noreferrer" variant="outline" icon="ri:external-link-line">Site officiel de l'ENS Paris-Saclay</Button>
+
 ## Programme pédagogique détaillé pour ENS Paris-Saclay
+
 <ProgrammeOperateur partenaire="ens" showTitle={false} />

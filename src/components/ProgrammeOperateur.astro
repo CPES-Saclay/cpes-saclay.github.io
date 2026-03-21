@@ -38,7 +38,8 @@ const partenairesConfig = {
   }
 };
 
-function matchPartenaire(etablissement: string, patterns: string[]): boolean {
+function matchPartenaire(etablissement: string | null, patterns: string[]): boolean {
+  if (!etablissement) return false;
   return patterns.some(pattern => etablissement.includes(pattern));
 }
 

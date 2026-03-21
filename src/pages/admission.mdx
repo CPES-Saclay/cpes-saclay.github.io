@@ -3,10 +3,44 @@ layout: ../layouts/Default.astro
 proseMode: true
 showBreadcrumbs: true
 title: Admission
-description: A propos
+description: Modalités de candidature, critères et calendrier Parcoursup
 order: 1
 ---
 
+import Button from '../components/Button.astro';
+import AdmissionCriteriaGrid from '../components/AdmissionCriteriaGrid.astro';
+import AdmissionTimeline from '../components/AdmissionTimeline.astro';
+
 # Admission
 
-L'Admission se fait via parcoursup
+Le CPES Paris-Saclay recrute chaque année 48 élèves via la plateforme **Parcoursup**. La sélection est nationale et repose sur l'excellence du dossier scolaire, la qualité du projet de formation et la motivation du candidat.
+
+## Les attendus
+
+Être titulaire d'un bac général avec la spécialité **mathématiques** et une seconde spécialité parmi : SES, SVT, Physique-Chimie, Histoire-Géographie Géopolitique et Sciences Politiques, Sciences de l'Ingénieur ou NSI.
+
+Avoir un intérêt affirmé pour les approches pluridisciplinaires et de la curiosité pour les enjeux de société.
+
+Pour les élèves étrangers : être capable de s'exprimer et d'argumenter en français (oral et écrit).
+
+### Grille d'analyse des candidatures
+
+La formation accorde une importance particulière à la **rédaction soignée et personnelle du projet de formation**.  La participation aux cordées de la réussite est également prise en compte.
+
+<AdmissionCriteriaGrid />
+
+#### Conseils aux candidats
+
+Une rédaction soignée et personnelle du projet de formation est nécessaire et appréciée, compte tenu du caractère pluridisciplinaire du cursus et de la diversité de ses partenaires.
+
+##### Conditions de candidature pour les étudiants étrangers
+
+Si vous êtes de nationalité étrangère, non titulaire d'un baccalauréat français, non ressortissant de l’Union européenne (UE), de l'Espace économique européen (EEE), de la Confédération Suisse, de Monaco ou d'Andorre, et que vous résidez dans un pays disposant d'un espace Campus France avec procédure **Études en France** : vous devez passer par [campusfrance.org](https://www.campusfrance.org) et non par Parcoursup.
+
+###### Calendrier
+
+<AdmissionTimeline />
+
+###### Candidater
+
+<Button href="https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39487" icon="ri:external-link-line">Voir la formation sur Parcoursup</Button>

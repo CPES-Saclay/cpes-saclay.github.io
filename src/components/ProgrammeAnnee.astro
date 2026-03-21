@@ -2,6 +2,7 @@
 import { getLangFromUrl, useTranslations } from '../i18n/index';
 import ProgrammeTable from './ProgrammeTable.astro';
 import CourseDetail from './CourseDetail.astro';
+import ProgrammeECTSChart from './ProgrammeECTSChart.astro';
 import programmeFr from '../data/programme-fr.json';
 import programmeEn from '../data/programme-en.json';
 
@@ -38,9 +39,12 @@ const anneeLabel = lang === 'fr' ? `Licence ${annee.slice(1)}` : `Bachelor ${ann
         </>
     )}
 
+    <h4 class="mt-12 mb-6">{lang === 'fr' ? 'Répartition des ECTS de la' : 'ECTS distribution for the'} {data.titre.toLowerCase()} {lang === 'fr' ? 'du CPES Paris-Saclay' : 'of CPES Paris-Saclay'}</h4>
+    <ProgrammeECTSChart annee={annee} lang={lang} />
+
     {showCourses && (
         <h4 class="mt-12 mb-6">
-        {lang === 'fr' ? 'Détails des cours de la' : 'Course details for'} {data.titre.toLowerCase()} {lang === 'fr' ? 'du CPES Paris-Saclay' : 'of CPES Paris-Saclay'}
+        {lang === 'fr' ? 'Cours de la' : 'Courses for'} {data.titre.toLowerCase()} {lang === 'fr' ? 'du CPES Paris-Saclay' : 'of CPES Paris-Saclay'}
         </h4>
     )}
     

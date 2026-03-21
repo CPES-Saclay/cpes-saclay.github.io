@@ -152,8 +152,26 @@ table tr, table thead tr {
   border-bottom-color: (var(--color-secondary) / 0.1) !important;
 }
 
+.prose ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.prose ul > li {
+  padding-left: 1.25em;
+  position: relative;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.prose ul > li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+}
+
 .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-  @apply text-3xl font-bold pt-16 pb-7 my-0 text-secondary;
+  @apply text-3xl font-bold pt-8 pb-7 my-0 text-secondary;
 }
 
 .prose .intermediate-title {

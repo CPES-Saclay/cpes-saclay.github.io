@@ -1,0 +1,241 @@
+---
+import programmeFr from '../data/programme-fr.json';
+import programmeEn from '../data/programme-en.json';
+
+export interface Props {
+  annee: 'L1' | 'L2' | 'L3';
+  lang: string;
+  height?: number;
+}
+
+const { annee, lang, height = 240 } = Astro.props;
+const programme = lang === 'fr' ? programmeFr : programmeEn;
+const data = (programme as any)[annee];
+
+const PALETTE = [
+  '#0055ff', '#ff2040', '#00cc55', '#ff7700',
+  '#9900ff', '#00bbff', '#ffcc00', '#ff0088',
+  '#00ffaa', '#ff3300', '#5500ff', '#00ddbb',
+  '#ffaa00', '#dd00ff', '#33ff00',
+];
+const SPEC_COLOR = '#ff2040';
+const SPEC_LABEL = lang === 'fr' ? 'Parcours Santé ou Société' : 'Health or Society Track';
+
+const EN_TO_FR_CAT: Record<string, string> = {
+  'Mathematics':              'Mathématiques',
+  'Computer Science':         'Informatique',
+  'Economics':                'Économie',
+  'Data Science':             'Sciences des données',
+  'Health':                   'Santé',
+  'Society':                  'Société',
+  'Languages':                'Langues',
+  'Languages & Culture':      'Langues & Culture',
+  'General Education':        'Ouverture',
+  'Open Courses':             'Ouverture',
+  'Projects & Entrepreneurship': 'Projets & Entrepreneuriat',
+};
+const normCat = (cat: string) => EN_TO_FR_CAT[cat] ?? cat;
+const baseMatieres: any[] = [];
+let specEcts = 0;
+
+for (const bloc of Object.values(data.blocs) as any[]) {
+  for (const m of bloc.matieres) {
+    const cat = normCat(m.categorie ?? '');
+    if (cat === 'Société') continue;
+    if (cat === 'Santé') { specEcts += m.ects; continue; }
+    baseMatieres.push(m);
+  }
+}
+baseMatieres.sort((a, b) => b.ects - a.ects);
+
+const paletteNonSpec = PALETTE.filter(c => c !== SPEC_COLOR);
+const chartData = [
+  ...baseMatieres.map((m, i) => ({
+    name: m.intitule,
+    value: m.ects,
+    itemStyle: { color: paletteNonSpec[i % paletteNonSpec.length] },
+  })),
+  ...(specEcts > 0 ? [{ name: SPEC_LABEL, value: specEcts, itemStyle: { color: SPEC_COLOR } }] : []),
+];
+
+const legendItems = [
+  ...baseMatieres.map((m, i) => ({
+    name: m.intitule,
+    ects: m.ects,
+    color: paletteNonSpec[i % paletteNonSpec.length],
+  })),
+  ...(specEcts > 0 ? [{ name: SPEC_LABEL, ects: specEcts, color: SPEC_COLOR }] : []),
+];
+---
+
+<div class="chart-layout">
+  <div
+    id={`echarts-${annee}`}
+    class="pie-area"
+    style={`width:${height}px;height:${height}px`}
+    data-series={JSON.stringify(chartData)}
+  ></div>
+
+  <ul class="legend-list" style={`max-height:${height}px`}>
+    {legendItems.map(item => (
+      <li class="legend-item" title={`${item.name} · ${item.ects} ECTS`}>
+        <span class="legend-circle" style={`background:${item.color}`}></span>
+        <span class="legend-name">{item.name}</span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  import * as echarts from 'echarts';
+
+  const instances = new Map<string, { chart: echarts.ECharts; ro: ResizeObserver }>();
+
+  function buildOption(isDark: boolean) {
+    const gapColor = isDark ? '#0a0a0a' : '#ffffff';
+    const textColor = isDark ? '#ffffff' : '#000000';
+
+    return {
+      tooltip: {
+        trigger: 'item' as const,
+        confine: true,
+        backgroundColor: isDark ? 'rgba(10,10,10,0.96)' : 'rgba(255,255,255,0.97)',
+        borderColor: isDark ? '#ffffff' : '#000000',
+        borderWidth: 1,
+        borderRadius: 0,
+        padding: [7, 13],
+        textStyle: {
+          fontFamily: 'Montserrat, sans-serif',
+          fontSize: 12,
+          color: textColor,
+        },
+        formatter: (p: any) =>
+          `<span style="font-size:11px;opacity:.65">${p.name}</span><br/>` +
+          `<strong style="font-size:13px">${p.value} ECTS</strong>` +
+          `<span style="opacity:.4;margin-left:6px">${p.percent}%</span>`,
+      },
+      series: [
+        {
+          type: 'pie' as const,
+          center: ['50%', '50%'],
+          radius: '88%',
+          label: { show: false },
+          labelLine: { show: false },
+          itemStyle: {
+            borderWidth: 2.5,
+            borderColor: gapColor,
+          },
+          emphasis: {
+            scale: true,
+            scaleSize: 5,
+            itemStyle: { opacity: 0.8 },
+          },
+          data: [] as any[],
+        },
+      ],
+    };
+  }
+
+  function initChart(el: HTMLElement) {
+    const id = el.id;
+    const old = instances.get(id);
+    if (old) {
+      old.ro.disconnect();
+      old.chart.dispose();
+      instances.delete(id);
+    }
+
+    const series = JSON.parse(el.dataset.series || '[]');
+    const isDark = document.documentElement.getAttribute('data-theme')?.includes('dark') ?? false;
+
+    const chart = echarts.init(el);
+    const option = buildOption(isDark);
+    option.series[0].data = series;
+    chart.setOption(option);
+
+    const ro = new ResizeObserver(() => chart.resize());
+    ro.observe(el);
+    instances.set(id, { chart, ro });
+  }
+
+  function initAll() {
+    document.querySelectorAll<HTMLElement>('.pie-area[data-series]').forEach(initChart);
+  }
+
+  initAll();
+
+  new MutationObserver(initAll).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ['data-theme'],
+  });
+</script>
+
+<style>
+  .chart-layout {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .pie-area {
+    flex-shrink: 0;
+  }
+
+  .legend-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-width: 0;
+    cursor: default;
+    margin: 0;
+    padding: 0 1rem 0 0;
+  }
+
+  .legend-item::before {
+    content: none;
+  }
+
+  .legend-circle {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .legend-name {
+    font-size: 0.68rem;
+    line-height: 1.25;
+    padding: 1px 0;
+    color: var(--color-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 560px) {
+    .chart-layout {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .legend-list {
+      max-height: none !important;
+      flex-wrap: nowrap;
+      gap: 0.15rem;
+    }
+  }
+</style>

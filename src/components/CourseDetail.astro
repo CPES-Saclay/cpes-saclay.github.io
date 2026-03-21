@@ -12,10 +12,10 @@ export interface MatiereData {
   heuresCours: number | null;
   heuresTdTp: number | null;
   ects: number;
-  etablissement: string;
+  etablissement: string | null;
   entite?: string;
-  mode: string;
-  description: string[];
+  mode: string | null;
+  description: string[] | null;
   electif?: boolean;
   contenu?: {
     enseignant1?: {
@@ -70,7 +70,7 @@ const getHeuresText = (hebdo: number | null, total: number | null): string => {
 
 const generateDescriptionHtml = (matiere: MatiereData): string => {
   let html = '';
-  matiere.description.forEach(para => {
+  (matiere.description ?? []).forEach(para => {
     html += `<p>${para}</p>`;
   });
   if (matiere.contenu) {
@@ -132,17 +132,16 @@ const descriptionHtml = generateDescriptionHtml(matiere);
 ---
 
 <div id={matiere.id} class="collapse collapse-arrow rounded-box bg-secondary/5 mb-4">
-  <input type="checkbox" />
-  <div class="collapse-title flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 font-medium">
-    <span class="text-secondary">{matiere.intitule}</span>
+  <input type="checkbox" id={`chk-${matiere.id}`} />
+  <label for={`chk-${matiere.id}`} class="collapse-title flex flex-col md:flex-row md:items-center justify-between gap-1 p-4 font-medium cursor-pointer">
+    <span class="text-secondary leading-tight">{matiere.intitule}</span>
     <div class="mr-8 flex flex-wrap gap-1">
-      {showAnneeBadge && <span class="bg-(--annee) px-1.5 py-1 text-xs md:text-[15px] text-primary leading-none">L{annee.slice(-1)}</span>}
-      {matiere.entite && <span class="border-(--entite) border text-(--entite) px-1.5 py-1 text-xs md:text-[15px] leading-none">{matiere.entite}</span>}
-      <span class="border-(--etablissement) border text-(--etablissement) px-1.5 py-1 text-xs md:text-[15px] leading-none">{matiere.etablissement}</span>
-
-      <span class="bg-(--ects) px-1.5 py-1 text-xs md:text-[15px] text-primary leading-none">{matiere.ects} ECTS</span>
+      {showAnneeBadge && <span class="bg-(--annee) px-1 py-0.5 text-[10px] md:text-[14px] text-primary leading-none">L{annee.slice(-1)}</span>}
+      {matiere.entite && <span class="border-(--entite) border text-(--entite) px-1 py-0.5 text-[10px] md:text-[14px] leading-none">{matiere.entite}</span>}
+      {matiere.etablissement && <span class="border-(--etablissement) border text-(--etablissement) px-1 py-0.5 text-[10px] md:text-[14px] leading-none">{matiere.etablissement}</span>}
+      <span class="bg-(--ects) px-1 py-0.5 text-[10px] md:text-[14px] text-primary leading-none">{matiere.ects} ECTS</span>
     </div>
-  </div>
+  </label>
   
   <div class="collapse-content">
     <div class="mb-4 mt-3 pb-4 text-sm text-secondary grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -152,14 +151,16 @@ const descriptionHtml = generateDescriptionHtml(matiere);
         <span><strong class="font-medium">{t('intitule')} :</strong> {matiere.intitule}</span>
         <span><strong class="font-medium">{t('duree')} :</strong> {getDureeText(matiere.nombreSemaines)}</span>
         <span><strong class="font-medium">{t('heuresCours')} :</strong> {getHeuresText(matiere.heuresHebdo, matiere.totalHeures)}</span>
-        <span><strong class="font-medium">{t('etablissement')} :</strong> {matiere.etablissement}</span>
-        <span><strong class="font-medium">{t('modeEnseignement')} :</strong> {matiere.mode}</span>
+        {matiere.etablissement && <span><strong class="font-medium">{t('etablissement')} :</strong> {matiere.etablissement}</span>}
+        {matiere.mode && <span><strong class="font-medium">{t('modeEnseignement')} :</strong> {matiere.mode}</span>}
         <span><strong class="font-medium">{t('credits')} :</strong> {matiere.ects} ECTS</span>
     </div>
+    {descriptionHtml && (
     <div class="mb-6">
       <span><strong class="font-medium">{t('descriptionCours')}</strong></span>
       <div class="prose max-w-none text-base-content/90" set:html={descriptionHtml} />
     </div>
+    )}
   </div>
 </div>
 

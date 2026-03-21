@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  titre: string;
+  desc?: string;
+  href?: string;
+  btnLabel?: string;
+}
+
+const { titre, desc, href, btnLabel } = Astro.props;
+---
+
+<section class="py-7">
+  <div class="flex items-center justify-between gap-6 mb-2">
+    <h2 class="text-xl font-extrabold text-secondary tracking-tight">{titre}</h2>
+    {href && btnLabel && (
+      <a
+        href={href}
+        class="inline-flex items-center gap-1.5 text-xs font-semibold text-secondary no-underline border border-secondary px-3 py-2 whitespace-nowrap shrink-0 hover:opacity-60 transition-opacity"
+      >
+        {btnLabel}
+        <Icon name="ri:arrow-right-line" />
+      </a>
+    )}
+  </div>
+  {desc && <p class="text-sm text-secondary leading-snug mb-5">{desc}</p>}
+  <slot />
+</section>

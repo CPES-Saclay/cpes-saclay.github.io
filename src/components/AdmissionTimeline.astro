@@ -1,0 +1,74 @@
+---
+import { getLangFromUrl } from '../i18n/index';
+const lang = getLangFromUrl(Astro.url);
+
+const steps = lang === 'en'
+  ? [
+      { label: "Opening of applications", periode: "January" },
+      { label: "Closing of applications", periode: "March" },
+      { label: "Results",                 periode: "June" },
+      { label: "Confirmation",            periode: "July" },
+    ]
+  : [
+      { label: "Ouverture des vœux", periode: "Janvier" },
+      { label: "Clôture des vœux",   periode: "Mars" },
+      { label: "Résultats",          periode: "Juin" },
+      { label: "Confirmation",       periode: "Juillet" },
+    ];
+---
+
+<div class="not-prose my-8">
+  <div class="hidden sm:block">
+    <div class="flex items-center">
+      {steps.map((step, i) => (
+        <>
+          <div class="w-6 h-6 border-2 border-secondary bg-secondary flex items-center justify-center shrink-0">
+            <span class="text-primary text-[10px] font-bold">{i + 1}</span>
+          </div>
+          {i < steps.length - 1 && (
+            <div class="flex-1 h-px bg-secondary/25" />
+          )}
+        </>
+      ))}
+    </div>
+    <div class="flex items-start mt-3">
+      {steps.map((step, i) => {
+        const isFirst = i === 0;
+        const isLast  = i === steps.length - 1;
+        const anchor  = isFirst ? 'left-0' : isLast ? 'right-0' : 'left-1/2 -translate-x-1/2';
+        const align   = isFirst ? 'text-left' : isLast ? 'text-right' : 'text-center';
+        return (
+          <>
+            <div class="relative w-6 shrink-0 h-8">
+              <div class={`absolute whitespace-nowrap ${anchor}`}>
+                <p class={`text-xs font-semibold uppercase tracking-wider text-secondary ${align}`}>{step.periode}</p>
+                <p class={`text-xs text-secondary/55 mt-0.5 ${align}`}>{step.label}</p>
+              </div>
+            </div>
+            {!isLast && <div class="flex-1" />}
+          </>
+        );
+      })}
+    </div>
+  </div>
+
+  <div class="flex flex-col sm:hidden">
+    {steps.map((step, i) => (
+      <div class="flex gap-4">
+        <div class="flex flex-col items-center">
+          <div class="w-6 h-6 border-2 border-secondary bg-secondary flex items-center justify-center shrink-0">
+            <span class="text-primary text-[10px] font-bold">{i + 1}</span>
+          </div>
+          {i < steps.length - 1 && (
+            <div class="w-px flex-1 bg-secondary/25 my-1" />
+          )}
+        </div>
+        <div class="pb-5">
+          <p class="text-xs font-semibold uppercase tracking-wider text-secondary">{step.periode}</p>
+          <p class="text-xs text-secondary/55 mt-0.5">{step.label}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+</div>

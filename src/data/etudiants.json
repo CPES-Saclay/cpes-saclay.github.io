@@ -1,0 +1,26 @@
+[
+  {
+    "nom": "Guilhem CANIS",
+    "photo": "/assets/etudiants/guilhem.png",
+    "annee": "L1",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/",
+    "contact": "john@email.fr"
+  },
+  {
+    "nom": "Lia BISCAFÉ-PARK",
+    "photo": "/assets/etudiants/lia.jpeg",
+    "annee": "L3",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/lia-biscaf%C3%A9-park-a69a0631a/",
+    "contact": null
+  },
+  {
+    "nom": "Maxence SYLVESTRE",
+    "photo": "/assets/etudiants/maxencesylvestre.jpeg",
+    "annee": "L1",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/maxencesylvestre/",
+    "contact": null
+  }
+]

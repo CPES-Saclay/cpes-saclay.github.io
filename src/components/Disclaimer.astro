@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<p class="disclaimer">
+  <Icon name="ri:information-line" />
+  <slot />
+</p>
+
+<style>
+  .disclaimer {
+    display: flex;
+    align-items: baseline;
+    gap: 0.45rem;
+    margin: 0.75rem 0;
+    padding: 0.6rem 0.9rem;
+    background: var(--color-base-200);
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+    line-height: 1.5;
+  }
+
+  .disclaimer :global(svg) {
+    flex-shrink: 0;
+    font-size: 0.85rem;
+    position: relative;
+    top: 0.1em;
+    opacity: 0.5;
+  }
+</style>

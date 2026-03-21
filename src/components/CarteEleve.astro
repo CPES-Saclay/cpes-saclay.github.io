@@ -1,32 +1,55 @@
 ---
-const { nom = "Ulysse", photo = "/uly.jpg", annee = "L1", spe = "sante" } = Astro.props;
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  nom: string;
+  photo?: string;
+  annee: 'L1' | 'L2' | 'L3';
+  parcours: 'sante' | 'societe';
+  linkedin?: string | null;
+  contact?: string | null;
+}
+
+const { nom, photo, annee, parcours, linkedin, contact } = Astro.props;
+
+const parcoursLabel = parcours === 'sante' ? 'Santé' : 'Société';
 ---
 
-<article class="card w-full bg-base-100 border border-base-content/30 card-lg" data-annee={ annee } data-spe={ spe }>
-  <div class="card-body">
-    <div class="flex">
-        <img src={ photo } alt={ nom } class="w-14 h-14 rounded-full"/>
-        <div class="ml-2">
-            <h2 class="card-title">{ nom }</h2>
-            {
-                annee == "L3" ? <span class="badge badge-error">L3</span>
-                : annee == "L2" ? <span class="badge badge-warning">L2</span>
-                : <span class="badge bg-yellow-200 border-bg-yellow-300 text-yellow-700">L1</span>
-            }
-            {
-                spe == "sante" ? <span class="badge badge-success">🧬 Spé Santé</span>
-                : <span class="badge badge-info">📊 Spé Société</span>
-            }
-        </div>
-    </div>
-    <content>
-      <slot />
-    </content>
-    <div class="justify-end card-actions pt-2">
-      <button class="btn btn-primary">
-        <Icon name="tabler:mail" /> Contacter { nom }
-      </button>
+<article class="px-3 py-5 bg-secondary/5" data-annee={annee} data-parcours={parcours}>
+  <div class="flex items-center gap-4">
+    {photo && (
+      <img src={photo} alt={nom} class="w-16 h-16 rounded-full mb-0 object-cover shrink-0 etudiant-photo" />
+    )}
+    <div class="flex-1 min-w-0 flex flex-col gap-0">
+      <div class="flex items-center justify-between gap-2">
+        <span class="font-semibold text-[0.95rem] text-secondary m-0">{nom}</span>
+        {(linkedin || contact) && (
+          <div class="flex gap-1">
+            {linkedin && (
+              <a href={linkedin} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center text-[1.1rem] no-underline text-secondary bg-transparent border-none" aria-label="LinkedIn">
+                <Icon name="ri:linkedin-box-fill" />
+              </a>
+            )}
+            {contact && (
+              <a href={`mailto:${contact}`} class="inline-flex items-center justify-center text-[1.1rem] no-underline text-secondary bg-transparent border-none" aria-label={`Contacter ${nom}`}>
+                <Icon name="ri:mail-fill" />
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+      <div class="flex gap-[0.3rem] pt-2 flex-wrap">
+        <span class="text-sm font-semibold h-6 w-7 text-center uppercase border border-secondary text-primary bg-secondary">{annee}</span>
+        <span class="text-sm font-medium h-6 px-1.5 border border-secondary text-secondary">{parcoursLabel}</span>
+      </div>
     </div>
   </div>
 </article>
+
+
+<style>
+  .etudiant-photo {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+</style>

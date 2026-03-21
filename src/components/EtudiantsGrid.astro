@@ -1,0 +1,92 @@
+---
+import CarteEleve from './CarteEleve.astro';
+import etudiants from '../data/etudiants.json';
+---
+
+<div class="flex flex-wrap gap-6 mb-8">
+  <div class="flex items-center gap-3" role="group" aria-label="Filtrer par année">
+    <span class="text-xs font-bold uppercase text-secondary shrink-0">Année</span>
+    <div class="flex filtre-options">
+      <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="all" checked hidden /><span>Toutes</span></label>
+      <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="L1" hidden /><span>L1</span></label>
+      <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="L2" hidden /><span>L2</span></label>
+      <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="L3" hidden /><span>L3</span></label>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-3" role="group" aria-label="Filtrer par parcours">
+    <span class="text-xs font-bold uppercase text-secondary shrink-0">Parcours</span>
+    <div class="flex filtre-options">
+      <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="all" checked hidden /><span>Tous</span></label>
+      <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="sante" hidden /><span>Santé</span></label>
+      <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="societe" hidden /><span>Société</span></label>
+    </div>
+  </div>
+</div>
+
+<div class="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4" id="cartes">
+  {etudiants.map(e => (
+    <CarteEleve
+      nom={e.nom}
+      photo={e.photo ?? undefined}
+      annee={e.annee as 'L1' | 'L2' | 'L3'}
+      parcours={e.parcours as 'sante' | 'societe'}
+      linkedin={e.linkedin}
+      contact={e.contact}
+    />
+  ))}
+</div>
+
+<p class="text-sm text-secondary py-4" id="vide" hidden>Aucun étudiant ne correspond à cette sélection.</p>
+
+<style>
+  .filtre-option span {
+    display: block;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.825rem;
+    font-weight: 500;
+    border: 1px solid color-mix(in srgb, var(--color-secondary) 20%, transparent);
+    border-left-width: 0;
+    color: var(--color-secondary);
+    background: transparent;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .filtre-option:first-child span {
+    border-left-width: 1px;
+  }
+
+  .filtre-option input:checked + span {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    border-color: var(--color-secondary);
+  }
+
+  .filtre-option:has(input:checked) + .filtre-option span {
+    border-left-color: var(--color-secondary);
+  }
+</style>
+
+<script is:inline>
+  const anneeInputs    = document.querySelectorAll('input[name="annee"]');
+  const parcoursInputs = document.querySelectorAll('input[name="parcours"]');
+  const cartes = document.querySelectorAll('#cartes article');
+  const vide   = document.getElementById('vide');
+
+  function applyFilters() {
+    const annee    = document.querySelector('input[name="annee"]:checked')?.value ?? 'all';
+    const parcours = document.querySelector('input[name="parcours"]:checked')?.value ?? 'all';
+    let visible = 0;
+    cartes.forEach(card => {
+      const ok = (annee    === 'all' || card.dataset.annee    === annee)
+              && (parcours === 'all' || card.dataset.parcours === parcours);
+      card.hidden = !ok;
+      if (ok) visible++;
+    });
+    vide.hidden = visible > 0;
+  }
+
+  [...anneeInputs, ...parcoursInputs].forEach(i => i.addEventListener('change', applyFilters));
+  applyFilters();
+</script>

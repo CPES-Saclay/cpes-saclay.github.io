@@ -2,10 +2,9 @@
   "L1": {
     "titre": "First Year",
     "ects": 60,
-    "lieu": "80% Lycée International de Palaiseau / 20% Partners (Faculty of Sciences of Orsay, ENS Paris-Saclay, Polytechnic Institute of Paris)",
     "blocs": {
       "fondamentaux": {
-        "nom": "Core fundamentals block",
+        "nom": "Core Block",
         "ects": 30,
         "totalHeures": 420,
         "totalCours": 270,
@@ -13,7 +12,9 @@
         "matieres": [
           {
             "id": "mathematiques-1",
-            "intitule": "Mathematics 1",
+            "code": "FO101",
+            "intitule": "Mathematics",
+            "categorie": "Mathematics",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 8,
@@ -23,61 +24,17 @@
             "heuresTdTp": 60,
             "ects": 18,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures + Tutorials",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This mathematics course focuses on three main themes: algebra, analysis and probabilities, based on the scientific preparatory classes curriculum.",
-              "It aims to reinforce high school foundations and standardize levels between those who took the advanced math option and others, while introducing new concepts such as vector spaces, matrices and complex numbers for those who have not covered them before, numerical series and probabilities on finite universes."
-            ],
-            "contenu": {
-              "enseignant1": {
-                "titre": "First instructor",
-                "chapitres": [
-                  {
-                    "titre": "Ch1 - Fundamentals",
-                    "details": [
-                      "Mathematical logic and reasoning methods",
-                      "Membership and inclusion: notion of sets and operations on sets",
-                      "Applications and functions: equality of functions, direct image, identity and indicator function, composed restrictions and extensions, injections surjections and bijections, inverse applications"
-                    ]
-                  },
-                  {
-                    "titre": "Ch2 - Limits and continuity",
-                    "details": [
-                      "Limits at infinity and at a point of a function, sequential characterization of limits",
-                      "Notion of closure and closed intervals in R, continuity at a point and on an interval",
-                      "Sequential characterization of continuity, left and right limits and continuity",
-                      "Properties of operations on limits and order relations (bounded on a neighborhood, sign, comparison of limits, squeeze theorem, upper bound, monotone limit theorem)",
-                      "Classic theorems (IVT and its corollary, continuity on a segment, bijection theorem)"
-                    ]
-                  },
-                  { "titre": "Ch3 - Matrices" },
-                  { "titre": "Ch4 - Differentiability" },
-                  { "titre": "Ch5 - Linear systems" },
-                  { "titre": "Ch6 - Geometry in 2 and 3 dimensions" },
-                  { "titre": "Ch7 - R vector spaces" },
-                  { "titre": "Ch8 - Complex numbers" }
-                ]
-              },
-              "enseignant2": {
-                "titre": "Second instructor",
-                "chapitres": [
-                  { "titre": "Chapter 1 - Sum and product" },
-                  { "titre": "Chapter 2 - Arithmetic-geometric sequences and induction reasoning" },
-                  { "titre": "Chapter 3 - Order in R" },
-                  { "titre": "Chapter 4 - Sequence limits" },
-                  { "titre": "Chapter 5 - Numerical series" },
-                  { "titre": "Chapter 6 - Introduction to probabilities" },
-                  { "titre": "Chapter 7 - Random variables" },
-                  { "titre": "Chapter 8 - Sum of random variables" },
-                  { "titre": "Chapter 9 - Primitives and integral calculus" },
-                  { "titre": "Chapter 10 - Local comparison of functions" }
-                ]
-              }
-            }
+              "This mathematics course focuses on three main areas: algebra, analysis, and probability, and is based on the curriculum of scientific preparatory classes.",
+              "It aims to strengthen high school fundamentals while introducing new concepts such as vector spaces, linear applications, numerical series, and probability on a finite set."
+            ]
           },
           {
             "id": "informatique-1",
-            "intitule": "Computer Science 1",
+            "code": "FO102",
+            "intitule": "Computer Science",
+            "categorie": "Computer Science",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 6,
@@ -87,24 +44,27 @@
             "heuresTdTp": 90,
             "ects": 12,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures + Tutorials",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This course covers the basics of Python programming, with an approach focused on different programming paradigms, algorithmics and data structures (lists, trees, graphs).",
-              "It includes formal logic, as well as databases. Students also learn algorithm validation and testing, recursion, and proofs by induction."
+              "This course covers the basics of programming in Python, with an approach focused on functional programming, algorithms, and data structures (lists, trees, graphs).",
+              "It includes formal logic, as well as databases and formal languages (automata, regular expressions).",
+              "Students also learn validation, testing, recursion, and proofs by induction."
             ]
           }
         ]
       },
       "applicatifs": {
-        "nom": "Applied and specialization domains block",
+        "nom": "Specialization and Applied Domains Block",
         "ects": 22,
-        "totalHeures": 291,
-        "totalCours": 231,
-        "totalTdTp": 78,
+        "totalHeures": 296,
+        "totalCours": 244,
+        "totalTdTp": 52,
         "matieres": [
           {
             "id": "economie-politiques-sociales-et-sante",
-            "intitule": "Economics, social policies and health",
+            "code": "AP103",
+            "intitule": "Economics, Social Policies and Health",
+            "categorie": "Economics",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 3,
@@ -114,90 +74,79 @@
             "heuresTdTp": 0,
             "ects": 6,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "This module offers a structured overview of the main fields of economics, combining historical, theoretical and applied approaches."
-            ],
-            "contenu": {
-              "sections": [
-                {
-                  "titre": "Foundations of economics and major schools of economic thought",
-                  "details": ["Students explore the foundations of economics, the functions of the economy and the major schools of economic thought."]
-                },
-                {
-                  "titre": "Introduction to microeconomics",
-                  "details": ["Study of consumer microeconomic equilibrium and mechanisms governing individual economic choices."]
-                },
-                {
-                  "titre": "Environmental economics",
-                  "details": ["Exploration of interactions between economic activity and environment, and analysis of issues related to sustainability and resource management."]
-                },
-                {
-                  "titre": "Market functioning and public intervention",
-                  "details": ["Analysis of the role of markets in the economy and conditions for state intervention to regulate economic activity."]
-                }
-              ]
-            }
+              "This module offers a structured overview of the major fields of economics, combining historical, theoretical, and applied approaches.",
+              "Students explore the foundations of economic thought, the history and evolution of the international financial system, as well as macroeconomic and microeconomic analysis tools."
+            ]
           },
           {
             "id": "decouverte-de-lia",
-            "intitule": "Introduction to AI",
+            "code": "AP141",
+            "intitule": "Introduction to Artificial Intelligence",
+            "categorie": "Data Science",
             "semestre1": true,
             "semestre2": false,
             "heuresHebdo": 2,
             "nombreSemaines": 12,
-            "totalHeures": 24,
+            "totalHeures": 28,
             "heuresCours": 0,
-            "heuresTdTp": 24,
+            "heuresTdTp": 28,
             "ects": 2,
-            "etablissement": "Paris-Saclay University",
-            "mode": "Tutorials",
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Tutorial / Lab",
             "description": [
-              "The AI discovery course offers a fun and visual introduction to artificial intelligence - more precisely to statistical learning - through robot control.",
-              "The objective, based on practical work, is to develop intuition about learning algorithms (supervised, unsupervised, reinforcement learning), to gradually arrive at mathematical formulations.",
-              "The implementation will be an opportunity to manipulate neural networks, computer vision and language processing. The necessary Python programming basics will be introduced progressively."
+              "The introductory AI course offers a playful and visual initiation to artificial intelligence - more specifically to statistical learning - through robot control.",
+              "The aim, based on practical work, is to develop intuition about learning algorithms (supervised, unsupervised, reinforcement), gradually leading to mathematical formulations.",
+              "Implementation will provide opportunities to work with neural networks, computer vision, and language processing. The necessary basics of Python programming will be introduced along the way."
             ]
           },
           {
             "id": "introduction-a-la-science-des-donnees",
-            "intitule": "Introduction to data science",
+            "code": "AP114",
+            "intitule": "Introduction to Data Science",
+            "categorie": "Data Science",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 2,
             "nombreSemaines": 12,
-            "totalHeures": 27,
-            "heuresCours": 3,
+            "totalHeures": 28,
+            "heuresCours": 4,
             "heuresTdTp": 24,
             "ects": 2,
-            "etablissement": "Paris-Saclay University",
-            "mode": "Lectures + Tutorials",
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This introduction to data science course presents the basics of data collection, processing, analysis and visualization (including image analysis).",
+              "This introductory data science course presents the basics of data collection, processing, analysis, and visualization (including image analysis).",
               "It covers the fundamentals of descriptive statistics and probability theory, using Python.",
-              "Through an image analysis and classification project, students learn to follow the complete data project processing chain, from the problem statement to the communication of results, with a strong practical component."
+              "Through an image analysis project, students learn to follow the complete workflow of a data project, from defining the problem to communicating results, with a strong practical component."
             ]
           },
           {
             "id": "introduction-a-la-statistique",
+            "code": "AP124",
             "intitule": "Introduction to Statistics",
+            "categorie": "Data Science",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 2,
             "nombreSemaines": 12,
-            "totalHeures": 24,
+            "totalHeures": 28,
             "heuresCours": 24,
-            "heuresTdTp": 0,
+            "heuresTdTp": 4,
             "ects": 2,
             "etablissement": "ENS Paris-Saclay",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "The introduction to Statistics course presents the fundamental notions of descriptive and inferential statistics, enabling the collection, organization, analysis and interpretation of numerical data.",
-              "It introduces students to the main methods for summarizing data, evaluating relationships between variables, and performing estimates and hypothesis tests."
+              "The introductory statistics course presents the fundamental concepts of descriptive and inferential statistics, enabling the collection, organization, analysis, and interpretation of numerical data.",
+              "It introduces students to the main methods for summarizing data, evaluating relationships between variables, and performing estimations and hypothesis tests."
             ]
           },
           {
             "id": "parcours-sante",
-            "intitule": "Health Track",
+            "code": "AP102",
+            "intitule": "Health Track - Biology",
+            "categorie": "Health",
             "electif": true,
             "semestre1": true,
             "semestre2": true,
@@ -208,15 +157,17 @@
             "heuresTdTp": 0,
             "ects": 7,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "This Biology course is based on the first-year program of BCPST preparatory classes.",
-              "It focuses on the study of living things at multiple scales: molecular, cellular, organism and ecosystem. It also covers cell organization, metabolism (respiration, nutrition) and genetics (DNA structure, transmission of genetic information)."
+              "This biology course is based on the first-year curriculum of the BCPST preparatory classes.",
+              "It focuses on the study of living organisms at several levels: molecular, cellular, organism, and ecosystem. It also covers cell organization, metabolism (respiration, nutrition), as well as genetics (structure of DNA, transmission of genetic information)."
             ]
           },
           {
             "id": "parcours-societe",
-            "intitule": "Society Track",
+            "code": "AP101",
+            "intitule": "Society Track - Sociology",
+            "categorie": "Society",
             "electif": true,
             "semestre1": true,
             "semestre2": true,
@@ -227,38 +178,17 @@
             "heuresTdTp": 0,
             "ects": 7,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "Presentation of sociology, its methods and approaches for analyzing society."
-            ],
-            "contenu": {
-              "sections": [
-                {
-                  "titre": "Sociological approaches and the sociologist's work",
-                  "details": ["Presentation of sociology, its methods and approaches for analyzing society."]
-                },
-                {
-                  "titre": "Health and well-being",
-                  "details": ["Study of health and well-being issues, with a focus on risk management, illustrated by the example of health risk."]
-                },
-                {
-                  "titre": "History of sociological thought",
-                  "details": [
-                    "Durkheim: social bond, relevance of his work, extensions, individualism, sociology of work, changes in work and employment.",
-                    "Marx: class conflict, social movements and social change.",
-                    "Weber: rationality and evolution of social structure."
-                  ]
-                },
-                {
-                  "titre": "Sociology of work and social protection",
-                  "details": ["Analysis of work transformations and social protection policies, including pensions, unemployment and health."]
-                }
-              ]
-            }
+              "This course is based on the curriculum of the B/L preparatory classes and provides advanced training dedicated to the scientific analysis of contemporary societies.",
+              "It covers major topics such as the production and dynamics of social order (individuals, socialization, norms, deviance), social relations and stratification (class, gender, age, social mobility), cultures and their diversity, as well as power, political participation, and collective action. This program aims to convey the key concepts of sociology while developing students' analytical rigor and argumentation skills."
+            ]
           },
           {
-            "id": "projet-institut-polytechnique-paris",
-            "intitule": "Institut Polytechnique Paris Project",
+            "id": "data-science-exploration-visualisation",
+            "code": "AP125",
+            "intitule": "Data Science: exploration & visualisation",
+            "categorie": "Data Science",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 2,
@@ -267,27 +197,29 @@
             "heuresCours": 0,
             "heuresTdTp": 30,
             "ects": 3,
-            "etablissement": "Polytechnic Institute of Paris",
+            "etablissement": "Institut Polytechnique de Paris",
             "entite": "Telecom Paris",
-            "mode": "Tutorials",
+            "mode": "Tutorial / Lab",
             "description": [
-              "This course introduces students to fundamental methods of statistical analysis, data processing and data visualization in Python.",
-              "Practical work is based on the most widely used numerical libraries (numpy, pandas, scikit-learn) and includes a pair project applied to real datasets. More advanced students can experiment with implementing simplified deep learning models.",
-              "This module combines statistical rigor, scientific programming practice and implementation of modern machine learning tools."
+              "This course introduces students to the fundamental methods of statistical analysis and data processing in Python.",
+              "The practical sessions use the most widely used numerical libraries (numpy, pandas, scikit-learn) and include a paired project applied to real datasets. The most advanced students can experiment with implementing simplified deep learning models.",
+              "This module combines statistical rigor, scientific programming practice, and the use of modern machine learning tools."
             ]
           }
         ]
       },
       "transverse": {
-        "nom": "Transversal block",
+        "nom": "Transversal Block",
         "ects": 8,
-        "totalHeures": 108,
+        "totalHeures": 140,
         "totalCours": 108,
         "totalTdTp": 0,
         "matieres": [
           {
             "id": "anglais",
+            "code": "TR107",
             "intitule": "English",
+            "categorie": "Languages & Culture",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 2,
@@ -297,15 +229,17 @@
             "heuresTdTp": 0,
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "This course follows an action-oriented approach across 5 skills (oral and written comprehension, written expression, continuous oral expression and interaction) with work on vowel sound pronunciation.",
-              "Interaction is through written and/or audiovisual documents centered on environmental and sustainable development issues and a communication scenario within a year-long project. Intercultural communication may be addressed within the project."
+              "This course takes an action-oriented approach to the five skills (listening and reading comprehension, written expression, continuous and interactive oral expression), with work on the pronunciation of vowel sounds.",
+              "Interaction takes place through written and/or audiovisual documents focused on environmental and sustainable development issues, and a communication scenario as part of a year-long project. Intercultural communication may also be addressed within the framework of the project."
             ]
           },
           {
             "id": "culture-sport-lv2",
-            "intitule": "Culture / Sports / Second Language (LV2)",
+            "code": "TR104",
+            "intitule": "Culture / Sports / Second Foreign Language",
+            "categorie": "Languages & Culture",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 2,
@@ -314,28 +248,48 @@
             "heuresCours": 48,
             "heuresTdTp": 0,
             "ects": 4,
-            "etablissement": "Paris-Saclay University",
-            "mode": "Lectures",
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Sports, Arts or Second Modern Language",
             "description": [
-              "Physical, Sports and Artistic Activities of the student's choice or language teaching."
+              "Physical, sports, and artistic activities chosen by the student or language instruction."
             ]
           },
           {
             "id": "spoc-sens-critique",
-            "intitule": "SPOC Critical Thinking: Science in Societies",
-            "semestre1": true,
+            "code": "TR128",
+            "intitule": "SPOC Critical Thinking: Science in Society",
+            "categorie": "General Education",
+            "semestre1": false,
             "semestre2": true,
             "heuresHebdo": null,
             "nombreSemaines": null,
-            "totalHeures": null,
+            "totalHeures": 12,
             "heuresCours": null,
             "heuresTdTp": null,
             "ects": 0,
-            "etablissement": "Paris-Saclay University",
+            "etablissement": "Université Paris-Saclay",
             "mode": "Small Private Online Course (SPOC)",
             "description": [
-              "The Critical Thinking / Science in Societies SPOC is an online course designed to raise students' awareness of science-society interaction issues by developing their critical thinking.",
-              "It consists of five sessions of fun exercises based on audio, video and textual resources. Each session is linked to a theme examining a specific field of scientific knowledge, and to a question exploring a specific aspect of science/society interactions."
+              "The SPOC Critical Thinking / Science in Society is an online course designed to raise students' awareness of the issues involved in the interactions between science and society by developing their critical thinking skills.",
+              "It consists of five sessions of engaging exercises using audio, video, and textual resources. Each session is linked to a theme covering a specific field of scientific knowledge, and to a question exploring a specific aspect of the interactions between science and society."
+            ]
+          },
+          {
+            "id": "projet-solidaire-l1",
+            "intitule": "Solidarity Project",
+            "categorie": "Projects & Entrepreneurship",
+            "semestre1": false,
+            "semestre2": false,
+            "heuresHebdo": null,
+            "nombreSemaines": null,
+            "totalHeures": 20,
+            "heuresCours": 0,
+            "heuresTdTp": 0,
+            "ects": 0,
+            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "mode": "-",
+            "description": [
+              "The Solidarity Project is listed in the Year 1 summary table with 20h and 0 ECTS."
             ]
           }
         ]
@@ -348,15 +302,17 @@
     "lieu": "50% Lycée International de Palaiseau / 50% Partners",
     "blocs": {
       "fondamentaux": {
-        "nom": "Core fundamentals block",
+        "nom": "Core Block",
         "ects": 27,
-        "totalHeures": 420,
+        "totalHeures": 408,
         "totalCours": 282,
-        "totalTdTp": 138,
+        "totalTdTp": 126,
         "matieres": [
           {
             "id": "mathematiques-2",
-            "intitule": "Mathematics 2",
+            "code": "FO201",
+            "intitule": "Mathematics",
+            "categorie": "Mathematics",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 7,
@@ -366,33 +322,37 @@
             "heuresTdTp": 60,
             "ects": 14,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures + Tutorials",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This second-year course deepens algebra (vector spaces, matrices, symmetric groups), analysis (integration, sequences and series, differential equations) and probabilities.",
-              "The objective is to consolidate and extend first-year knowledge with emphasis on rigor, modeling and solving complex problems."
+              "This second-year course deepens the study of algebra (vector spaces, matrices, symmetric groups), analysis (integration, sequences and series, differential equations), and probability.",
+              "The objective is to consolidate and extend first-year knowledge by emphasizing rigor, modeling, and the resolution of complex problems."
             ]
           },
           {
             "id": "mathematiques-chaines-de-markov",
+            "code": "FO225",
             "intitule": "Mathematics - Markov Chains",
+            "categorie": "Mathematics",
             "semestre1": true,
             "semestre2": false,
-            "heuresHebdo": 4,
+            "heuresHebdo": 3,
             "nombreSemaines": 12,
-            "totalHeures": 48,
+            "totalHeures": 36,
             "heuresCours": 24,
-            "heuresTdTp": 24,
+            "heuresTdTp": 12,
             "ects": 3,
             "etablissement": "ENS Paris-Saclay",
-            "mode": "Lectures + Tutorials",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "The course covers the formal definition, construction of a Markov chain, fundamental properties such as Markovianity, absorbing states, and communication classes.",
-              "It also includes key theorems such as the ergodic theorem, convergence to a stationary distribution, and absorption times. This course prepares for in-depth analysis of chains and their various applications in probabilities, statistics and more generally in data science."
+              "The course covers the formal definition and construction of a Markov chain, fundamental properties such as the Markov property, absorbing states, and communication classes.",
+              "It also includes key theorems like the ergodic theorem, convergence to a stationary distribution, and absorption times. This course prepares students for in-depth analysis of chains and their various applications in probability, statistics, and more generally in data science."
             ]
           },
           {
             "id": "informatique-2",
-            "intitule": "Computer Science 2",
+            "code": "FO202",
+            "intitule": "Computer Science",
+            "categorie": "Computer Science",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 4,
@@ -402,15 +362,17 @@
             "heuresTdTp": 30,
             "ects": 7,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures + Tutorials",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "The second-year computer science program focuses on Python, with a deepening of programming methods, including recursion, induction and sequential and hierarchical data structures.",
-              "Students also study advanced algorithmics (exhaustive exploration, graphs, problem decomposition), formal logic and resource management such as memory and files."
+              "The second-year computer science program focuses on the Python language, with an in-depth study of programming methods, including recursion, induction, and sequential and hierarchical data structures.",
+              "Students also study advanced algorithms (exhaustive search, graphs, problem decomposition), formal logic, regular languages, as well as resource management such as memory and files."
             ]
           },
           {
             "id": "principes-interpretation-langages",
-            "intitule": "Language Interpretation Principles",
+            "code": "FO222",
+            "intitule": "Principles of Language Interpretation",
+            "categorie": "Computer Science",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 3.5,
@@ -419,33 +381,31 @@
             "heuresCours": 18,
             "heuresTdTp": 24,
             "ects": 3,
-            "etablissement": "Paris-Saclay University",
-            "mode": "Lectures + Tutorials",
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This course is an introduction to language interpretation principles."
-            ],
-            "contenu": {
-              "sections": [
-                { "titre": "Different phases of language interpretation: lexical, syntactic, semantic analysis and execution" },
-                { "titre": "Regular expressions, finite automata" },
-                { "titre": "Algebraic grammars, word recognition by CYK algorithm, LL top-down parsing" },
-                { "titre": "Abstract syntax trees" },
-                { "titre": "Simple semantic rules for scope, typing and evaluation" }
-              ]
-            }
+              "This course is an introduction to the principles of language interpretation. The following topics are covered:",
+              "The different phases of language interpretation: lexical, syntactic, and semantic analysis, and execution;",
+              "Regular expressions, finite automata;",
+              "Algebraic grammars, word recognition using the CYK algorithm, LL top-down parsing;",
+              "Abstract syntax trees;",
+              "Simple semantic rules for scope, typing, and evaluation."
+            ]
           }
         ]
       },
       "applicatifs": {
-        "nom": "Applied and specialization domains block",
+        "nom": "Specialization and Applied Domains Block",
         "ects": 24,
-        "totalHeures": 364,
+        "totalHeures": 352,
         "totalCours": 306,
-        "totalTdTp": 58,
+        "totalTdTp": 46,
         "matieres": [
           {
             "id": "economie-politiques-sociales-et-sante-l2",
-            "intitule": "Economics, social policies and health",
+            "code": "AP203",
+            "intitule": "Economics, Social Policies and Health",
+            "categorie": "Economics",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 2,
@@ -455,30 +415,17 @@
             "heuresTdTp": 0,
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures",
-            "description": [],
-            "contenu": {
-              "sections": [
-                {
-                  "titre": "Theme 1: Business, governance and organizations",
-                  "details": [
-                    "Chapter 1: The company: evolution since the early 19th century",
-                    "Chapter 2: Corporate governance and transformation of financial structures"
-                  ]
-                },
-                {
-                  "titre": "Theme 2: Economic policies",
-                  "details": [
-                    "Chapter 3: Keynesian policy modeling (IS/LM and AS/AD)",
-                    "Chapter 4: Debate on the role and necessity of public intervention"
-                  ]
-                }
-              ]
-            }
+            "mode": "Lecture",
+            "description": [
+              "Building on the first-year course, this course aims to deepen the understanding of contemporary economic mechanisms.",
+              "The program notably covers economic and financial globalization, economic imbalances, regulation, and public intervention. It also integrates theoretical and sociological foundations to analyze societal developments and prepare students for critical essays in the entrance exams of top business schools."
+            ]
           },
           {
             "id": "parcours-sante-l2",
-            "intitule": "Health Track",
+            "code": "AP202",
+            "intitule": "Health Track - Biology",
+            "categorie": "Health",
             "electif": true,
             "semestre1": true,
             "semestre2": true,
@@ -489,16 +436,18 @@
             "heuresTdTp": 0,
             "ects": 6,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "This course, based on the second-year program of BCPST preparatory classes, deepens human biology, physiology and health, also integrating genomics, development and cellular communication.",
-              "It develops understanding of major physiological processes (immunity, reproduction, nervous system, hormonal regulation), the impact of environmental factors and addresses evolution and phylogeny.",
-              "Practical work and document studies aim to reinforce analysis of major body functions related to health."
+              "This course, based on the second-year curriculum of the BCPST preparatory classes, deepens the study of human biology, physiology, and health, also integrating genomics, development, and cell communication.",
+              "It develops understanding of major physiological processes (immunity, reproduction, nervous system, hormonal regulation), the impact of environmental factors, and addresses evolution and phylogeny.",
+              "Practical work and document studies aim to strengthen the analysis of the main functions of the organism in relation to health."
             ]
           },
           {
             "id": "parcours-societe-l2",
-            "intitule": "Society Track",
+            "code": "AP230",
+            "intitule": "Society Track - Sociology",
+            "categorie": "Society",
             "electif": true,
             "semestre1": true,
             "semestre2": true,
@@ -509,36 +458,17 @@
             "heuresTdTp": 0,
             "ects": 6,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures",
-            "description": [],
-            "contenu": {
-              "sections": [
-                {
-                  "titre": "Theme 1: Socialization",
-                  "details": ["History and main theoretical approaches to socialization. Study of fundamental concepts and exploration of the diversity of agents, forms and socialization processes through concrete applications of theory."]
-                },
-                {
-                  "titre": "Theme 2: Deviance",
-                  "details": ["Examination of theoretical foundations of deviance analysis, with particular emphasis on interactionist sociology. Study of the medical world through the lens of deviance theories: patient journeys, hospital organization and history of psychiatry."]
-                },
-                {
-                  "titre": "Theme 3: Social stratification",
-                  "details": ["Analysis of the structure and evolution of contemporary society, based on an update of recent work and literature on social stratification."]
-                },
-                {
-                  "titre": "Theme 4: Social relations and inequalities",
-                  "details": ["Study of social relations and dynamics of domination in social space, antagonistic forces structuring conflicts, as well as associated issues and perspectives. Analysis of inequalities and poverty, including their spatial dimension (access to housing, trajectories, appropriation of physical space) and their health implications."]
-                },
-                {
-                  "titre": "Theme 5: Introduction to political sociology",
-                  "details": ["Introduction to the sociology of social movements"]
-                }
-              ]
-            }
+            "mode": "Lecture",
+            "description": [
+              "This second-year course deepens the study of social mechanisms by focusing on the processes of inequality construction, transformations of family structures, social and political institutions, as well as issues of globalization and social change.",
+              "Students are required to analyze case studies, apply more complex sociological theories, and refine their critical methods to prepare for competitive exams, with an emphasis on rigorous interpretation of contemporary social phenomena."
+            ]
           },
           {
             "id": "electifs-hec",
-            "intitule": "HEC Electives",
+            "code": "AP210",
+            "intitule": "HEC Elective",
+            "categorie": "Economics",
             "semestre1": true,
             "semestre2": false,
             "heuresHebdo": 3,
@@ -548,22 +478,26 @@
             "heuresTdTp": 0,
             "ects": 1,
             "etablissement": "HEC Paris",
-            "mode": "Lectures",
-            "description": ["Students must choose one course from:"],
+            "mode": "Lecture",
+            "description": [
+              "Students must choose one course from:"
+            ],
             "contenu": {
               "choix": [
                 "Politics, crises, communication",
                 "Convictions, data and emotions: how to build a sustainable business",
                 "Social issues and social policies",
                 "Labor law",
-                "Energy transition challenges",
-                "The pharmaceutical industry: its health issues, risks and opportunities"
+                "The challenges of the energy transition",
+                "The pharmaceutical industry: its health issues, risks, and opportunities"
               ]
             }
           },
           {
             "id": "sciences-des-donnees-1",
+            "code": "AP218",
             "intitule": "Data Science 1",
+            "categorie": "Data Science",
             "semestre1": true,
             "semestre2": false,
             "heuresHebdo": 2,
@@ -572,17 +506,19 @@
             "heuresCours": 0,
             "heuresTdTp": 30,
             "ects": 2,
-            "etablissement": "Polytechnic Institute of Paris",
+            "etablissement": "Institut Polytechnique de Paris",
             "entite": "École Polytechnique",
-            "mode": "Tutorials",
+            "mode": "Tutorial / Lab",
             "description": [
-              "This course deepens fundamental techniques for data processing, analysis and modeling. It introduces advanced statistical methods, basic machine learning algorithms, as well as computer tools for managing and exploiting large datasets.",
-              "Emphasis is placed on practical implementation and critical interpretation of results in various contexts."
+              "This course deepens the fundamental techniques of data processing, analysis, and modeling. It introduces advanced statistical methods, basic machine learning algorithms, as well as computer tools for managing and exploiting large datasets.",
+              "The emphasis is on practical implementation and critical interpretation of results in various contexts."
             ]
           },
           {
             "id": "sciences-des-donnees-2",
+            "code": "AP228",
             "intitule": "Data Science 2",
+            "categorie": "Data Science",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 2.33,
@@ -591,62 +527,59 @@
             "heuresCours": 24,
             "heuresTdTp": 4,
             "ects": 2,
-            "etablissement": "Polytechnic Institute of Paris",
+            "etablissement": "Institut Polytechnique de Paris",
             "entite": "École Polytechnique",
-            "mode": "Lectures + Tutorials",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This course offers an advanced approach to statistical methods, supervised and unsupervised learning techniques, and management of large databases.",
-              "It emphasizes rigorous model application, critical evaluation of results, and interpretation of complex data. Students develop strong programming skills and use specialized software to address real-world problems in various fields."
+              "This course offers an advanced approach to statistical methods, supervised and unsupervised learning techniques, and the management of large databases.",
+              "It emphasizes the rigorous application of models, critical evaluation of results, and interpretation of complex data. Students develop strong programming skills and use specialized software to address real-world problems in various fields."
             ]
           },
           {
             "id": "statistiques-2",
-            "intitule": "Statistics 2",
+            "code": "AP214",
+            "intitule": "Statistics",
+            "categorie": "Data Science",
             "semestre1": false,
             "semestre2": true,
-            "heuresHebdo": 4,
+            "heuresHebdo": 3,
             "nombreSemaines": 12,
-            "totalHeures": 48,
+            "totalHeures": 36,
             "heuresCours": 24,
-            "heuresTdTp": 24,
+            "heuresTdTp": 12,
             "ects": 3,
             "etablissement": "ENS Paris-Saclay",
-            "mode": "Lectures + Tutorials",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
               "The objective of this course is to deepen statistical inference methods, including point and interval estimation, hypothesis testing, and analysis of variance (ANOVA). It also covers simple linear models, multivariate statistics, and basic stochastic processes.",
-              "This course combines theory and practical applications using statistical software, enabling students to design, analyze and interpret quantitative studies in biology or economics."
+              "This course combines theory and practical applications using statistical software, enabling students to design, analyze, and interpret quantitative studies in biology or economics."
             ]
           },
           {
             "id": "enjeux-societaux-sante-biologie",
-            "intitule": "Health-Biology Societal Issues",
-            "semestre1": true,
-            "semestre2": false,
+            "code": "AP219",
+            "intitule": "Societal Issues in Health and Biology",
+            "categorie": "Health",
+            "semestre1": false,
+            "semestre2": true,
             "heuresHebdo": 3,
             "nombreSemaines": 10,
             "totalHeures": 30,
             "heuresCours": 30,
             "heuresTdTp": 0,
             "ects": 2,
-            "etablissement": "Paris-Saclay University",
-            "mode": "Lectures",
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Lecture",
             "description": [
-              "The objective of this course is to acquire basic knowledge in biology, enabling students to understand biological issues and the nature of data they will encounter."
-            ],
-            "contenu": {
-              "sections": [
-                { "titre": "Living things: from cell to organism" },
-                { "titre": "Unity of the living world: Replication, transcription and translation" },
-                { "titre": "Genome and sequencing" },
-                { "titre": "Gene expression regulation" },
-                { "titre": "Evolution in biology" },
-                { "titre": "Metabolism and its regulation" }
-              ]
-            }
+              "The objective of this course is to acquire basic knowledge in biology, enabling students to understand biological issues and the nature of the data they will encounter.",
+              "The following topics are covered: Life: from the cell to the organism; Unity of the living world: replication, transcription, and translation; Genome and sequencing; Regulation of gene expression; Evolution in biology; Metabolism and its regulation."
+            ]
           },
           {
             "id": "data-modeling",
-            "intitule": "Data Modeling for social science and business",
+            "code": "AP247",
+            "intitule": "Data Modeling for Social Sciences and Business",
+            "categorie": "Data Science",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 3,
@@ -656,15 +589,17 @@
             "heuresTdTp": 0,
             "ects": 1,
             "etablissement": "HEC Paris",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "This course offers a practical introduction to data modeling applied to social sciences and management, centered on advanced use of Excel.",
-              "Students learn to organize, analyze and effectively represent data, while learning the logic of formulas (HLOOKUP, VLOOKUP, SUMIF, SUMIFS) and pivot tables."
+              "This course offers a practical introduction to data modeling applied to social sciences and management, focusing on advanced use of Excel.",
+              "Students learn to efficiently organize, analyze, and represent data, while being introduced to formula logic (HLOOKUP, VLOOKUP, SUMIF, SUMIFS) and pivot tables."
             ]
           },
           {
             "id": "startup-durabilite",
-            "intitule": "Startup and sustainability",
+            "code": "AP248",
+            "intitule": "Startups and Sustainability",
+            "categorie": "Economics",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 3,
@@ -674,14 +609,16 @@
             "heuresTdTp": 0,
             "ects": 1,
             "etablissement": "HEC Paris",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
               "This course explores the links between entrepreneurship and sustainable development, analyzing how startups integrate social and environmental issues into their business models."
             ]
           },
           {
             "id": "introduction-r-rstudio",
-            "intitule": "Introduction to R and R-Studio for data analysis",
+            "code": "AP249",
+            "intitule": "Introduction to R and RStudio for Data Analysis",
+            "categorie": "Data Science",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 2,
@@ -690,17 +627,17 @@
             "heuresCours": 24,
             "heuresTdTp": 0,
             "ects": 2,
-            "etablissement": "Paris-Saclay University",
-            "mode": "Lectures",
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Lecture",
             "description": [
-              "This introduction to R and R-Studio course offers a first initiation to the R language and its working environment. Students learn to manipulate datasets, perform basic statistical analyses and produce clear, reproducible visualizations.",
-              "The course uses biology-related datasets."
+              "This introductory course to R and R-Studio offers a first introduction to the R language and its working environment. Students learn to manipulate datasets, perform basic statistical analyses, and produce clear and reproducible visualizations.",
+              "The course uses datasets related to biology."
             ]
           }
         ]
       },
       "transverse": {
-        "nom": "Transversal block",
+        "nom": "Transversal Block",
         "ects": 9,
         "totalHeures": 134,
         "totalCours": 114,
@@ -708,7 +645,9 @@
         "matieres": [
           {
             "id": "projet-solidaire",
-            "intitule": "Community Project",
+            "code": "TR206",
+            "intitule": "Solidarity Project",
+            "categorie": "Projects & Entrepreneurship",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 1,
@@ -718,14 +657,16 @@
             "heuresTdTp": 20,
             "ects": 2,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "-",
+            "mode": "Tutorial / Lab",
             "description": [
-              "The Community Project aims - over the first two years of training - to introduce students to managing projects with social, civic or associative dimensions. Through implementing concrete and sustainable actions for a community, students develop practical skills in project management, teamwork and communication."
+              "The Solidarity Project aims - over the first two years of the program - to introduce students to managing projects with a social, civic, or community dimension. Through the implementation of concrete and sustainable actions serving a community, students develop practical skills in project management, teamwork, and communication."
             ]
           },
           {
             "id": "anglais-l2",
+            "code": "TR207",
             "intitule": "English",
+            "categorie": "Languages & Culture",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 2,
@@ -735,15 +676,17 @@
             "heuresTdTp": 0,
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "This course follows an action-oriented approach across 5 skills (oral and written comprehension, written expression, continuous oral expression and interaction) with work on vowel sound pronunciation.",
-              "Interaction is through written and/or audiovisual documents centered on environmental and sustainable development issues and a communication scenario within a year-long project. Intercultural communication may be addressed within the project."
+              "This course follows an action-oriented approach across the five skills (listening and reading comprehension, written expression, continuous and interactive oral expression), with a focus on the pronunciation of vowel sounds.",
+              "Interaction takes place through written and/or audiovisual documents centered on environmental and sustainable development issues, as well as a communication scenario within a year-long project. Intercultural communication may also be addressed as part of the project."
             ]
           },
           {
             "id": "methodes-entrepreneur-hec",
-            "intitule": "HEC Entrepreneur Methods",
+            "code": "TR230",
+            "intitule": "Entrepreneurial Methods",
+            "categorie": "Projects & Entrepreneurship",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 6,
@@ -753,15 +696,17 @@
             "heuresTdTp": 0,
             "ects": 1,
             "etablissement": "HEC Paris",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
               "This course introduces students to the main methods and tools used by entrepreneurs.",
-              "Students learn to transform an idea into a viable project, structure a business model and pilot the development of an innovative startup in a competitive environment."
+              "Students learn how to turn an idea into a viable project, structure a business model, and manage the development of an innovative startup in a competitive environment."
             ]
           },
           {
             "id": "culture-sport-lv2-l2",
-            "intitule": "Culture / Sports / Second Language (LV2)",
+            "code": "TR234",
+            "intitule": "Culture / Sports / Second Foreign Language",
+            "categorie": "Languages & Culture",
             "semestre1": true,
             "semestre2": false,
             "heuresHebdo": 2,
@@ -771,14 +716,16 @@
             "heuresTdTp": 0,
             "ects": 1,
             "etablissement": "Université Paris-Saclay",
-            "mode": "Lectures and/or Tutorials",
+            "mode": "Sports, Arts or Second Modern Language",
             "description": [
-              "Physical, Sports and Artistic Activities of the student's choice or language teaching."
+              "Physical, sports, and artistic activities chosen by the student, or language instruction."
             ]
           },
           {
-            "id": "spoc-transition-energetique",
+            "id": "spoc-transition-ecologique",
+            "code": "TR232",
             "intitule": "SPOC Ecological Transition",
+            "categorie": "General Education",
             "semestre1": true,
             "semestre2": false,
             "heuresHebdo": 1,
@@ -790,8 +737,8 @@
             "etablissement": "Université Paris-Saclay",
             "mode": "Small Private Online Course (SPOC)",
             "description": [
-              "The main objective of this SPOC is to understand the mechanisms and consequences related to global warming and biodiversity erosion and their relationships with our lifestyles and consumption.",
-              "More generally, it aims to provide a transversal vision for understanding global changes, particularly in relation to the UN Sustainable Development Goals and the concept of planetary limits."
+              "The main objective of this SPOC is to help students understand the mechanisms and consequences related to global warming and biodiversity loss, as well as their connections to our lifestyles and consumption habits.",
+              "More broadly, it aims to provide a cross-disciplinary perspective for understanding global changes, particularly in relation to the United Nations' Sustainable Development Goals and the concept of planetary boundaries."
             ]
           }
         ]
@@ -804,15 +751,17 @@
     "lieu": "30% Lycée International de Palaiseau / 70% Partners",
     "blocs": {
       "fondamentaux": {
-        "nom": "Core fundamentals block",
+        "nom": "Core Block",
         "ects": 21,
         "totalHeures": 270,
-        "totalCours": 186,
-        "totalTdTp": 84,
+        "totalCours": 180,
+        "totalTdTp": 90,
         "matieres": [
           {
             "id": "mathematiques-3",
-            "intitule": "Mathematics 3",
+            "code": "FO301",
+            "intitule": "Mathematics",
+            "categorie": "Mathematics",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 4,
@@ -822,14 +771,16 @@
             "heuresTdTp": 30,
             "ects": 7,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures + Tutorials",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This third mathematics course offers an in-depth introduction to topology of normed vector spaces, duality and the study of quadratic and Hermitian forms. It also offers an introduction to differentiable optimization, as well as fundamental algebraic structures: groups, rings and fields."
+              "This third mathematics course offers an in-depth introduction to the topology of normed vector spaces, to duality, and to the study of quadratic and Hermitian forms. It also provides an introduction to differentiable optimization, as well as to fundamental algebraic structures: groups, rings, and fields."
             ]
           },
           {
             "id": "mesures-integration-probabilites",
-            "intitule": "Measures, integration, probabilities",
+            "code": "FO312",
+            "intitule": "Measures, Integration, Probability",
+            "categorie": "Mathematics",
             "semestre1": true,
             "semestre2": false,
             "heuresHebdo": 3,
@@ -839,15 +790,17 @@
             "heuresTdTp": 12,
             "ects": 3.5,
             "etablissement": "ENS Paris-Saclay",
-            "mode": "Lectures + Tutorials",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This course introduces the foundations of measure theory and integration, with particular attention to the construction of sigma-algebras, the notion of measurability and the Lebesgue integral. It explores functional spaces and their properties, in connection with modern analysis tools.",
-              "Applications to probabilities (Kolmogorov axiomatics) illustrate the scope of these concepts in modeling random phenomena and in rigorous treatment of random variables."
+              "This course introduces the foundations of measure and integration theory, with particular attention given to the construction of σ-algebras, the notion of measurability, and the Lebesgue integral. It explores functional spaces and their properties, in connection with the tools of modern analysis.",
+              "Applications to probability illustrate the scope of these concepts in modeling random phenomena and in the rigorous treatment of random variables."
             ]
           },
           {
             "id": "theorie-information-optimisation",
-            "intitule": "Information theory, optimization",
+            "code": "FO324",
+            "intitule": "Information Theory, Optimization",
+            "categorie": "Mathematics",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 3,
@@ -857,15 +810,17 @@
             "heuresTdTp": 12,
             "ects": 3.5,
             "etablissement": "ENS Paris-Saclay",
-            "mode": "Lectures + Tutorials",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This course offers an introduction to signal theory, particularly the discrete Fourier transform and the Nyquist-Shannon theorem, which allow analysis and reconstruction of digital signals.",
-              "It then addresses the foundations of discrete optimization and convex optimization, with or without constraints, emphasizing analytical and algorithmic solution methods."
+              "This course offers an introduction to signal theory, in particular to the discrete Fourier transform and the Nyquist-Shannon theorem, which make it possible to analyze and reconstruct digital signals.",
+              "It then covers the fundamentals of discrete optimization and convex optimization, with or without constraints, emphasizing analytical and algorithmic solution methods."
             ]
           },
           {
             "id": "equations-differentielles-ordinaires",
-            "intitule": "Ordinary differential equations",
+            "code": "FO315",
+            "intitule": "Ordinary Differential Equations",
+            "categorie": "Mathematics",
             "semestre1": true,
             "semestre2": false,
             "heuresHebdo": 3,
@@ -875,57 +830,45 @@
             "heuresTdTp": 12,
             "ects": 3.5,
             "etablissement": "ENS Paris-Saclay",
-            "mode": "Lectures + Tutorials",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This course covers the resolution of ordinary differential equations (ODE) of order 1 and 2, as well as first-order linear differential systems and their extension to nth-order ODEs. It addresses the Cauchy-Lipschitz theorem, qualitative analysis of solutions and offers an introduction to stochastic differential equations (SDE).",
-              "The program provides essential knowledge for understanding and manipulating the main tools of differential analysis."
+              "This course deals with the solution of ordinary differential equations (ODEs) of order 1 and 2, as well as linear differential systems of order 1 and their extension to ODEs of order n. It covers the Cauchy-Lipschitz theorem, qualitative analysis of solutions, and offers an introduction to partial differential equations (PDEs).",
+              "The program provides the essential knowledge needed to understand and use the main tools of differential analysis."
             ]
           },
           {
             "id": "bases-de-donnees",
-            "intitule": "Databases",
+            "code": "FO328",
+            "intitule": "Databases Management",
+            "categorie": "Computer Science",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 3.5,
             "nombreSemaines": 12,
             "totalHeures": 42,
-            "heuresCours": 24,
-            "heuresTdTp": 18,
+            "heuresCours": 18,
+            "heuresTdTp": 24,
             "ects": 3.5,
-            "etablissement": "Paris-Saclay University",
-            "mode": "Lectures + Tutorials",
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This course deepens the principles of using relational Database Management Systems (DBMS)."
-            ],
-            "contenu": {
-              "sections": [
-                {
-                  "titre": "Integrity and Constraints",
-                  "details": ["In-depth study of data models, updates and management of SQL and non-SQL constraints."]
-                },
-                {
-                  "titre": "Procedural Programming (PL/SQL)",
-                  "details": ["Learning PL/SQL language to automate processing through cursors, triggers and database exception and error handling."]
-                },
-                {
-                  "titre": "Web Architecture and Program Mode",
-                  "details": ["Interfacing between databases and web applications (Internet architecture, HTML, PHP). The course covers DBMS access issues in \"program mode\", level independence and data confidentiality (encapsulation)."]
-                }
-              ]
-            }
+              "This course covers the fundamental principles of Database Management Systems (DBMS), including data modeling, integrity constraints, persistence, concurrency control, and security. It also focuses on PL/SQL programming and database integration using general-purpose languages (PHP)."
+            ]
           }
         ]
       },
       "applicatifs": {
-        "nom": "Applied and specialization domains block",
+        "nom": "Specialization and Applied Domains Block",
         "ects": 21,
         "totalHeures": 300,
-        "totalCours": 288,
-        "totalTdTp": 12,
+        "totalCours": 264,
+        "totalTdTp": 36,
         "matieres": [
           {
             "id": "economie-politiques-sociales-et-sante-l3",
-            "intitule": "Economics, social policies and health",
+            "code": "AP303",
+            "intitule": "Economics, Social Policies and Health",
+            "categorie": "Economics",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 2,
@@ -935,15 +878,17 @@
             "heuresTdTp": 0,
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "This course analyzes the design and evaluation of public policies: who decides, with what objectives, and how to measure their effects using micro and macro-econometric tools. It also addresses behavioral economics applied to public policies and offers a critical assessment of interventions.",
-              "The second part explores economic and financial globalization: trade opening since the 19th century, international trade analysis, regionalization and governance, as well as the constitution and functioning of the global capital market."
+              "This course analyzes the design and evaluation of public policies: who decides, with what objectives, and how to measure their effects using micro- and macro-econometric tools. It also covers behavioral economics as applied to public policies and offers a critical assessment of interventions.",
+              "The second part explores economic and financial globalization: the opening of trade since the 19th century, analysis of international trade, regionalization and governance, as well as the formation and functioning of the global capital market."
             ]
           },
           {
             "id": "sociologie-quantitative",
-            "intitule": "Quantitative sociology",
+            "code": "AP319",
+            "intitule": "Quantitative Sociology",
+            "categorie": "Society",
             "semestre1": true,
             "semestre2": false,
             "heuresHebdo": 2,
@@ -952,39 +897,59 @@
             "heuresCours": 24,
             "heuresTdTp": 0,
             "ects": 2,
-            "etablissement": "Polytechnic Institute of Paris",
+            "etablissement": "Institut Polytechnique de Paris",
             "entite": "ENSAE",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "The objective of this course is to introduce students to the analysis of social phenomena from quantitative data. It combines sociological concepts and statistical tools to measure behaviors, inequalities and social dynamics.",
-              "Students learn to collect and process data, use analysis methods such as descriptive statistics and regression, and interpret results for concrete applications such as social mobility or inequalities."
+              "The objective of this course is to introduce students to the analysis of social phenomena using quantitative data. It combines sociological concepts and statistical tools to measure behaviors, inequalities, and social dynamics.",
+              "Students learn to collect and process data, use analysis methods such as descriptive statistics and regression, and interpret the results for practical applications such as social mobility or inequalities."
             ]
           },
           {
             "id": "sociologie-computationnelle",
-            "intitule": "Computational sociology",
+            "code": "AP347",
+            "intitule": "Introduction to Computational Sociology",
+            "categorie": "Society",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 2,
-            "nombreSemaines": 12,
-            "totalHeures": 24,
-            "heuresCours": 24,
+            "nombreSemaines": 6,
+            "totalHeures": 12,
+            "heuresCours": 12,
             "heuresTdTp": 0,
-            "ects": 2,
-            "etablissement": "Polytechnic Institute of Paris",
+            "ects": 1,
+            "etablissement": "Institut Polytechnique de Paris",
             "entite": "ENSAE",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "This computational sociology course explores quantitative and computational methods applied to the study of social phenomena. It introduces fundamental concepts of modeling, social network analysis, and processing of large databases from human interactions.",
-              "The course emphasizes the use of digital tools for collecting, analyzing and visualizing social data."
+              "This course in computational sociology explores quantitative and computational methods applied to the study of social phenomena. It introduces the fundamental concepts of modeling, social network analysis, and the processing of large databases resulting from human interactions.",
+              "The course highlights the use of digital tools for the collection, analysis, and visualization of social data."
             ]
           },
           {
-            "id": "parcours-sante-l3",
-            "intitule": "Health Track",
-            "electif": true,
+            "id": "ethique-des-donnees",
+            "intitule": "Data Ethics",
+            "categorie": "Society",
             "semestre1": true,
             "semestre2": false,
+            "heuresHebdo": 2,
+            "nombreSemaines": 6,
+            "totalHeures": 12,
+            "heuresCours": 12,
+            "heuresTdTp": 0,
+            "ects": 1,
+            "etablissement": null,
+            "mode": null,
+            "description": []
+          },
+          {
+            "id": "parcours-sante-l3",
+            "code": "AP302",
+            "intitule": "Health Track - Biology",
+            "categorie": "Health",
+            "electif": true,
+            "semestre1": true,
+            "semestre2": true,
             "heuresHebdo": 2,
             "nombreSemaines": 30,
             "totalHeures": 60,
@@ -992,34 +957,20 @@
             "heuresTdTp": 0,
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "This module offers a multidisciplinary approach to understanding the fundamental mechanisms of living things."
-            ],
-            "contenu": {
-              "sections": [
-                {
-                  "titre": "Microbiology",
-                  "details": ["Diversity of microorganisms (organization, ecology, metabolism), laboratory observation and culture."]
-                },
-                {
-                  "titre": "Immunology",
-                  "details": ["Roles of molecular and cellular actors of the immune system, vaccine strategies and antiviral principles."]
-                },
-                {
-                  "titre": "Cell differentiation",
-                  "details": ["Stem cell concept, differentiation stages and control (genetic, paracrine, hormonal), role in development and cell renewal."]
-                },
-                {
-                  "titre": "Neurosciences",
-                  "details": ["Anatomo-functional organization of the central and peripheral nervous system, complex functions (stress, motor skills), and pathologies, particularly neurodegenerative."]
-                }
-              ]
-            }
+              "This module offers a multidisciplinary approach to understanding the fundamental mechanisms of living organisms:",
+              "Microbiology: diversity of microorganisms, observation and culture in the laboratory.",
+              "Immunology: roles of the molecular and cellular actors of the immune system, vaccination strategies, and principles of antivirals.",
+              "Cellular differentiation: concept of stem cells, stages and control of differentiation, role in development and cell renewal.",
+              "Neuroscience: anatomo-functional organization of the central and peripheral nervous systems, complex functions, and pathologies, notably neurodegenerative diseases."
+            ]
           },
           {
             "id": "parcours-societe-l3",
-            "intitule": "Society Track",
+            "code": "AP301",
+            "intitule": "Society Track - Sociology",
+            "categorie": "Society",
             "electif": true,
             "semestre1": false,
             "semestre2": true,
@@ -1030,34 +981,20 @@
             "heuresTdTp": 0,
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "This module explores major contemporary issues through four key themes."
-            ],
-            "contenu": {
-              "sections": [
-                {
-                  "titre": "Sociology of risk",
-                  "details": ["Analysis of perceptions and social constructions of risk, prevention policies and behaviors in the face of uncertainty."]
-                },
-                {
-                  "titre": "Sociology of the family",
-                  "details": ["Study of family forms, role transformations and intergenerational relationships in various contexts."]
-                },
-                {
-                  "titre": "Sociology of sexuality",
-                  "details": ["Approach to norms, representations and practices, in connection with social and cultural evolutions."]
-                },
-                {
-                  "titre": "Sociology of social movements",
-                  "details": ["Understanding collective mobilizations, their actors, strategies and impact on social change."]
-                }
-              ]
-            }
+              "This module explores major contemporary issues through four key themes:",
+              "Sociology of risk: analysis of perceptions and social constructions of risk, prevention policies, and behaviors in the face of uncertainty.",
+              "Sociology of the family: study of family forms, transformations of roles, and intergenerational relationships in various contexts.",
+              "Sociology of sexuality (introduction): approach to norms, representations, and practices, in connection with social and cultural developments.",
+              "Sociology of social movements: understanding collective mobilizations, their actors, their strategies, and their impact on social change."
+            ]
           },
           {
-            "id": "analyse-donnees-sciences-sociales-biologie",
-            "intitule": "Data analysis for social sciences and biology",
+            "id": "analyse-donnees-modelisation-sciences",
+            "code": "AP348",
+            "intitule": "Data Analysis and Modeling in Sciences",
+            "categorie": "Data Science",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 3,
@@ -1067,34 +1004,55 @@
             "heuresTdTp": 12,
             "ects": 3,
             "etablissement": "ENS Paris-Saclay",
-            "mode": "Lectures + Tutorials",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This Data Analysis for Social Sciences and Biology course introduces fundamental data science methods adapted to the specific contexts of these disciplines. It covers data collection, cleaning, visualization and statistical analysis, with a focus on database exploitation and computer tools.",
-              "The course uses R and Python to develop students' analytical and programming skills."
+              "This course in Data Analysis and Modeling for Sciences introduces fundamental data analysis and modeling methods common to all scientific disciplines: basic sciences, natural sciences, humanities and social sciences. It covers data collection, visualization, and statistical analysis, as well as mathematical modeling and protocol modeling.",
+              "The course utilizes languages such as R, Python, and Julia to develop students' analytical and programming skills."
             ]
           },
           {
             "id": "recherche-clinique-epidemiologique",
-            "intitule": "Introduction to clinical and epidemiological research",
+            "code": "AP331",
+            "intitule": "Introduction to Clinical and Epidemiological Research",
+            "categorie": "Health",
             "semestre1": true,
+            "semestre2": false,
+            "heuresHebdo": 4,
+            "nombreSemaines": 12,
+            "totalHeures": 48,
+            "heuresCours": 48,
+            "heuresTdTp": 0,
+            "ects": 3,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Lecture",
+            "description": [
+              "This introduction to clinical and epidemiological research presents the essential methodological foundations for designing, conducting, and analyzing studies in public health and clinical settings. It covers the key principles of epidemiology, the different types of observational and interventional studies, as well as statistical methods suited to the analysis of clinical data.",
+              "Particular attention is given to scientific rigor, research ethics, and the critical interpretation of results, with a practical approach that encourages the application of concepts in various biomedical contexts."
+            ]
+          },
+          {
+            "id": "option-informatique",
+            "code": "AP349",
+            "intitule": "Computer Science Elective",
+            "categorie": "Computer Science",
+            "semestre1": false,
             "semestre2": true,
             "heuresHebdo": 4,
-            "nombreSemaines": 24,
-            "totalHeures": 96,
-            "heuresCours": 96,
-            "heuresTdTp": 0,
-            "ects": 6,
-            "etablissement": "Paris-Saclay University",
-            "mode": "Lectures",
+            "nombreSemaines": 12,
+            "totalHeures": 48,
+            "heuresCours": 24,
+            "heuresTdTp": 24,
+            "ects": 3,
+            "etablissement": "Université Paris-Saclay",
+            "mode": "Lecture + Tutorial / Lab",
             "description": [
-              "This introduction to clinical and epidemiological research presents the essential methodological foundations for designing, conducting and analyzing studies in public health and clinical settings. It covers key epidemiology principles, different types of observational and interventional studies, as well as statistical methods adapted to clinical data analysis.",
-              "Particular attention is paid to scientific rigor, research ethics and critical interpretation of results, with a practical approach favoring application of concepts in various biomedical contexts."
+              "One elective selected from: Fairness in AI; Biological Data Analysis; Theoretical Computer Science."
             ]
           }
         ]
       },
       "transverse": {
-        "nom": "Transversal block",
+        "nom": "Transversal Block",
         "ects": 18,
         "totalHeures": 252,
         "totalCours": 108,
@@ -1102,7 +1060,9 @@
         "matieres": [
           {
             "id": "projet-capstone",
+            "code": "TR326",
             "intitule": "Capstone Project",
+            "categorie": "Projects & Entrepreneurship",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 6,
@@ -1112,15 +1072,17 @@
             "heuresTdTp": 144,
             "ects": 12,
             "etablissement": "HEC Paris",
-            "mode": "Tutorials",
+            "mode": "Tutorial / Lab",
             "description": [
-              "The Capstone project is a synthesis project that concludes the program. It allows students to mobilize all acquired skills to solve a concrete problem in data science. This project can take the form of in-depth data analysis, development of a predictive model or design of an innovative solution to address a real issue.",
-              "Carried out over several months, it promotes autonomy, creativity and practical application of statistical methods, programming and data visualization."
+              "The Capstone project is a synthesis project that concludes the program. It enables students to mobilize all the skills they have acquired to solve a concrete problem in data science. This project may take the form of an in-depth data analysis, the development of a predictive model, or the design of an innovative solution to address a real-world challenge.",
+              "Carried out over several months, it fosters autonomy, creativity, and the practical application of statistical methods, programming, and data visualization."
             ]
           },
           {
             "id": "anglais-l3",
+            "code": "TR307",
             "intitule": "English",
+            "categorie": "Languages & Culture",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 2,
@@ -1130,15 +1092,17 @@
             "heuresTdTp": 0,
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
-            "mode": "Lectures",
+            "mode": "Lecture",
             "description": [
-              "This English course aims to consolidate and deepen the five language skills (oral and written comprehension, written expression, continuous oral expression and interaction) in an action-oriented approach. Emphasis is placed on fluency and precision, with work on pronunciation and intonation.",
-              "Activities are based on varied documents and collaborative projects around current themes such as environment, sustainable development and intercultural communication, to prepare students for professional and academic exchanges in an international context."
+              "This English course aims to consolidate and deepen the five language skills (listening and reading comprehension, written expression, continuous and interactive oral expression) through an action-oriented approach. Emphasis is placed on fluency and accuracy, with work on pronunciation and intonation.",
+              "Activities are based on a variety of documents and collaborative projects around current themes such as the environment, sustainable development, and intercultural communication, in order to prepare students for professional and academic exchanges in an international context."
             ]
           },
           {
             "id": "culture-sport-lv2-l3",
-            "intitule": "Culture / Sports / Second Language (LV2)",
+            "code": "TR304",
+            "intitule": "Culture / Sports / Second Foreign Language",
+            "categorie": "Languages & Culture",
             "semestre1": true,
             "semestre2": true,
             "heuresHebdo": 2,
@@ -1148,9 +1112,9 @@
             "heuresTdTp": 0,
             "ects": 2,
             "etablissement": "Université Paris-Saclay",
-            "mode": "Lectures and/or Tutorials",
+            "mode": "Sports, Arts or Second Modern Language",
             "description": [
-              "Physical, Sports and Artistic Activities of the student's choice or language teaching."
+              "Physical Sports and Artistic Activities chosen by the student or language instruction."
             ]
           }
         ]

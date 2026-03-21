@@ -1,0 +1,157 @@
+---
+import { getLangFromUrl } from '../i18n/index';
+import TableBorder from './TableBorder.astro';
+import programmeFr from '../data/programme-fr.json';
+import programmeEn from '../data/programme-en.json';
+
+const lang = getLangFromUrl(Astro.url);
+const programme = lang === 'fr' ? programmeFr : programmeEn;
+
+const ANNEES = ['L1', 'L2', 'L3'] as const;
+
+const CATEGORIES = [
+  { key: 'Mathématiques',             label: { fr: 'Mathématiques',               en: 'Mathematics' } },
+  { key: 'Informatique',              label: { fr: 'Informatique',                en: 'Computer Science' } },
+  { key: 'Sciences des données',      label: { fr: 'Sciences des données',        en: 'Data Science' } },
+  { key: 'Économie',                  label: { fr: 'Économie',                    en: 'Economics' } },
+  { key: 'SPEC',                      label: { fr: 'Parcours Santé ou Société',   en: 'Health or Society Track' }, note: true },
+  { key: 'Langues',                   label: { fr: 'Langues',                     en: 'Languages' } },
+  { key: 'Langues & Culture',         label: { fr: 'Langues & Culture',           en: 'Languages & Culture' } },
+  { key: 'Ouverture',                 label: { fr: 'Ouverture',                   en: 'Open Courses' } },
+  { key: 'Projets & Entrepreneuriat', label: { fr: 'Projets & Entrepreneuriat',   en: 'Projects & Entrepreneurship' } },
+];
+
+const EN_TO_FR_CAT: Record<string, string> = {
+  'Mathematics':              'Mathématiques',
+  'Computer Science':         'Informatique',
+  'Economics':                'Économie',
+  'Data Science':             'Sciences des données',
+  'Health':                   'Santé',
+  'Society':                  'Société',
+  'Languages':                'Langues',
+  'Languages & Culture':      'Langues & Culture',
+  'General Education':        'Ouverture',
+  'Open Courses':             'Ouverture',
+  'Projects & Entrepreneurship': 'Projets & Entrepreneuriat',
+};
+
+function normalizeCategorie(cat: string): string {
+  return EN_TO_FR_CAT[cat] ?? cat;
+}
+
+function displayKey(cat: string): string | null {
+  if (cat === 'Santé' || cat === 'Société') return 'SPEC';
+  return cat;
+}
+
+const ects:   Record<string, Record<string, number>> = {};
+const heures: Record<string, Record<string, number>> = {};
+
+for (const annee of ANNEES) {
+  ects[annee]   = {};
+  heures[annee] = {};
+
+  for (const blocData of Object.values((programme as any)[annee].blocs) as any[]) {
+    for (const m of blocData.matieres) {
+      const normCat = normalizeCategorie(m.categorie ?? 'Ouverture');
+      if (m.electif && normCat === 'Société') continue;
+      const dk = displayKey(normCat);
+      if (dk === null) continue;
+
+      ects[annee][dk] = (ects[annee][dk] ?? 0) + (m.ects ?? 0);
+
+      if (m.heuresHebdo) {
+        heures[annee][dk] = Math.max(heures[annee][dk] ?? 0, m.heuresHebdo);
+      }
+    }
+  }
+}
+
+const fmtEcts = (v: number | undefined) =>
+  !v ? '' : Number.isInteger(v) ? String(v) : v.toFixed(1);
+
+const fmtH = (v: number | undefined) => {
+  if (!v || v < 0.5) return '';
+  const r = Math.round(v);
+  return `${r}h`;
+};
+
+for (const annee of ANNEES) {
+  if (heures[annee]['Langues & Culture']) {
+    heures[annee]['Langues & Culture'] += 1.5;
+  }
+}
+
+const totalCat  = (key: string) => ANNEES.reduce((s, a) => s + (ects[a][key] ?? 0), 0);
+const totalYear = (annee: string) => CATEGORIES.reduce((s, c) => s + (ects[annee][c.key] ?? 0), 0);
+const grandTotal = () => ANNEES.reduce((s, a) => s + totalYear(a), 0);
+
+const t = (fr: string, en: string) => lang === 'fr' ? fr : en;
+const L = lang as 'fr' | 'en';
+---
+
+<p class="text-base font-semibold text-secondary mt-8 mb-3">{t('Répartition des crédits ECTS', 'ECTS credit distribution')}</p>
+<TableBorder>
+  <table class="table w-full text-sm">
+    <thead>
+      <tr class="bg-secondary">
+        <th class="text-left font-bold text-primary">{t('Discipline', 'Discipline')}</th>
+        {ANNEES.map(a => <th class="text-center font-bold text-primary">L{a.slice(1)}</th>)}
+        <th class="text-center font-bold text-primary">{t('Total', 'Total')}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {CATEGORIES.map(cat => {
+        const row = ANNEES.map(a => ects[a][cat.key] ?? 0);
+        const tot = totalCat(cat.key);
+        if (tot === 0) return null;
+        return (
+          <tr>
+            <td>
+              {cat.label[L]}
+              {cat.note && <span class="text-[15px] text-secondary">*</span>}
+            </td>
+            {row.map(v => <td class="text-center">{fmtEcts(v || undefined)}</td>)}
+            <td class="text-center font-semibold">{fmtEcts(tot)}</td>
+          </tr>
+        );
+      })}
+    </tbody>
+    <tfoot>
+      <tr class="font-bold text-base-content">
+        <td>{t('Total', 'Total')}</td>
+        {ANNEES.map(a => <td class="text-center">{fmtEcts(totalYear(a))}</td>)}
+        <td class="text-center">{fmtEcts(grandTotal())}</td>
+      </tr>
+    </tfoot>
+  </table>
+</TableBorder>
+<p class="text-xs text-base-content italic mt-1">* {t('Un seul parcours au choix (Santé ou Société)', 'One track only (Health or Society)')}</p>
+
+<p class="text-base font-semibold text-secondary mt-8 mb-3">{t('Volume horaire hebdomadaire', 'Weekly course hours')}</p>
+<TableBorder>
+  <table class="table w-full text-sm">
+    <thead>
+      <tr class="bg-secondary">
+        <th class="text-left font-bold text-primary">{t('Discipline', 'Discipline')}</th>
+        {ANNEES.map(a => <th class="text-center font-bold text-primary">L{a.slice(1)}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {CATEGORIES.map(cat => {
+        const row = ANNEES.map(a => heures[a][cat.key]);
+        if (row.every(v => !v || v < 0.5)) return null;
+        return (
+          <tr>
+            <td>
+              {cat.label[L]}
+              {cat.note && <span class="text-[15px] text-secondary">*</span>}
+            </td>
+            {row.map(v => <td class="text-center">{fmtH(v)}</td>)}
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</TableBorder>
+<p class="text-xs text-base-content italic mt-1">{t('Heures du cours principal par discipline et par année.', 'Hours of the main course per discipline and year.')} * {t('Un seul parcours au choix.', 'One track only.')}</p>

@@ -1,0 +1,32 @@
+---
+import { Icon } from 'astro-icon/components';
+import Partenaires from './Partenaires.astro';
+
+interface Props {
+  partenaire: 'lipps' | 'ups' | 'hec' | 'ens' | 'ipp';
+  nom: string;
+  description: string;
+  href: string;
+}
+
+const { partenaire, nom, description, href } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 py-6 border-b border-b-[color-mix(in_srgb,var(--color-secondary)_10%,transparent)] first-of-type:border-t first-of-type:border-t-[color-mix(in_srgb,var(--color-secondary)_10%,transparent)] no-underline transition-colors duration-150 cursor-pointer"
+>
+  <div class="shrink-0 sm:w-36 flex items-center justify-start sm:justify-center logo-wrapper">
+    <Partenaires partenaire={partenaire} noLink />
+  </div>
+  <div class="flex flex-1 min-w-0 items-center gap-4">
+    <div class="flex-1 min-w-0">
+      <p class="font-semibold text-base text-[color-mix(in_srgb,var(--color-secondary)_85%,transparent)] mb-1 transition-colors duration-150 group-hover:text-[var(--color-secondary)]">{nom}</p>
+      <p class="text-sm text-[color-mix(in_srgb,var(--color-secondary)_45%,transparent)] m-0 leading-normal">{description}</p>
+    </div>
+    <div class="shrink-0 text-xl text-[color-mix(in_srgb,var(--color-secondary)_25%,transparent)] transition-[transform,color] duration-200 group-hover:translate-x-1 group-hover:text-[color-mix(in_srgb,var(--color-secondary)_80%,transparent)]">
+      <Icon name="ri:arrow-right-line" />
+    </div>
+  </div>
+</a>
+

@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  href: string;
+  titre: string;
+  desc?: string;
+}
+
+const { href, titre, desc } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group flex items-center gap-3 py-2.5 no-underline border-b border-secondary/8 last:border-0"
+>
+  <Icon
+    name="ri:arrow-right-line"
+    class="text-secondary/30 text-sm flex-shrink-0 transition-all duration-150 group-hover:text-secondary group-hover:translate-x-0.5"
+  />
+  <span class="text-sm font-semibold text-secondary">{titre}</span>
+  {desc && <span class="text-xs text-secondary/50 ml-auto pl-4 text-right leading-tight hidden sm:block">{desc}</span>}
+</a>

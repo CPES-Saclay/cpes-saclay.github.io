@@ -1,0 +1,86 @@
+---
+import DefaultLayout from "../../layouts/Default.astro";
+import Partenaires from "../../components/Partenaires.astro";
+import SectionBloc from "../../components/SectionBloc.astro";
+import BlocLien from "../../components/BlocLien.astro";
+---
+
+<DefaultLayout title="Key facts" description="Everything you need to know about CPES Paris-Saclay" showBreadcrumbs={true}>
+  <h1 class="text-4xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
+    Everything you need to know about CPES Paris-Saclay
+  </h1>
+
+  <SectionBloc
+    titre="Programme"
+    desc="3 years of progressive training, two specialisation tracks, 180 ECTS."
+    href="/en/programme"
+    btnLabel="Full programme"
+  >
+    <BlocLien href="/en/programme/l1" titre="L1" desc="80% LIPPS — Fundamentals and working methods" />
+    <BlocLien href="/en/programme/l2" titre="L2" desc="50/50 — Specialisation & research projects" />
+    <BlocLien href="/en/programme/l3" titre="L3" desc="70% partners — Capstone and preparation for Master's" />
+    <BlocLien href="/en/programme/par-matiere" titre="By discipline" desc="Maths, Computer Science, Economics, Specialisation, Data Science..." />
+    <BlocLien href="/en/programme/par-operateur" titre="By institution" desc="LIPPS, ENS, IP Paris, Paris-Saclay, HEC Paris" />
+  </SectionBloc>
+
+  <SectionBloc
+    titre="Admission"
+    href="/en/admission"
+    btnLabel="Admission procedures"
+  >
+    <BlocLien href="/en/admission" titre="Criteria & selection grid" desc="Requirements, application file, study plan" />
+    <BlocLien href="/en/admission" titre="Parcoursup timeline" desc="Key dates of the procedure" />
+    <BlocLien href="/en/boursiers" titre="Scholarships" desc="Financial aid, boarding school, 40% of the cohort" />
+    <BlocLien href="/en/faq" titre="FAQ" desc="Frequently asked questions about the application" />
+  </SectionBloc>
+
+  <SectionBloc
+    titre="Partners"
+    desc="Five institutions of excellence that operate the CPES Paris-Saclay"
+    href="/en/partenaires"
+    btnLabel="All partners"
+  >
+    <div class="mb-2">
+      <Partenaires />
+    </div>
+    <BlocLien href="/en/formation/lycee-international-de-palaiseau" titre="LIPPS" desc="Lycée International de Palaiseau Paris-Saclay" />
+    <BlocLien href="/en/formation/universite-paris-saclay" titre="Université Paris-Saclay" desc="France's top university in the Shanghai ranking" />
+    <BlocLien href="/en/formation/hec-paris" titre="HEC Paris" desc="Entrepreneurship, strategy, Capstone" />
+    <BlocLien href="/en/formation/ens-paris-saclay" titre="ENS Paris-Saclay" desc="Mathematics and fundamental sciences" />
+    <BlocLien href="/en/formation/institut-polytechnique-de-paris" titre="Institut Polytechnique de Paris" desc="École Polytechnique, Télécom, ENSAE, ENSTA, École Nationale des Ponts et Chaussées" />
+  </SectionBloc>
+
+  <SectionBloc
+    titre="Academic life"
+    desc="Research, projects, conferences, laboratory visits and cultural activities."
+  >
+    <BlocLien href="/en/initiation-a-la-recherche" titre="Introduction to research" desc="Supervised projects from year 1" />
+    <BlocLien href="/en/capstone" titre="Capstone project" desc="Applied research project in year 3 supervised by HEC Paris" />
+    <BlocLien href="/en/projets-et-entrepreneuriat" titre="Projects & entrepreneurship" desc="With HEC Paris and the Paris-Saclay ecosystem" />
+    <BlocLien href="/en/conferences" titre="Conferences" desc="Researchers, professionals and invited speakers" />
+    <BlocLien href="/en/visites" titre="Visits" desc="Laboratories, companies and institutions" />
+    <BlocLien href="/en/langues-sports-ateliers" titre="Languages, sport & workshops" desc="Cultural and sports activities on campus" />
+  </SectionBloc>
+
+  <SectionBloc
+    titre="Career opportunities"
+    desc="The first cohort of the CPES will graduate in 2026, but ambitions are already numerous and diverse: selective Master's programmes in France and internationally, engineering schools, business schools, research..."
+    href="/en/debouches"
+    btnLabel="See career opportunities"
+  />
+
+  <SectionBloc
+    titre="Our students"
+    desc="Portraits and feedback from CPES students."
+    href="/en/nos-etudiants"
+    btnLabel="See the portraits"
+  />
+
+  <!-- RESOURCES -->
+  <SectionBloc titre="Documents and contact">
+    <BlocLien href="/en/documents-officiels" titre="Official documents" desc="Booklets, regulations and administrative resources" />
+    <BlocLien href="/en/faq" titre="FAQ" desc="Answers to frequently asked questions" />
+    <BlocLien href="/en/contact" titre="Contact" desc="Contact us for any question or information request" />
+  </SectionBloc>
+
+</DefaultLayout>

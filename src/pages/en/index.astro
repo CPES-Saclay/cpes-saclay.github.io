@@ -1,60 +1,235 @@
 ---
 import DefaultLayout from "../../layouts/Default.astro";
-import Hero1 from "../../components/Hero1.astro";
 import Partenaires from "../../components/Partenaires.astro";
-import ButtonsBox from "../../components/ButtonsBox.astro";
+import Temoignage from "../../components/Temoignage.astro";
+import Button from "../../components/Button.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <DefaultLayout>
-    <div class="prose prose-lg max-w-none mx-4 md:mx-16 my-10">
-        <h1>CPES Paris-Saclay</h1>
-        <p class="text-2xl font-bold">Data Science, Society and Health</p>
-
-        <ButtonsBox
-            title='Detailed program by year'
-            links={[
-                { href: "/en/programme/l1", title: "First year" },
-                { href: "/en/programme/l2", title: "Second year" },
-                { href: "/en/programme/l3", title: "Third year" },
-            ]}
-        />
-
-        <ButtonsBox
-            title='Other views of the program'
-            links={[
-                { href: "/en/programme/par-operateur", title: "By operator" },
-                { href: "/en/programme/par-matiere", title: "By discipline" },
-            ]}
-        />
-
-        <h2>An excellence program at the heart of the Saclay plateau</h2>
-
-        <p>The Multidisciplinary Cycle of Higher Education (CPES) is a high-level 3-year program, delivering a diploma equivalent to a <strong>Bachelor's degree</strong> (Licence).</p>
-
-        <p>Launched in September 2023 at the Lycée International de Palaiseau Paris-Saclay (LIPPS), this curriculum is the result of an unprecedented collaboration between five prestigious institutions:</p>
-        <ul>
-            <li><strong>Lycée International de Palaiseau Paris-Saclay (LIPPS)</strong></li>
-            <li><strong>Université Paris-Saclay</strong></li>
-            <li><strong>Institut Polytechnique de Paris</strong></li>
-            <li><strong>HEC Paris</strong></li>
-            <li><strong>ENS Paris-Saclay</strong></li>
-        </ul>
-
-        <h2>Why choose this CPES?</h2>
-
-        <p>It's a future-oriented program, designed to meet the growing needs for data science expertise across all sectors. It offers:</p>
-        <ul>
-            <li><strong>A hybrid pedagogy</strong>: The best of preparatory classes (personalized support) and university/grandes écoles (research, projects).</li>
-            <li><strong>Research-based training</strong>: From the 1st year, with lab visits, conferences and concrete projects.</li>
-            <li><strong>Multidisciplinary openness</strong>: Mathematics, Computer Science, but also Economics, Sociology or Biology depending on your track.</li>
-        </ul>
-
-        <div class="flex flex-col md:flex-row gap-4 my-8">
-            <a href="a-propos" class="btn btn-primary max-sm:w-full">Learn more about the program</a>
-            <a href="contact" class="btn btn-secondary max-sm:w-full">Contact us</a>
-        </div>
+  <section class="py-14 pb-16">
+    <h1 class="text-4xl md:text-6xl font-black text-secondary leading-[1.05] tracking-[-0.02em] mb-2">
+      CPES Paris-Saclay
+    </h1>
+    <p class="text-base font-semibold text-secondary mb-5">Data Science, Society and Health</p>
+    <div class="grid grid-cols-[auto_auto_auto_auto] w-fit mb-8">
+      <div class="flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b border-r border-secondary/20">
+        <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">3 years</span>
+        <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">of study</span>
+      </div>
+      <div class="flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b border-r border-secondary/20">
+        <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">180</span>
+        <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">ECTS credits</span>
+      </div>
+      <div class="flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b sm:border-r border-secondary/20">
+        <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">5</span>
+        <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">institutions</span>
+      </div>
+      <div class="hidden sm:flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b border-secondary/20">
+        <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">48</span>
+        <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">students/cohort</span>
+      </div>
     </div>
-    
-    <Hero1 />
+    <p class="text-base text-secondary leading-[1.75] max-w-[90ch] mb-8">
+      A multidisciplinary and interdisciplinary 3-year degree built in partnership between
+      ENS Paris-Saclay, Université Paris-Saclay, Institut Polytechnique de Paris,
+      HEC Paris and the Lycée International de Palaiseau Paris-Saclay. The CPES trains students with
+      interdisciplinary profiles mastering data science and AI (mathematics, computer science)
+      while applying them to health or society depending on their chosen track.
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <Button href="/en/programme" variant="primary" iconPosition="right" class="mb-0! mt-0!">Programme</Button>
+      <Button href="/en/partenaires" variant="outline" iconPosition="right" class="mb-0! mt-0!">Partners</Button>
+      <Button href="/en/a-propos" variant="outline" iconPosition="right" class="mb-0! mt-0!">Key facts</Button>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">Two specialization tracks from year one</h2>
+    <p class="text-[0.9375rem] text-secondary leading-[1.75] mb-4">
+      The CPES aims to provide students with solid proficiency in data science and
+      artificial intelligence, grounded in mathematics and computer science, together with
+      the ability to understand their implications in two fields of application of their choice.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+      <div class="flex flex-col gap-3">
+        <div class="text-[1.75rem] text-secondary"><Icon name="ri:heart-pulse-line" /></div>
+        <h3 class="text-base font-bold text-secondary m-0">Health</h3>
+        <p class="text-[0.875rem] text-secondary leading-[1.6] m-0">
+          Application of data science in the field of health: genomics,
+          epidemiology, bioinformatics and ethical implications of biomedical data.
+        </p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <div class="text-[1.75rem] text-secondary"><Icon name="ri:scales-line" /></div>
+        <h3 class="text-base font-bold text-secondary m-0">Society</h3>
+        <p class="text-[0.875rem] text-secondary leading-[1.6] m-0">
+          Application of data science in economics and
+          sociology: social stratification, public policy and the humanities.
+        </p>
+      </div>
+    </div>
+    <div class="mt-8">
+      <Button href="/en/programme" icon="ri:arrow-right-line" iconPosition="right" class="mb-0">See the full programme</Button>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">A progressive 3-year structure</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 mt-8">
+      <div class="flex flex-col gap-2 border-b border-secondary/20 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 py-6 sm:py-0 sm:pr-8">
+        <span class="text-[0.7rem] font-bold tracking-[0.12em] uppercase text-secondary">Year 1 (L1)</span>
+        <div class="flex items-baseline gap-[0.4rem] my-1">
+          <span class="text-[1.75rem] font-black leading-none text-secondary">80%</span>
+          <span class="text-[1.25rem] text-secondary opacity-25">/</span>
+          <span class="text-[1.75rem] font-black leading-none text-secondary opacity-25">20%</span>
+        </div>
+        <p class="text-[0.75rem] font-semibold text-secondary m-0">LIPPS / Partners</p>
+        <p class="text-[0.85rem] text-secondary leading-[1.55] m-0 flex-1">Fundamentals and working methods. Introduction to partner institutions.</p>
+        <a href="/en/programme/l1" class="inline-flex items-center gap-[0.3rem] text-[0.8rem] font-semibold text-secondary no-underline mt-auto hover:opacity-60 transition-opacity">Year 1 programme <Icon name="ri:arrow-right-line" /></a>
+      </div>
+      <div class="flex flex-col gap-2 border-b border-secondary/20 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 py-6 sm:py-0 sm:px-8">
+        <span class="text-[0.7rem] font-bold tracking-[0.12em] uppercase text-secondary">Year 2 (L2)</span>
+        <div class="flex items-baseline gap-[0.4rem] my-1">
+          <span class="text-[1.75rem] font-black leading-none text-secondary">50%</span>
+          <span class="text-[1.25rem] text-secondary">/</span>
+          <span class="text-[1.75rem] font-black leading-none text-secondary">50%</span>
+        </div>
+        <p class="text-[0.75rem] font-semibold text-secondary m-0">LIPPS / Partners</p>
+        <p class="text-[0.85rem] text-secondary leading-[1.55] m-0 flex-1">Start of specialization, research projects and progressive immersion.</p>
+        <a href="/en/programme/l2" class="inline-flex items-center gap-[0.3rem] text-[0.8rem] font-semibold text-secondary no-underline mt-auto hover:opacity-60 transition-opacity">Year 2 programme <Icon name="ri:arrow-right-line" /></a>
+      </div>
+      <div class="flex flex-col gap-2 py-6 sm:py-0 sm:pl-8">
+        <span class="text-[0.7rem] font-bold tracking-[0.12em] uppercase text-secondary">Year 3 (L3)</span>
+        <div class="flex items-baseline gap-[0.4rem] my-1">
+          <span class="text-[1.75rem] font-black leading-none text-secondary opacity-25">20%</span>
+          <span class="text-[1.25rem] text-secondary opacity-25">/</span>
+          <span class="text-[1.75rem] font-black leading-none text-secondary">80%</span>
+        </div>
+        <p class="text-[0.75rem] font-semibold text-secondary m-0">LIPPS / Partners</p>
+        <p class="text-[0.85rem] text-secondary leading-[1.55] m-0 flex-1">Autonomy, final Capstone project and preparation for Master's programmes.</p>
+        <a href="/en/programme/l3" class="inline-flex items-center gap-[0.3rem] text-[0.8rem] font-semibold text-secondary no-underline mt-auto hover:opacity-60 transition-opacity">Year 3 programme <Icon name="ri:arrow-right-line" /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">Run by five institutions</h2>
     <Partenaires />
+    <Button href="/en/partenaires" icon="ri:arrow-right-line" iconPosition="right" class="mb-0 mt-4">Discover the partners</Button>
+  </section>
+
+  <section class="py-16">
+    <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">A unique programme</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+      <div class="flex flex-col gap-3">
+        <div class="text-[1.5rem] text-secondary"><Icon name="ri:flask-line" /></div>
+        <h3 class="text-[0.95rem] font-bold text-secondary m-0">Research-based training</h3>
+        <p class="text-[0.875rem] text-secondary leading-[1.6] m-0">From year 1: laboratory visits, researcher conferences and supervised academic projects.</p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <div class="text-[1.5rem] text-secondary"><Icon name="ri:building-2-line" /></div>
+        <h3 class="text-[0.95rem] font-bold text-secondary m-0">Five institutions</h3>
+        <p class="text-[0.875rem] text-secondary leading-[1.6] m-0">Excellence institutions, complementary in their expertise and training environments.</p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <div class="text-[1.5rem] text-secondary"><Icon name="ri:route-line" /></div>
+        <h3 class="text-[0.95rem] font-bold text-secondary m-0">Two tracks</h3>
+        <p class="text-[0.875rem] text-secondary leading-[1.6] m-0">Health or Society: each student builds their interdisciplinary profile from the first year.</p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <div class="text-[1.5rem] text-secondary"><Icon name="ri:graduation-cap-line" /></div>
+        <h3 class="text-[0.95rem] font-bold text-secondary m-0">Ambitious career prospects</h3>
+        <p class="text-[0.875rem] text-secondary leading-[1.6] m-0">Master's programmes, grandes écoles, doctorates: graduates go on to the best post-bachelor pathways.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">Campus & boarding school</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+      <div class="flex flex-col gap-[0.6rem]">
+        <div class="text-[1.5rem] text-secondary"><Icon name="ri:home-line" /></div>
+        <h3 class="text-[0.95rem] font-bold text-secondary m-0">LIPPS boarding school</h3>
+        <p class="text-[0.875rem] text-secondary leading-[1.6] m-0">Approximately <strong>90 places</strong> reserved for CPES students, open at weekends.</p>
+      </div>
+      <div class="flex flex-col gap-[0.6rem]">
+        <div class="text-[1.5rem] text-secondary"><Icon name="ri:team-line" /></div>
+        <h3 class="text-[0.95rem] font-bold text-secondary m-0">Social diversity</h3>
+        <p class="text-[0.875rem] text-secondary leading-[1.6] m-0">The CPES targets <strong>40%</strong> scholarship recipients. Personalised support for all profiles.</p>
+        <a href="/en/boursiers" class="inline-flex items-center gap-[0.3rem] text-[0.8rem] font-semibold text-secondary no-underline mt-auto hover:opacity-60 transition-opacity">Scholarship information <Icon name="ri:arrow-right-line" /></a>
+      </div>
+      <div class="flex flex-col gap-[0.6rem]">
+        <div class="text-[1.5rem] text-secondary"><Icon name="ri:map-pin-line" /></div>
+        <h3 class="text-[0.95rem] font-bold text-secondary m-0">Paris-Saclay campus</h3>
+        <p class="text-[0.875rem] text-secondary leading-[1.6] m-0">Libraries, sports facilities and events from the grandes écoles on the plateau.</p>
+      </div>
+      <div class="flex flex-col gap-[0.6rem]">
+        <div class="text-[1.5rem] text-secondary"><Icon name="ri:men-line" /></div>
+        <h3 class="text-[0.95rem] font-bold text-secondary m-0">Gender parity</h3>
+        <p class="text-[0.875rem] text-secondary leading-[1.6] m-0">The CPES targets a cohort that is <strong>50% women</strong>, contributing to gender parity in elite scientific programmes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">What our students say</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      <Temoignage auteur="First name LAST NAME" annee="L1" parcours="sante">
+        The CPES let me discover research much earlier than any other programme. The courses are demanding, but the environment is truly stimulating.
+      </Temoignage>
+      <Temoignage auteur="First name LAST NAME" annee="L3" parcours="sante">
+        What I appreciate most is the coherence across disciplines. Mathematics, computer science and the humanities genuinely speak to each other — that is rare in a bachelor's degree.
+      </Temoignage>
+      <Temoignage auteur="First name LAST NAME" annee="L2" parcours="societe">
+        In two years, I have had courses at ENS, Télécom Paris and HEC. Few bachelor's programmes offer that diversity of environments, and it genuinely changes how you approach a problem.
+      </Temoignage>
+    </div>
+    <div class="mt-8">
+      <Button href="/en/nos-etudiants" icon="ri:arrow-right-line" iconPosition="right" position="right" class="mb-0">Our students</Button>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">Everything you need to know</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-secondary/10 border border-secondary/10 mt-8">
+      <a href="/en/programme" class="group flex flex-col gap-2 p-7 bg-base-100 no-underline relative hover:bg-base-200 transition-colors">
+        <Icon name="ri:book-open-line" class="text-[1.35rem] text-secondary mb-1" />
+        <span class="font-bold text-[0.95rem] text-secondary">Programme</span>
+        <span class="text-[0.825rem] text-secondary leading-[1.5]">Detailed programme by year, by discipline or by partner</span>
+        <Icon name="ri:arrow-right-line" class="absolute top-7 right-7 text-base text-secondary opacity-30 transition-[transform,opacity] duration-150 group-hover:translate-x-[3px] group-hover:opacity-100" />
+      </a>
+      <a href="/en/admission" class="group flex flex-col gap-2 p-7 bg-base-100 no-underline relative hover:bg-base-200 transition-colors">
+        <Icon name="ri:user-add-line" class="text-[1.35rem] text-secondary mb-1" />
+        <span class="font-bold text-[0.95rem] text-secondary">Admissions</span>
+        <span class="text-[0.825rem] text-secondary leading-[1.5]">Application procedures, selection criteria and Parcoursup timeline</span>
+        <Icon name="ri:arrow-right-line" class="absolute top-7 right-7 text-base text-secondary opacity-30 transition-[transform,opacity] duration-150 group-hover:translate-x-[3px] group-hover:opacity-100" />
+      </a>
+      <a href="/en/faq" class="group flex flex-col gap-2 p-7 bg-base-100 no-underline relative hover:bg-base-200 transition-colors">
+        <Icon name="ri:question-line" class="text-[1.35rem] text-secondary mb-1" />
+        <span class="font-bold text-[0.95rem] text-secondary">FAQ</span>
+        <span class="text-[0.825rem] text-secondary leading-[1.5]">Answers to the most frequently asked questions about the CPES</span>
+        <Icon name="ri:arrow-right-line" class="absolute top-7 right-7 text-base text-secondary opacity-30 transition-[transform,opacity] duration-150 group-hover:translate-x-[3px] group-hover:opacity-100" />
+      </a>
+      <a href="/en/debouches" class="group flex flex-col gap-2 p-7 bg-base-100 no-underline relative hover:bg-base-200 transition-colors">
+        <Icon name="ri:rocket-line" class="text-[1.35rem] text-secondary mb-1" />
+        <span class="font-bold text-[0.95rem] text-secondary">Career opportunities</span>
+        <span class="text-[0.825rem] text-secondary leading-[1.5]">Master's programmes, grandes écoles and prospects after the bachelor's</span>
+        <Icon name="ri:arrow-right-line" class="absolute top-7 right-7 text-base text-secondary opacity-30 transition-[transform,opacity] duration-150 group-hover:translate-x-[3px] group-hover:opacity-100" />
+      </a>
+      <a href="/en/documents-officiels" class="group flex flex-col gap-2 p-7 bg-base-100 no-underline relative hover:bg-base-200 transition-colors">
+        <Icon name="ri:file-text-line" class="text-[1.35rem] text-secondary mb-1" />
+        <span class="font-bold text-[0.95rem] text-secondary">Documents</span>
+        <span class="text-[0.825rem] text-secondary leading-[1.5]">Administrative resources, press releases...</span>
+        <Icon name="ri:arrow-right-line" class="absolute top-7 right-7 text-base text-secondary opacity-30 transition-[transform,opacity] duration-150 group-hover:translate-x-[3px] group-hover:opacity-100" />
+      </a>
+      <a href="/en/nos-etudiants" class="group flex flex-col gap-2 p-7 bg-base-100 no-underline relative hover:bg-base-200 transition-colors">
+        <Icon name="ri:group-line" class="text-[1.35rem] text-secondary mb-1" />
+        <span class="font-bold text-[0.95rem] text-secondary">Our students</span>
+        <span class="text-[0.825rem] text-secondary leading-[1.5]">Profiles, pathways and testimonials from CPES students</span>
+        <Icon name="ri:arrow-right-line" class="absolute top-7 right-7 text-base text-secondary opacity-30 transition-[transform,opacity] duration-150 group-hover:translate-x-[3px] group-hover:opacity-100" />
+      </a>
+    </div>
+  </section>
+
 </DefaultLayout>

@@ -1,0 +1,20 @@
+---
+export interface Props {
+  question: string;
+}
+const { question } = Astro.props;
+---
+
+<details class="group border-b border-secondary/10 last:border-b-0">
+  <summary class="flex items-center justify-between gap-4 py-4 cursor-pointer list-none select-none">
+    <span class="font-semibold text-secondary leading-snug">{question}</span>
+    <span class="text-secondary/40 text-xl leading-none flex-shrink-0 transition-transform duration-200 group-open:rotate-45">+</span>
+  </summary>
+  <div class="pb-5 text-secondary/80 leading-relaxed prose max-w-none">
+    <slot />
+  </div>
+</details>
+
+<style>
+  summary::-webkit-details-marker { display: none; }
+</style>

@@ -1,0 +1,63 @@
+---
+import { getLangFromUrl } from '../i18n/index';
+
+interface Props {
+  partenaire: 'lipps' | 'ups' | 'hec' | 'ens' | 'ipp';
+}
+
+const { partenaire } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
+const ALL = [
+  {
+    key: 'ipp',
+    src: '/assets/partenaires/logo_ipparis.svg',
+    alt: 'Institut Polytechnique de Paris',
+    href: `${lang === 'en' ? '/en' : ''}/formation/institut-polytechnique-de-paris`,
+  },
+  {
+    key: 'ups',
+    src: '/assets/partenaires/logo_universite-paris-saclay.svg',
+    alt: lang === 'fr' ? 'Université Paris-Saclay' : 'Paris-Saclay University',
+    href: `${lang === 'en' ? '/en' : ''}/formation/universite-paris-saclay`,
+  },
+  {
+    key: 'hec',
+    src: '/assets/partenaires/logo_hecparis.svg',
+    alt: 'HEC Paris',
+    href: `${lang === 'en' ? '/en' : ''}/formation/hec-paris`,
+  },
+  {
+    key: 'ens',
+    src: '/assets/partenaires/logo_ens-paris-saclay.svg',
+    alt: 'ENS Paris-Saclay',
+    href: `${lang === 'en' ? '/en' : ''}/formation/ens-paris-saclay`,
+  },
+  {
+    key: 'lipps',
+    src: '/assets/partenaires/logo_lipps.png',
+    alt: 'Lycée International de Palaiseau Paris-Saclay',
+    href: `${lang === 'en' ? '/en' : ''}/formation/lycee-international-de-palaiseau`,
+  },
+];
+
+const current = ALL.find(p => p.key === partenaire)!;
+---
+
+<div class="not-prose mt-1 mb-8">
+  <div class="flex flex-nowrap items-center justify-between gap-4 pb-8 overflow-hidden max-w-3xl">
+    {ALL.map(p => (
+      <a
+        href={p.href}
+        aria-label={p.alt}
+        aria-current={p.key === partenaire ? 'page' : undefined}
+        class:list={[
+          'flex-1 flex items-center justify-center min-w-0 no-underline transition-opacity duration-150',
+          p.key === partenaire ? 'opacity-100' : 'opacity-[0.3] hover:opacity-100',
+        ]}
+      >
+        <img src={p.src} alt={p.alt} class="block w-full max-h-7 md:max-h-9 object-contain" />
+      </a>
+    ))}
+  </div>
+</div>

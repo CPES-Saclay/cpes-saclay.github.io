@@ -2,20 +2,20 @@
 layout: ../../../layouts/Default.astro
 proseMode: true
 showBreadcrumbs: true
-title: "Detailed educational program for the Paris-Saclay CPES"
-breadcrumbTitle: "Program"
-description: "Discover the course content of the CPES: Mathematics, Computer Science, Data Science, and specializations."
+title: "Detailed educational programme for the Paris-Saclay CPES"
+breadcrumbTitle: "Programme"
+description: "Discover the course content of the CPES: Mathematics, Computer Science, Data Science, and specialisations."
 order: 3
 ---
 
-import CourseDetail from '../../../components/CourseDetail.astro';
 import TableBorder from '../../../components/TableBorder.astro';
 import ButtonsBox from '../../../components/ButtonsBox.astro';
+import ProgrammeOverviewTables from '../../../components/ProgrammeOverviewTables.astro';
 
-# Detailed educational program for the Paris-Saclay CPES
+# Programme of the training
 
 <ButtonsBox
-    title='Detailed program by year'
+    title='Detailed programme by year'
     links={[
         { href: "/en/programme/l1", title: "First year" },
         { href: "/en/programme/l2", title: "Second year" },
@@ -24,9 +24,19 @@ import ButtonsBox from '../../../components/ButtonsBox.astro';
 />
 
 <ButtonsBox
-    title='Other views of the program'
+    title='Other views of the programme'
     links={[
         { href: "/en/programme/par-operateur", title: "By operator" },
         { href: "/en/programme/par-matiere", title: "By discipline" },
     ]}
 />
+
+## Courses
+
+Courses are delivered at the heart of the Paris-Saclay campus by lecturers or lecturer-researchers from the Lycée International de Palaiseau Paris-Saclay, Université Paris-Saclay, ENS Paris-Saclay, Institut Polytechnique de Paris and HEC Paris.
+
+The programme is organised into blocks spread over three years, with a progressive increase in teaching carried out by the higher education and research institutions (ESR).
+
+### ECTS credit distribution and weekly course hours
+
+<ProgrammeOverviewTables />

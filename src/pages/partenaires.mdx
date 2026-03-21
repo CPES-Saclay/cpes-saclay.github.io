@@ -3,17 +3,45 @@ layout: ../layouts/Default.astro
 proseMode: true
 showBreadcrumbs: true
 title: Partenaires
-description: A propos
+description: Les établissements partenaires du CPES Paris-Saclay
 order: 1
 ---
 
+import PartenaireItem from '../components/PartenaireItem.astro';
+
 # Partenaires
 
+Le CPES Paris-Saclay est une formation opérée par cinq établissements d'excellence du plateau de Saclay. Chacun contribue à la richesse pluridisciplinaire de la formation, en apportant ses enseignants, ses infrastructures et son expertise.
 
-<div class="flex flex-wrap justify-center items-center gap-13 mt-8">
-    <img src="/assets/partenaires/logo_ipparis.svg" alt="Logo de l'Institut Polytechnique de Paris" class="h-20 lg:h-23"/>
-    <img src="/assets/partenaires/logo_universite-paris-saclay.svg" alt="Logo de l'Université Paris-Saclay" class="h-14 md:h-18"/>
-    <img src="/assets/partenaires/logo_hecparis.svg" alt="Logo de HEC Paris" class="h-15 md:h-20"/>
-    <img src="/assets/partenaires/logo_ens-paris-saclay.svg" alt="Logo de l'ENS Paris-Saclay" class="h-15 md:h-18"/>
-    <img src="/assets/partenaires/logo_lipps.png" alt="Logo du Lycée International de Palaiseau" class="h-15 md:h-22"/>
+<div class="not-prose mt-8">
+  <PartenaireItem
+    partenaire="lipps"
+    nom="Lycée International de Palaiseau Paris-Saclay"
+    description="Au coeur du campus Paris-Saclay, le LIPPS assure les enseignements fondamentaux en mathématiques, informatique, économie et les parcours de spécialisation."
+    href="/formation/lycee-international-de-palaiseau"
+  />
+  <PartenaireItem
+    partenaire="ups"
+    nom="Université Paris-Saclay"
+    description="Première université française au classement de Shanghai, l'Université Paris-Saclay contribue aux enseignements en sciences des données et ouverture scientifique."
+    href="/formation/universite-paris-saclay"
+  />
+  <PartenaireItem
+    partenaire="hec"
+    nom="HEC Paris"
+    description="Grande école de commerce de rang mondial, HEC Paris apporte au CPES son expertise en entrepreneuriat et stratégie à travers des cours électifs et le projet Capstone."
+    href="/formation/hec-paris"
+  />
+  <PartenaireItem
+    partenaire="ens"
+    nom="ENS Paris-Saclay"
+    description="École d'excellence en sciences fondamentales, elle apporte son expertise en mathématiques et en statistiques."
+    href="/formation/ens-paris-saclay"
+  />
+  <PartenaireItem
+    partenaire="ipp"
+    nom="Institut Polytechnique de Paris"
+    description="Regroupement des grandes écoles d'ingénieurs École Polytechnique, ENSTA, ENSAE, Télécom Paris, Télécom SudParis et École Nationale des Ponts et Chaussées, l'Institut Polytechnique de Paris enrichit la formation en sciences de l'ingénieur."
+    href="/formation/institut-polytechnique-de-paris"
+  />
 </div>

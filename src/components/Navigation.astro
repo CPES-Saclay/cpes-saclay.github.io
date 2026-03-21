@@ -10,8 +10,8 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class="flex flex-col bg-primary lg:flex-row lg:items-center min-h-full lg:min-h-0 w-full lg:w-max py-10 px-6 lg:px-0 lg:py-0 gap-6 lg:justify-center z-10">
-  <div class="flex lg:hidden justify-between items-center w-full mb-6">
+<div class="flex flex-col bg-primary xl:flex-row xl:items-center min-h-full xl:min-h-0 w-full xl:w-max py-10 px-6 xl:px-0 xl:py-0 gap-6 xl:justify-center z-10">
+  <div class="flex xl:hidden justify-between items-center w-full mb-6">
     <p class="font-bold text-2xl" data-i18n="siteTitle">CPES Paris-Saclay</p>
     <label for="mobile_drawer" class="hover:cursor-pointer">
       <Icon name="ri:close-line" class="text-3xl" />
@@ -55,9 +55,9 @@ const t = useTranslations(lang);
 
   <LanguageSwitcher />
 
-  <div class="theme-toggle-btn flex items-center gap-2 text-2xl hover:cursor-pointer mx-auto z-50 lg:mx-0">
+  <div class="theme-toggle-btn flex items-center gap-2 text-2xl hover:cursor-pointer mx-auto z-50 xl:mx-0">
     <Icon name="ri:sun-fill" class="theme-icon-light" />
     <Icon name="ri:moon-line" class="theme-icon-dark hidden" />
-    <span class="lg:hidden text-base" data-i18n="mode">Mode</span>
+    <span class="xl:hidden text-base" data-i18n="mode">Mode</span>
   </div>
 </div>

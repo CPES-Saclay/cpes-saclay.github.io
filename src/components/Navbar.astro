@@ -10,12 +10,12 @@ const homeUrl = lang === 'en' ? '/en/' : '/';
 <div id="navbar" class="fixed top-0 left-0 w-full transition-all duration-500 ease-in-out z-10 bg-primary shadow-sm">
     <div class="container mx-auto px-6 py-8 flex justify-between">
         <a href={homeUrl}>
-            <img src="/assets/logo_cpes-paris-saclay.svg" alt="Logo du CPES Paris-Saclay" class="h-14 lg:h-18 dark:invert"/>
+            <img src="/assets/logo_cpes-paris-saclay.svg" alt="Logo du CPES Paris-Saclay" class="h-14 xl:h-18 pr-8 dark:invert"/>
         </a>
-        <div class="hidden lg:flex lg:items-center">
-            <Navigation class="hidden lg:flex lg:items-center"/>
+        <div class="hidden xl:flex xl:items-center">
+            <Navigation class="hidden xl:flex xl:items-center"/>
         </div>
-        <div class="flex lg:hidden items-center">
+        <div class="flex xl:hidden items-center">
             <label for="mobile_drawer" class="hover:cursor-pointer">
                 <Icon name="ri:menu-4-line" class="text-3xl"/>
             </label>

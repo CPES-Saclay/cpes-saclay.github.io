@@ -7,17 +7,20 @@ description: Documents administratifs et livrets de rentrée
 order: 1
 ---
 
+import DocumentOfficiel from '../components/DocumentOfficiel.astro';
+
 # Documents officiels
 
-Vous trouverez ici les documents officiels et ressources administratives utiles pour les étudiant·e·s du CPES : règlement intérieur, maquettes de formation, calendriers, et livrets de rentrée par année.
+Vous trouverez ici les documents officiels et ressources publiques liés au CPES Paris-Saclay, notamment les communiqués de presse et les livrets de rentrée destinés aux futurs étudiants du CPES Paris-Saclay.
 
-## Livrets de rentrée
+<div class="not-prose mt-8">
+  <DocumentOfficiel
+    titre="Communiqués de presse"
+    categorie="Presse"
+    description="Communications officielles des opérateurs du CPES Paris-Saclay à destination de la presse et du grand public."
+    fichiers={[
+      { label: "Ouverture du CPES Paris-Saclay (PDF)", href: "/assets/documents/cp_ouverture_cpes_paris-saclay.pdf" },
+    ]}
+  />
 
-Les livrets de rentrée L1, L2 et L3 (présentation des enseignements, planning, contacts) sont disponibles dans la racine du site. Ils contiennent des informations détaillées sur l'organisation annuelle, les UE et les modalités d'évaluation.
-
-## Règlement et calendrier
-
-- Règlement intérieur du lycée (consultable auprès de l'administration du LIPPS).
-- Calendrier académique et dates des semestres (disponibles chaque année via la coordination pédagogique).
-
-Pour les documents officiels non publiés ici, contactez la coordination pédagogique ou l'administration du Lycée International de Palaiseau.
+</div>

@@ -7,11 +7,11 @@ const t = useTranslations(lang);
 ---
 
 <footer class="bg-primary">
-  <div class="bg-[url('/assets/footer_cpes.jpg')] bg-no-repeat bg-center bg-cover md:h-64 h-48">
-    <div class="bg-black/10 h-full">
-      <div class="text-white container mx-auto px-6 w-full flex flex-col items-left justify-center h-full">
-        <p class="text-2xl md:text-4xl font-bold">{t('footerTitre1')}</p>
-        <p class="mt-2 text-xl">{t('footerTitre2')}</p>
+  <div class="bg-[url('/assets/footer_cpes.jpg')] bg-no-repeat bg-center bg-cover">
+    <div class="bg-black/20">
+      <div class="text-white container mx-auto px-6 w-full flex flex-col items-left justify-center py-12 md:py-16 gap-2">
+        <p class="text-2xl md:text-3xl font-bold">{t('footerTitre1')}</p>
+        <p class="text-base md:text-lg opacity-90">{t('footerTitre2')}</p>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@ const t = useTranslations(lang);
     <div class="flex flex-col md:flex-row gap-8 justify-between">
       <div class="flex flex-col items-start gap-4">
         <img src="/assets/logo_cpes-paris-saclay.svg" alt="Logo du CPES Paris-Saclay" class="h-14 md:h-18 mt-2.5 dark:invert"/>
-        <p class="text-sm mb-4">
+        <p class="text-sm mb-4 max-w-[20rem]">
             {t('footerDescription')}
         </p>
       </div>

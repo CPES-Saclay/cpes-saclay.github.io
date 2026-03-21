@@ -6,10 +6,18 @@ title: Université Paris-Saclay
 description: Université Paris-Saclay
 order: 1
 ---
-
 import ProgrammeOperateur from '../../components/ProgrammeOperateur.astro';
+import PartenaireHeader from '../../components/PartenaireHeader.astro';
+import Button from '../../components/Button.astro';
 
 # Université Paris-Saclay
 
-## Programme pédagogique détaillé pour Université Paris-Saclay
+<PartenaireHeader partenaire="ups" />
+
+Première université française au classement de Shanghai, l'Université Paris-Saclay contribue aux enseignements en sciences des données et ouverture scientifique.
+
+<Button href="https://www.universite-paris-saclay.fr/formation/cycle-pluridisciplinaire-detudes-superieures" target="_blank" rel="noopener noreferrer" variant="outline" icon="ri:external-link-line">Site de l'Université Paris-Saclay</Button>
+
+## Programme pédagogique détaillé pour l'Université Paris-Saclay
+
 <ProgrammeOperateur partenaire="ups" showTitle={false} />

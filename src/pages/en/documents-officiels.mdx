@@ -3,6 +3,25 @@ layout: ../../layouts/Default.astro
 proseMode: true
 showBreadcrumbs: true
 title: Official documents
-description: Administrative resources and welcome booklets
+description: Administrative resources and official documents for CPES students
 order: 1
 ---
+
+import DocumentOfficiel from '../../components/DocumentOfficiel.astro';
+
+# Official documents
+
+Here you will find the official documents and public resources related to the CPES Paris-Saclay, including press releases and welcome booklets for prospective students.
+
+<div class="not-prose mt-8">
+
+  <DocumentOfficiel
+    titre="Press releases"
+    categorie="Press"
+    description="Official communications from the operators of CPES Paris-Saclay for media and the general public."
+    fichiers={[
+      { label: "Opening of the CPES Paris-Saclay (PDF)", href: "/assets/documents/cp_ouverture_cpes_paris-saclay.pdf" },
+    ]}
+  />
+
+</div>

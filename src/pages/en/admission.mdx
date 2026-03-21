@@ -3,6 +3,44 @@ layout: ../../layouts/Default.astro
 proseMode: true
 showBreadcrumbs: true
 title: Admission
-description: Admission procedures and Parcoursup information
+description: Application procedures, selection criteria and Parcoursup timeline
 order: 1
 ---
+
+import Button from '../../components/Button.astro';
+import AdmissionCriteriaGrid from '../../components/AdmissionCriteriaGrid.astro';
+import AdmissionTimeline from '../../components/AdmissionTimeline.astro';
+
+# Admission
+
+The CPES Paris-Saclay admits 48 students each year through the **Parcoursup** platform. Selection is national and based on the excellence of the academic record, the quality of the study plan and the motivation of the applicant.
+
+## Requirements
+
+Applicants must hold a general baccalaureate with the **mathematics** specialisation and a second specialisation from among: SES, SVT, Physics-Chemistry, History-Geography Geopolitics and Political Sciences, Engineering Sciences or Computer Science (NSI).
+
+A genuine interest in interdisciplinary approaches and curiosity about societal issues are also required.
+
+For international students: the ability to express and argue in French (oral and written) is required.
+
+### Selection criteria grid
+
+The programme places particular importance on a **carefully written and personal study plan**. Participation in equal opportunities schemes (cordées de la réussite) is also taken into account.
+
+<AdmissionCriteriaGrid />
+
+#### Advice for applicants
+
+A carefully written and personal study plan is necessary and appreciated, given the interdisciplinary nature of the programme and the diversity of its partners.
+
+##### Application conditions for international students
+
+If you are a foreign national, do not hold a French baccalaureate, are not a citizen of the European Union (EU), the European Economic Area (EEA), Switzerland, Monaco or Andorra, and reside in a country with a Campus France office running the **Études en France** procedure: you must apply through [campusfrance.org](https://www.campusfrance.org) and not through Parcoursup.
+
+###### Timeline
+
+<AdmissionTimeline />
+
+###### Apply
+
+<Button href="https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39487" icon="ri:external-link-line">View the programme on Parcoursup</Button>

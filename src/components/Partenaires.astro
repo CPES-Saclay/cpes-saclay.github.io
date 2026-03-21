@@ -1,17 +1,61 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/index';
+import { getLangFromUrl } from '../i18n/index';
 
+export interface Props {
+  partenaire?: 'lipps' | 'ups' | 'hec' | 'ens' | 'ipp';
+  noLink?: boolean;
+}
+
+const { partenaire, noLink = false } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+
+const prefix = lang === 'en' ? '/en' : '';
+
+const ALL_LOGOS = [
+  { key: 'ipp',   src: '/assets/partenaires/logo_ipparis.svg', alt: 'Institut Polytechnique de Paris',                       href: `${prefix}/formation/institut-polytechnique-de-paris` },
+  { key: 'ups',   src: '/assets/partenaires/logo_universite-paris-saclay.svg', alt: lang === 'fr' ? 'Université Paris-Saclay' : 'Paris-Saclay University', href: `${prefix}/formation/universite-paris-saclay` },
+  { key: 'hec',   src: '/assets/partenaires/logo_hecparis.svg', alt: 'HEC Paris',                                             href: `${prefix}/formation/hec-paris` },
+  { key: 'ens',   src: '/assets/partenaires/logo_ens-paris-saclay.svg', alt: 'ENS Paris-Saclay',                                      href: `${prefix}/formation/ens-paris-saclay` },
+  { key: 'lipps', src: '/assets/partenaires/logo_lipps.png', alt: 'Lycée International de Palaiseau Paris-Saclay',          href: `${prefix}/formation/lycee-international-de-palaiseau` },
+];
+
+const logos = partenaire
+  ? ALL_LOGOS.filter(l => l.key === partenaire)
+  : ALL_LOGOS;
+
+const isSingle = !!partenaire;
 ---
 
-<div class="text-secondary bg-secondary-content dark:text-secondary-content dark:bg-secondary py-10 px-5 md:px-20">
-    <h1 class="text-xl text-center font-bold" data-i18n="etablissements">{t('etablissements')}</h1>
-    <div class="flex flex-wrap justify-center items-center gap-13 mt-8">
-        <img src="/assets/partenaires/logo_ipparis.svg" alt="Logo de l'Institut Polytechnique de Paris" class="h-20 lg:h-23"/>
-        <img src="/assets/partenaires/logo_universite-paris-saclay.svg" alt="Logo de l'Université Paris-Saclay" class="h-14 md:h-18"/>
-        <img src="/assets/partenaires/logo_hecparis.svg" alt="Logo de HEC Paris" class="h-15 md:h-20"/>
-        <img src="/assets/partenaires/logo_ens-paris-saclay.svg" alt="Logo de l'ENS Paris-Saclay" class="h-15 md:h-18"/>
-        <img src="/assets/partenaires/logo_lipps.png" alt="Logo du Lycée International de Palaiseau" class="h-15 md:h-22"/>
-    </div>
+<div class:list={[
+  "flex flex-nowrap items-center overflow-hidden",
+  isSingle ? "justify-start gap-0 p-0" : "justify-between gap-4 md:gap-12 py-8 md:py-10 max-w-4xl",
+]}>
+  {logos.map(l => (
+    noLink
+      ? <img
+          src={l.src}
+          alt={l.alt}
+          class:list={[
+            "block",
+            isSingle ? "h-8 sm:h-11 w-auto" : "flex-1 min-w-0 w-full h-auto max-h-9 md:max-h-13 object-contain object-center",
+          ]}
+        />
+      : <a
+          href={l.href}
+          title={l.alt}
+          class:list={[
+            "inline-flex items-center justify-center transition-opacity duration-150 hover:opacity-60",
+            isSingle ? "shrink-0" : "flex-1 min-w-0",
+          ]}
+        >
+          <img
+            src={l.src}
+            alt={l.alt}
+            class:list={[
+              "block",
+              isSingle ? "h-8 sm:h-11 w-auto" : "w-full h-auto max-h-9 md:max-h-13 object-contain object-center",
+            ]}
+          />
+        </a>
+  ))}
 </div>

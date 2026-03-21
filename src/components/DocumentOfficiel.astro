@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Fichier {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  titre: string;
+  categorie?: string;
+  description?: string;
+  fichiers: Fichier[];
+}
+
+const { titre, categorie, description, fichiers } = Astro.props;
+---
+
+<div class="flex flex-col items-start py-5 first-of-type:pt-0 gap-3">
+  {categorie && <span class="text-[0.7rem] px-1 border border-secondary uppercase text-secondary">{categorie}</span>}
+  <span class="text-xl font-semibold text-secondary m-0 leading-tight">{titre}</span>
+  {description && <span class="text-sm m-0 leading-tight">{description}</span>}
+  <div class="flex flex-wrap gap-2 w-full">
+    {fichiers.map(f => (
+      <a href={f.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-[1.1rem] py-[0.6rem] text-[0.825rem] font-medium no-underline bg-secondary text-primary border border-secondary whitespace-nowrap transition-opacity duration-150 hover:opacity-80">
+        <Icon name="ri:download-2-line" />
+        <span>{f.label}</span>
+      </a>
+    ))}
+  </div>
+</div>
