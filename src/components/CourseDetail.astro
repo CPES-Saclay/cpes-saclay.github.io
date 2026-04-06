@@ -36,10 +36,11 @@ export interface Props {
   annee: string;
   lang: string;
   showAnneeBadge?: boolean;
+  showEtablissement?: boolean;
   electif?: boolean;
 }
 
-const { matiere, annee, lang, showAnneeBadge, electif = false } = Astro.props;
+const { matiere, annee, lang, showAnneeBadge, showEtablissement = true, electif = false } = Astro.props;
 const t = useTranslations(lang as 'fr' | 'en');
 
 const getSemestreText = (s1: boolean, s2: boolean): string => {
@@ -138,7 +139,7 @@ const descriptionHtml = generateDescriptionHtml(matiere);
     <div class="mr-8 flex flex-wrap gap-1">
       {showAnneeBadge && <span class="bg-(--annee) px-1 py-0.5 text-[10px] md:text-[14px] text-primary leading-none">L{annee.slice(-1)}</span>}
       {matiere.entite && <span class="border-(--entite) border text-(--entite) px-1 py-0.5 text-[10px] md:text-[14px] leading-none">{matiere.entite}</span>}
-      {matiere.etablissement && <span class="border-(--etablissement) border text-(--etablissement) px-1 py-0.5 text-[10px] md:text-[14px] leading-none">{matiere.etablissement}</span>}
+      {showEtablissement && matiere.etablissement && <span class="border-(--etablissement) border text-(--etablissement) px-1 py-0.5 text-[10px] md:text-[14px] leading-none">{matiere.etablissement}</span>}
       <span class="bg-(--ects) px-1 py-0.5 text-[10px] md:text-[14px] text-primary leading-none">{matiere.ects} ECTS</span>
     </div>
   </label>

@@ -28,7 +28,7 @@ const lang = Astro.url.pathname.startsWith('/en') ? 'en' : 'fr';
         <main class="pt-32 md:pt-40 pb-14 container mx-auto px-6 py-8 min-h-[35vh]">
           {showBreadcrumbs && <div class="mb-6"><Breadcrumbs title={breadcrumbTitle} icon={pageIcon}/></div>}
           <div class:list={[
-            proseMode && "prose prose-invert lg:prose-xl w-full max-w-none!",
+            proseMode && "prose lg:prose-xl w-full max-w-none! text-secondary",
             !proseMode && "w-full"
           ]}>
             <slot />

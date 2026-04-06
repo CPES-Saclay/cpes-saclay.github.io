@@ -23,29 +23,22 @@ const { links, title } = Astro.props as Props;
             </span>
         )
     }
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+    <div class="flex flex-wrap gap-10 mt-8">
         {
             links.map(({ href, icon, title, description }) => (
-                <div class="flex flex-col">
-                    <div class="flex">
-                        <div class="flex flex-col gap-2 flex-grow">
-                            {icon && (
-                                <div class="text-[1.75rem] text-secondary">
-                                    <Icon name={icon} />
-                                </div>
-                            )}
-                            <span class="text-base font-bold text-secondary m-0">
-                                {title}
-                            </span>
+                <div class="flex gap-1.5 flex-col flex-1 min-w-[20rem]">
+                    {icon && (
+                        <div class="text-[1.75rem] mb-1.5 text-secondary">
+                            <Icon name={icon} />
                         </div>
-                        <a href={href} class="btn no-underline bg-primary text-secondary hover:bg-secondary hover:text-primary border border-secondary">
-                            <Icon name="ri:arrow-right-line" />
-                            <span class="ml-2 no-underline">Voir la liste</span>
-                        </a>
-                    </div>
-                    <p class="text-[0.875rem] text-secondary leading-[1.6] m-0">
+                    )}
+                    <span class="text-base font-bold p-0 text-secondary m-0">
+                        {title}
+                    </span>
+                    <span class="text-[0.875rem] p-0 text-secondary m-0">
                         {description}
-                    </p>
+                    </span>
+                    <Button href={href} icon="ri:arrow-right-line" iconPosition="right" size="sm" class="mt-2 mb-0 w-fit">Voir la liste</Button>
                 </div>
             ))
         }

@@ -105,11 +105,12 @@ const anneeLabels = {
         </div>
         
         {courses.map(course => (
-          <CourseDetail 
+          <CourseDetail
             matiere={course.matiere}
             annee={course.annee}
             lang={lang}
             showAnneeBadge={true}
+            showEtablissement={false}
           />
         ))}
       </div>
