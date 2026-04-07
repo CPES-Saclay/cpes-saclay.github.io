@@ -17,6 +17,15 @@
         "design",
         "data"
       ]
+    },
+    {
+      "login": "Utharushan",
+      "name": "Utharushan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/173533966?v=4",
+      "profile": "https://utharushan.github.io/",
+      "contributions": [
+        "content"
+      ]
     }
   ],
   "contributorsPerLine": 7,
