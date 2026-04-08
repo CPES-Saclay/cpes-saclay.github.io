@@ -12,7 +12,7 @@ Site (presque) officiel des CPES Paris-Saclay. Ce site est encore en constructio
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://funa.dev"><img src="https://avatars.githubusercontent.com/u/86372093?v=4?s=100" width="100px;" alt="Funasitien 🌥"/><br /><sub><b>Funasitien 🌥</b></sub></a><br /><a href="https://github.com/CPES-Saclay/cpes-saclay.github.io/commits?author=Funasitien" title="Code">💻</a> <a href="#design-Funasitien" title="Design">🎨</a> <a href="#data-Funasitien" title="Data">🔣</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://funa.dev"><img src="https://avatars.githubusercontent.com/u/86372093?v=4?s=100" width="100px;" alt="Funasitien 🌥"/><br /><sub><b>Funasitien 🌥</b></sub></a><br /><a href="https://github.com/CPES-Saclay/cpes-saclay.github.io/commits?author=Funasitien" title="Code">💻</a> <a href="#design-Funasitien" title="Design">🎨</a> <a href="#data-Funasitien" title="Data">🔣</a> <a href="#content-Funasitien" title="Content">🖋</a></td>
     </tr>
   </tbody>
 </table>
