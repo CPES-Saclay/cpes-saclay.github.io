@@ -8,6 +8,16 @@
   "commitConvention": "angular",
   "contributors": [
     {
+      "login": "Funasitien",
+      "name": "Funasitien 🌥",
+      "avatar_url": "https://avatars.githubusercontent.com/u/86372093?v=4",
+      "profile": "https://funa.dev",
+      "contributions": [
+        "code",
+        "design",
+        "data",
+      ]
+    },
       "login": "msylv",
       "name": "Maxence SYLVESTRE",
       "avatar_url": "https://avatars.githubusercontent.com/u/94127264?v=4",
