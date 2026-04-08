@@ -7,7 +7,23 @@ description: A propos
 order: 1
 ---
 
+import Conference from '../components/Conference.astro';
+
 # Conférences
 
-## Conférences HEC (L1)
-## Conférences Communes (IPP Biotech)
+<div class="not-prose grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+  <Conference
+    titre="Santé numérique : dialogue entre médecine, ingénierie et société"
+    partenaire="Institut Polytechnique de Paris"
+    date="Mars 2026"
+    youtube="https://youtu.be/_iGqq1wHj_Y"
+    description="Organisé notamment par l’Ecole Polytechnique, cette conférence a été animée par Nesma Houmani, maître de conférences en neuro-ingénierie, Guy Gozlan, psychiatre, Thomas Lindemann, professeur de science politique, et Nabila Sasdli, PhD cheffe de projet santé numérique. "
+  />
+  <Conference
+    titre="Quand les machines pensent et décident - le libre arbitre et la responsabilité à l'épreuve de l'IA"
+    intervenant="Julien Gobin"
+    partenaire="HEC Paris"
+    date="Décembre 2025"
+    description="Conférence sur les enjeux éthiques et civilisationnels de l'intelligence artificielle."
+  />
+</div>

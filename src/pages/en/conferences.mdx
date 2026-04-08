@@ -7,8 +7,22 @@ description: Conference programme and invited talks
 order: 1
 ---
 
+import Conference from '../../components/Conference.astro';
+
 # Conferences
 
-## HEC Conferences (Year 1)
-
-## Joint Conferences (IPP Biotech)
+<div class="not-prose grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+  <Conference
+    titre="Digital health: a dialogue between medicine, engineering and society"
+    partenaire="Institut Polytechnique de Paris"
+    date="March 2026"
+    youtube="https://youtu.be/_iGqq1wHj_Y"
+    description="Organised notably by École Polytechnique, this conference was led by Nesma Houmani, lecturer in neuro-engineering, Guy Gozlan, psychiatrist, Thomas Lindemann, professor of political science, and Nabila Sasdli, PhD and digital health project manager."
+  />
+  <Conference
+    titre="When machines think and decide — free will and responsibility in the age of AI"
+    intervenant="Julien Gobin"
+    partenaire="HEC Paris"
+    description="A conference on the ethical and civilisational challenges of artificial intelligence, delivered to CPES data science students."
+  />
+</div>

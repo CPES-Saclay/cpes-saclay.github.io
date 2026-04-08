@@ -152,6 +152,13 @@ table tr, table thead tr {
   border-bottom-color: (var(--color-secondary) / 0.1) !important;
 }
 
+.prose {
+  --tw-prose-body: var(--color-secondary);
+  --tw-prose-headings: var(--color-secondary);
+  --tw-prose-bold: var(--color-secondary);
+  --tw-prose-links: var(--color-secondary);
+}
+
 .prose ul {
   list-style: none;
   padding-left: 0;

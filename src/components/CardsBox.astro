@@ -7,6 +7,7 @@ interface Props {
         href: string;
         icon?: string;
         title: string;
+        description?: string;
     }>;
 }
 
@@ -15,12 +16,14 @@ const { links, title } = Astro.props as Props;
 <div class="flex flex-col gap-4 my-8">
     {title && <span class="font-semibold text-secondary text-xl md:text-2xl lg:text-3xl leading-tight">{title}</span>}
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-secondary/10 border border-secondary/10">
-        {links.map(({ href, icon, title }) => (
-        <a href={href} class="group flex flex-col gap-2 p-7 bg-base-100 no-underline relative hover:bg-base-200 transition-colors">
+        {links.map(({ href, icon, title, description }) => (
+        <a href={href} class="group flex flex-col gap-2 p-7 bg-base-100 no-underline hover:bg-base-200 transition-colors">
             {icon && <Icon name={icon} class="text-[1.35rem] text-secondary mb-1" />}
-            <span class="font-bold text-[0.95rem] text-secondary">{title}</span>
-            <span class="text-[0.825rem] text-secondary leading-[1.5]">Masters, grandes écoles et perspectives après la licence</span>
-            <Icon name="ri:arrow-right-line" class="absolute top-7 right-7 text-base text-secondary opacity-30 transition-[transform,opacity] duration-150 group-hover:translate-x-[3px] group-hover:opacity-100" />
+            <span class="flex items-center justify-between gap-2">
+              <span class="font-bold text-[0.95rem] text-secondary">{title}</span>
+              <Icon name="ri:arrow-right-line" class="text-base text-secondary opacity-30 shrink-0 transition-[transform,opacity] duration-150 group-hover:translate-x-0.75 group-hover:opacity-100" />
+            </span>
+            {description && <span class="text-[0.825rem] text-secondary leading-normal">{description}</span>}
         </a>
         ))}
     </div>

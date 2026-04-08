@@ -16,6 +16,24 @@
         "code",
         "design",
         "data",
+      ]
+    },
+      "login": "msylv",
+      "name": "Maxence SYLVESTRE",
+      "avatar_url": "https://avatars.githubusercontent.com/u/94127264?v=4",
+      "profile": "https://github.com/msylv",
+      "contributions": [
+        "code",
+        "design",
+        "data"
+      ]
+    },
+    {
+      "login": "Utharushan",
+      "name": "Utharushan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/173533966?v=4",
+      "profile": "https://utharushan.github.io/",
+      "contributions": [
         "content"
       ]
     }

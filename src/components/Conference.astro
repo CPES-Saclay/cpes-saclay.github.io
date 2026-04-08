@@ -1,0 +1,129 @@
+---
+interface Props {
+  titre: string;
+  intervenant?: string;
+  partenaire?: string;
+  date?: string;
+  description?: string;
+  youtube?: string;
+  linkedin?: string;
+  image?: string;
+}
+
+const { titre, intervenant, partenaire, date, description, youtube, linkedin, image } = Astro.props;
+
+function getYoutubeEmbedUrl(url: string): string {
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/);
+  return match ? `https://www.youtube.com/embed/${match[1]}` : url;
+}
+
+function getLinkedinEmbedUrl(url: string): string {
+  return url.replace('/posts/', '/embed/feed/update/').replace(/\/$/, '');
+}
+
+const embedUrl = youtube ? getYoutubeEmbedUrl(youtube) : linkedin ? getLinkedinEmbedUrl(linkedin) : null;
+const embedProvider = youtube ? 'youtube' : linkedin ? 'linkedin' : null;
+---
+
+<div class="border border-secondary flex flex-col">
+  {(embedUrl || image) && (
+    <div class="h-48 w-full bg-white">
+      {embedUrl ? (
+        <div class="conf-embed w-full h-full" data-embed-url={embedUrl}>
+          <div class="conf-embed-consent w-full h-full flex flex-col items-center justify-center gap-3 p-4 text-center max-w-xs mx-auto">
+            <span class="text-sm text-secondary">Autoriser le dépôt de cookies par les services tiers (YouTube, LinkedIn)</span>
+            <div class="flex gap-2">
+              <button class="conf-embed-accept px-3 py-1.5 text-sm font-medium bg-secondary text-primary border border-secondary cursor-pointer hover:bg-primary hover:text-secondary transition-colors">
+                Accepter
+              </button>
+              <button class="conf-embed-refuse px-3 py-1.5 text-sm font-medium bg-primary text-secondary border border-secondary cursor-pointer hover:bg-secondary hover:text-primary transition-colors">
+                Refuser
+              </button>
+            </div>
+          </div>
+          <div class="conf-embed-refused w-full h-full items-center justify-center p-4 text-center max-w-xs mx-auto" style="display:none;">
+            <span class="text-sm font-bold text-secondary">Nous ne pouvons pas afficher le contenu de cette vidéo car vous avez refusé les cookies tiers.</span>
+          </div>
+          <iframe class="conf-embed-iframe w-full h-full border-0" style="display:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      ) : (
+        <img src={image} alt={titre} class="w-full h-full object-cover" />
+      )}
+    </div>
+  )}
+  <div class:list={["p-5 flex flex-col gap-1.5", (embedUrl || image) && "border-t border-secondary"]}>
+    <span class="text-base font-bold text-secondary">{titre}</span>
+    {(date || intervenant || partenaire) && (
+      <div class="text-sm text-secondary">
+        {date && <><span>{date}</span>{intervenant && <> par</>}</>}{intervenant && <> <span class="font-medium">{intervenant}</span></>}{partenaire && <> <em class="opacity-70">{partenaire}</em></>}
+      </div>
+    )}
+    {description && (
+      <p class="text-[0.85rem] text-secondary leading-[1.55] m-0 mt-1">{description}</p>
+    )}
+  </div>
+</div>
+
+<script is:inline>
+  function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[1]) : null;
+  }
+
+  function setCookie(name, value, days) {
+    var expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+  }
+
+  function activateEmbed(el) {
+    var iframe = el.querySelector('.conf-embed-iframe');
+    var consent = el.querySelector('.conf-embed-consent');
+    var url = el.getAttribute('data-embed-url');
+    if (iframe && consent && url) {
+      iframe.src = url;
+      iframe.style.display = '';
+      consent.style.display = 'none';
+    }
+  }
+
+  function refuseEmbed(el) {
+    var consent = el.querySelector('.conf-embed-consent');
+    var refused = el.querySelector('.conf-embed-refused');
+    if (consent && refused) {
+      consent.style.display = 'none';
+      refused.style.display = 'flex';
+    }
+  }
+
+  function initEmbeds() {
+    var embeds = document.querySelectorAll('.conf-embed');
+    var consent = getCookie('embed_consent');
+
+    embeds.forEach(function(el) {
+      if (consent === '1') { activateEmbed(el); return; }
+      if (consent === '0') { refuseEmbed(el); return; }
+
+      var acceptBtn = el.querySelector('.conf-embed-accept');
+      var refuseBtn = el.querySelector('.conf-embed-refuse');
+
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', function() {
+          setCookie('embed_consent', '1', 7);
+          embeds.forEach(activateEmbed);
+        });
+      }
+      if (refuseBtn) {
+        refuseBtn.addEventListener('click', function() {
+          setCookie('embed_consent', '0', 7);
+          embeds.forEach(refuseEmbed);
+        });
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEmbeds);
+  } else {
+    initEmbeds();
+  }
+</script>

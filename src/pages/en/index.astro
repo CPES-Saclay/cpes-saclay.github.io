@@ -7,41 +7,44 @@ import { Icon } from "astro-icon/components";
 ---
 
 <DefaultLayout>
-  <section class="py-14 pb-16">
-    <h1 class="text-4xl md:text-6xl font-black text-secondary leading-[1.05] tracking-[-0.02em] mb-2">
-      CPES Paris-Saclay
-    </h1>
-    <p class="text-base font-semibold text-secondary mb-5">Data Science, Society and Health</p>
-    <div class="grid grid-cols-[auto_auto_auto_auto] w-fit mb-8">
-      <div class="flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b border-r border-secondary/20">
-        <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">3 years</span>
-        <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">of study</span>
+  <section class="py-7 md:py-14 pb-16 flex flex-col-reverse md:flex-row md:items-stretch gap-8 md:gap-12">
+    <div class="flex-1 min-w-0">
+      <h1 class="text-4xl md:text-6xl font-black text-secondary leading-[1.05] tracking-[-0.02em] mb-2">
+        CPES Paris-Saclay
+      </h1>
+      <p class="text-base font-semibold text-secondary mb-5">Data Science, Society and Health</p>
+      <div class="grid grid-cols-[auto_auto_auto_auto] w-fit mb-8">
+        <div class="flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b border-r border-secondary/20">
+          <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">3 years</span>
+          <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">of study</span>
+        </div>
+        <div class="flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b border-r border-secondary/20">
+          <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">180</span>
+          <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">ECTS credits</span>
+        </div>
+        <div class="flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b sm:border-r border-secondary/20">
+          <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">5</span>
+          <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">institutions</span>
+        </div>
+        <div class="hidden sm:flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b border-secondary/20">
+          <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">48</span>
+          <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">students/cohort</span>
+        </div>
       </div>
-      <div class="flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b border-r border-secondary/20">
-        <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">180</span>
-        <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">ECTS credits</span>
-      </div>
-      <div class="flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b sm:border-r border-secondary/20">
-        <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">5</span>
-        <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">institutions</span>
-      </div>
-      <div class="hidden sm:flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b border-secondary/20">
-        <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">48</span>
-        <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">students/cohort</span>
+      <p class="text-base text-secondary leading-[1.75] max-w-[90ch] mb-8">
+        A multidisciplinary and interdisciplinary 3-year degree built in partnership between
+        ENS Paris-Saclay, Université Paris-Saclay, Institut Polytechnique de Paris,
+        HEC Paris and the Lycée International de Palaiseau Paris-Saclay. The CPES trains students with
+        interdisciplinary profiles mastering data science and AI (mathematics, computer science)
+        while applying them to health or society depending on their chosen track.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <Button href="/en/programme" variant="primary" iconPosition="right" class="mb-0! mt-0!">Programme</Button>
+        <Button href="/en/partenaires" variant="outline" iconPosition="right" class="mb-0! mt-0!">Partners</Button>
+        <Button href="/en/a-propos" variant="outline" iconPosition="right" class="mb-0! mt-0!">Key facts</Button>
       </div>
     </div>
-    <p class="text-base text-secondary leading-[1.75] max-w-[90ch] mb-8">
-      A multidisciplinary and interdisciplinary 3-year degree built in partnership between
-      ENS Paris-Saclay, Université Paris-Saclay, Institut Polytechnique de Paris,
-      HEC Paris and the Lycée International de Palaiseau Paris-Saclay. The CPES trains students with
-      interdisciplinary profiles mastering data science and AI (mathematics, computer science)
-      while applying them to health or society depending on their chosen track.
-    </p>
-    <div class="flex flex-wrap gap-3">
-      <Button href="/en/programme" variant="primary" iconPosition="right" class="mb-0! mt-0!">Programme</Button>
-      <Button href="/en/partenaires" variant="outline" iconPosition="right" class="mb-0! mt-0!">Partners</Button>
-      <Button href="/en/a-propos" variant="outline" iconPosition="right" class="mb-0! mt-0!">Key facts</Button>
-    </div>
+    <div class="md:w-[40%] shrink-0 h-42 md:h-auto bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/environnement/cpes_paris-saclay_environnement_20.webp');" role="img" aria-label="CPES Paris-Saclay campus"></div>
   </section>
 
   <section class="py-16">
@@ -117,6 +120,14 @@ import { Icon } from "astro-icon/components";
     <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">Run by five institutions</h2>
     <Partenaires />
     <Button href="/en/partenaires" icon="ri:arrow-right-line" iconPosition="right" class="mb-0 mt-4">Discover the partners</Button>
+  </section>
+
+  <section class="py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="h-56 md:h-72 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/environnement/cpes_paris-saclay_environnement_17.webp');" role="img" aria-label="CPES Paris-Saclay campus"></div>
+      <div class="h-56 md:h-72 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/environnement/cpes_paris-saclay_environnement_3.webp');" role="img" aria-label="CPES Paris-Saclay campus"></div>
+      <div class="h-56 md:h-72 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/environnement/cpes_paris-saclay_environnement_18.webp');" role="img" aria-label="CPES Paris-Saclay campus"></div>
+    </div>
   </section>
 
   <section class="py-16">

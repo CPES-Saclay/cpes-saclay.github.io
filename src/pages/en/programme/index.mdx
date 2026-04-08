@@ -9,12 +9,16 @@ order: 3
 ---
 
 import TableBorder from '../../../components/TableBorder.astro';
-import ButtonsBox from '../../../components/ButtonsBox.astro';
+import CardsBox from '../../../components/CardsBox.astro';
+import FlexBox from '../../../components/FlexBox.astro';
 import ProgrammeOverviewTables from '../../../components/ProgrammeOverviewTables.astro';
+import Disclaimer from '../../../components/Disclaimer.astro';
 
 # Programme of the training
 
-<ButtonsBox
+<Disclaimer>The programme is regularly updated to improve. The version presented here corresponds to the 2023-2026 cohort.</Disclaimer>
+
+<CardsBox
     title='Detailed programme by year'
     links={[
         { href: "/en/programme/l1", title: "First year" },
@@ -23,11 +27,19 @@ import ProgrammeOverviewTables from '../../../components/ProgrammeOverviewTables
     ]}
 />
 
-<ButtonsBox
+<FlexBox
     title='Other views of the programme'
     links={[
-        { href: "/en/programme/par-operateur", title: "By operator" },
-        { href: "/en/programme/par-matiere", title: "By discipline" },
+        { href: "/en/programme/par-operateur",
+          title: "By operator",
+          description: "Courses detailed by partner institution.",
+          icon: "ri:briefcase-4-line"
+        },
+        { href: "/en/programme/par-matiere",
+          title: "By discipline",
+          description: "Courses grouped by major discipline.",
+          icon: "ri:book-ai-line"
+        },
     ]}
 />
 
