@@ -10,7 +10,7 @@ interface Props {
 const { title, icon, class: className } = Astro.props;
 ---
 
-<div class={`lg:hidden ${className || ''}`}>
+<div class={`xl:hidden ${className || ''}`}>
   <details class="group w-full">
     <summary class="flex flex-row items-center text-[18px] gap-2 hover:font-medium transition-all hover:cursor-pointer">
       {icon && <Icon name={icon} />}
@@ -26,7 +26,7 @@ const { title, icon, class: className } = Astro.props;
   </details>
 </div>
 
-<div class={`hidden lg:block relative ${className || ''}`} data-dropdown>
+<div class={`hidden xl:block relative ${className || ''}`} data-dropdown>
   <div class="flex flex-row items-center text-[18px] gap-2 hover:font-medium transition-all hover:cursor-pointer" data-dropdown-trigger>
     {icon && <Icon name={icon} />}
     {title}
