@@ -5,7 +5,89 @@
     "annee": "L1",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/gcanis/",
+    "contact": "guilhem.canis@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Maxence PAUZIES",
+    "photo": "/assets/etudiants/maxencepauzies.jpeg",
+    "annee": "L1",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/maxence-pauzies-bab65a374/",
+    "contact": "maxence.pauzies@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Maxence SYLVESTRE",
+    "photo": "/assets/etudiants/maxencesylvestre.jpeg",
+    "annee": "L1",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/maxencesylvestre/",
     "contact": null
+  },
+
+  {
+    "nom": "Adèle THOMAS",
+    "photo": "/assets/etudiants/adele.jpeg",
+    "annee": "L2",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/ad%C3%A8le-thomas-6a590a334/",
+    "contact": "adele.thomashuguet@free.fr"
+  },
+  {
+    "nom": "Auréva TAGAND-BAUD",
+    "photo": "/assets/etudiants/aureva.jpg",
+    "annee": "L2",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/aur%C3%A9va-t-58418a311/",
+    "contact": "aureva.tagand-baud@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Evaëlle CHOMARD",
+    "photo": null,
+    "annee": "L2",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/eva%C3%ABlle-chomard-8b0907352?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    "contact": "evaelle.chomard@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Nina HOUZÉ",
+    "photo": "/assets/etudiants/nina.jpg",
+    "annee": "L2",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/nina-houz%C3%A9-457b8534a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "contact": "nina.houze@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Sarra DAMAK",
+    "photo": "/assets/etudiants/sarrad.jpeg",
+    "annee": "L2",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/sarra-damak-0a8345313?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    "contact": "damaksarra06@icloud.com"
+  },
+
+  {
+    "nom": "Cléo GOLLIN",
+    "photo": "/assets/etudiants/cleo.jpg",
+    "annee": "L3",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/cleo-gollin-1630a4233",
+    "contact": "clgollin@gmail.com"
+  },
+  {
+    "nom": "Eléana TRAN",
+    "photo": "/assets/etudiants/eleana.jpeg",
+    "annee": "L3",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/eleanatran",
+    "contact": "eleanatran@gmail.com"
+  },
+  {
+    "nom": "Enguerrand ROQUES BAHEZRE DE LANLAY",
+    "photo": "/assets/etudiants/enguerrand.jpeg",
+    "annee": "L3",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/enguerrandrbdl",
+    "contact": "enguerrandroquesbdl@gmail.com"
   },
   {
     "nom": "Lia BISCAFÉ-PARK",
@@ -16,11 +98,27 @@
     "contact": null
   },
   {
-    "nom": "Maxence SYLVESTRE",
-    "photo": "/assets/etudiants/maxencesylvestre.jpeg",
-    "annee": "L1",
+    "nom": "Manon AUBOY",
+    "photo": "/assets/etudiants/manon.jpeg",
+    "annee": "L3",
     "parcours": "societe",
-    "linkedin": "https://www.linkedin.com/in/maxencesylvestre/",
+    "linkedin": "https://www.linkedin.com/in/manon-aubouy-9816472ab/",
     "contact": null
+  },
+  {
+    "nom": "Tristan PAILLOT",
+    "photo": null,
+    "annee": "L3",
+    "parcours": "societe",
+    "linkedin": null,
+    "contact": "tristan.paillot@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Tristan ROUSSEAU",
+    "photo": "/assets/etudiants/tristanr.jpg",
+    "annee": "L3",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/trrousseau/",
+    "contact": "tristan.rousseau@hec.edu"
   }
 ]
