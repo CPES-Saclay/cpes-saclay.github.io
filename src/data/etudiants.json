@@ -21,9 +21,8 @@
     "annee": "L1",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/maxencesylvestre/",
-    "contact": null
+    "contact": "maxence.sylvestre@universite-paris-saclay.fr"
   },
-
   {
     "nom": "Adèle THOMAS",
     "photo": "/assets/etudiants/adele.jpeg",
@@ -41,12 +40,28 @@
     "contact": "aureva.tagand-baud@universite-paris-saclay.fr"
   },
   {
+    "nom": "Danaé DELEEST",
+    "photo": "/assets/etudiants/danae.jpeg",
+    "annee": "L2",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/danaé-deleest-547371336",
+    "contact": "danae.deleest@hec.edu"
+  },
+  {
     "nom": "Evaëlle CHOMARD",
     "photo": null,
     "annee": "L2",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/eva%C3%ABlle-chomard-8b0907352?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     "contact": "evaelle.chomard@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Ludivine QUARTIER",
+    "photo": "/assets/etudiants/ludivine.jpg",
+    "annee": "L2",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/ludivine-quartier-228a51315",
+    "contact": "ludivine.quartier@hec.edu"
   },
   {
     "nom": "Nina HOUZÉ",
@@ -104,6 +119,14 @@
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/manon-aubouy-9816472ab/",
     "contact": null
+  },
+  {
+    "nom": "Tharushan UTHAYAKUMAR",
+    "photo": "/assets/etudiants/tharushan.jpg",
+    "annee": "L3",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/utharushan/",
+    "contact": "tharushan.uthayakumar@hec.edu"
   },
   {
     "nom": "Tristan PAILLOT",
