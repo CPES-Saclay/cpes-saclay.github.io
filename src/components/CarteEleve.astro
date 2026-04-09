@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { getLangFromUrl } from '../i18n';
 
 interface Props {
   nom: string;
@@ -12,7 +13,10 @@ interface Props {
 
 const { nom, photo, annee, parcours, linkedin, contact } = Astro.props;
 
-const parcoursLabel = parcours === 'sante' ? 'Santé' : 'Société';
+const lang = getLangFromUrl(Astro.url);
+const parcoursLabel = parcours === 'sante'
+  ? (lang === 'fr' ? 'Santé' : 'Health')
+  : (lang === 'fr' ? 'Société' : 'Society');
 ---
 
 <article class="px-3 py-5 bg-secondary/5" data-annee={annee} data-parcours={parcours}>

@@ -3,7 +3,7 @@ layout: ../layouts/Default.astro
 proseMode: true
 showBreadcrumbs: true
 title: Conférences
-description: A propos
+description: "Conférences du CPES Paris-Saclay : interventions de chercheurs et professionnels sur l'IA, la santé numérique, la bio-informatique, les données et la société."
 order: 1
 ---
 
@@ -15,7 +15,7 @@ import Conference from '../components/Conference.astro';
   <Conference
     titre="Santé numérique : dialogue entre médecine, ingénierie et société"
     partenaire="Institut Polytechnique de Paris"
-    date="Mars 2026"
+    date="Décembre 2025"
     youtube="https://youtu.be/_iGqq1wHj_Y"
     description="Organisé notamment par l’Ecole Polytechnique, cette conférence a été animée par Nesma Houmani, maître de conférences en neuro-ingénierie, Guy Gozlan, psychiatre, Thomas Lindemann, professeur de science politique, et Nabila Sasdli, PhD cheffe de projet santé numérique. "
   />
@@ -24,6 +24,76 @@ import Conference from '../components/Conference.astro';
     intervenant="Julien Gobin"
     partenaire="HEC Paris"
     date="Décembre 2025"
-    description="Conférence sur les enjeux éthiques et civilisationnels de l'intelligence artificielle."
+    description="L'IA pose à nouveau, de manière très concrète, de grandes questions anciennes. Reprenant la métaphore de la Tour de Babel, interrogeant la promesse d'un langage unique : efficacité, prévision, optimisation, mathématisation. Fondé sur l'information : sert-il à produire davantage d'ordre, ou à rechercher la vérité ? Cette technologie se situe dans la civilisation libérale, bâtie sur le libre arbitre, l'autonomie et la responsabilité (un destin déterminé par le consentement libre et éclairé). Avec l'IA, le jugement et la décision s'externalisent : une nouvelle vision de l'être humain émerge, dans laquelle l'exercice de notre responsabilité nous échappe au risque d'effacer les piliers mêmes de notre civilisation."
+  />
+  <Conference
+    titre="Numérique en santé : apports et perspectives"
+    intervenant="Clémence Marty-Chastan"
+    date="Septembre 2024 et Décembre 2025"
+    partenaire='HEC Paris'
+    description="Panorama de l'e-santé (téléconsultation, télésurveillance, téléexpertise, télésoin, robotique) : un outil pour compléter le soin sans s'y substituer, lutter contre les déserts médicaux et alléger l'empreinte carbone des hôpitaux. Mais une relation de confiance fragile, des données sensibles et dispersées (SNDS, dossier patient unique), un cadre réglementaire exigeant (RGPD, HDS, CNIL), et des freins persistants : interopérabilité, biais des IA, fracture numérique et lenteur d'intégration du secteur."
+  />
+
+  <Conference
+    titre="Introduction à la bio-informatique"
+    intervenant="Olivier Lespinet"
+    partenaire="Université Paris-Saclay, Institut de Biologie Intégrative de la Cellule"
+    date="Septembre 2025"
+    description="Comprendre les problématiques biologiques et développer des outils pour manipuler les données du vivant. Tour d'horizon des champs d'application — bio-informatique des séquences (ADN, ARN, protéines), structurale (macromolécules), des réseaux (modélisation de systèmes biologiques), des populations (écologie, épidémiologie) et des images (satellite, microscopie) avec reconnaissance de formes sur données bruitées."
+  />
+  <Conference
+    titre="Physique et ingénierie pour les nouvelles technologies de la santé"
+    intervenant="Pierre-Yves Joubert, Anne-Marie Haghiri-Gosnet, Alexis Brenes"
+    partenaire="C2N"
+    date="Septembre 2024 et 2025"
+    description="Trois présentations au Centre de Nanosciences et de Nanotechnologies : techniques d'imagerie et d'instrumentation médicale (scanners, implants), organes artificiels et microfluidique appliquée à l'analyse sanguine, et enfin les défis d'ingénierie des pacemakers (autonomie, gestion de l'énergie, intégration cardiaque)."
+  />
+  <Conference
+    titre="Économie inclusive et accès à la santé pour tous"
+    intervenant="Bénédicte Faivre-Tavignot"
+    partenaire="HEC Paris"
+    date="Septembre 2024"
+    description="L'économie inclusive comme réponse à la fracture sociale, risque majeur aux côtés du climat et de la géopolitique. Du social business inspiré de Muhammad Yunus (Grameen Bank, Danone) aux stratégies « base de la pyramide » (Essilor, Schneider, Dacia), l'entreprise peut résoudre des problèmes sociaux plutôt que les aliéner via innovation frugale, innovation inversée, contrats à impact et finance solidaire. Application à l'accès aux soins avec l'exemple d'IPSO Santé face aux déserts médicaux."
+  />
+  <Conference
+    titre="Analyse du racisme et de l'antisémitisme"
+    intervenant="Nonna Mayer"
+    partenaire="Sciences Po, CEE"
+    date="Septembre 2024"
+    description="Présentation des travaux de recherche sur le racisme : difficultés à le définir, son omniprésence et sa montée dans nos sociétés contemporaines, et les facteurs explicatifs. Méthodologie de construction d'enquêtes et techniques d'analyse de données (analyses factorielles, échelles d'attitude)."
+  />
+  <Conference
+    titre="L'enquête ELFE : suivre une cohorte d'enfants sur le long terme"
+    intervenant="Nathalie Oria"
+    date="Septembre 2024"
+    description="Présentation de l'Étude Longitudinale Française depuis l'Enfance : déroulé de l'enquête, suivi des participants sur plus de dix ans, défis méthodologiques et principes guidant l'analyse de ces données complexes."
+  />
+  <Conference
+    titre="Digitalisation, Data et IA dans l'industrie pharmaceutique"
+    intervenant="Samer El Bawad, Ahmad Murtada, Alban Arrault"
+    partenaire="Servier"
+    date="Septembre 2024"
+    description="Présentation de l'entreprise et du rôle des données en médecine : enjeux liés à leur collecte, méthodologies et cadre réglementaire, puis exploitation via des techniques de traitement avancées (clustering, modèles non supervisés)."
+  />
+  <Conference
+    titre="Histoire et philosophie de la Data"
+    intervenant="Marie David"
+    partenaire="HEC Paris"
+    date="Septembre 2024"
+    description="Retour historique sur les données et l'intelligence artificielle : de l'IA symbolique aux réseaux de neurones, spécialisation des modèles, transformations sociétales profondes induites par ces technologies et questions de pouvoir autour du contrôle de l'IA."
+  />
+  <Conference
+    titre="Traitement des données publiques et journalisme"
+    intervenant="Ioana Manolescu"
+    partenaire="Inria"
+    date="Septembre 2024"
+    description="Présentation des travaux menés à Inria autour du traitement de données publiques au service du journalisme et de la liberté d'expression. Diversité des formats (CSV, JSON, graphes), difficultés de collecte et de compilation, construction de modèles unifiés, apports de l'IA pour l'extraction d'information et enjeux de conflits d'intérêts dans le journalisme."
+  />
+  <Conference
+    titre="Micalis et MaIAGE : à la croisée de la microbiologie et de l'informatique"
+    intervenant="Équipe Prokaryotic Cell Development"
+    partenaire="INRAE, Université Paris-Saclay, AgroParisTech"
+    date="Septembre 2024"
+    description="Étude des bactéries, de leurs types et de leurs réactions, et illustration de la collaboration entre biologistes et informaticiens : comment un mathématicien peut trouver sa place dans des problématiques appliquées au vivant. Volet plus biologique sur le séquençage de l'ADN et la réplication."
   />
 </div>

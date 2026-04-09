@@ -1,25 +1,39 @@
 ---
 import CarteEleve from './CarteEleve.astro';
 import etudiants from '../data/etudiants.json';
+import { getLangFromUrl } from '../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = {
+  annee: lang === 'fr' ? 'Année' : 'Year',
+  toutes: lang === 'fr' ? 'Toutes' : 'All',
+  parcours: lang === 'fr' ? 'Parcours' : 'Track',
+  tous: lang === 'fr' ? 'Tous' : 'All',
+  sante: lang === 'fr' ? 'Santé' : 'Health',
+  societe: lang === 'fr' ? 'Société' : 'Society',
+  filtrerAnnee: lang === 'fr' ? 'Filtrer par année' : 'Filter by year',
+  filtrerParcours: lang === 'fr' ? 'Filtrer par parcours' : 'Filter by track',
+  vide: lang === 'fr' ? 'Aucun étudiant ne correspond à cette sélection.' : 'No student matches this selection.',
+};
 ---
 
 <div class="flex flex-wrap gap-6 mb-8">
-  <div class="flex items-center gap-3" role="group" aria-label="Filtrer par année">
-    <span class="text-xs font-bold uppercase text-secondary shrink-0">Année</span>
+  <div class="flex items-center gap-3" role="group" aria-label={t.filtrerAnnee}>
+    <span class="text-xs font-bold uppercase text-secondary shrink-0">{t.annee}</span>
     <div class="flex filtre-options">
-      <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="all" checked hidden /><span>Toutes</span></label>
+      <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="all" checked hidden /><span>{t.toutes}</span></label>
       <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="L1" hidden /><span>L1</span></label>
       <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="L2" hidden /><span>L2</span></label>
       <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="L3" hidden /><span>L3</span></label>
     </div>
   </div>
 
-  <div class="flex items-center gap-3" role="group" aria-label="Filtrer par parcours">
-    <span class="text-xs font-bold uppercase text-secondary shrink-0">Parcours</span>
+  <div class="flex items-center gap-3" role="group" aria-label={t.filtrerParcours}>
+    <span class="text-xs font-bold uppercase text-secondary shrink-0">{t.parcours}</span>
     <div class="flex filtre-options">
-      <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="all" checked hidden /><span>Tous</span></label>
-      <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="sante" hidden /><span>Santé</span></label>
-      <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="societe" hidden /><span>Société</span></label>
+      <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="all" checked hidden /><span>{t.tous}</span></label>
+      <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="sante" hidden /><span>{t.sante}</span></label>
+      <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="societe" hidden /><span>{t.societe}</span></label>
     </div>
   </div>
 </div>
@@ -37,7 +51,7 @@ import etudiants from '../data/etudiants.json';
   ))}
 </div>
 
-<p class="text-sm text-secondary py-4" id="vide" hidden>Aucun étudiant ne correspond à cette sélection.</p>
+<p class="text-sm text-secondary py-4" id="vide" hidden>{t.vide}</p>
 
 <style>
   .filtre-option span {

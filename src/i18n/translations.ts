@@ -46,7 +46,7 @@ export const translations = {
     etablissement: "Établissement",
     modeEnseignement: "Mode d'enseignement",
     credits: "Crédits",
-    alerteSite: "Ce site internet n'est EN AUCUN CAS officiel et représentatif des CPES. Il sert uniquement de maquette.",
+    alerteSite: "Ce site internet n'est en aucun cas officiel et représentatif des CPES. Il est actuellement uniquement un prototype.",
     footerTitre1: "Former les experts de la donnée de demain",
     footerTitre2: "Un cursus pluridisciplinaire unique alliant mathématiques, informatique, économie, société ou santé, sciences des données et IA.",
     footerDescription: "Allier l'exigence des classes préparatoires à l'écosystème de recherche et de formation des grandes écoles de Paris-Saclay.",
