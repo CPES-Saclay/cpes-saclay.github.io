@@ -56,7 +56,7 @@ const current = ALL.find(p => p.key === partenaire)!;
           p.key === partenaire ? 'opacity-100' : 'opacity-[0.3] hover:opacity-100',
         ]}
       >
-        <img src={p.src} alt={p.alt} class="block w-full max-h-7 md:max-h-9 object-contain" />
+        <img src={p.src} alt={p.alt} class="block w-full max-h-7 dark:brightness-0 dark:invert md:max-h-9 object-contain" />
       </a>
     ))}
   </div>
