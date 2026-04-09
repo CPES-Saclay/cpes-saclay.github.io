@@ -38,7 +38,7 @@ const sizeClass = `col-span-1 ${colClass} row-span-1 ${rowClass}`;
     <div class="flex mb-2">
         {
             icon.includes("/") ?
-            <img src={icon} alt={title} class="h-8 w-8 rounded" />
+            <img loading="lazy" src={icon} alt={title} class="h-8 w-8 rounded" />
             :
             <div class={`h-7 w-7 flex items-center justify-center p-1 mr-1 rounded ${icon_color}`}>
               <Icon name={icon} class="text-3xl" />

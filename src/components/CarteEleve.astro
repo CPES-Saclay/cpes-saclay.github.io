@@ -22,7 +22,7 @@ const parcoursLabel = parcours === 'sante'
 <article class="px-3 py-5 bg-secondary/5" data-annee={annee} data-parcours={parcours}>
   <div class="flex items-center gap-4">
     {photo
-      ? <img src={photo} alt={nom} class="w-16 h-16 rounded-full mb-0 object-cover shrink-0 etudiant-photo" />
+      ? <img loading="lazy" src={photo} alt={nom} class="w-16 h-16 rounded-full mb-0 object-cover shrink-0 etudiant-photo" />
       : <div class="w-16 h-16 rounded-full shrink-0 flex items-center justify-center font-bold text-xl bg-secondary text-primary">{nom[0]}</div>
     }
     <div class="flex-1 min-w-0 flex flex-col gap-0">

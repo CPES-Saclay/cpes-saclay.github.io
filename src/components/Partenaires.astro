@@ -33,6 +33,7 @@ const isSingle = !!partenaire;
   {logos.map(l => (
     noLink
       ? <img
+          loading="lazy"
           src={l.src}
           alt={l.alt}
           class:list={[
@@ -49,6 +50,7 @@ const isSingle = !!partenaire;
           ]}
         >
           <img
+            loading="lazy"
             src={l.src}
             alt={l.alt}
             class:list={[

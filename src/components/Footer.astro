@@ -18,7 +18,7 @@ const t = useTranslations(lang);
   <div class="container mx-auto px-6 py-12">
     <div class="flex flex-col md:flex-row gap-8 justify-between">
       <div class="flex flex-col items-start gap-4">
-        <img src="/assets/logo_cpes-paris-saclay.svg" alt="Logo du CPES Paris-Saclay" class="h-14 md:h-18 mt-2.5 dark:invert"/>
+        <img loading="lazy" src="/assets/logo_cpes-paris-saclay.svg" alt="Logo du CPES Paris-Saclay" class="h-14 md:h-18 mt-2.5 dark:invert"/>
         <p class="text-sm mb-4 max-w-[20rem]">
             {t('footerDescription')}
         </p>
@@ -77,9 +77,37 @@ const t = useTranslations(lang);
       </div>
     </div>
   </div>
-  <div class="bg-error fixed text-white bottom-0 left-0 right-0 text-center py-1 px-4">
-    <p class="text-xs">
+  <div id="alerte-site" hidden class="bg-error fixed text-white bottom-0 left-0 right-0 py-1 pl-4 pr-10">
+    <p class="text-xs text-center">
       {t('alerteSite')}
     </p>
+    <button
+      type="button"
+      id="alerte-site-close"
+      aria-label="Fermer"
+      class="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center justify-center w-6 h-6 hover:opacity-70 transition-opacity"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" class="w-4 h-4">
+        <path d="M6 6l12 12M18 6L6 18" />
+      </svg>
+    </button>
   </div>
+  <script>
+    const KEY = 'alerteSiteClosedAt';
+    const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
+    const el = document.getElementById('alerte-site');
+    const btn = document.getElementById('alerte-site-close');
+    if (el && btn) {
+      const closedAt = Number(localStorage.getItem(KEY) || 0);
+      if (closedAt && Date.now() - closedAt < SEVEN_DAYS) {
+        el.remove();
+      } else {
+        el.hidden = false;
+        btn.addEventListener('click', () => {
+          localStorage.setItem(KEY, String(Date.now()));
+          el.remove();
+        });
+      }
+    }
+  </script>
 </footer>
