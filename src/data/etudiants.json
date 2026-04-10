@@ -1,5 +1,13 @@
 [
   {
+    "nom": "Ali KOITA",
+    "photo": "/assets/etudiants/ali.jpeg",
+    "annee": "L1",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/ali-koïta-b97168397/",
+    "contact": "ali.koita@universite-paris-saclay.fr"
+  },
+  {
     "nom": "Guilhem CANIS",
     "photo": "/assets/etudiants/guilhem.png",
     "annee": "L1",
@@ -87,6 +95,14 @@
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/cleo-gollin-1630a4233",
     "contact": "clgollin@gmail.com"
+  },
+  {
+    "nom": "Elios MORIZE",
+    "photo": "/assets/etudiants/elios.png",
+    "annee": "L3",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/elios-morize/",
+    "contact": "elios.morize@gmail.com"
   },
   {
     "nom": "Eléana TRAN",
