@@ -1,7 +1,7 @@
 [
   {
     "nom": "Ali KOITA",
-    "photo": "/assets/etudiants/ali.jpeg",
+    "photo": "/assets/etudiants/alikoita.webp",
     "annee": "L1",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/ali-koïta-b97168397/",
@@ -9,7 +9,7 @@
   },
   {
     "nom": "Guilhem CANIS",
-    "photo": "/assets/etudiants/guilhem.png",
+    "photo": "/assets/etudiants/guilhemcanis.webp",
     "annee": "L1",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/gcanis/",
@@ -17,7 +17,7 @@
   },
   {
     "nom": "Maxence PAUZIES",
-    "photo": "/assets/etudiants/maxencepauzies.jpeg",
+    "photo": "/assets/etudiants/maxencepauzies.webp",
     "annee": "L1",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/maxence-pauzies-bab65a374/",
@@ -25,15 +25,23 @@
   },
   {
     "nom": "Maxence SYLVESTRE",
-    "photo": "/assets/etudiants/maxencesylvestre.jpeg",
+    "photo": "/assets/etudiants/maxencesylvestre.webp",
     "annee": "L1",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/maxencesylvestre/",
     "contact": "maxence.sylvestre@universite-paris-saclay.fr"
   },
   {
+    "nom": "Wanhong DENG",
+    "photo": "/assets/etudiants/wanhongdeng.webp",
+    "annee": "L1",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/emmanuelle-deng-b87952359/",
+    "contact": "wanhong.deng@universite-paris-saclay.fr"
+  },
+  {
     "nom": "Adèle THOMAS",
-    "photo": "/assets/etudiants/adele.jpeg",
+    "photo": "/assets/etudiants/adelethomas.webp",
     "annee": "L2",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/ad%C3%A8le-thomas-6a590a334/",
@@ -41,7 +49,7 @@
   },
   {
     "nom": "Auréva TAGAND-BAUD",
-    "photo": "/assets/etudiants/aureva.jpg",
+    "photo": "/assets/etudiants/aurevatagandbaud.webp",
     "annee": "L2",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/aur%C3%A9va-t-58418a311/",
@@ -49,7 +57,7 @@
   },
   {
     "nom": "Danaé DELEEST",
-    "photo": "/assets/etudiants/danae.jpeg",
+    "photo": "/assets/etudiants/danaedeleest.webp",
     "annee": "L2",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/danaé-deleest-547371336",
@@ -65,7 +73,7 @@
   },
   {
     "nom": "Ludivine QUARTIER",
-    "photo": "/assets/etudiants/ludivine.jpg",
+    "photo": "/assets/etudiants/ludivinequartier.webp",
     "annee": "L2",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/ludivine-quartier-228a51315",
@@ -73,7 +81,7 @@
   },
   {
     "nom": "Nina HOUZÉ",
-    "photo": "/assets/etudiants/nina.jpg",
+    "photo": "/assets/etudiants/ninahouze.webp",
     "annee": "L2",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/nina-houz%C3%A9-457b8534a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -81,7 +89,7 @@
   },
   {
     "nom": "Sarra DAMAK",
-    "photo": "/assets/etudiants/sarrad.jpeg",
+    "photo": "/assets/etudiants/sarradamak.webp",
     "annee": "L2",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/sarra-damak-0a8345313?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
@@ -90,7 +98,7 @@
 
   {
     "nom": "Cléo GOLLIN",
-    "photo": "/assets/etudiants/cleo.jpg",
+    "photo": "/assets/etudiants/cleogollin.webp",
     "annee": "L3",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/cleo-gollin-1630a4233",
@@ -98,7 +106,7 @@
   },
   {
     "nom": "Elios MORIZE",
-    "photo": "/assets/etudiants/elios.png",
+    "photo": "/assets/etudiants/eliosmorize.webp",
     "annee": "L3",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/elios-morize/",
@@ -106,7 +114,7 @@
   },
   {
     "nom": "Eléana TRAN",
-    "photo": "/assets/etudiants/eleana.jpeg",
+    "photo": "/assets/etudiants/eleanatran.webp",
     "annee": "L3",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/eleanatran",
@@ -114,7 +122,7 @@
   },
   {
     "nom": "Enguerrand ROQUES BAHEZRE DE LANLAY",
-    "photo": "/assets/etudiants/enguerrand.jpeg",
+    "photo": "/assets/etudiants/enguerrandroques.webp",
     "annee": "L3",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/enguerrandrbdl",
@@ -122,7 +130,7 @@
   },
   {
     "nom": "Lia BISCAFÉ-PARK",
-    "photo": "/assets/etudiants/lia.jpeg",
+    "photo": "/assets/etudiants/liabiscafepark.webp",
     "annee": "L3",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/lia-biscaf%C3%A9-park-a69a0631a/",
@@ -130,7 +138,7 @@
   },
   {
     "nom": "Manon AUBOY",
-    "photo": "/assets/etudiants/manon.jpeg",
+    "photo": "/assets/etudiants/manonauboy.webp",
     "annee": "L3",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/manon-aubouy-9816472ab/",
@@ -138,7 +146,7 @@
   },
   {
     "nom": "Tharushan UTHAYAKUMAR",
-    "photo": "/assets/etudiants/tharushan.jpg",
+    "photo": "/assets/etudiants/tharushanuthayakumar.webp",
     "annee": "L3",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/utharushan/",
@@ -154,7 +162,7 @@
   },
   {
     "nom": "Tristan ROUSSEAU",
-    "photo": "/assets/etudiants/tristanr.jpg",
+    "photo": "/assets/etudiants/tristanrousseau.webp",
     "annee": "L3",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/trrousseau/",
