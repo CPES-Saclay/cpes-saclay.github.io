@@ -8,8 +8,11 @@ order: 1
 ---
 
 import Conference from '../../components/Conference.astro';
+import Disclaimer from '../../components/Disclaimer.astro';
 
 # Conferences
+
+<Disclaimer>The conference programme evolves each year. Topics and speakers may vary.</Disclaimer>
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
   <Conference
@@ -94,5 +97,60 @@ import Conference from '../../components/Conference.astro';
     partenaire="INRAE, Université Paris-Saclay, AgroParisTech"
     date="September 2024"
     description="The study of bacteria, their types and their reactions, and an illustration of the collaboration between biologists and computer scientists: how a mathematician can find their place in problems applied to living systems. A more biological section on DNA sequencing and replication."
+  />
+  <Conference
+    titre="Democracies in crisis and populism"
+    intervenant="Yann Algan"
+    partenaire="HEC Paris"
+    date="2023 - 2024"
+    description="An analysis of the crisis of liberal-representative democracies through the lens of populism. The symptoms are multiple: rising abstention, the erosion of governing parties, declining unionisation. The satisfaction curve flattens among younger generations. Populism, hard to define, refers in its pejorative sense to a corrupt elite facing a pure people. Resentment is framed as 'the poison of democracy'."
+  />
+  <Conference
+    titre="Data journalism, fact-checking and data integration"
+    intervenant="Nelly Barret"
+    partenaire="CEDAR, Inria"
+    date="2023 - 2024"
+    description="Presentation of StatCheck, an automated fact-checking tool: a warehouse of statistical data coupled with a search engine and textual analysis to detect persuasive techniques in the media (binary classification or multi-class across 13 techniques). Broader view on a system for integrating heterogeneous data with unified access through a mediator, a warehouse or a data lake (graph representation, compact summaries, SQL queries). Data journalism is defined as the intersection of facts, raw data and computing skills."
+  />
+  <Conference
+    titre="Planet China: the Zero Covid policy"
+    intervenant="Cazole, Gabay, Bénédicte Faivre-Tavignot"
+    partenaire="HEC Paris"
+    date="2023 - 2024"
+    description="Epidemiological monitoring of China's Zero Covid policy, based on the expatriate community and multiple cross-referenced sources, with incremental death rates as a central indicator. The conference also introduces the concept of inclusive economics carried by Bénédicte Faivre-Tavignot, articulated around three dimensions: access to goods and services, access to credit and loans, and duty of vigilance."
+  />
+  <Conference
+    titre="Does one need to be a healthcare professional to start a business in healthcare?"
+    intervenant="Rémy Slama"
+    partenaire="Collège de France, Inserm"
+    date="2023 - 2024"
+    description="A structured debate around the legitimacy of non-physician entrepreneurs in healthcare. Supporters of NO highlight a fresh perspective, freedom and the absence of bias from a medical calling. Supporters of YES emphasise legitimacy, responsibility and the prevention of impostures. Rémy Slama also speaks about biology becoming highly quantitative and the application of data to public health."
+  />
+  <Conference
+    titre="Entrepreneurship in healthcare"
+    intervenant="Jeanne Theuret"
+    partenaire="Sorella Care"
+    date="2023 - 2024"
+    description="Can healthcare be treated as an ordinary business? The supportive side highlights real demand, international competition and the creation of applications. The opposing side recalls the patient-caregiver relationship, vital stakes, ethics and the social security framework. In Europe, CE marking and clinical studies remain unavoidable prerequisites for reimbursement."
+  />
+  <Conference
+    titre="Health data"
+    intervenant="Philippe Emery, President of Abbott France"
+    partenaire="Abbott"
+    date="2023 - 2024"
+    description="Abbott presents itself as a global leader in diagnostics, nutrition and medical devices, with 800 employees and 300 million euros in revenue in France. Personal data are described as the most valuable resource of the 21st century, ahead of natural resources. The SNDS is portrayed as a unique system in the world, centralising all national Vitale data and accessible for research and health policy steering."
+  />
+  <Conference
+    titre="Digital health, trust and hospitals"
+    intervenant="Cédric Lussiez"
+    partenaire="GHNE"
+    date="2023 - 2024"
+    description="The hospital sector accounts for 11.5% of GDP, including 5% for public hospitals, but suffers from a structural shortage of staff. The conference posits ontological trust as the sine qua non of any digital transformation: without it, action becomes violent or anarchic. Illustrated by hospitals' refusal to use GDP as a steering indicator, and by the inability to treat 40% of patients due to a lack of doctors."
+  />
+  <Conference
+    titre="Visit to Station F: entrepreneurial ecosystem"
+    partenaire="Station F, AYOLAB"
+    date="2023 - 2024"
+    description="Meetings at Station F with entrepreneurs from the Parisian startup ecosystem. Presentation of AYOLAB, a startup specialised in tracking products on marketplaces (Amazon-type), illustrating a concrete application of data science outside the strictly health-related field."
   />
 </div>

@@ -8,8 +8,11 @@ order: 1
 ---
 
 import Conference from '../components/Conference.astro';
+import Disclaimer from '../components/Disclaimer.astro';
 
 # Conférences
+
+<Disclaimer>Le programme des conférences évolue chaque année. Les thèmes, intervenants peuvent varier.</Disclaimer>
 
 <div class="not-prose grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
   <Conference
@@ -95,5 +98,60 @@ import Conference from '../components/Conference.astro';
     partenaire="INRAE, Université Paris-Saclay, AgroParisTech"
     date="Septembre 2024"
     description="Étude des bactéries, de leurs types et de leurs réactions, et illustration de la collaboration entre biologistes et informaticiens : comment un mathématicien peut trouver sa place dans des problématiques appliquées au vivant. Volet plus biologique sur le séquençage de l'ADN et la réplication."
+  />
+  <Conference
+    titre="Démocraties en crise et populismes"
+    intervenant="Yann Algan"
+    partenaire="HEC Paris"
+    date="2023 - 2024"
+    description="Analyse de la crise des démocraties libérales-représentatives à travers le prisme du populisme. Les symptômes sont multiples : abstention croissante, effacement des partis de gouvernement, baisse de la syndicalisation. La courbe de satisfaction s'aplatit chez les jeunes. Le populisme, difficile à définir, désigne dans son sens péjoratif une élite corrompue face à un peuple pur. Le ressentiment est posé comme « le poison de la démocratie »."
+  />
+  <Conference
+    titre="Journalisme de données, fact-checking et intégration de données"
+    intervenant="Nelly Barret"
+    partenaire="CEDAR, Inria"
+    date="2023 - 2024"
+    description="Présentation de StatCheck, outil de fact-checking automatisé : un warehouse de données statistiques couplé à un moteur de recherche et à une analyse textuelle pour détecter les techniques persuasives dans les médias (classification binaire ou multi-classes parmi 13 techniques). Ouverture sur un système d'intégration de données hétérogènes offrant un accès unifié via médiateur, warehouse ou data lake (représentation en graphe, résumés compacts, requêtes SQL). Le data journalism y est défini comme l'intersection entre faits, données brutes et compétences informatiques."
+  />
+  <Conference
+    titre="Planète Chine : politique Zéro Covid"
+    intervenant="Cazole, Gabay, Bénédicte Faivre-Tavignot"
+    partenaire="HEC Paris"
+    date="2023 - 2024"
+    description="Suivi épidémiologique de la politique Zéro Covid en Chine, appuyé sur la communauté expatriée et des sources multiples et croisées, avec le taux de décès incrémental comme indicateur central. La conférence introduit également le concept d'économie inclusive porté par Bénédicte Faivre-Tavignot, articulé autour de trois dimensions : accès aux biens et services, accès aux crédits et prêts, et devoir de vigilance."
+  />
+  <Conference
+    titre="Faut-il un professionnel de santé pour entreprendre dans la santé ?"
+    intervenant="Rémy Slama"
+    partenaire="Collège de France, Inserm"
+    date="2023 - 2024"
+    description="Débat structuré autour de la légitimité du non-médecin entrepreneur en santé. Les partisans du NON valorisent le regard neuf, la liberté et l'absence de biais de la vocation médicale. Les partisans du OUI insistent sur la légitimité, la responsabilité et la prévention des impostures. Rémy Slama intervient en parallèle sur la biologie devenue très quantitative et l'application des données à la santé publique."
+  />
+  <Conference
+    titre="Entreprendre dans la santé"
+    intervenant="Jeanne Theuret"
+    partenaire="Sorella Care"
+    date="2023 - 2024"
+    description="La santé peut-elle être traitée comme un commerce ordinaire ? Le versant favorable met en avant la réalité de la demande, la concurrence internationale et la création d'applications. Le versant opposé rappelle la relation patient-soignant, l'enjeu vital, l'éthique et le cadre de la sécurité sociale. En Europe, le marquage CE et les études cliniques restent des prérequis incontournables pour accéder au remboursement."
+  />
+  <Conference
+    titre="Les données de santé"
+    intervenant="Philippe Emery, Président Abbott France"
+    partenaire="Abbott"
+    date="2023 - 2024"
+    description="Abbott se présente comme leader mondial du diagnostic, de la nutrition et des dispositifs médicaux, avec 800 collaborateurs et 300 millions d'euros de chiffre d'affaires en France. Les données personnelles sont qualifiées de ressource la plus précieuse du XXIe siècle, devant les ressources naturelles. Le SNDS est décrit comme un système unique au monde centralisant l'intégralité des données Vitale nationales, accessible pour la recherche et le pilotage en santé."
+  />
+  <Conference
+    titre="Santé numérique, confiance et hôpital"
+    intervenant="Cédric Lussiez"
+    partenaire="GHNE"
+    date="2023 - 2024"
+    description="Le secteur hospitalier représente 11,5 % du PIB, dont 5 % pour les hôpitaux publics, mais souffre d'un déficit structurel en personnel. La conférence pose la confiance ontologique comme condition sine qua non de toute transformation numérique : sans elle, l'action devient violente ou anarchique. Illustrée par le refus des hôpitaux d'utiliser le PIB comme indicateur de pilotage, et par l'incapacité à prendre en charge 40 % des patients faute de médecins."
+  />
+  <Conference
+    titre="Visite de Station F : écosystème entrepreneurial"
+    partenaire="Station F, AYOLAB"
+    date="2023 - 2024"
+    description="Rencontres à Station F avec des entrepreneurs de l'écosystème startup parisien. Présentation d'AYOLAB, startup spécialisée dans le tracking de produits sur les marketplaces (type Amazon), illustrant une application concrète de la data science hors du champ strictement sanitaire."
   />
 </div>
