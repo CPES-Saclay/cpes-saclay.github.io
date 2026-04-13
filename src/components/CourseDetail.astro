@@ -130,6 +130,7 @@ const generateDescriptionHtml = (matiere: MatiereData): string => {
 };
 
 const descriptionHtml = generateDescriptionHtml(matiere);
+const showDescription = false;
 ---
 
 <div id={matiere.id} class="collapse collapse-arrow rounded-box bg-secondary/5 mb-4">
@@ -156,7 +157,7 @@ const descriptionHtml = generateDescriptionHtml(matiere);
         {matiere.mode && <span><strong class="font-medium">{t('modeEnseignement')} :</strong> {matiere.mode}</span>}
         <span><strong class="font-medium">{t('credits')} :</strong> {matiere.ects} ECTS</span>
     </div>
-    {descriptionHtml && (
+    {descriptionHtml && showDescription && (
     <div class="mb-6">
       <span><strong class="font-medium">{t('descriptionCours')}</strong></span>
       <div class="prose max-w-none text-base-content/90" set:html={descriptionHtml} />
