@@ -1,5 +1,13 @@
 [
   {
+    "nom": "Adam Dan SEBIH",
+    "photo": "/assets/etudiants/adamdansebih.webp",
+    "annee": "L1",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/adam-dan-sebih-b89726343/",
+    "contact": null
+  },
+  {
     "nom": "Ali KOITA",
     "photo": "/assets/etudiants/alikoita.webp",
     "annee": "L1",
@@ -30,6 +38,14 @@
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/maxencesylvestre/",
     "contact": "maxence.sylvestre@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Robin NTSAKALA",
+    "photo": "/assets/etudiants/robinntsakala.webp",
+    "annee": "L1",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/robin-n-697325355/",
+    "contact": null
   },
   {
     "nom": "Wanhong DENG",
@@ -65,7 +81,7 @@
   },
   {
     "nom": "Evaëlle CHOMARD",
-    "photo": null,
+    "photo": "/assets/etudiants/evaellechomard.webp",
     "annee": "L2",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/eva%C3%ABlle-chomard-8b0907352?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
@@ -95,7 +111,6 @@
     "linkedin": "https://www.linkedin.com/in/sarra-damak-0a8345313?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     "contact": "damaksarra06@icloud.com"
   },
-
   {
     "nom": "Cléo GOLLIN",
     "photo": "/assets/etudiants/cleogollin.webp",
@@ -103,14 +118,6 @@
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/cleo-gollin-1630a4233",
     "contact": "clgollin@gmail.com"
-  },
-  {
-    "nom": "Elios MORIZE",
-    "photo": "/assets/etudiants/eliosmorize.webp",
-    "annee": "L3",
-    "parcours": "societe",
-    "linkedin": "https://www.linkedin.com/in/elios-morize/",
-    "contact": "elios.morize@gmail.com"
   },
   {
     "nom": "Eléana TRAN",
@@ -121,8 +128,16 @@
     "contact": "eleanatran@gmail.com"
   },
   {
+    "nom": "Elios MORIZE",
+    "photo": "/assets/etudiants/eliosmorize.webp",
+    "annee": "L3",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/elios-morize/",
+    "contact": "elios.morize@gmail.com"
+  },
+  {
     "nom": "Enguerrand ROQUES BAHEZRE DE LANLAY",
-    "photo": "/assets/etudiants/enguerrandroques.webp",
+    "photo": "/assets/etudiants/enguerrandroquesbahezredelanlay.webp",
     "annee": "L3",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/enguerrandrbdl",
@@ -145,12 +160,44 @@
     "contact": null
   },
   {
+    "nom": "Noreen TROISPOUX",
+    "photo": "/assets/etudiants/noreentroispoux.webp",
+    "annee": "L3",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/noreen-troispoux",
+    "contact": "noreen.troispoux@gmail.com"
+  },
+  {
+    "nom": "Othmane NAMMOUS",
+    "photo": "/assets/etudiants/othmanenammous.webp",
+    "annee": "L3",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/othmane-nammous-400330297/",
+    "contact": "othmane.nammous@hec.edu"
+  },
+  {
+    "nom": "Rémi MALAPERT",
+    "photo": "/assets/etudiants/remimalapert.webp",
+    "annee": "L3",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/rmalapert/",
+    "contact": null
+  },
+  {
     "nom": "Tharushan UTHAYAKUMAR",
     "photo": "/assets/etudiants/tharushanuthayakumar.webp",
     "annee": "L3",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/utharushan/",
     "contact": "tharushan.uthayakumar@hec.edu"
+  },
+  {
+    "nom": "Tristan JOLY",
+    "photo": "/assets/etudiants/tristanjoly.webp",
+    "annee": "L3",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/tristanjoly/",
+    "contact": "tristanjoly@proton.me"
   },
   {
     "nom": "Tristan PAILLOT",
@@ -167,5 +214,13 @@
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/trrousseau/",
     "contact": "tristan.rousseau@hec.edu"
+  },
+  {
+    "nom": "Yanis CHERGUI",
+    "photo": "/assets/etudiants/yanischergui.webp",
+    "annee": "L3",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/yanis-chergui/",
+    "contact": null
   }
 ]
