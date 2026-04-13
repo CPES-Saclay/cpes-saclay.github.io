@@ -11,10 +11,10 @@ interface Props {
     class?: string;
     target?: string;
     rel?: string;
-    posthogEvent?: string;
+    triggerClass?: string;
 }
 
-const { href, variant = 'primary', size = 'default', icon, iconPosition = 'left', position = 'left', class: className, target, rel, posthogEvent } = Astro.props;
+const { href, variant = 'primary', size = 'default', icon, iconPosition = 'left', position = 'left', class: className, target, rel, triggerClass } = Astro.props;
 
 const variants = {
     primary: 'bg-secondary text-primary hover:bg-primary hover:text-secondary border border-secondary',
@@ -34,8 +34,7 @@ const innerClass = [
         href={href}
         target={target}
         rel={rel}
-        data-posthog-event={posthogEvent}
-        class:list={innerClass}
+        class:list={[...innerClass, triggerClass]}
     >
         {icon && iconPosition === 'left' && <Icon name={icon} class="text-lg" />}
         <slot />
@@ -45,8 +44,7 @@ const innerClass = [
   {!href && (
     <button
         type="button"
-        data-posthog-event={posthogEvent}
-        class:list={innerClass}
+        class:list={[...innerClass, triggerClass]}
     >
         {icon && iconPosition === 'left' && <Icon name={icon} class="text-lg" />}
         <slot />
@@ -54,14 +52,3 @@ const innerClass = [
     </button>
   )}
 </div>
-
-<script is:inline>
-  document.addEventListener('click', (e) => {
-    const target = e.target.closest && e.target.closest('[data-posthog-event]');
-    if (!target) return;
-    const event = target.getAttribute('data-posthog-event');
-    if (event && window.posthog) {
-      window.posthog.capture(event);
-    }
-  });
-</script>
