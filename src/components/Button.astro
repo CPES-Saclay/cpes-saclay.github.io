@@ -2,7 +2,7 @@
 import { Icon } from "astro-icon/components";
 
 interface Props {
-    href: string;
+    href?: string;
     variant?: 'primary' | 'secondary' | 'outline';
     size?: 'default' | 'sm';
     icon?: string;
@@ -11,29 +11,57 @@ interface Props {
     class?: string;
     target?: string;
     rel?: string;
+    posthogEvent?: string;
 }
 
-const { href, variant = 'primary', size = 'default', icon, iconPosition = 'left', position = 'left', class: className, target, rel } = Astro.props;
+const { href, variant = 'primary', size = 'default', icon, iconPosition = 'left', position = 'left', class: className, target, rel, posthogEvent } = Astro.props;
 
 const variants = {
     primary: 'bg-secondary text-primary hover:bg-primary hover:text-secondary border border-secondary',
     outline: 'bg-primary text-secondary hover:bg-secondary hover:text-primary border border-secondary'
 };
+
+const innerClass = [
+    "inline-flex cursor-pointer items-center justify-center font-medium transition-all duration-200 no-underline gap-2",
+    size === 'sm' ? 'px-3 py-1.5 text-sm' : 'px-5 py-4 text-base',
+    variants[variant],
+];
 ---
 
 <div class:list={["flex mb-8", position === 'right' ? 'justify-end' : 'justify-start', className]}>
-  <a
-      href={href}
-      target={target}
-      rel={rel}
-      class:list={[
-          "inline-flex cursor-pointer items-center justify-center font-medium transition-all duration-200 no-underline gap-2",
-          size === 'sm' ? 'px-3 py-1.5 text-sm' : 'px-5 py-4 text-base',
-          variants[variant],
-      ]}
-  >
-      {icon && iconPosition === 'left' && <Icon name={icon} class="text-lg" />}
-      <slot />
-      {icon && iconPosition === 'right' && <Icon name={icon} class="text-lg" />}
-  </a>
+  {href && (
+    <a
+        href={href}
+        target={target}
+        rel={rel}
+        data-posthog-event={posthogEvent}
+        class:list={innerClass}
+    >
+        {icon && iconPosition === 'left' && <Icon name={icon} class="text-lg" />}
+        <slot />
+        {icon && iconPosition === 'right' && <Icon name={icon} class="text-lg" />}
+    </a>
+  )}
+  {!href && (
+    <button
+        type="button"
+        data-posthog-event={posthogEvent}
+        class:list={innerClass}
+    >
+        {icon && iconPosition === 'left' && <Icon name={icon} class="text-lg" />}
+        <slot />
+        {icon && iconPosition === 'right' && <Icon name={icon} class="text-lg" />}
+    </button>
+  )}
 </div>
+
+<script is:inline>
+  document.addEventListener('click', (e) => {
+    const target = e.target.closest && e.target.closest('[data-posthog-event]');
+    if (!target) return;
+    const event = target.getAttribute('data-posthog-event');
+    if (event && window.posthog) {
+      window.posthog.capture(event);
+    }
+  });
+</script>
