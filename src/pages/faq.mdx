@@ -8,6 +8,7 @@ order: 1
 ---
 
 import FaqQuestion from '../components/FaqQuestion.astro';
+import Button from '../components/Button.astro';
 
 # Foire aux questions
 
@@ -27,6 +28,19 @@ Les cours sont dispensés principalement au Lycée International de Palaiseau Pa
 Oui. Dès la première année, les étudiants choisissent entre un **parcours Santé** et un **parcours Société**, qui représentent chacun environ 22 ECTS de cours spécialisés répartis sur les trois années.
 </FaqQuestion>
 
+<FaqQuestion question="Quels sont les frais de candidature et de scolarité ?">
+Il n'y a **aucun frais de candidature** : l'admission se fait exclusivement via Parcoursup. Les frais de scolarité sont les **frais universitaires classiques** (droits d'inscription nationaux et CVEC).
+</FaqQuestion>
+
+<FaqQuestion question="Peut-on travailler en parallèle ?">
+Le rythme de la formation est **très soutenu** (cours, projets, travail personnel), ce qui rend un emploi en parallèle très difficile à concilier avec le cursus. Il est fortement recommandé de se tourner vers les bourses et aides disponibles.
+</FaqQuestion>
+
 <FaqQuestion question="Le CPES est-il compatible avec d'autres formations ?">
 Non. Le CPES est une formation à part entière qui remplace la première année post-bac. Son rythme intensif est incompatible avec une double inscription.
 </FaqQuestion>
+
+<div class="not-prose mt-12">
+  <p class="text-secondary mb-3">Vous ne trouvez pas la réponse à votre question ?</p>
+  <Button onclick="window.posthog && posthog.capture('faq_question_asked')">Poser une question</Button>
+</div>
