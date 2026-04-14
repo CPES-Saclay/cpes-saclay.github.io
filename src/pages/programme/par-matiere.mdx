@@ -8,7 +8,7 @@ order: 3.2
 ---
 
 import ProgrammeParMatiere from '../../components/ProgrammeMatiere.astro';
-import ButtonsBox from '../../components/ButtonsBox.astro';
+import CardsBox from '../../components/CardsBox.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
 
 # Programme par discipline
@@ -17,13 +17,17 @@ import Disclaimer from '../../components/Disclaimer.astro';
 
 <ProgrammeParMatiere />
 
-<ButtonsBox
+<CardsBox
     title='Autres vues du programme'
     links={[
         { href: "/programme", title: "Vue d'ensemble" },
-        { href: "/programme/par-operateur", title: "Par opérateur" },
-        { href: "/programme/l1", title: "L1" },
-        { href: "/programme/l2", title: "L2" },
-        { href: "/programme/l3", title: "L3" },
+        { href: "/programme/l1", title: "Première année" },
+        { href: "/programme/l2", title: "Deuxième année" },
+        { href: "/programme/l3", title: "Troisième année" },
+        { href: "/programme/par-operateur",
+          title: "Par opérateur",
+          description: "Enseignements détaillés par établissement partenaire.",
+          icon: "ri:briefcase-4-line"
+        },
     ]}
 />

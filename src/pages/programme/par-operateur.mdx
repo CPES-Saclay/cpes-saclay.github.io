@@ -10,7 +10,7 @@ order: 3.1
 
 import Disclaimer from '../../components/Disclaimer.astro';
 import ProgrammeOperateur from '../../components/ProgrammeOperateur.astro';
-import ButtonsBox from '../../components/ButtonsBox.astro';
+import CardsBox from '../../components/CardsBox.astro';
 
 # Programme pédagogique détaillé pour chaque opérateur du CPES Paris-Saclay
 
@@ -35,13 +35,17 @@ Les opérateurs du CPES Paris-Saclay sont le Lycée International de Palaiseau P
 ###### Institut Polytechnique de Paris
 <ProgrammeOperateur partenaire="ipp" showTitle={false} />
 
-###### Autres vues du programme
-<ButtonsBox
+<CardsBox
+    title='Autres vues du programme'
     links={[
         { href: "/programme", title: "Vue d'ensemble" },
-        { href: "/programme/par-matiere", title: "Par discipline" },
-        { href: "/programme/l1", title: "L1" },
-        { href: "/programme/l2", title: "L2" },
-        { href: "/programme/l3", title: "L3" },
+        { href: "/programme/l1", title: "Première année" },
+        { href: "/programme/l2", title: "Deuxième année" },
+        { href: "/programme/l3", title: "Troisième année" },
+        { href: "/programme/par-matiere",
+          title: "Par discipline",
+          description: "Enseignements regroupés par grande discipline.",
+          icon: "ri:book-ai-line"
+        },
     ]}
 />

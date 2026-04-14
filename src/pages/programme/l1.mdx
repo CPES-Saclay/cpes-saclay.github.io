@@ -8,7 +8,7 @@ description: "Programme de L1 du CPES Paris-Saclay : fondamentaux en mathématiq
 ---
 import ProgrammeAnnee from '../../components/ProgrammeAnnee.astro';
 import ProportionBar from '../../components/ProportionBar.astro';
-import ButtonsBox from '../../components/ButtonsBox.astro';
+import CardsBox from '../../components/CardsBox.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
 
 # Programme détaillé de la première année du CPES Paris-Saclay
@@ -20,13 +20,21 @@ import Disclaimer from '../../components/Disclaimer.astro';
 
 <ProgrammeAnnee annee="L1" />
 
-###### Autres vues du programme
-<ButtonsBox
+<CardsBox
+    title='Autres vues du programme'
     links={[
         { href: "/programme", title: "Vue d'ensemble" },
-        { href: "/programme/par-matiere", title: "Par discipline" },
-        { href: "/programme/par-operateur", title: "Par opérateur" },
-        { href: "/programme/l2", title: "L2" },
-        { href: "/programme/l3", title: "L3" },
+        { href: "/programme/l2", title: "Deuxième année" },
+        { href: "/programme/l3", title: "Troisième année" },
+        { href: "/programme/par-operateur",
+          title: "Par opérateur",
+          description: "Enseignements détaillés par établissement partenaire.",
+          icon: "ri:briefcase-4-line"
+        },
+        { href: "/programme/par-matiere",
+          title: "Par discipline",
+          description: "Enseignements regroupés par grande discipline.",
+          icon: "ri:book-ai-line"
+        },
     ]}
 />

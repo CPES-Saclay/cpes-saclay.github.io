@@ -8,27 +8,35 @@ description: "CPES Paris-Saclay year 3 programme: advanced courses at partner in
 ---
 import ProgrammeAnnee from '../../../components/ProgrammeAnnee.astro';
 import ProportionBar from '../../../components/ProportionBar.astro';
-import ButtonsBox from '../../../components/ButtonsBox.astro';
+import CardsBox from '../../../components/CardsBox.astro';
 import Disclaimer from '../../../components/Disclaimer.astro';
 
 # Detailed educational programme for the third year of the Paris-Saclay CPES
 
 <Disclaimer>The programme is regularly updated to improve. The version presented here corresponds to the 2023-2026 cohort.</Disclaimer>
 
-Tutoring is offered by students from the partner schools and university (HEC and Institut Polytechnique de Paris). In L3, students can in particular benefit from tutoring in Physics and Chemistry provided by Institut Polytechnique de Paris.
+Tutoring is offered by students from the partners (HEC and Institut Polytechnique de Paris). In L3, students can in particular benefit from tutoring in Physics and Chemistry provided by Institut Polytechnique de Paris.
 
 ## Distribution of courses in year 3 (L3)
 <ProportionBar lipps={20} esr={80} />
 
 <ProgrammeAnnee annee="L3" />
 
-###### Other views of the programme
-<ButtonsBox
+<CardsBox
+    title='Other views of the programme'
     links={[
         { href: "/en/programme", title: "Overview" },
-        { href: "/en/programme/par-matiere", title: "By discipline" },
-        { href: "/en/programme/par-operateur", title: "By operator" },
-        { href: "/en/programme/l1", title: "L1" },
-        { href: "/en/programme/l2", title: "L2" },
+        { href: "/en/programme/l1", title: "First year" },
+        { href: "/en/programme/l2", title: "Second year" },
+        { href: "/en/programme/par-operateur",
+          title: "By operator",
+          description: "Courses detailed by partner institution.",
+          icon: "ri:briefcase-4-line"
+        },
+        { href: "/en/programme/par-matiere",
+          title: "By discipline",
+          description: "Courses grouped by major discipline.",
+          icon: "ri:book-ai-line"
+        },
     ]}
 />

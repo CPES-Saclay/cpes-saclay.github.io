@@ -8,7 +8,7 @@ description: "CPES Paris-Saclay year 2 programme: advanced mathematics, computer
 ---
 import ProgrammeAnnee from '../../../components/ProgrammeAnnee.astro';
 import ProportionBar from '../../../components/ProportionBar.astro';
-import ButtonsBox from '../../../components/ButtonsBox.astro';
+import CardsBox from '../../../components/CardsBox.astro';
 import Disclaimer from '../../../components/Disclaimer.astro';
 
 # Detailed educational programme for the second year of the Paris-Saclay CPES
@@ -20,13 +20,21 @@ import Disclaimer from '../../../components/Disclaimer.astro';
 
 <ProgrammeAnnee annee="L2" />
 
-###### Other views of the programme
-<ButtonsBox
+<CardsBox
+    title='Other views of the programme'
     links={[
         { href: "/en/programme", title: "Overview" },
-        { href: "/en/programme/par-matiere", title: "By discipline" },
-        { href: "/en/programme/par-operateur", title: "By operator" },
-        { href: "/en/programme/l1", title: "L1" },
-        { href: "/en/programme/l3", title: "L3" },
+        { href: "/en/programme/l1", title: "First year" },
+        { href: "/en/programme/l3", title: "Third year" },
+        { href: "/en/programme/par-operateur",
+          title: "By operator",
+          description: "Courses detailed by partner institution.",
+          icon: "ri:briefcase-4-line"
+        },
+        { href: "/en/programme/par-matiere",
+          title: "By discipline",
+          description: "Courses grouped by major discipline.",
+          icon: "ri:book-ai-line"
+        },
     ]}
 />

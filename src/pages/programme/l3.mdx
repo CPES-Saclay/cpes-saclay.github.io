@@ -8,27 +8,35 @@ description: "Programme de L3 du CPES Paris-Saclay : cours avancés chez les par
 ---
 import ProgrammeAnnee from '../../components/ProgrammeAnnee.astro';
 import ProportionBar from '../../components/ProportionBar.astro';
-import ButtonsBox from '../../components/ButtonsBox.astro';
+import CardsBox from '../../components/CardsBox.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
 
 # Programme détaillé de la troisième année du CPES Paris-Saclay
 
 <Disclaimer>Le programme évolue régulièrement pour s'améliorer. Celui présenté ici correspond à la promotion 2023-2026.</Disclaimer>
 
-Un tutorat est proposé par des étudiants des écoles et Université partenaires (HEC et l'Institut Polytechnique de Paris). En L3, les étudiants ont notamment la possibilité de bénéficier d'un tutorat en Physique-Chimie assuré par l'Institut Polytechnique de Paris.
+Un tutorat est proposé par des étudiants des partenaires (HEC et l'Institut Polytechnique de Paris). En L3, les étudiants ont notamment la possibilité de bénéficier d'un tutorat en Physique-Chimie assuré par l'Institut Polytechnique de Paris.
 
 ## Répartition des enseignements en L3
 <ProportionBar lipps={20} esr={80} />
 
 <ProgrammeAnnee annee="L3" />
 
-###### Autres vues du programme
-<ButtonsBox
+<CardsBox
+    title='Autres vues du programme'
     links={[
         { href: "/programme", title: "Vue d'ensemble" },
-        { href: "/programme/par-matiere", title: "Par discipline" },
-        { href: "/programme/par-operateur", title: "Par opérateur" },
-        { href: "/programme/l1", title: "L1" },
-        { href: "/programme/l2", title: "L2" }
+        { href: "/programme/l1", title: "Première année" },
+        { href: "/programme/l2", title: "Deuxième année" },
+        { href: "/programme/par-operateur",
+          title: "Par opérateur",
+          description: "Enseignements détaillés par établissement partenaire.",
+          icon: "ri:briefcase-4-line"
+        },
+        { href: "/programme/par-matiere",
+          title: "Par discipline",
+          description: "Enseignements regroupés par grande discipline.",
+          icon: "ri:book-ai-line"
+        },
     ]}
 />
