@@ -16,6 +16,14 @@
     "contact": "ali.koita@universite-paris-saclay.fr"
   },
   {
+    "nom": "Audran TRAORE",
+    "photo": "/assets/etudiants/audrantraore.jpeg",
+    "annee": "L1",
+    "parcours": "societe",
+    "linkedin": "http://linkedin.com/in/audran-traore-599005368",
+    "contact": "audran.traore@universite-paris-saclay.fr"
+  },
+  {
     "nom": "Guilhem CANIS",
     "photo": "/assets/etudiants/guilhemcanis.webp",
     "annee": "L1",
@@ -192,20 +200,20 @@
     "contact": "tharushan.uthayakumar@hec.edu"
   },
   {
+    "nom": "Othmane NAMMOUS",
+    "photo": "/assets/etudiants/othmanenammous.webp",
+    "annee": "L3",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/othmane-nammous-400330297/",
+    "contact": "othmane.nammous@hec.edu"
+  },
+  {
     "nom": "Tristan JOLY",
     "photo": "/assets/etudiants/tristanjoly.webp",
     "annee": "L3",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/tristanjoly/",
     "contact": "tristanjoly@proton.me"
-  },
-  {
-    "nom": "Tristan PAILLOT",
-    "photo": null,
-    "annee": "L3",
-    "parcours": "societe",
-    "linkedin": null,
-    "contact": "tristan.paillot@universite-paris-saclay.fr"
   },
   {
     "nom": "Tristan ROUSSEAU",
