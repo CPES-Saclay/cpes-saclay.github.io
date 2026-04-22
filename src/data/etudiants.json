@@ -17,7 +17,7 @@
   },
   {
     "nom": "Audran TRAORE",
-    "photo": "/assets/etudiants/audrantraore.jpeg",
+    "photo": "/assets/etudiants/audrantraore.webp",
     "annee": "L1",
     "parcours": "societe",
     "linkedin": "http://linkedin.com/in/audran-traore-599005368",
@@ -30,6 +30,14 @@
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/gcanis/",
     "contact": "guilhem.canis@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Léa POLAT",
+    "photo": "/assets/etudiants/leapolat.webp",
+    "annee": "L1",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/l%C3%A9a-polat-49bb9436a/",
+    "contact": "lea.polat@universite-paris-saclay.fr"
   },
   {
     "nom": "Maxence PAUZIES",
@@ -86,6 +94,14 @@
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/danaé-deleest-547371336",
     "contact": "danae.deleest@hec.edu"
+  },
+  {
+    "nom": "Eléa-Leïla BENNOUNA",
+    "photo": "/assets/etudiants/elealeilabennouna.webp",
+    "annee": "L2",
+    "parcours": "sante",
+    "linkedin": null,
+    "contact": "elea.bennouna@gmail.com"
   },
   {
     "nom": "Evaëlle CHOMARD",
