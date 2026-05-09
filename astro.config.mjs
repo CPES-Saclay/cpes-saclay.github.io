@@ -5,6 +5,7 @@ import mdx from "@astrojs/mdx";
 import remarkCallout from "@r4ai/remark-callout";
 
 export default defineConfig({
+  site: 'https://cpes-paris-saclay.fr',
   vite: {
     plugins: [tailwindcss()],
   },
