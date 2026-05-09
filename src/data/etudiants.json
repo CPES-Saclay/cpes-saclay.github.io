@@ -16,6 +16,14 @@
     "contact": "ali.koita@universite-paris-saclay.fr"
   },
   {
+    "nom": "Aminata SARR",
+    "photo": "/assets/etudiants/aminatasarr.webp",
+    "annee": "L1",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/aminata-sarr-063972397/",
+    "contact": "aminata.sarr@universite-paris-saclay.fr"
+  },
+  {
     "nom": "Audran TRAORE",
     "photo": "/assets/etudiants/audrantraore.webp",
     "annee": "L1",
@@ -54,6 +62,14 @@
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/maxencesylvestre/",
     "contact": "maxence.sylvestre@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Pablo MARTINEZ",
+    "photo": "/assets/etudiants/pablomartinez.webp",
+    "annee": "L1",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/martinez-emma/",
+    "contact": "pablo.martinez-palacios@universite-paris-saclay.fr"
   },
   {
     "nom": "Robin NTSAKALA",

@@ -24,10 +24,7 @@
             "ects": 18,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Ce cours de mathématiques se concentre sur trois grandes thématiques : l'algèbre, l'analyse et les probabilités et s'appuie sur le programme des prépas scientifiques.",
-              "Il vise à renforcer les bases du lycée tout en introduisant des notions nouvelles comme les espaces vectoriels, les applications linéaires, les séries numériques et les probabilités sur un univers fini."
-            ],
+            "description": [],
             "categorie": "Mathématiques"
           },
           {
@@ -44,11 +41,7 @@
             "ects": 12,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Ce cours couvre les bases de la programmation en Python, avec une approche axée sur la programmation fonctionnelle, l'algorithmique et les structures de données (listes, arbres, graphes).",
-              "Il inclut la logique formelle, ainsi que les bases de données et les langages formels (automates, expressions régulières).",
-              "Les élèves apprennent aussi la validation, le test des algorithmes, la récursivité, et les preuves par induction."
-            ],
+            "description": [],
             "categorie": "Informatique"
           }
         ]
@@ -74,10 +67,7 @@
             "ects": 6,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce module offre une vue d'ensemble structurée des grands domaines de l'économie, mêlant approches historiques, théoriques et appliquées.",
-              "Les étudiantes et étudiants explorent les fondements de la pensée économique, l'histoire et les évolutions du système financier international, ainsi que les outils d'analyse macroéconomique et microéconomique."
-            ],
+            "description": [],
             "categorie": "Économie"
           },
           {
@@ -94,11 +84,7 @@
             "ects": 2,
             "etablissement": "Université Paris-Saclay",
             "mode": "Travaux pratiques",
-            "description": [
-              "Le cours de découverte de l'IA propose une initiation ludique et visuelle à l'intelligence artificielle - plus précisément à l'apprentissage statistique - via le pilotage de robots.",
-              "L'optique, sur la base de travaux pratiques, est de développer une intuition sur les algorithmes d'apprentissage (supervisés, non supervisés, par renforcement), pour parvenir progressivement aux formulations mathématiques.",
-              "La mise en œuvre sera l'occasion de manipuler réseaux de neurones, vision artificielle et traitement du langage. Les rudiments de programmation Python nécessaires seront introduits au fil de l'eau."
-            ],
+            "description": [],
             "categorie": "Sciences des données"
           },
           {
@@ -115,11 +101,7 @@
             "ects": 2,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral + Travaux pratiques",
-            "description": [
-              "Ce cours d'introduction à la science des données présente les bases de la collecte, du traitement, de l'analyse et de la visualisation des données (y compris l'analyse d'images).",
-              "Il couvre les fondamentaux des statistiques descriptives et de la théorie des probabilités, en s'appuyant sur Python.",
-              "Au travers d'un projet d'analyse d'images, les étudiants apprennent ainsi à suivre la chaîne complète de traitement d'un projet data, de la problématique à la communication des résultats, avec une forte composante pratique."
-            ],
+            "description": [],
             "categorie": "Sciences des données"
           },
           {
@@ -136,10 +118,7 @@
             "ects": 2,
             "etablissement": "ENS Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Le cours d'introduction à la Statistique présente les notions fondamentales de la statistique descriptive et inférentielle, permettant de collecter, organiser, analyser et interpréter des données numériques.",
-              "Il initie les étudiants aux principales méthodes pour résumer des données, évaluer des relations entre variables, et effectuer des estimations et tests d'hypothèses."
-            ],
+            "description": [],
             "categorie": "Sciences des données"
           },
           {
@@ -157,10 +136,7 @@
             "ects": 7,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours de Biologie s'appuie sur le programme de première année des classes préparatoires de BCPST.",
-              "Il porte sur l'étude du vivant à plusieurs échelles : moléculaire, cellulaire, organisme et écosystème. Il aborde aussi l'organisation des cellules, le métabolisme (respiration, nutrition) ainsi que la génétique (structure de l'ADN, transmission de l'information génétique)."
-            ],
+            "description": [],
             "categorie": "Santé"
           },
           {
@@ -178,10 +154,7 @@
             "ects": 7,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours s'appuie sur le programme des classes préparatoires B/L et constitue une formation approfondie dédiée à l'analyse scientifique des sociétés contemporaines.",
-              "Il couvre les grandes thématiques telles que la production et la dynamique de l'ordre social (individus, socialisation, normes, déviances), les rapports sociaux et la stratification (classes, genre, âge, mobilité sociale), les cultures et leurs diversités, ainsi que le pouvoir, la participation politique et l'action collective. Ce programme vise à transmettre les concepts clés de la sociologie tout en développant la rigueur analytique et la capacité d'argumentation des étudiants."
-            ],
+            "description": [],
             "categorie": "Société"
           },
           {
@@ -198,11 +171,7 @@
             "ects": 3,
             "etablissement": "Institut Polytechnique de Paris",
             "mode": "Travaux pratiques",
-            "description": [
-              "Ce cours initie les étudiantes et étudiants aux méthodes fondamentales d'analyse statistique et de traitement de données en Python.",
-              "Les travaux pratiques s'appuient sur les bibliothèques numériques les plus utilisées (numpy, pandas, scikit-learn) et incluent un projet en binôme appliqué à des jeux de données réels. Les plus avancés peuvent expérimenter la mise en œuvre de modèles de deep learning simplifiés.",
-              "Ce module articule rigueur statistique, pratique de la programmation scientifique et mise en œuvre d'outils modernes d'apprentissage automatique."
-            ],
+            "description": [],
             "entite": "Telecom Paris",
             "categorie": "Sciences des données"
           }
@@ -229,10 +198,7 @@
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours s'inscrit dans une approche actionnelle dans les 5 compétences (compréhension orale et écrite, expression écrite, expression orale en continu et en interaction) avec un travail sur la prononciation des sons voyelles.",
-              "L'interaction se fait à travers des documents écrits et/ou audiovisuels centrés sur la problématique de l'environnement et du développement durable et un scénario de communication dans le cadre d'un projet tout au long de l'année. La communication interculturelle pourra être abordée dans le cadre du projet."
-            ],
+            "description": [],
             "categorie": "Langues & Culture"
           },
           {
@@ -249,9 +215,7 @@
             "ects": 4,
             "etablissement": "Université Paris-Saclay",
             "mode": "Pratique sportive ou artistique ou cours (LV2)",
-            "description": [
-              "Activités Physiques Sportives et Artistiques au choix de l'étudiant ou enseignement linguistique."
-            ],
+            "description": [],
             "categorie": "Langues & Culture"
           },
           {
@@ -268,10 +232,7 @@
             "ects": 0,
             "etablissement": "Université Paris-Saclay",
             "mode": "Small Private Online Course (SPOC)",
-            "description": [
-              "Le SPOC Sens critique / sciences en sociétés est un enseignement en ligne destiné à sensibiliser les étudiants aux enjeux des interactions sciences et sociétés en développant leur sens critique.",
-              "Il est constitué de cinq séances d'exercices ludiques portant sur des ressources audio, vidéo et textuelles. Chaque séance est rattachée d'une part à un thème envisageant un champ spécifique de connaissances scientifiques, d'autre part à un questionnement interrogeant un aspect spécifique des interactions sciences/sociétés."
-            ],
+            "description": [],
             "categorie": "Ouverture"
           },
           {
@@ -287,9 +248,7 @@
             "ects": 0,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "-",
-            "description": [
-              "Le Projet solidaire est mentionné dans le tableau de synthèse L1 avec 20h et 0 ECTS."
-            ],
+            "description": [],
             "categorie": "Projets & Entrepreneuriat"
           }
         ]
@@ -322,10 +281,7 @@
             "ects": 14,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Ce cours de deuxième année approfondit l'algèbre (espaces vectoriels, matrices, groupes symétriques), l'analyse (intégration, suites et séries, équations différentielles) et les probabilités.",
-              "L'objectif est de consolider et étendre les connaissances de première année en mettant l'accent sur la rigueur, la modélisation et la résolution de problèmes complexes."
-            ],
+            "description": [],
             "categorie": "Mathématiques"
           },
           {
@@ -342,10 +298,7 @@
             "ects": 3,
             "etablissement": "ENS Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Le cours couvre la définition formelle, la construction d'une chaîne de Markov, les propriétés fondamentales telles que la Markovianité, les états absorbants, et les classes de communication.",
-              "Il inclut également des théorèmes clés comme le théorème ergodique, la convergence vers une distribution stationnaire, et les temps d'absorption. Ce cours prépare à l'analyse approfondie des chaînes et à leurs applications variées en probabilités, statistiques et plus généralement en science des données."
-            ],
+            "description": [],
             "categorie": "Mathématiques"
           },
           {
@@ -362,10 +315,7 @@
             "ects": 7,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral + Travaux pratiques",
-            "description": [
-              "Le programme d'informatique de deuxième année se concentre sur le langage Python, avec un approfondissement des méthodes de programmation, notamment la récursivité, l'induction et les structures de données séquentielles et hiérarchiques.",
-              "Les étudiants étudient également l'algorithmique avancée (exploration exhaustive, graphes, décomposition de problèmes), la logique formelle, les langages réguliers, ainsi que la gestion des ressources comme la mémoire et les fichiers."
-            ],
+            "description": [],
             "categorie": "Informatique"
           },
           {
@@ -382,14 +332,7 @@
             "ects": 3,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Ce cours est une introduction aux principes d'interprétation des langages. Les points suivants sont étudiés :",
-              "Les différentes phases de l'interprétation des langages : analyses lexicale, syntaxique, sémantiques et exécution ;",
-              "Les expressions régulières, automates finis ;",
-              "Les grammaires algébriques, reconnaissance des mots par l'algorithme CYK, analyse descendante LL ;",
-              "Les arbres de syntaxe abstraite ;",
-              "Les règles sémantiques simples pour la portée, le typage et l'évaluation."
-            ],
+            "description": [],
             "categorie": "Informatique"
           }
         ]
@@ -415,10 +358,7 @@
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Dans le prolongement du cours de première année, ce cours vise à approfondir la compréhension des mécanismes économiques contemporains.",
-              "Le programme couvre notamment la mondialisation économique et financière, les déséquilibres économiques, la régulation et l'intervention publique. Il intègre aussi les fondements théoriques et sociologiques pour analyser les évolutions des sociétés et préparer les étudiants à la dissertation critique aux concours des grandes écoles de commerce."
-            ],
+            "description": [],
             "categorie": "Économie"
           },
           {
@@ -436,11 +376,7 @@
             "ects": 6,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours qui s'appuie sur le programme de deuxième année des classes préparatoires de BCPST approfondit la biologie humaine, la physiologie et la santé, intégrant aussi la génomique, le développement et la communication cellulaire.",
-              "Il développe la compréhension des grands processus physiologiques (immunité, reproduction, système nerveux, régulation hormonale), l'impact des facteurs environnementaux et aborde l'évolution et la phylogénie.",
-              "Les travaux pratiques et études de documents visent à renforcer l'analyse des grandes fonctions de l'organisme en lien avec la santé."
-            ],
+            "description": [],
             "categorie": "Santé"
           },
           {
@@ -458,10 +394,7 @@
             "ects": 6,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours de deuxième année approfondit l'étude des mécanismes sociaux en insistant sur les processus de construction des inégalités, les transformations des structures familiales, les institutions sociales et politiques, ainsi que les questions de mondialisation et de changement social.",
-              "Les étudiants sont amenés à analyser des études de cas, mobiliser des théories sociologiques plus complexes et affiner leur méthode critique pour préparer les concours, avec un accent sur l'interprétation rigoureuse des phénomènes sociaux contemporains."
-            ],
+            "description": [],
             "categorie": "Société"
           },
           {
@@ -478,9 +411,7 @@
             "ects": 1,
             "etablissement": "HEC Paris",
             "mode": "Cours magistral",
-            "description": [
-              "Les étudiants doivent choisir un cours entre :"
-            ],
+            "description": [],
             "contenu": {
               "choix": [
                 "Politique, crises, communication",
@@ -507,10 +438,7 @@
             "ects": 2,
             "etablissement": "Institut Polytechnique de Paris",
             "mode": "Travaux dirigés",
-            "description": [
-              "Ce cours approfondit les techniques fondamentales de traitement, d'analyse et de modélisation des données. Il introduit les méthodes statistiques avancées, les algorithmes d'apprentissage automatique de base, ainsi que les outils informatiques pour la gestion et l'exploitation de grands ensembles de données.",
-              "L'accent est mis sur la mise en œuvre pratique et l'interprétation critique des résultats dans des contextes variés."
-            ],
+            "description": [],
             "entite": "École Polytechnique",
             "categorie": "Sciences des données"
           },
@@ -528,10 +456,7 @@
             "ects": 2,
             "etablissement": "Institut Polytechnique de Paris",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Ce cours propose une approche avancée des méthodes statistiques, des techniques d'apprentissage supervisé et non supervisé, et de la gestion de bases de données volumineuses.",
-              "Il met l'accent sur l'application rigoureuse des modèles, l'évaluation critique des résultats, et l'interprétation des données complexes. Les étudiants développent des compétences solides en programmation et utilisent des logiciels spécialisés pour traiter des problématiques réelles dans divers domaines."
-            ],
+            "description": [],
             "entite": "École Polytechnique",
             "categorie": "Sciences des données"
           },
@@ -549,10 +474,7 @@
             "ects": 3,
             "etablissement": "ENS Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "L'objectif de ce cours est d'approfondir les méthodes d'inférence statistique, incluant l'estimation ponctuelle et par intervalle, les tests d'hypothèses, et l'analyse de la variance (ANOVA). Il aborde aussi les modèles linéaires simples, les statistiques multivariées, et les processus stochastiques de base.",
-              "Ce cours combine théorie et applications pratiques avec l'utilisation de logiciels statistiques, pour permettre aux étudiants de concevoir, analyser et interpréter des études quantitatives en biologie ou en économie."
-            ],
+            "description": [],
             "categorie": "Sciences des données"
           },
           {
@@ -569,10 +491,7 @@
             "ects": 2,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "L'objectif de ce cours est d'acquérir les connaissances de base en biologie, permettant aux étudiants de comprendre les problématiques biologiques et la nature des données auxquelles ils seront confrontés.",
-              "Les notions suivantes sont développées : Le vivant : de la cellule à l'organisme ; Unité du monde vivant : Réplication, transcription et traduction ; Génome et séquençage ; Régulation de l'expression génétique ; Évolution en biologie ; Le métabolisme et sa régulation."
-            ],
+            "description": [],
             "categorie": "Santé"
           },
           {
@@ -589,10 +508,7 @@
             "ects": 1,
             "etablissement": "HEC Paris",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours propose une initiation pratique à la modélisation de données appliquée aux sciences sociales et au management, centrée sur l'utilisation avancée d'Excel.",
-              "Les étudiants apprennent à organiser, analyser et représenter efficacement des données, tout en s'initiant à la logique des formules (RechercheH, RechercheV, Somme.si, Somme.si.ens) et des tableaux croisés dynamiques."
-            ],
+            "description": [],
             "categorie": "Sciences des données"
           },
           {
@@ -609,9 +525,7 @@
             "ects": 1,
             "etablissement": "HEC Paris",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours explore les liens entre entrepreneuriat et développement durable, en analysant comment les startups intègrent les enjeux sociaux et environnementaux dans leurs modèles économiques."
-            ],
+            "description": [],
             "categorie": "Économie"
           },
           {
@@ -628,10 +542,7 @@
             "ects": 2,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours d'introduction à R et à R-Studio propose une première initiation au langage R et à son environnement de travail. Les étudiants apprennent à manipuler des jeux de données, réaliser des analyses statistiques de base et produire des visualisations claires et reproductibles.",
-              "Le cours s'appuie sur des jeux de données relatifs à la biologie."
-            ],
+            "description": [],
             "categorie": "Sciences des données"
           }
         ]
@@ -657,9 +568,7 @@
             "ects": 2,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "-",
-            "description": [
-              "Le Projet solidaire vise - sur les deux premières années de la formation - à initier les étudiants à la conduite du projet à dimension sociale, citoyenne ou associative. À travers la mise en place d'actions concrètes et durables au service d'une communauté, les étudiants développent des compétences pratiques en gestion de projet, en travail d'équipe et en communication."
-            ],
+            "description": [],
             "categorie": "Projets & Entrepreneuriat"
           },
           {
@@ -676,10 +585,7 @@
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours s'inscrit dans une approche actionnelle dans les 5 compétences (compréhension orale et écrite, expression écrite, expression orale en continu et en interaction) avec un travail sur la prononciation des sons voyelles.",
-              "L'interaction se fait à travers des documents écrits et/ou audiovisuels centrés sur la problématique de l'environnement et du développement durable et un scénario de communication dans le cadre d'un projet tout au long de l'année. La communication interculturelle pourra être abordée dans le cadre du projet."
-            ],
+            "description": [],
             "categorie": "Langues & Culture"
           },
           {
@@ -696,10 +602,7 @@
             "ects": 1,
             "etablissement": "HEC Paris",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours initie les étudiants aux principales méthodes et outils mobilisés par les entrepreneurs.",
-              "Les étudiants apprennent à transformer une idée en projet viable, à structurer un business model et à piloter le développement d'une startup innovante dans un environnement compétitif."
-            ],
+            "description": [],
             "categorie": "Projets & Entrepreneuriat"
           },
           {
@@ -716,9 +619,7 @@
             "ects": 1,
             "etablissement": "Université Paris-Saclay",
             "mode": "Pratique sportive ou artistique ou cours (LV2)",
-            "description": [
-              "Activités Physiques Sportives et Artistiques au choix de l'étudiant ou enseignement linguistique."
-            ],
+            "description": [],
             "categorie": "Langues & Culture"
           },
           {
@@ -735,10 +636,7 @@
             "ects": 1,
             "etablissement": "Université Paris-Saclay",
             "mode": "Small Private Online Course (SPOC)",
-            "description": [
-              "Le principal objectif de ce SPOC est de faire comprendre les mécanismes et conséquences liés au réchauffement climatique et à l'érosion de la biodiversité ainsi que leurs relations avec nos modes de vie et de consommation.",
-              "Plus généralement, il vise à apporter une vision transversale pour appréhender les changements globaux, notamment en lien avec les objectifs de développement durable de l'ONU et le concept de limites planétaires."
-            ],
+            "description": [],
             "categorie": "Ouverture"
           }
         ]
@@ -771,9 +669,7 @@
             "ects": 7,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Ce cours offre une introduction approfondie à la topologie des espaces vectoriels normés, à la dualité et à l'étude des formes quadratiques et hermitiennes. Il propose également une initiation à l'optimisation différentiable, ainsi qu'aux structures algébriques fondamentales : groupes, anneaux et corps."
-            ],
+            "description": [],
             "categorie": "Mathématiques"
           },
           {
@@ -790,10 +686,7 @@
             "ects": 3.5,
             "etablissement": "ENS Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Ce cours introduit les fondements de la théorie de la mesure et de l'intégration, avec une attention particulière portée à la construction des tribus, à la notion de mesurabilité et à l'intégrale de Lebesgue. Il explore les espaces fonctionnels et leurs propriétés, en lien avec les outils de l'analyse moderne.",
-              "Des applications aux probabilités permettent d'illustrer la portée de ces concepts dans la modélisation de phénomènes aléatoires et dans le traitement rigoureux de variables aléatoires."
-            ],
+            "description": [],
             "categorie": "Mathématiques"
           },
           {
@@ -810,10 +703,7 @@
             "ects": 3.5,
             "etablissement": "ENS Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Ce cours propose une introduction à la théorie du signal, en particulier à la transformée de Fourier discrète et au théorème de Nyquist-Shannon, qui permettent d'analyser et de reconstruire des signaux numériques.",
-              "Il aborde ensuite les fondements de l'optimisation discrète et de l'optimisation convexe, avec ou sans contraintes, en mettant l'accent sur les méthodes analytiques et algorithmiques de résolution."
-            ],
+            "description": [],
             "categorie": "Mathématiques"
           },
           {
@@ -830,10 +720,7 @@
             "ects": 3.5,
             "etablissement": "ENS Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Ce cours traite de la résolution des équations différentielles ordinaires (EDO) d'ordre 1 et 2, ainsi que des systèmes différentiels linéaires d'ordre 1 et de leur prolongement aux EDO d'ordre n. Il aborde le théorème de Cauchy-Lipschitz, l'analyse qualitative des solutions et propose une introduction aux équations différentielles partielles (EDS).",
-              "Le programme permet d'acquérir les connaissances essentielles à la compréhension et à la manipulation des principaux outils de l'analyse différentielle."
-            ],
+            "description": [],
             "categorie": "Mathématiques"
           },
           {
@@ -850,9 +737,7 @@
             "ects": 3.5,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Ce cours aborde les principes d'utilisation des systèmes de gestion de bases de données (modèles, contraintes, persistance, concurrence, confidentialité...) Il étudie les langages PL/SQL ainsi que l'accès au SGBD à partir de programmes généralistes (PHP)."
-            ],
+            "description": [],
             "categorie": "Informatique"
           }
         ]
@@ -878,10 +763,7 @@
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours analyse la conception et l'évaluation des politiques publiques : qui décide, avec quels objectifs, et comment mesurer leurs effets grâce aux outils de la micro et macroéconométrie. Il aborde également l'économie comportementale appliquée aux politiques publiques et propose un bilan critique des interventions.",
-              "La seconde partie explore la mondialisation économique et financière : ouverture des échanges depuis le XIXᵉ siècle, analyse des échanges internationaux, régionalisation et gouvernance, ainsi que la constitution et le fonctionnement du marché mondial des capitaux."
-            ],
+            "description": [],
             "categorie": "Économie"
           },
           {
@@ -898,10 +780,7 @@
             "ects": 2,
             "etablissement": "Institut Polytechnique de Paris",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours initie à l'analyse des phénomènes sociaux à partir de données quantitatives. Il combine concepts sociologiques et outils statistiques pour mesurer comportements, inégalités et dynamiques sociales.",
-              "Les étudiants apprennent à collecter et traiter des données, à utiliser des méthodes d'analyse comme les statistiques descriptives et la régression, et à interpréter les résultats pour des applications concrètes telles que les mobilités sociales ou les inégalités."
-            ],
+            "description": [],
             "entite": "ENSAE",
             "categorie": "Société"
           },
@@ -919,10 +798,7 @@
             "ects": 1,
             "etablissement": "Institut Polytechnique de Paris",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours de Sociologie computationnelle explore les méthodes quantitatives et informatiques appliquées à l'étude des phénomènes sociaux. Il introduit les concepts fondamentaux de la modélisation, de l'analyse des réseaux sociaux, et du traitement de grandes bases de données issues des interactions humaines.",
-              "Le cours met en avant l'utilisation d'outils numériques pour la collecte, l'analyse et la visualisation des données sociales."
-            ],
+            "description": [],
             "entite": "ENSAE",
             "categorie": "Société"
           },
@@ -957,13 +833,7 @@
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours propose une approche pluridisciplinaire pour comprendre les mécanismes fondamentaux du vivant :",
-              "Microbiologie : diversité des microorganismes (organisation, écologie, métabolisme), observation et culture en laboratoire.",
-              "Immunologie : rôles des acteurs moléculaires et cellulaires du système immunitaire, stratégies vaccinales et principes des antiviraux.",
-              "Différenciation cellulaire : notion de cellule souche, étapes et contrôle de la différenciation (génétique, paracrine, hormonal), rôle dans le développement et le renouvellement cellulaire.",
-              "Neurosciences : organisation anatomo-fonctionnelle du système nerveux central et périphérique, fonctions complexes (stress, motricité), et pathologies, notamment neurodégénératives."
-            ],
+            "description": [],
             "categorie": "Santé"
           },
           {
@@ -981,14 +851,7 @@
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce module explore les grands enjeux contemporains à travers quatre thématiques clés :",
-              "Sociologie du risque : analyse des perceptions et des constructions sociales du risque, des politiques de prévention et des comportements face à l'incertitude.",
-              "Sociologie de la famille : étude des formes familiales, des transformations des rôles et des relations intergénérationnelles dans des contextes variés.",
-              "Sociologie de la sexualité (introduction) : approche des normes, des représentations et des pratiques, en lien avec les évolutions sociales et culturelles.",
-              "Sociologie des mouvements sociaux : compréhension des mobilisations collectives, de leurs acteurs, de leurs stratégies et de leur impact sur le changement social.",
-              "Un enseignement qui offre des outils conceptuels et méthodologiques pour analyser les structures et les mutations de la société."
-            ],
+            "description": [],
             "categorie": "Société"
           },
           {
@@ -1005,10 +868,7 @@
             "ects": 3,
             "etablissement": "ENS Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": [
-              "Ce cours d'Analyse de données et modélisation dans les sciences introduit les méthodes fondamentales d'analyse de données et de modélisation communes à toutes les sciences : sciences fondamentales, sciences de la nature, sciences humaines et sociales. Il aborde la collecte, la visualisation et l'analyse statistique des données, ainsi que leur modélisation mathématique et la modélisation des protocoles.",
-              "Le cours s'appuie sur des langages comme R, Python et Julia pour développer les compétences analytiques et programmatiques des étudiants."
-            ],
+            "description": [],
             "categorie": "Sciences des données"
           },
           {
@@ -1025,10 +885,7 @@
             "ects": 3,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours d'Introduction à la recherche clinique et épidémiologique présente les fondements méthodologiques essentiels à la conception, la conduite et l'analyse des études en santé publique et clinique. Il couvre les principes clés de l'épidémiologie, les différents types d'études observationnelles et interventionnelles, ainsi que les méthodes statistiques adaptées à l'analyse des données cliniques.",
-              "Une attention particulière est portée à la rigueur scientifique, à l'éthique de la recherche et à l'interprétation critique des résultats, avec une approche pratique favorisant l'application des concepts dans des contextes biomédicaux variés."
-            ],
+            "description": [],
             "categorie": "Santé"
           },
           {
@@ -1045,9 +902,7 @@
             "ects": 3,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral + Travaux pratiques",
-            "description": [
-              "Une option à choisir entre : Fairness en IA ; Analyse de données biologiques ; Informatique Théorique."
-            ],
+            "description": [],
             "categorie": "Informatique"
           }
         ]
@@ -1073,10 +928,7 @@
             "ects": 12,
             "etablissement": "HEC Paris",
             "mode": "Travaux dirigés",
-            "description": [
-              "Le projet Capstone est un projet de synthèse qui clôture la formation. Il permet aux étudiants de mobiliser l'ensemble des compétences acquises pour résoudre un problème concret en data science. Ce projet peut prendre la forme d'une analyse approfondie de données, du développement d'un modèle prédictif ou de la conception d'une solution innovante pour répondre à un enjeu réel.",
-              "Réalisé sur plusieurs mois, il favorise l'autonomie, la créativité et l'application pratique des méthodes statistiques, de la programmation et de la visualisation des données."
-            ],
+            "description": [],
             "categorie": "Projets & Entrepreneuriat"
           },
           {
@@ -1093,10 +945,7 @@
             "ects": 4,
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
-            "description": [
-              "Ce cours vise à consolider et approfondir les cinq compétences langagières (compréhension orale et écrite, expression écrite, expression orale en continu et en interaction) dans une approche actionnelle. L'accent est mis sur la fluidité et la précision, avec un travail sur la prononciation et l'intonation.",
-              "Les activités s'appuient sur des documents variés et des projets collaboratifs autour de thématiques actuelles telles que l'environnement, le développement durable et la communication interculturelle, afin de préparer les étudiants à des échanges professionnels et académiques en contexte international."
-            ],
+            "description": [],
             "categorie": "Langues & Culture"
           },
           {
@@ -1113,9 +962,7 @@
             "ects": 2,
             "etablissement": "Université Paris-Saclay",
             "mode": "Pratique sportive ou artistique ou cours (LV2)",
-            "description": [
-              "Activités Physiques Sportives et Artistiques au choix de l'étudiant ou enseignement linguistique."
-            ],
+            "description": [],
             "categorie": "Langues & Culture"
           }
         ]
