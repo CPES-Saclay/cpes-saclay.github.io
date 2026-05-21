@@ -1,8 +1,9 @@
-# CPES Paris-Saclay
+# Site du CPES Paris-Saclay
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-Site (presque) officiel des CPES Paris-Saclay. Ce site est encore en construction, mais vous trouverez bientôt plus d'informations sur ce README.
+Site du CPES Paris-Saclay.  
+[cpes-paris-saclay.fr](https://cpes-paris-saclay.fr)
 
 ## Contributeurs
 
