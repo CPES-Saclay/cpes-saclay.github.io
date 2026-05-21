@@ -1,47 +1,80 @@
 ---
-import { getLangFromUrl } from '../i18n/index';
+import { getLangFromUrl } from "../i18n/index";
 
 export interface Props {
-  partenaire?: 'lipps' | 'ups' | 'hec' | 'ens' | 'ipp';
+  partenaire?: "lipps" | "ups" | "hec" | "ens" | "ipp";
   noLink?: boolean;
 }
 
 const { partenaire, noLink = false } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 
-const prefix = lang === 'en' ? '/en' : '';
+const prefix = lang === "en" ? "/en" : "";
 
 const ALL_LOGOS = [
-  { key: 'ipp',   src: '/assets/partenaires/logo_ipparis.svg', alt: 'Institut Polytechnique de Paris',                       href: `${prefix}/formation/institut-polytechnique-de-paris` },
-  { key: 'ups',   src: '/assets/partenaires/logo_universite-paris-saclay.svg', alt: lang === 'fr' ? 'Université Paris-Saclay' : 'Paris-Saclay University', href: `${prefix}/formation/universite-paris-saclay` },
-  { key: 'hec',   src: '/assets/partenaires/logo_hecparis.svg', alt: 'HEC Paris',                                             href: `${prefix}/formation/hec-paris` },
-  { key: 'ens',   src: '/assets/partenaires/logo_ens-paris-saclay.svg', alt: 'ENS Paris-Saclay',                                      href: `${prefix}/formation/ens-paris-saclay` },
-  { key: 'lipps', src: '/assets/partenaires/logo_lipps.png', alt: 'Lycée International de Palaiseau Paris-Saclay',          href: `${prefix}/formation/lycee-international-de-palaiseau` },
+  {
+    key: "ens",
+    src: "/assets/partenaires/logo_ens-paris-saclay.svg",
+    alt: "ENS Paris-Saclay",
+    href: `${prefix}/formation/ens-paris-saclay`,
+  },
+  {
+    key: "hec",
+    src: "/assets/partenaires/logo_hecparis.svg",
+    alt: "HEC Paris",
+    href: `${prefix}/formation/hec-paris`,
+  },
+  {
+    key: "ipp",
+    src: "/assets/partenaires/logo_ipparis.svg",
+    alt: "Institut Polytechnique de Paris",
+    href: `${prefix}/formation/institut-polytechnique-de-paris`,
+  },
+  {
+    key: "lipps",
+    src: "/assets/partenaires/logo_lipps.png",
+    alt: "Lycée International de Palaiseau Paris-Saclay",
+    href: `${prefix}/formation/lycee-international-de-palaiseau`,
+  },
+  {
+    key: "ups",
+    src: "/assets/partenaires/logo_universite-paris-saclay.svg",
+    alt: lang === "fr" ? "Université Paris-Saclay" : "Paris-Saclay University",
+    href: `${prefix}/formation/universite-paris-saclay`,
+  }
 ];
 
 const logos = partenaire
-  ? ALL_LOGOS.filter(l => l.key === partenaire)
+  ? ALL_LOGOS.filter((l) => l.key === partenaire)
   : ALL_LOGOS;
 
 const isSingle = !!partenaire;
 ---
 
-<div class:list={[
-  "flex flex-nowrap items-center overflow-hidden",
-  isSingle ? "justify-start gap-0 p-0" : "justify-between gap-4 md:gap-12 py-8 md:py-10 max-w-4xl",
-]}>
-  {logos.map(l => (
-    noLink
-      ? <img
+<div
+  class:list={[
+    "flex flex-nowrap items-center overflow-hidden",
+    isSingle
+      ? "justify-start gap-0 p-0"
+      : "justify-between gap-4 md:gap-12 py-8 md:py-10 max-w-4xl",
+  ]}
+>
+  {
+    logos.map((l) =>
+      noLink ? (
+        <img
           loading="lazy"
           src={l.src}
           alt={l.alt}
           class:list={[
             "block dark:brightness-0 dark:invert",
-            isSingle ? "h-8 sm:h-11 w-auto" : "flex-1 min-w-0 w-full h-auto max-h-9 md:max-h-13 object-contain object-center",
+            isSingle
+              ? "h-8 sm:h-11 w-auto"
+              : "flex-1 min-w-0 w-full h-auto max-h-9 md:max-h-13 object-contain object-center",
           ]}
         />
-      : <a
+      ) : (
+        <a
           href={l.href}
           title={l.alt}
           class:list={[
@@ -55,9 +88,13 @@ const isSingle = !!partenaire;
             alt={l.alt}
             class:list={[
               "block dark:brightness-0 dark:invert",
-              isSingle ? "h-8 sm:h-11 w-auto" : "w-full h-auto max-h-9 md:max-h-13 object-contain object-center",
+              isSingle
+                ? "h-8 sm:h-11 w-auto"
+                : "w-full h-auto max-h-9 md:max-h-13 object-contain object-center",
             ]}
           />
         </a>
-  ))}
+      ),
+    )
+  }
 </div>
