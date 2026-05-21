@@ -25,8 +25,8 @@ const ogLocale = Astro.url.pathname.startsWith('/en') ? 'en_US' : 'fr_FR';
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
-    <meta name="robots" content="noindex">
     <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
