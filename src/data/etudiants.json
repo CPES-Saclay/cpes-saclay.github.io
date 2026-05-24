@@ -140,8 +140,16 @@
     "photo": "/assets/etudiants/ninahouze.webp",
     "annee": "L2",
     "parcours": "sante",
-    "linkedin": "https://www.linkedin.com/in/nina-houz%C3%A9-457b8534a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    "linkedin": "https://www.linkedin.com/in/nina-houz%C3%A9-457b8534a",
     "contact": "nina.houze@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Robin LANZ",
+    "photo": "/assets/etudiants/robinlanz.webp",
+    "annee": "L2",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/robin-lanz-4846ab330",
+    "contact": "robin.lanz@universite-paris-saclay.fr"
   },
   {
     "nom": "Sarra DAMAK",
