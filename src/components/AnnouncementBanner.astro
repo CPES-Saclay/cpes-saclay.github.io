@@ -1,0 +1,85 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  lang?: "fr" | "en";
+}
+
+const { lang = "fr" } = Astro.props;
+
+const content = {
+  fr: {
+    text: "Admis(e) au CPES Paris-Saclay pour la rentrée 2026 ? Préparez votre arrivée : devoirs de rentrée, groupe des futurs L1 et guide du BDE.",
+    cta: "Espace CPES29",
+    href: "/cpes29",
+    close: "Fermer l'annonce",
+  },
+  en: {
+    text: "Admitted to CPES Paris-Saclay for the 2026 intake? Get ready: holiday assignments, the prospective L1 group and the student union guide.",
+    cta: "CPES29 space",
+    href: "/en/cpes29",
+    close: "Dismiss announcement",
+  },
+};
+
+const t = content[lang];
+---
+
+<div id="cpes29-banner" class="bg-secondary text-primary">
+  <div class="container mx-auto px-6 py-3 sm:py-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+    <div class="flex items-start gap-3 sm:contents">
+      <p class="flex-1 text-[0.8rem] leading-snug m-0">{t.text}</p>
+      <button
+        id="cpes29-banner-close"
+        type="button"
+        aria-label={t.close}
+        class="shrink-0 inline-flex items-center justify-center p-1 text-primary hover:opacity-60 transition-opacity cursor-pointer sm:order-3"
+      >
+        <Icon name="ri:close-line" class="text-lg" />
+      </button>
+    </div>
+    <a
+      href={t.href}
+      class="self-start sm:self-auto sm:order-2 shrink-0 inline-flex items-center gap-1 border border-primary px-2.5 py-1 text-[0.75rem] font-semibold no-underline text-primary whitespace-nowrap hover:bg-primary hover:text-secondary transition-colors"
+    >
+      {t.cta}
+      <Icon name="ri:arrow-right-line" />
+    </a>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var KEY = "cpes29_banner_dismissed";
+    var TTL = 48 * 60 * 60 * 1000; // 48h
+    var el = document.getElementById("cpes29-banner");
+    if (!el) return;
+
+    var GAP = 32; // espacement entre la navbar et le contenu (px)
+    function syncPad() {
+      var stack = document.getElementById("top-stack");
+      var main = document.querySelector("main");
+      if (stack && main) main.style.paddingTop = stack.offsetHeight + GAP + "px";
+    }
+
+    try {
+      var ts = parseInt(localStorage.getItem(KEY) || "0", 10);
+      if (ts && Date.now() - ts < TTL) el.style.display = "none";
+    } catch (e) {}
+
+    var btn = document.getElementById("cpes29-banner-close");
+    if (btn)
+      btn.addEventListener("click", function () {
+        el.style.display = "none";
+        try {
+          localStorage.setItem(KEY, String(Date.now()));
+        } catch (e) {}
+        syncPad();
+      });
+
+    document.addEventListener("DOMContentLoaded", syncPad);
+    window.addEventListener("load", syncPad);
+    window.addEventListener("resize", syncPad);
+    syncPad();
+  })();
+</script>

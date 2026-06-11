@@ -4,9 +4,10 @@ import Posthog from '../components/Posthog.astro';
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, noindex = false } = Astro.props;
 
 const siteName = "CPES Paris-Saclay";
 const pageTitle = title ? `${title} – ${siteName}` : siteName;
@@ -25,6 +26,7 @@ const ogLocale = Astro.url.pathname.startsWith('/en') ? 'en_US' : 'fr_FR';
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
 

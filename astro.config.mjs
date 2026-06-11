@@ -23,7 +23,9 @@ export default defineConfig({
       theme: "css-variables"
     }
   },
-  integrations: [icon(), mdx(), sitemap()],
+  integrations: [icon(), mdx(), sitemap({
+    filter: (page) => !page.includes('/cpes29'),
+  })],
   publicDir: 'static',
   compressHTML: true,
   redirects: {

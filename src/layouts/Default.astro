@@ -3,6 +3,7 @@ import Head from "./Head.astro";
 import "../assets/app.css";
 import "../assets/callouts.css";
 import Navbar from "../components/Navbar.astro";
+import AnnouncementBanner from "../components/AnnouncementBanner.astro";
 import Navigation from "../components/Navigation.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import Footer from "../components/Footer.astro";
@@ -14,6 +15,7 @@ const pageTitle = frontmatter.title ?? Astro.props.title ?? null;
 const breadcrumbTitle = frontmatter.breadcrumbTitle ?? Astro.props.breadcrumbTitle ?? pageTitle;
 const pageIcon = frontmatter.icon ?? Astro.props.icon ?? null;
 const pageDescription = frontmatter.description ?? Astro.props.description ?? null;
+const noindex = frontmatter.noindex ?? Astro.props.noindex ?? false;
 const lang = Astro.url.pathname.startsWith('/en') ? 'en' : 'fr';
 
 const banner = `
@@ -28,12 +30,15 @@ const banner = `
 <Fragment set:html={`<!--${banner}-->`} />
 <!DOCTYPE html>
 <html lang={lang} class="scroll-smooth" data-theme="cpes-paris-saclay-light">
-  <Head title={pageTitle} description={pageDescription} />
+  <Head title={pageTitle} description={pageDescription} noindex={noindex} />
   <body class="w-screen overflow-x-hidden">
     <div class="drawer">
       <input id="mobile_drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content">
-        <Navbar />
+        <div id="top-stack" class="fixed top-0 left-0 w-full z-10">
+          <AnnouncementBanner lang={lang} />
+          <Navbar />
+        </div>
         <main class="pt-32 md:pt-40 pb-14 container mx-auto px-6 py-8 min-h-[35vh]">
           {showBreadcrumbs && <div class="mb-6"><Breadcrumbs title={breadcrumbTitle} icon={pageIcon}/></div>}
           <div class:list={[

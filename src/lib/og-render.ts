@@ -86,9 +86,9 @@ export async function renderOgImage(
           type: 'img',
           props: {
             src: logoDataUrl,
-            width: 705,
+            width: 611,
             height: 180,
-            style: { height: '180px', width: '705px', objectFit: 'contain' },
+            style: { height: '180px', width: '611px', objectFit: 'contain' },
           },
         },
         {
