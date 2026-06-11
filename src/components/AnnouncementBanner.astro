@@ -51,11 +51,11 @@ const t = content[lang];
 <script is:inline>
   (function () {
     var KEY = "cpes29_banner_dismissed";
-    var TTL = 48 * 60 * 60 * 1000; // 48h
+    var TTL = 48 * 60 * 60 * 1000;
     var el = document.getElementById("cpes29-banner");
     if (!el) return;
 
-    var GAP = 32; // espacement entre la navbar et le contenu (px)
+    var GAP = 32;
     function syncPad() {
       var stack = document.getElementById("top-stack");
       var main = document.querySelector("main");
