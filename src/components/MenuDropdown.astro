@@ -12,7 +12,7 @@ const { title, icon, class: className } = Astro.props;
 
 <div class={`xl:hidden ${className || ''}`}>
   <details class="group w-full">
-    <summary class="flex flex-row items-center text-[18px] gap-2 hover:font-medium transition-all hover:cursor-pointer">
+    <summary class="menu-link flex flex-row items-center text-[18px] gap-2 px-3 py-1.5 hover:cursor-pointer">
       {icon && <Icon name={icon} />}
       {title}
       <Icon
@@ -20,14 +20,14 @@ const { title, icon, class: className } = Astro.props;
         class="text-xl transition-transform duration-200 ease-in-out group-open:rotate-180 ml-auto"
       />
     </summary>
-    <div class="flex flex-col gap-2 mt-4 pl-4 border-l border-secondary/10">
+    <div class="submenu flex flex-col gap-2 mt-4 pl-4 border-l border-secondary/10">
       <slot />
     </div>
   </details>
 </div>
 
 <div class={`hidden xl:block relative ${className || ''}`} data-dropdown>
-  <div class="flex flex-row items-center text-[18px] gap-2 hover:font-medium transition-all hover:cursor-pointer" data-dropdown-trigger>
+  <div class="menu-link flex flex-row items-center text-[18px] gap-2 px-3 py-1.5 hover:cursor-pointer" data-dropdown-trigger>
     {icon && <Icon name={icon} />}
     {title}
     <Icon
@@ -38,7 +38,8 @@ const { title, icon, class: className } = Astro.props;
   </div>
 
   <div
-    class="absolute flex flex-col gap-2 left-0 mt-4 w-max bg-primary p-4 border border-secondary/10 rounded-box shadow-xl opacity-0 translate-y-[-6px] pointer-events-none transition-all duration-200 ease-in-out"
+    class="dropdown-panel submenu absolute flex flex-col gap-1 left-1/2 mt-4 w-max bg-primary p-2 border border-secondary/10 rounded-2xl shadow-xl opacity-0 pointer-events-none transition-all duration-300 ease-in-out"
+    style="transform: translateX(-50%) translateY(-10px) scale(0.95)"
     data-dropdown-panel
   >
     <slot />

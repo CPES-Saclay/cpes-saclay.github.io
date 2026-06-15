@@ -132,8 +132,57 @@ button:active,
 .dropdown-content,
 .theme-icon-light,
 .theme-icon-dark,
-.lang-switcher {
+.lang-switcher,
+.menu-link {
   transition: all 0.3s ease !important;
+}
+
+.dropdown-panel {
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.menu-link {
+  position: relative;
+}
+
+@media (min-width: 1280px) {
+  .menu-link::after {
+    content: "";
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.12rem;
+    height: 1.5px;
+    background-color: var(--color-secondary);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  .menu-link:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.submenu .menu-link::after {
+  display: none;
+}
+.submenu .menu-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2px;
+  height: 1.05rem;
+  background-color: var(--color-secondary);
+  transform: translateY(-50%) scaleY(0);
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.submenu .menu-link:hover {
+  padding-left: 1.25rem;
+}
+.submenu .menu-link:hover::before {
+  transform: translateY(-50%) scaleY(1);
 }
 
 table {

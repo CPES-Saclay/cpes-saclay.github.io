@@ -12,12 +12,12 @@ const localizedHref = href ? localizeHref(href, Astro.url) : undefined;
 ---
 
 {localizedHref ? (
-    <a href={localizedHref} class="flex flex-row items-center text-[18px] gap-2 hover:font-medium transition-all hover:cursor-pointer">
+    <a href={localizedHref} class="menu-link flex flex-row items-center text-[18px] gap-2 px-3 py-1.5 hover:cursor-pointer">
       {icon && <Icon name={icon} />}
       <slot />
     </a>
 ) : (
-  <div class="flex flex-row items-center text-[18px] gap-2 hover:font-medium transition-all hover:cursor-pointer">
+  <div class="menu-link flex flex-row items-center text-[18px] gap-2 px-3 py-1.5 hover:cursor-pointer">
     <slot />
   </div>
 )}
