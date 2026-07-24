@@ -1,0 +1,242 @@
+---
+import { Icon } from 'astro-icon/components';
+import { resultats } from '../data/resultats';
+import { getLangFromUrl } from '../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const tr = (b?: { fr: string; en: string }) => (b ? (b[lang] ?? b.fr) : '');
+
+const t = {
+  promotion: { fr: 'Promotion', en: 'Class' },
+  overview: { fr: "Vue d'ensemble", en: 'Overview' },
+  discipline: { fr: 'Par discipline', en: 'By discipline' },
+  diplomes: { fr: 'diplômés', en: 'graduates' },
+  admissions: { fr: 'admissions', en: 'admissions' },
+  familles: { fr: 'familles de débouchés', en: 'outcome families' },
+  repartition: { fr: 'Répartition des admissions', en: 'Breakdown of admissions' },
+  telecharger: { fr: 'Télécharger les résultats (PDF)', en: 'Download the results (PDF)' },
+  orientation: { fr: 'Une promotion tournée vers le quantitatif', en: 'A cohort oriented towards quantitative fields' },
+  caption: (p: number, d: number) => ({
+    fr: `Chiffres établis à partir des ${p} étudiants, sur ${d}, ayant accepté de partager leurs résultats.`,
+    en: `Figures based on the ${p} of ${d} graduates who agreed to share their results.`,
+  }),
+};
+---
+
+<div class="resultats-promo not-prose my-8">
+  <div class="flex flex-wrap items-center gap-2 mb-6">
+    <span class="text-xs font-bold uppercase tracking-[0.08em] text-secondary mr-1">{tr(t.promotion)}</span>
+    {resultats.map((p, i) => (
+      <button
+        type="button"
+        class:list={["promo-pill px-3.5 py-1.5 text-sm font-semibold cursor-pointer", i === 0 && "is-active"]}
+        data-promo={p.id}
+      >{p.id}</button>
+    ))}
+  </div>
+
+  {resultats.map((promo, pi) => {
+    const max = Math.max(...promo.familles.map(f => f.total));
+    const tabs = [
+      { id: 'overview', label: tr(t.overview) },
+      ...promo.familles.map(f => ({ id: f.id, label: tr(f.nom) })),
+      { id: 'discipline', label: tr(t.discipline) },
+    ];
+    return (
+      <div class="promo-panel" data-promo={promo.id} hidden={pi !== 0}>
+        {promo.pdf && (
+          <div class="flex justify-start mb-6">
+            <a href={promo.pdf} target="_blank" rel="noopener noreferrer" download class="download-link inline-flex items-center gap-2 text-sm font-semibold text-secondary no-underline">
+              <Icon name="ri:download-2-line" />
+              <span>{tr(t.telecharger)}</span>
+            </a>
+          </div>
+        )}
+        <div role="tablist" class="tabs-scroll flex flex-col sm:flex-row gap-1 sm:overflow-x-auto sm:overflow-y-hidden sm:border-b border-secondary/15 mb-7">
+          {tabs.map((tab, ti) => (
+            <button
+              type="button"
+              role="tab"
+              class:list={["tab-btn shrink-0 px-3.5 py-2.5 text-sm text-left sm:whitespace-nowrap cursor-pointer", ti === 0 && "tab-active"]}
+              data-tab={tab.id}
+              aria-selected={ti === 0 ? "true" : "false"}
+            >{tab.label}</button>
+          ))}
+        </div>
+
+        {/* Vue d'ensemble */}
+        <div class="tab-panel" data-tab="overview">
+          <div class="mb-8">
+            <p class="text-sm text-secondary m-0 leading-relaxed"><span class="font-bold">{promo.diplomes}</span> {tr(t.diplomes)}</p>
+            <p class="text-sm text-secondary m-0 leading-relaxed"><span class="font-bold">{promo.totalAdmissions}</span> {tr(t.admissions)}</p>
+            <p class="text-sm text-secondary m-0 leading-relaxed"><span class="font-bold">{promo.familles.length}</span> {tr(t.familles)}</p>
+          </div>
+
+          <p class="text-xs font-bold uppercase tracking-[0.1em] text-secondary mb-4">{tr(t.repartition)}</p>
+          {promo.familles.map(f => (
+            <div class="mb-4">
+              <div class="flex items-baseline justify-between gap-3 mb-1.5">
+                <span class="min-w-0 truncate">
+                  <span class="font-bold text-secondary">{tr(f.nom)}</span>
+                  <span class="text-secondary text-[0.8rem]"> {tr(f.exemples)}</span>
+                </span>
+                <span class="font-black text-secondary shrink-0">{f.total}</span>
+              </div>
+              <div class="h-2 bg-secondary/10">
+                <div class="h-full bg-secondary" style={`width: ${(f.total / max) * 100}%`}></div>
+              </div>
+            </div>
+          ))}
+          <p class="text-xs text-secondary mt-6">{tr(t.caption(promo.partages, promo.diplomes))}</p>
+        </div>
+
+        {/* Détail par famille */}
+        {promo.familles.map(f => (
+          <div class="tab-panel" data-tab={f.id} hidden>
+            <div class="mb-5">
+              <h3 class="text-2xl font-black text-secondary leading-tight m-0">{tr(f.nom)}</h3>
+              {f.detailSousTitre && (
+                <p class="text-sm text-secondary mt-1 m-0">{f.total} {tr(t.admissions)} · {tr(f.detailSousTitre)}</p>
+              )}
+            </div>
+            <div class="border-b border-secondary/15">
+              {f.lignes.map(l => (
+                <div class="flex items-start justify-between gap-4 py-3 border-t border-secondary/15">
+                  <div class="min-w-0">
+                    <div class="font-bold text-secondary leading-snug">{l.nom}</div>
+                    {l.detail && <div class="text-secondary text-[0.825rem] leading-snug mt-0.5">{l.detail}</div>}
+                  </div>
+                  <span class="font-black text-secondary text-lg shrink-0 tabular-nums">{l.n}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        {/* Orientation disciplinaire */}
+        <div class="tab-panel" data-tab="discipline" hidden>
+          <h3 class="text-2xl font-black text-secondary leading-tight m-0 mb-5">{tr(t.orientation)}</h3>
+          <div class="border-b border-secondary/15">
+            {promo.orientation.map(o => (
+              <div class="flex items-start gap-4 py-4 border-t border-secondary/15">
+                <span class="text-xs font-bold text-secondary pt-1 shrink-0 w-6 tabular-nums">{o.num}</span>
+                <div>
+                  <div class="font-bold text-secondary leading-snug">{tr(o.nom)}</div>
+                  <div class="text-secondary text-[0.825rem] leading-snug mt-0.5">{tr(o.desc)}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
+<style>
+  .tabs-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .tabs-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Filtre promo */
+  .promo-pill {
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
+    background-color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease !important;
+  }
+  .promo-pill.is-active {
+    background-color: var(--color-secondary) !important;
+    color: var(--color-primary);
+  }
+  .promo-pill:active {
+    transform: translateY(1px);
+  }
+
+  /* Lien de téléchargement */
+  .download-link {
+    transition: opacity 0.2s ease !important;
+  }
+  .download-link:hover {
+    opacity: 0.65;
+  }
+
+  /* Onglets — barre latérale en mobile (liste verticale) */
+  .tab-btn {
+    border-left: 3px solid transparent;
+    color: var(--color-secondary);
+    transition: border-color 0.2s ease !important;
+  }
+  .tab-btn.tab-active {
+    border-left-color: var(--color-secondary);
+    font-weight: 600;
+  }
+
+  /* Onglets — soulignement en desktop (liste horizontale) */
+  @media (min-width: 640px) {
+    .tab-btn {
+      border-left: 0;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+    }
+    .tab-btn.tab-active {
+      border-left-color: transparent;
+      border-bottom-color: var(--color-secondary);
+    }
+  }
+
+  /* Apparition du contenu au changement d'onglet */
+  .tab-panel:not([hidden]) {
+    animation: tab-in 0.32s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+  }
+  @keyframes tab-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tab-panel:not([hidden]),
+    .promo-pill,
+    .tab-btn {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.resultats-promo').forEach((root) => {
+    const promoPills = root.querySelectorAll<HTMLElement>('.promo-pill');
+    const promoPanels = root.querySelectorAll<HTMLElement>('.promo-panel');
+
+    const setPromo = (id?: string) => {
+      promoPills.forEach((b) => b.classList.toggle('is-active', b.dataset.promo === id));
+      promoPanels.forEach((p) => { p.hidden = p.dataset.promo !== id; });
+    };
+    promoPills.forEach((b) => b.addEventListener('click', () => setPromo(b.dataset.promo)));
+
+    promoPanels.forEach((panel) => {
+      const tabs = panel.querySelectorAll<HTMLElement>('.tab-btn');
+      const panels = panel.querySelectorAll<HTMLElement>('.tab-panel');
+      const setTab = (id?: string) => {
+        tabs.forEach((tb) => {
+          const on = tb.dataset.tab === id;
+          tb.classList.toggle('tab-active', on);
+          tb.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        panels.forEach((p) => { p.hidden = p.dataset.tab !== id; });
+      };
+      tabs.forEach((tb) => tb.addEventListener('click', () => setTab(tb.dataset.tab)));
+    });
+  });
+</script>
