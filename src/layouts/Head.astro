@@ -3,14 +3,15 @@ import Posthog from '../components/Posthog.astro';
 
 interface Props {
   title?: string;
+  fullTitle?: string;
   description?: string;
   noindex?: boolean;
 }
 
-const { title, description, noindex = false } = Astro.props;
+const { title, fullTitle, description, noindex = false } = Astro.props;
 
 const siteName = "CPES Paris-Saclay";
-const pageTitle = title ? `${title} – ${siteName}` : siteName;
+const pageTitle = fullTitle ? fullTitle : (title ? `${title} – ${siteName}` : siteName);
 const pageDescription = description || "Le Cycle Pluridisciplinaire d'Études Supérieures de Paris-Saclay : une formation d'excellence pluridisciplinaire.";
 
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
