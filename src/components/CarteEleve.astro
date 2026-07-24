@@ -5,13 +5,15 @@ import { getLangFromUrl } from '../i18n';
 interface Props {
   nom: string;
   photo?: string;
-  annee: 'L1' | 'L2' | 'L3';
+  annee: string;
   parcours: 'sante' | 'societe';
+  showParcours?: boolean;
+  promo?: string | null;
   linkedin?: string | null;
   contact?: string | null;
 }
 
-const { nom, photo, annee, parcours, linkedin, contact } = Astro.props;
+const { nom, photo, annee, parcours, showParcours = true, promo, linkedin, contact } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const parcoursLabel = parcours === 'sante'
@@ -43,9 +45,10 @@ const parcoursLabel = parcours === 'sante'
           </div>
         )}
       </div>
-      <div class="flex gap-[0.3rem] pt-2 flex-wrap">
-        <span class="text-sm font-semibold h-6 w-7 text-center uppercase border border-secondary text-primary bg-secondary">{annee}</span>
-        <span class="text-sm font-medium h-6 px-1.5 border border-secondary text-secondary">{parcoursLabel}</span>
+      <div class="flex items-center gap-[0.3rem] pt-2 flex-wrap">
+        <span class="text-sm font-semibold h-6 px-1.5 text-center uppercase border border-secondary text-primary bg-secondary">{annee}</span>
+        {showParcours && <span class="text-sm font-medium h-6 px-1.5 border border-secondary text-secondary">{parcoursLabel}</span>}
+        {promo && <span class="text-sm text-secondary ml-auto">{promo}</span>}
       </div>
     </div>
   </div>

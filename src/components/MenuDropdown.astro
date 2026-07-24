@@ -17,10 +17,10 @@ const { title, icon, class: className } = Astro.props;
       {title}
       <Icon
         name="ri:arrow-down-s-line"
-        class="text-xl transition-transform duration-200 ease-in-out group-open:rotate-180 ml-auto"
+        class="submenu-arrow text-xl transition-transform duration-200 ease-in-out group-open:rotate-180 ml-auto"
       />
     </summary>
-    <div class="submenu flex flex-col gap-2 mt-4 pl-4 border-l border-secondary/10">
+    <div class="submenu flex flex-col gap-0 mt-4 pl-4 border-l border-secondary/10">
       <slot />
     </div>
   </details>
@@ -38,7 +38,7 @@ const { title, icon, class: className } = Astro.props;
   </div>
 
   <div
-    class="dropdown-panel submenu absolute flex flex-col gap-1 left-1/2 mt-4 w-max bg-primary p-2 border border-secondary/10 rounded-2xl shadow-xl opacity-0 pointer-events-none transition-all duration-300 ease-in-out"
+    class="dropdown-panel submenu absolute flex flex-col gap-0.5 left-1/2 mt-4 w-max bg-primary p-2 border border-secondary/10 rounded-2xl shadow-xl opacity-0 pointer-events-none transition-all duration-300 ease-in-out"
     style="transform: translateX(-50%) translateY(-10px) scale(0.95)"
     data-dropdown-panel
   >

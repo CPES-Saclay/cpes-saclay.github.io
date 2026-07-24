@@ -133,8 +133,44 @@ button:active,
 .theme-icon-light,
 .theme-icon-dark,
 .lang-switcher,
-.menu-link {
+.menu-link,
+.submenu-arrow {
   transition: all 0.3s ease !important;
+}
+
+.btn-fade {
+  transition: all 0.2s ease !important;
+  animation: btn-fade-in 0.4s ease-out both !important;
+}
+@keyframes btn-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.drawer-side {
+  transition: opacity 0.25s ease-out, visibility 0.35s ease-out allow-discrete !important;
+}
+.drawer-side > *:not(.drawer-overlay) {
+  transition: translate 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.drawer-overlay {
+  transition: opacity 0.35s ease-out !important;
+}
+
+@media (max-width: 1279px) {
+  details.group {
+    interpolate-size: allow-keywords;
+  }
+  details.group::details-content {
+    block-size: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: block-size 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, content-visibility 0.35s allow-discrete !important;
+  }
+  details.group[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+  }
 }
 
 .dropdown-panel {

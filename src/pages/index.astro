@@ -6,9 +6,13 @@ import Button from "../components/Button.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<DefaultLayout>
+<DefaultLayout
+  title="Cycle Pluridisciplinaire d'Études Supérieures"
+  description="Le CPES Paris-Saclay (Cycle Pluridisciplinaire d'Études Supérieures) : une formation d'excellence en 3 ans en sciences des données, société et santé, portée par cinq établissements du plateau de Saclay."
+>
   <section class="py-7 md:py-14 pb-16 flex flex-col-reverse md:flex-row md:items-stretch gap-8 md:gap-12">
     <div class="flex-1 min-w-0">
+      <p class="text-[0.7rem] sm:text-[0.75rem] font-bold uppercase tracking-[0.08em] text-secondary mb-2">Cycle Pluridisciplinaire d'Études Supérieures</p>
       <h1 class="text-4xl md:text-6xl font-black text-secondary leading-[1.05] tracking-[-0.02em] mb-2">
         CPES Paris-Saclay
       </h1>
@@ -33,7 +37,7 @@ import { Icon } from "astro-icon/components";
       </div>
       <p class="text-base text-secondary leading-[1.75] max-w-prose sm:max-w-[65ch] mb-8">
         Diplôme pluridisciplinaire et interdisciplinaire en 3 ans construit en partenariat entre 
-        l'ENS Paris-Saclay, HEC Paris, l'Institut Polytechnique de Paris, le Lycée International de Palaiseau Paris-Saclay et l'Université Paris-Saclay. Le CPES forme des profils pluridisciplinaires maîtrisant les sciences des données et l'IA (mathématiques, informatique) et capables d'interpréter ces données dans le domaine de la santé ou de la société selon le parcours choisi.
+        l'ENS Paris-Saclay, HEC Paris, l'Institut Polytechnique de Paris, le Lycée International de Palaiseau Paris-Saclay et l'Université Paris-Saclay. Le Cycle Pluridisciplinaire d'Études Supérieures (CPES) forme des profils pluridisciplinaires maîtrisant les sciences des données et l'IA (mathématiques, informatique) et capables d'interpréter ces données dans le domaine de la santé ou de la société selon le parcours choisi.
       </p>
       <div class="flex flex-wrap gap-3">
         <Button href="/programme" variant="primary" iconPosition="right" class="mb-0! mt-0!">Programme</Button>
@@ -48,7 +52,7 @@ import { Icon } from "astro-icon/components";
   <section class="py-16">
     <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">Deux parcours au choix dès la L1</h2>
     <p class="text-[0.9375rem] text-secondary leading-[1.75] mb-4">
-      Le CPES vise à offrir un niveau de maîtrise robuste en sciences des données et en
+      Le Cycle Pluridisciplinaire d'Études Supérieures de Paris-Saclay vise à offrir un niveau de maîtrise robuste en sciences des données et en
       intelligence artificielle, adossé aux mathématiques et à l'informatique, ainsi qu'une
       capacité à interpréter ces données dans deux domaines au choix.
     </p>
@@ -130,6 +134,9 @@ import { Icon } from "astro-icon/components";
 
   <section class="py-16">
     <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">Une formation unique</h2>
+    <p class="text-[0.9375rem] text-secondary leading-[1.75] mb-4 max-w-[70ch]">
+      Le Cycle Pluridisciplinaire d'Études Supérieures (CPES) Paris-Saclay réunit cinq établissements d'excellence autour d'une même formation, structurée par deux parcours et une initiation à la recherche dès la première année.
+    </p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
       <div class="flex flex-col gap-3">
         <div class="text-[1.5rem] text-secondary"><Icon name="ri:building-2-line" /></div>
@@ -208,7 +215,7 @@ import { Icon } from "astro-icon/components";
       <a href="/faq" class="group flex flex-col gap-2 p-7 bg-base-100 no-underline relative hover:bg-base-200 transition-colors">
         <Icon name="ri:question-line" class="text-[1.35rem] text-secondary mb-1" />
         <span class="font-bold text-[0.95rem] text-secondary">FAQ</span>
-        <span class="text-[0.825rem] text-secondary leading-[1.5]">Réponses aux questions les plus fréquentes sur le CPES</span>
+        <span class="text-[0.825rem] text-secondary leading-[1.5]">Réponses aux questions les plus fréquentes sur le Cycle Pluridisciplinaire d'Études Supérieures</span>
         <Icon name="ri:arrow-right-line" class="absolute top-7 right-7 text-base text-secondary opacity-30 transition-[transform,opacity] duration-150 group-hover:translate-x-[3px] group-hover:opacity-100" />
       </a>
       <a href="/debouches" class="group flex flex-col gap-2 p-7 bg-base-100 no-underline relative hover:bg-base-200 transition-colors">

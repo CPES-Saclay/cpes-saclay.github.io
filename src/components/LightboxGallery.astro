@@ -1,0 +1,61 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  images: { src: string; alt: string }[];
+  closeLabel?: string;
+}
+
+const { images, closeLabel = 'Fermer' } = Astro.props;
+---
+
+<div class="lightbox-gallery not-prose flex flex-wrap gap-3">
+  {images.map(img => (
+    <button
+      type="button"
+      class="lightbox-thumb w-28 h-28 md:w-40 md:h-40 bg-cover bg-center border border-secondary cursor-pointer transition-opacity duration-150 hover:opacity-80"
+      style={`background-image: url('${img.src}')`}
+      data-src={img.src}
+      aria-label={img.alt}
+    ></button>
+  ))}
+
+  <div class="lightbox-overlay fixed inset-0 z-[60] hidden items-center justify-center bg-black/85 p-4 md:p-10" role="dialog" aria-modal="true">
+    <button type="button" class="lightbox-close absolute top-4 right-4 text-white text-4xl leading-none cursor-pointer hover:opacity-80" aria-label={closeLabel}>
+      <Icon name="ri:close-line" />
+    </button>
+    <div class="lightbox-image w-full h-full max-w-4xl bg-contain bg-center bg-no-repeat"></div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.lightbox-gallery').forEach((root) => {
+    const overlay = root.querySelector('.lightbox-overlay') as HTMLElement | null;
+    const imageEl = root.querySelector('.lightbox-image') as HTMLElement | null;
+    const closeBtn = root.querySelector('.lightbox-close');
+    if (!overlay || !imageEl || !closeBtn) return;
+
+    const open = (src?: string) => {
+      if (!src) return;
+      imageEl.style.backgroundImage = `url('${src}')`;
+      overlay.classList.remove('hidden');
+      overlay.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      overlay.classList.add('hidden');
+      overlay.classList.remove('flex');
+      imageEl.style.backgroundImage = '';
+      document.body.style.overflow = '';
+    };
+
+    root.querySelectorAll<HTMLElement>('.lightbox-thumb').forEach((thumb) => {
+      thumb.addEventListener('click', () => open(thumb.dataset.src));
+    });
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !overlay.classList.contains('hidden')) close();
+    });
+  });
+</script>

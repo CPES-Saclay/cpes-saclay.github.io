@@ -9,6 +9,7 @@ order: 1
 
 import EtudiantsGrid from '../../components/EtudiantsGrid.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
+import Button from '../../components/Button.astro';
 
 # Our students
 
@@ -17,3 +18,7 @@ Do you still have questions about the CPES Paris-Saclay? Feel free to contact ou
 <Disclaimer>Only students who have given their consent to be contacted appear on this page.</Disclaimer>
 
 <EtudiantsGrid />
+
+<div class="not-prose mt-10">
+  <Button href="/en/nos-alumnis" icon="ri:arrow-right-line" iconPosition="right">See our alumni</Button>
+</div>

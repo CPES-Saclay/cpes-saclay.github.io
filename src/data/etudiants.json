@@ -1,8 +1,8 @@
 [
   {
-    "nom": "Adam Dan SEBIH",
+    "nom": "Adam DAN SEBIH",
     "photo": "/assets/etudiants/adamdansebih.webp",
-    "annee": "L1",
+    "annee": "L2",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/adam-dan-sebih-b89726343/",
     "contact": null
@@ -10,31 +10,15 @@
   {
     "nom": "Ali KOITA",
     "photo": "/assets/etudiants/alikoita.webp",
-    "annee": "L1",
+    "annee": "L2",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/ali-koïta-b97168397/",
     "contact": "ali.koita@universite-paris-saclay.fr"
   },
   {
-    "nom": "Aminata SARR",
-    "photo": "/assets/etudiants/aminatasarr.webp",
-    "annee": "L1",
-    "parcours": "sante",
-    "linkedin": "https://www.linkedin.com/in/aminata-sarr-063972397/",
-    "contact": "aminata.sarr@universite-paris-saclay.fr"
-  },
-  {
-    "nom": "Audran TRAORE",
-    "photo": "/assets/etudiants/audrantraore.webp",
-    "annee": "L1",
-    "parcours": "societe",
-    "linkedin": "http://linkedin.com/in/audran-traore-599005368",
-    "contact": "audran.traore@universite-paris-saclay.fr"
-  },
-  {
     "nom": "Guilhem CANIS",
     "photo": "/assets/etudiants/guilhemcanis.webp",
-    "annee": "L1",
+    "annee": "L2",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/gcanis/",
     "contact": "guilhem.canis@universite-paris-saclay.fr"
@@ -42,7 +26,7 @@
   {
     "nom": "Léa POLAT",
     "photo": "/assets/etudiants/leapolat.webp",
-    "annee": "L1",
+    "annee": "L2",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/l%C3%A9a-polat-49bb9436a/",
     "contact": "lea.polat@universite-paris-saclay.fr"
@@ -50,7 +34,7 @@
   {
     "nom": "Maxence PAUZIES",
     "photo": "/assets/etudiants/maxencepauzies.webp",
-    "annee": "L1",
+    "annee": "L2",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/maxence-pauzies-bab65a374/",
     "contact": "maxence.pauzies@universite-paris-saclay.fr"
@@ -58,7 +42,7 @@
   {
     "nom": "Maxence SYLVESTRE",
     "photo": "/assets/etudiants/maxencesylvestre.webp",
-    "annee": "L1",
+    "annee": "L2",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/maxencesylvestre/",
     "contact": "maxence.sylvestre@universite-paris-saclay.fr"
@@ -66,31 +50,15 @@
   {
     "nom": "Pablo MARTINEZ",
     "photo": "/assets/etudiants/pablomartinez.webp",
-    "annee": "L1",
+    "annee": "L2",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/martinez-emma/",
     "contact": "pablo.martinez-palacios@universite-paris-saclay.fr"
   },
   {
-    "nom": "Robin NTSAKALA",
-    "photo": "/assets/etudiants/robinntsakala.webp",
-    "annee": "L1",
-    "parcours": "societe",
-    "linkedin": "https://www.linkedin.com/in/robin-n-697325355/",
-    "contact": null
-  },
-  {
-    "nom": "Wanhong DENG",
-    "photo": "/assets/etudiants/wanhongdeng.webp",
-    "annee": "L1",
-    "parcours": "sante",
-    "linkedin": "https://www.linkedin.com/in/emmanuelle-deng-b87952359/",
-    "contact": "wanhong.deng@universite-paris-saclay.fr"
-  },
-  {
     "nom": "Adèle THOMAS",
     "photo": "/assets/etudiants/adelethomas.webp",
-    "annee": "L2",
+    "annee": "L3",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/ad%C3%A8le-thomas-6a590a334/",
     "contact": "adele.thomashuguet@free.fr"
@@ -98,7 +66,7 @@
   {
     "nom": "Auréva TAGAND-BAUD",
     "photo": "/assets/etudiants/aurevatagandbaud.webp",
-    "annee": "L2",
+    "annee": "L3",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/aur%C3%A9va-t-58418a311/",
     "contact": "aureva.tagand-baud@universite-paris-saclay.fr"
@@ -106,7 +74,7 @@
   {
     "nom": "Danaé DELEEST",
     "photo": "/assets/etudiants/danaedeleest.webp",
-    "annee": "L2",
+    "annee": "L3",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/danaé-deleest-547371336",
     "contact": "danae.deleest@hec.edu"
@@ -114,7 +82,7 @@
   {
     "nom": "Eléa-Leïla BENNOUNA",
     "photo": "/assets/etudiants/elealeilabennouna.webp",
-    "annee": "L2",
+    "annee": "L3",
     "parcours": "sante",
     "linkedin": null,
     "contact": "elea.bennouna@gmail.com"
@@ -122,7 +90,7 @@
   {
     "nom": "Evaëlle CHOMARD",
     "photo": "/assets/etudiants/evaellechomard.webp",
-    "annee": "L2",
+    "annee": "L3",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/eva%C3%ABlle-chomard-8b0907352?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     "contact": "evaelle.chomard@universite-paris-saclay.fr"
@@ -130,7 +98,7 @@
   {
     "nom": "Ludivine QUARTIER",
     "photo": "/assets/etudiants/ludivinequartier.webp",
-    "annee": "L2",
+    "annee": "L3",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/ludivine-quartier-228a51315",
     "contact": "ludivine.quartier@hec.edu"
@@ -138,7 +106,7 @@
   {
     "nom": "Nina HOUZÉ",
     "photo": "/assets/etudiants/ninahouze.webp",
-    "annee": "L2",
+    "annee": "L3",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/nina-houz%C3%A9-457b8534a",
     "contact": "nina.houze@universite-paris-saclay.fr"
@@ -146,7 +114,7 @@
   {
     "nom": "Robin LANZ",
     "photo": "/assets/etudiants/robinlanz.webp",
-    "annee": "L2",
+    "annee": "L3",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/robin-lanz-4846ab330",
     "contact": "robin.lanz@universite-paris-saclay.fr"
@@ -154,7 +122,7 @@
   {
     "nom": "Sarra DAMAK",
     "photo": "/assets/etudiants/sarradamak.webp",
-    "annee": "L2",
+    "annee": "L3",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/sarra-damak-0a8345313?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     "contact": "damaksarra06@icloud.com"
@@ -162,7 +130,7 @@
   {
     "nom": "Cléo GOLLIN",
     "photo": "/assets/etudiants/cleogollin.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/cl%C3%A9o-gollin-1630a4233/",
     "contact": "clgollin@gmail.com"
@@ -170,7 +138,7 @@
   {
     "nom": "Eléana TRAN",
     "photo": "/assets/etudiants/eleanatran.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/eleanatran",
     "contact": "eleanatran@gmail.com"
@@ -178,7 +146,7 @@
   {
     "nom": "Elios MORIZE",
     "photo": "/assets/etudiants/eliosmorize.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/elios-morize/",
     "contact": "elios.morize@gmail.com"
@@ -186,7 +154,7 @@
   {
     "nom": "Enguerrand ROQUES BAHEZRE DE LANLAY",
     "photo": "/assets/etudiants/enguerrandroquesbahezredelanlay.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/enguerrandrbdl",
     "contact": "enguerrandroquesbdl@gmail.com"
@@ -194,7 +162,7 @@
   {
     "nom": "Lia BISCAFÉ-PARK",
     "photo": "/assets/etudiants/liabiscafepark.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/lia-biscaf%C3%A9-park-a69a0631a/",
     "contact": null
@@ -202,7 +170,7 @@
   {
     "nom": "Manon AUBOUY",
     "photo": "/assets/etudiants/manonaubouy.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/manon-aubouy-9816472ab/",
     "contact": null
@@ -210,7 +178,7 @@
   {
     "nom": "Noreen TROISPOUX",
     "photo": "/assets/etudiants/noreentroispoux.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/noreen-troispoux",
     "contact": "noreen.troispoux@gmail.com"
@@ -218,7 +186,7 @@
   {
     "nom": "Othmane NAMMOUS",
     "photo": "/assets/etudiants/othmanenammous.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/othmane-nammous-400330297/",
     "contact": "othmane.nammous@hec.edu"
@@ -226,7 +194,7 @@
   {
     "nom": "Rémi MALAPERT",
     "photo": "/assets/etudiants/remimalapert.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/rmalapert/",
     "contact": null
@@ -234,7 +202,7 @@
   {
     "nom": "Tharushan UTHAYAKUMAR",
     "photo": "/assets/etudiants/tharushanuthayakumar.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/utharushan/",
     "contact": "tharushan.uthayakumar@hec.edu"
@@ -242,7 +210,7 @@
   {
     "nom": "Tristan JOLY",
     "photo": "/assets/etudiants/tristanjoly.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/tristanjoly/",
     "contact": "tristanjoly@proton.me"
@@ -250,7 +218,7 @@
   {
     "nom": "Tristan ROUSSEAU",
     "photo": "/assets/etudiants/tristanrousseau.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/trrousseau/",
     "contact": "tristan.rousseau@hec.edu"
@@ -258,7 +226,7 @@
   {
     "nom": "Yanis CHERGUI",
     "photo": "/assets/etudiants/yanischergui.webp",
-    "annee": "L3",
+    "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/yanis-chergui/",
     "contact": null

@@ -1,0 +1,24 @@
+---
+layout: ../layouts/Default.astro
+proseMode: true
+showBreadcrumbs: true
+title: Nos alumni
+description: "Portraits et contacts des anciens étudiants (alumni) du CPES Paris-Saclay : découvrez leur promotion et échangez avec eux sur la suite de leur formation."
+order: 1
+---
+
+import EtudiantsGrid from '../components/EtudiantsGrid.astro';
+import Disclaimer from '../components/Disclaimer.astro';
+import Button from '../components/Button.astro';
+
+# Nos alumni
+
+Les alumni du CPES Paris-Saclay sont les anciens étudiants ayant achevé leur cursus au sein de la formation. Retrouvez ici leur promotion, n'hésitez pas à les contacter pour échanger sur leur expérience et sur la suite de leur trajectoire après le CPES.
+
+<Disclaimer>Uniquement les alumni ayant donné leur accord pour être contactés apparaissent sur cette page.</Disclaimer>
+
+<EtudiantsGrid mode="alumnis" />
+
+<div class="not-prose mt-10">
+  <Button href="https://www.instagram.com/alumni_cpesparissaclay/" target="_blank" rel="noopener noreferrer" icon="ri:instagram-line" iconPosition="left">Instagram des Alumni</Button>
+</div>

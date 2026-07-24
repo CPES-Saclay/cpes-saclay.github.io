@@ -3,48 +3,80 @@ import CarteEleve from './CarteEleve.astro';
 import etudiants from '../data/etudiants.json';
 import { getLangFromUrl } from '../i18n';
 
+interface Props {
+  mode?: 'etudiants' | 'alumnis';
+}
+
+const { mode = 'etudiants' } = Astro.props;
+
+const isAlumni = (e: { annee: string }) => e.annee.startsWith('CPES');
+const liste = etudiants.filter(e => (mode === 'alumnis' ? isAlumni(e) : !isAlumni(e)));
+
+const anneeOptions = mode === 'alumnis'
+  ? [...new Set(liste.map(e => e.annee))].sort().reverse()
+  : ['L1', 'L2', 'L3'];
+
+const showParcours = mode !== 'alumnis';
+const showAnnee = anneeOptions.length > 1;
+
+const promoParAnnee: Record<string, string> = { L1: 'CPES29', L2: 'CPES28', L3: 'CPES27' };
+
 const lang = getLangFromUrl(Astro.url);
 const t = {
-  annee: lang === 'fr' ? 'Année' : 'Year',
+  annee: mode === 'alumnis'
+    ? (lang === 'fr' ? 'Promotion' : 'Class')
+    : (lang === 'fr' ? 'Année' : 'Year'),
   toutes: lang === 'fr' ? 'Toutes' : 'All',
   parcours: lang === 'fr' ? 'Parcours' : 'Track',
   tous: lang === 'fr' ? 'Tous' : 'All',
   sante: lang === 'fr' ? 'Santé' : 'Health',
   societe: lang === 'fr' ? 'Société' : 'Society',
-  filtrerAnnee: lang === 'fr' ? 'Filtrer par année' : 'Filter by year',
+  filtrerAnnee: mode === 'alumnis'
+    ? (lang === 'fr' ? 'Filtrer par promotion' : 'Filter by class')
+    : (lang === 'fr' ? 'Filtrer par année' : 'Filter by year'),
   filtrerParcours: lang === 'fr' ? 'Filtrer par parcours' : 'Filter by track',
-  vide: lang === 'fr' ? 'Aucun étudiant ne correspond à cette sélection.' : 'No student matches this selection.',
+  vide: mode === 'alumnis'
+    ? (lang === 'fr' ? 'Aucun alumni ne correspond à cette sélection.' : 'No alumni matches this selection.')
+    : (lang === 'fr' ? 'Aucun étudiant ne correspond à cette sélection.' : 'No student matches this selection.'),
 };
 ---
 
-<div class="flex flex-wrap gap-6 mb-8">
-  <div class="flex items-center gap-3" role="group" aria-label={t.filtrerAnnee}>
-    <span class="text-xs font-bold uppercase text-secondary shrink-0">{t.annee}</span>
-    <div class="flex filtre-options">
-      <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="all" checked hidden /><span>{t.toutes}</span></label>
-      <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="L1" hidden /><span>L1</span></label>
-      <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="L2" hidden /><span>L2</span></label>
-      <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="L3" hidden /><span>L3</span></label>
-    </div>
-  </div>
+{(showAnnee || showParcours) && (
+  <div class="flex flex-wrap gap-6 mb-8">
+    {showAnnee && (
+      <div class="flex items-center gap-3" role="group" aria-label={t.filtrerAnnee}>
+        <span class="text-xs font-bold uppercase text-secondary shrink-0">{t.annee}</span>
+        <div class="flex filtre-options">
+          <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value="all" checked hidden /><span>{t.toutes}</span></label>
+          {anneeOptions.map(a => (
+            <label class="filtre-option cursor-pointer"><input type="radio" name="annee" value={a} hidden /><span>{a}</span></label>
+          ))}
+        </div>
+      </div>
+    )}
 
-  <div class="flex items-center gap-3" role="group" aria-label={t.filtrerParcours}>
-    <span class="text-xs font-bold uppercase text-secondary shrink-0">{t.parcours}</span>
-    <div class="flex filtre-options">
-      <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="all" checked hidden /><span>{t.tous}</span></label>
-      <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="sante" hidden /><span>{t.sante}</span></label>
-      <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="societe" hidden /><span>{t.societe}</span></label>
-    </div>
+    {showParcours && (
+      <div class="flex items-center gap-3" role="group" aria-label={t.filtrerParcours}>
+        <span class="text-xs font-bold uppercase text-secondary shrink-0">{t.parcours}</span>
+        <div class="flex filtre-options">
+          <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="all" checked hidden /><span>{t.tous}</span></label>
+          <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="sante" hidden /><span>{t.sante}</span></label>
+          <label class="filtre-option cursor-pointer"><input type="radio" name="parcours" value="societe" hidden /><span>{t.societe}</span></label>
+        </div>
+      </div>
+    )}
   </div>
-</div>
+)}
 
 <div class="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4" id="cartes">
-  {etudiants.map(e => (
+  {liste.map(e => (
     <CarteEleve
       nom={e.nom}
       photo={e.photo ?? undefined}
-      annee={e.annee as 'L1' | 'L2' | 'L3'}
+      annee={e.annee}
       parcours={e.parcours as 'sante' | 'societe'}
+      showParcours={showParcours}
+      promo={mode === 'alumnis' ? undefined : promoParAnnee[e.annee]}
       linkedin={e.linkedin}
       contact={e.contact}
     />

@@ -7,6 +7,8 @@ description: "Contact the CPES Paris-Saclay: administrative contact, academic co
 order: 1
 ---
 
+import ButtonsBox from '../../components/ButtonsBox.astro';
+
 # Contact
 
 ## Administration of the Lycée International de Palaiseau Paris-Saclay
@@ -24,7 +26,14 @@ This website is maintained by students from all backgrounds of the programme in 
 
 ## Student union (BDE)
 
-For any question about student life, you can also contact the BDE CPES Paris-Saclay by email at [bde@cpes-paris-saclay.fr](mailto:bde@cpes-paris-saclay.fr) or on Linkedin [BDE CPES Paris-Saclay](https://www.linkedin.com/company/bde-cpes-paris-saclay).
+For any question about student life, you can also contact the BDE CPES Paris-Saclay by email at [bde@cpes-paris-saclay.fr](mailto:bde@cpes-paris-saclay.fr).
+
+<ButtonsBox
+  links={[
+    { href: "https://www.instagram.com/cpes_parissaclay/", icon: "ri:instagram-line", title: "BDE Instagram" },
+    { href: "https://www.linkedin.com/company/bde-cpes-paris-saclay", icon: "ri:linkedin-box-fill", title: "BDE Linkedin" },
+  ]}
+/>
 
 <div class="not-prose mt-12">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
