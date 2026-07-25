@@ -24,7 +24,7 @@ const parcoursLabel = parcours === 'sante'
   : (lang === 'fr' ? 'Société' : 'Society');
 ---
 
-<article class="px-3 py-5 bg-secondary/5" data-annee={annee} data-parcours={parcours}>
+<article class="h-full px-3 py-5 bg-secondary/5" data-annee={annee} data-parcours={parcours}>
   <div class="flex items-center gap-4">
     {photo && <div role="img" aria-label={nom} style={`background-image: url('${photo}')`} class="w-16 h-16 rounded-full shrink-0 bg-cover bg-center etudiant-photo"></div>}
     <div class="flex-1 min-w-0 flex flex-col gap-0">

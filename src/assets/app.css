@@ -138,6 +138,14 @@ button:active,
   transition: all 0.3s ease !important;
 }
 
+/* Transitions de survol pour les liens et boutons (couleur/fond/bordure/opacité/transform),
+   sans font-weight pour éviter tout jitter. */
+a,
+button,
+[role="button"] {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease !important;
+}
+
 .btn-fade {
   transition: all 0.2s ease !important;
   animation: btn-fade-in 0.4s ease-out both !important;

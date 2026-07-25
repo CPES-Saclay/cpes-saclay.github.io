@@ -3,6 +3,7 @@ import DefaultLayout from "../../layouts/Default.astro";
 import Partenaires from "../../components/Partenaires.astro";
 import Temoignage from "../../components/Temoignage.astro";
 import Button from "../../components/Button.astro";
+import AlumniSlider from "../../components/AlumniSlider.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -118,6 +119,18 @@ import { Icon } from "astro-icon/components";
         <p class="text-[0.85rem] text-secondary leading-[1.55] m-0 flex-1">Autonomy, final Capstone project and preparation for Master's programmes.</p>
         <a href="/en/programme/l3" class="inline-flex items-center gap-[0.3rem] text-[0.8rem] font-semibold text-secondary no-underline mt-auto hover:opacity-60 transition-opacity">Year 3 programme <Icon name="ri:arrow-right-line" /></a>
       </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">Our alumni</h2>
+    <p class="text-[0.9375rem] text-secondary leading-[1.75] mb-8 max-w-[70ch]">
+      The first cohort (CPES26) went on to universities, engineering and business grandes écoles and selective master's programmes, in France and abroad.
+    </p>
+    <AlumniSlider />
+    <div class="flex flex-wrap gap-3 mt-8">
+      <Button href="/en/nos-alumnis" icon="ri:arrow-right-line" iconPosition="right" class="mb-0! mt-0!">See our alumni</Button>
+      <Button href="/en/debouches" variant="outline" icon="ri:arrow-right-line" iconPosition="right" class="mb-0! mt-0!">See career opportunities</Button>
     </div>
   </section>
 

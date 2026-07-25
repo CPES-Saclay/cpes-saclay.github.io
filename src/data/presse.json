@@ -1,0 +1,101 @@
+[
+  {
+    "titre": "Le CPES cité par le président d'IP Paris parmi les cursus d'avenir",
+    "description": "Dans un entretien à Thotis, Thierry Coulhon évoque le CPES et sa forte féminisation.",
+    "source": "Thotis",
+    "date": "2026-03-24",
+    "url": "https://thotismedia.com/institut-polytechnique-de-paris-dans-la-course-mondiale-aux-cotes-du-mit-et-de-lepfl/",
+    "categorie": "presse",
+    "logo": "/assets/presse/thotis.webp"
+  },
+  {
+    "titre": "Le Figaro Étudiant retient le CPES Paris-Saclay parmi les pépites de Parcoursup",
+    "description": "Le média classe le CPES Paris-Saclay dans sa sélection de formations universitaires à repérer.",
+    "source": "Le Figaro Étudiant",
+    "date": "2025-12-09",
+    "url": "https://etudiant.lefigaro.fr/article/etudes/les-pepites-de-l-universite-francaise-que-vous-trouverez-sur-parcoursup-20251209/",
+    "categorie": "presse",
+    "logo": "/assets/presse/lefigaro-etudiant.webp"
+  },
+  {
+    "titre": "Les CPES en sciences des données décryptés",
+    "description": "L'Étudiant revient sur ces cursus mêlant mathématiques, informatique et enjeux de société.",
+    "source": "L'Étudiant",
+    "date": "",
+    "url": "https://www.letudiant.fr/etudes/classes-prepa/des-cpes-s-ouvrent-dans-le-secteur-des-sciences-des-donnees.html",
+    "categorie": "presse",
+    "logo": "/assets/presse/letudiant.webp"
+  },
+  {
+    "titre": "Le CPES Paris-Saclay présenté en détail",
+    "description": "Azimut détaille la formation, ses deux parcours et les profils recherchés.",
+    "source": "Azimut Orientation",
+    "date": "",
+    "url": "https://azimut-orientation.com/le-cpes-sciences-des-donnees-sante-societe-de-palaiseau-paris-saclay/",
+    "categorie": "presse",
+    "logo": "/assets/presse/azimut-orientation.webp"
+  },
+  {
+    "titre": "L'ENS Paris-Saclay, partenaire du CPES Paris-Saclay",
+    "description": "L'École présente son rôle dans la formation et l'organisation des trois années.",
+    "source": "ENS Paris-Saclay",
+    "date": "2023-02-06",
+    "url": "https://ens-paris-saclay.fr/actualite/lens-paris-saclay-partenaire-du-nouveau-cpes-paris-saclay",
+    "categorie": "partenaires",
+    "logo": "/assets/presse/ens-paris-saclay.webp"
+  },
+  {
+    "titre": "IP Paris annonce l'ouverture du CPES Paris-Saclay",
+    "description": "Le communiqué de lancement de l'Institut Polytechnique de Paris, avec son dossier de presse.",
+    "source": "Institut Polytechnique de Paris",
+    "date": "2023-02-08",
+    "url": "https://www.ip-paris.fr/communiques-et-dossiers-de-presse/ouverture-dune-nouvelle-formation-post-bac-dexcellence-le-cycle-pluridisciplinaire-detudes",
+    "categorie": "partenaires",
+    "logo": "/assets/presse/ip-paris.webp"
+  },
+  {
+    "titre": "L'Université Paris-Saclay annonce l'ouverture du CPES Paris-Saclay",
+    "description": "L'actualité de lancement de la formation sur le site de l'Université.",
+    "source": "Université Paris-Saclay",
+    "date": "",
+    "url": "https://www.universite-paris-saclay.fr/actualites/ouverture-dune-nouvelle-formation-post-bac-dexcellence",
+    "categorie": "partenaires",
+    "logo": "/assets/presse/universite-paris-saclay.webp"
+  },
+  {
+    "titre": "Le CPES Paris-Saclay dans le catalogue de l'Université Paris-Saclay",
+    "description": "La fiche officielle du cursus : programme, grade de licence et poursuites d'études.",
+    "source": "Université Paris-Saclay",
+    "date": "",
+    "url": "https://www.universite-paris-saclay.fr/formation/cycle-pluridisciplinaire-detudes-superieures",
+    "categorie": "partenaires",
+    "logo": "/assets/presse/universite-paris-saclay.webp"
+  },
+  {
+    "titre": "La promotion CPES28 visite la bibliothèque de l'X",
+    "description": "La promotion CPES28 découvre la bibliothèque de l'École Polytechnique, son histoire et ses collections, auxquelles les étudiants du CPES Paris-Saclay ont accès.",
+    "source": "École Polytechnique",
+    "date": "",
+    "url": "https://www.polytechnique.edu/bibliotheque/actualites/visite-des-etudiants-de-cpes-de-premiere-annee-du-lipps",
+    "categorie": "partenaires",
+    "logo": "/assets/presse/ecole-polytechnique.webp"
+  },
+  {
+    "titre": "Thierry Coulhon (IP Paris), Parole d'Université",
+    "description": "L'entretien vidéo avec le président de l'Institut Polytechnique de Paris, qui y évoque le CPES Paris-Saclay comme cursus d'avenir.",
+    "source": "Thotis",
+    "date": "2026-03-24",
+    "url": "https://www.youtube.com/watch?v=LF-Q-IFH4u0",
+    "categorie": "video",
+    "logo": "/assets/presse/thotis.webp"
+  },
+  {
+    "titre": "Claire Lartigues présente le CPES Paris-Saclay",
+    "description": "La vice-présidente de l'Université Paris-Saclay présente ce Cycle Pluridisciplinaire d'Études Supérieures en sciences des données, santé et société, en partenariat avec l'Académie de Versailles, l'ENS Paris-Saclay, l'Institut Polytechnique de Paris et HEC Paris.",
+    "source": "Thotis",
+    "date": "",
+    "url": "https://www.youtube.com/watch?v=iWkRkNIzHLE",
+    "categorie": "video",
+    "logo": "/assets/presse/thotis.webp"
+  }
+]

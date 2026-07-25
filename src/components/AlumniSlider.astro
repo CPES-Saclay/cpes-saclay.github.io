@@ -1,0 +1,148 @@
+---
+import CarteEleve from './CarteEleve.astro';
+import etudiants from '../data/etudiants.json';
+import { buildLogos, trFormation } from '../data/alumniCards';
+import { getLangFromUrl } from '../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+
+// Ordre aléatoire (mélange Fisher-Yates au build).
+const alumni = etudiants.filter((e) => e.annee.startsWith('CPES'));
+for (let i = alumni.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [alumni[i], alumni[j]] = [alumni[j], alumni[i]];
+}
+
+// Contenu dupliqué pour un défilement en boucle continue.
+const boucle = [...alumni, ...alumni];
+---
+
+<div class="alumni-slider not-prose relative">
+  <div class="alumni-track flex gap-4 overflow-x-auto pb-1" data-track>
+    {boucle.map((e, i) => (
+      <div class="shrink-0 w-70 sm:w-75" aria-hidden={i >= alumni.length ? 'true' : undefined}>
+        <CarteEleve
+          nom={e.nom}
+          photo={e.photo ?? undefined}
+          annee={e.annee}
+          parcours={(e.parcours ?? 'societe') as 'sante' | 'societe'}
+          showParcours={false}
+          linkedin={e.linkedin}
+          contact={null}
+          logos={buildLogos(e, lang)}
+          etablissement={(e as any).etablissement ?? undefined}
+          formation={trFormation((e as any).formation, lang)}
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  /* Fondu (theme-aware) sur les extrémités gauche/droite. */
+  .alumni-slider::before,
+  .alumni-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2.5rem;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .alumni-slider::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-primary), transparent);
+  }
+  .alumni-slider::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-primary), transparent);
+  }
+
+  .alumni-track {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+  }
+  .alumni-track::-webkit-scrollbar {
+    display: none;
+  }
+  .alumni-track.dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.alumni-slider').forEach((slider) => {
+    const track = slider.querySelector('[data-track]') as HTMLElement | null;
+    if (!track) return;
+
+    // Défilement continu (marquee), en pause uniquement pendant un glisser.
+    const PPS = 90; // pixels par seconde
+    let last = 0;
+    let carry = 0;
+    let paused = false;
+    const wrap = () => {
+      const half = track.scrollWidth / 2;
+      if (track.scrollLeft >= half) track.scrollLeft -= half;
+      else if (track.scrollLeft < 0) track.scrollLeft += half;
+    };
+    const frame = (now: number) => {
+      if (last && !paused) {
+        carry += (PPS * (now - last)) / 1000;
+        const move = Math.floor(carry);
+        if (move > 0) {
+          carry -= move;
+          track.scrollLeft += move;
+          wrap();
+        }
+      }
+      last = now;
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+
+    // Contrôle à la souris : glisser pour faire défiler.
+    let down = false;
+    let startX = 0;
+    let startScroll = 0;
+    let moved = false;
+
+    track.addEventListener('mousedown', (e) => {
+      down = true;
+      moved = false;
+      paused = true;
+      startX = e.pageX;
+      startScroll = track.scrollLeft;
+      track.classList.add('dragging');
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!down) return;
+      const dx = e.pageX - startX;
+      if (Math.abs(dx) > 4) moved = true;
+      track.scrollLeft = startScroll - dx;
+      wrap();
+    });
+    const release = () => {
+      if (!down) return;
+      down = false;
+      paused = false;
+      track.classList.remove('dragging');
+    };
+    window.addEventListener('mouseup', release);
+    window.addEventListener('mouseleave', release);
+
+    // Évite qu'un glisser déclenche un clic sur une carte / un lien.
+    track.addEventListener(
+      'click',
+      (e) => {
+        if (moved) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      },
+      true,
+    );
+  });
+</script>

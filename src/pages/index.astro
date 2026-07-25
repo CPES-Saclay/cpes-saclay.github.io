@@ -3,6 +3,7 @@ import DefaultLayout from "../layouts/Default.astro";
 import Partenaires from "../components/Partenaires.astro";
 import Temoignage from "../components/Temoignage.astro";
 import Button from "../components/Button.astro";
+import AlumniSlider from "../components/AlumniSlider.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -115,6 +116,18 @@ import { Icon } from "astro-icon/components";
         <p class="text-[0.85rem] text-secondary leading-[1.55] m-0 flex-1">Autonomie, projet Capstone final et préparation aux Masters.</p>
         <a href="/programme/l3" class="inline-flex items-center gap-[0.3rem] text-[0.8rem] font-semibold text-secondary no-underline mt-auto hover:opacity-60 transition-opacity">Programme L3 <Icon name="ri:arrow-right-line" /></a>
       </div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">Nos alumni</h2>
+    <p class="text-[0.9375rem] text-secondary leading-[1.75] mb-8 max-w-[70ch]">
+      La première promotion (CPES26) a rejoint universités, grandes écoles d'ingénieurs et de commerce et masters sélectifs, en France comme à l'international.
+    </p>
+    <AlumniSlider />
+    <div class="flex flex-wrap gap-3 mt-8">
+      <Button href="/nos-alumnis" icon="ri:arrow-right-line" iconPosition="right" class="mb-0! mt-0!">Voir nos alumni</Button>
+      <Button href="/debouches" variant="outline" icon="ri:arrow-right-line" iconPosition="right" class="mb-0! mt-0!">Voir les débouchés</Button>
     </div>
   </section>
 

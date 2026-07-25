@@ -2,5 +2,6 @@ User-agent: *
 Disallow: /assets/etudiants/
 Disallow: /assets/internat/
 Disallow: /assets/debouches/
+Disallow: /assets/presse/
 
 Sitemap: https://cpes-paris-saclay.fr/sitemap-index.xml

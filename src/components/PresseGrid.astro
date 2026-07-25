@@ -1,0 +1,59 @@
+---
+import { Icon } from 'astro-icon/components';
+import presse from '../data/presse.json';
+import { getLangFromUrl } from '../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const tr = (b: { fr: string; en: string }) => b[lang] ?? b.fr;
+
+const categories = [
+  { id: 'presse', label: { fr: 'Articles de presse', en: 'Press articles' } },
+  { id: 'partenaires', label: { fr: 'Institutions partenaires', en: 'Partner institutions' } },
+  { id: 'video', label: { fr: 'Vidéos', en: 'Videos' } },
+];
+---
+
+<div class="not-prose flex flex-col gap-12 mt-10">
+  {categories.map((cat) => {
+    const items = presse.filter((p) => p.categorie === cat.id);
+    if (!items.length) return null;
+    return (
+      <div>
+        <h2 class="text-xl font-bold text-secondary mb-5 mt-0">{tr(cat.label)}</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {items.map((p) => (
+            <a
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="presse-card group flex h-full flex-col gap-3 p-6 border border-secondary/15 no-underline relative"
+            >
+              {p.logo && (
+                <img src={p.logo} alt={p.source} loading="lazy" draggable="false" class="presse-logo h-7 w-auto max-w-[150px] object-contain object-left self-start" />
+              )}
+              <span class="font-bold text-secondary leading-snug pr-6">{p.titre}</span>
+              <span class="text-sm text-secondary leading-normal">{p.description}</span>
+              <Icon
+                name={p.categorie === 'video' ? 'ri:play-circle-line' : 'ri:external-link-line'}
+                class="absolute top-6 right-5 text-base text-secondary opacity-40 group-hover:opacity-100"
+              />
+            </a>
+          ))}
+        </div>
+      </div>
+    );
+  })}
+</div>
+
+<style>
+  .presse-card:hover {
+    background-color: color-mix(in srgb, var(--color-secondary) 5%, transparent);
+  }
+
+  /* Fond blanc sous les logos en thème sombre pour rester visibles. */
+  :global(:root[data-theme="cpes-paris-saclay-dark"]) .presse-logo {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 3px 6px;
+  }
+</style>

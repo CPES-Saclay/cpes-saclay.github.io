@@ -1,38 +1,10 @@
 ---
 import CarteEleve from './CarteEleve.astro';
 import etudiants from '../data/etudiants.json';
-import { logosDebouches } from '../data/logosDebouches';
+import { buildLogos, trFormation } from '../data/alumniCards';
 import { getLangFromUrl } from '../i18n';
 
 const lang = getLangFromUrl(Astro.url);
-
-// Traduction EN des formations (l'établissement, nom propre, reste inchangé).
-const formationEn: Record<string, string> = {
-  "Cycle ingénieur": "Engineering programme",
-  "Santé publique": "Public Health",
-  "Programme grande école (MiM)": "Grande École programme (MiM)",
-  "Programme grande école": "Grande École programme",
-  "Master Sociologie Quantitative et Démographie (SQD)": "Master in Quantitative Sociology and Demography (SQD)",
-  "Master IA et Société": "Master in AI and Society",
-  "Master Informatique pour la Data Science (ISD), voie alternance": "Master in Computer Science for Data Science (ISD), apprenticeship track",
-  "Master Data Science and Business Analytics": "Master in Data Science and Business Analytics",
-  "Master Data Driven Health": "Master in Data Driven Health",
-};
-const trFormation = (f?: string | null): string | undefined => {
-  if (!f) return undefined;
-  return lang === 'en' ? (formationEn[f] ?? f) : f;
-};
-
-const buildLogos = (e: any) => {
-  const etab = (e.etablissement as string | undefined) ?? '';
-  const formation = trFormation(e.formation as string | undefined) ?? '';
-  const label = formation ? `${etab} · ${formation}` : etab;
-  return ((e.logos as string[] | undefined) ?? []).map((name) => ({
-    src: `/assets/debouches/${name}.webp`,
-    ratio: logosDebouches[name] ?? 2,
-    label,
-  }));
-};
 
 interface Props {
   mode?: 'etudiants' | 'alumnis';
@@ -119,9 +91,9 @@ const t = {
       promo={mode === 'alumnis' ? undefined : promoParAnnee[e.annee]}
       linkedin={e.linkedin}
       contact={mode === 'alumnis' ? null : e.contact}
-      logos={mode === 'alumnis' ? buildLogos(e) : undefined}
+      logos={mode === 'alumnis' ? buildLogos(e, lang) : undefined}
       etablissement={(e as any).etablissement ?? undefined}
-      formation={trFormation((e as any).formation)}
+      formation={trFormation((e as any).formation, lang)}
     />
   ))}
 </div>
