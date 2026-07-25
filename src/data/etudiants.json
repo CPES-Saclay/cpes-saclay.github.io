@@ -133,7 +133,12 @@
     "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/cl%C3%A9o-gollin-1630a4233/",
-    "contact": "clgollin@gmail.com"
+    "contact": null,
+    "etablissement": "Institut Polytechnique de Paris (IPP)",
+    "formation": "Master Sociologie Quantitative et Démographie (SQD)",
+    "logos": [
+      "ip-paris"
+    ]
   },
   {
     "nom": "Eléana TRAN",
@@ -141,7 +146,13 @@
     "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/eleanatran",
-    "contact": "eleanatran@gmail.com"
+    "contact": null,
+    "etablissement": "Centrale/ESSEC",
+    "formation": "Master Data Science and Business Analytics",
+    "logos": [
+      "centrale-supelec",
+      "essec"
+    ]
   },
   {
     "nom": "Elios MORIZE",
@@ -149,7 +160,12 @@
     "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/elios-morize/",
-    "contact": "elios.morize@gmail.com"
+    "contact": null,
+    "etablissement": "Paris Sciences et Lettres (PSL)",
+    "formation": "Master IA et Société",
+    "logos": [
+      "psl"
+    ]
   },
   {
     "nom": "Enguerrand ROQUES BAHEZRE DE LANLAY",
@@ -157,7 +173,12 @@
     "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/enguerrandrbdl",
-    "contact": "enguerrandroquesbdl@gmail.com"
+    "contact": null,
+    "etablissement": "HEC Paris",
+    "formation": "Programme grande école (MiM)",
+    "logos": [
+      "hec-paris"
+    ]
   },
   {
     "nom": "Lia BISCAFÉ-PARK",
@@ -165,15 +186,12 @@
     "annee": "CPES26",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/lia-biscaf%C3%A9-park-a69a0631a/",
-    "contact": null
-  },
-  {
-    "nom": "Manon AUBOUY",
-    "photo": "/assets/etudiants/manonaubouy.webp",
-    "annee": "CPES26",
-    "parcours": "societe",
-    "linkedin": "https://www.linkedin.com/in/manon-aubouy-9816472ab/",
-    "contact": null
+    "contact": null,
+    "etablissement": "École Polytechnique",
+    "formation": "Cycle ingénieur",
+    "logos": [
+      "ecole-polytechnique"
+    ]
   },
   {
     "nom": "Noreen TROISPOUX",
@@ -181,7 +199,12 @@
     "annee": "CPES26",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/noreen-troispoux",
-    "contact": "noreen.troispoux@gmail.com"
+    "contact": null,
+    "etablissement": "KTH Royal Institute of Technology",
+    "formation": "Master Data Driven Health",
+    "logos": [
+      "kth"
+    ]
   },
   {
     "nom": "Othmane NAMMOUS",
@@ -189,7 +212,12 @@
     "annee": "CPES26",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/othmane-nammous-400330297/",
-    "contact": "othmane.nammous@hec.edu"
+    "contact": null,
+    "etablissement": "Télécom SudParis",
+    "formation": "Cycle ingénieur",
+    "logos": [
+      "telecom-sudparis"
+    ]
   },
   {
     "nom": "Rémi MALAPERT",
@@ -197,7 +225,12 @@
     "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/rmalapert/",
-    "contact": null
+    "contact": null,
+    "etablissement": "Université Paris-Saclay",
+    "formation": "Master Informatique pour la Data Science (ISD), voie alternance",
+    "logos": [
+      "universite-paris-saclay"
+    ]
   },
   {
     "nom": "Tharushan UTHAYAKUMAR",
@@ -205,15 +238,12 @@
     "annee": "CPES26",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/utharushan/",
-    "contact": "tharushan.uthayakumar@hec.edu"
-  },
-  {
-    "nom": "Tristan JOLY",
-    "photo": "/assets/etudiants/tristanjoly.webp",
-    "annee": "CPES26",
-    "parcours": "sante",
-    "linkedin": "https://www.linkedin.com/in/tristanjoly/",
-    "contact": "tristanjoly@proton.me"
+    "contact": null,
+    "etablissement": "HEC Paris",
+    "formation": "Programme grande école (MiM)",
+    "logos": [
+      "hec-paris"
+    ]
   },
   {
     "nom": "Tristan ROUSSEAU",
@@ -221,7 +251,12 @@
     "annee": "CPES26",
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/trrousseau/",
-    "contact": "tristan.rousseau@hec.edu"
+    "contact": null,
+    "etablissement": "HEC Paris",
+    "formation": "Programme grande école (MiM)",
+    "logos": [
+      "hec-paris"
+    ]
   },
   {
     "nom": "Yanis CHERGUI",
@@ -229,6 +264,180 @@
     "annee": "CPES26",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/yanis-chergui/",
-    "contact": null
+    "contact": null,
+    "etablissement": "HEC Paris",
+    "formation": "Programme grande école (MiM)",
+    "logos": [
+      "hec-paris"
+    ]
+  },
+  {
+    "nom": "Nathan BAUDRON",
+    "photo": null,
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null,
+    "etablissement": "École Supérieure des Travaux Publics (ESTP)",
+    "formation": "Cycle ingénieur",
+    "logos": [
+      "estp"
+    ]
+  },
+  {
+    "nom": "Hanae BENRABH",
+    "photo": null,
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null,
+    "etablissement": "Université Paris-Saclay",
+    "formation": "Santé publique",
+    "logos": [
+      "universite-paris-saclay"
+    ]
+  },
+  {
+    "nom": "Raphaël CONTRI",
+    "photo": "/assets/etudiants/raphaelcontri.webp",
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": "https://www.linkedin.com/in/raphael-contri",
+    "contact": null,
+    "etablissement": "ENSAI",
+    "formation": "Cycle ingénieur",
+    "logos": [
+      "ensai"
+    ]
+  },
+  {
+    "nom": "Thibaud DUBRULLE",
+    "photo": null,
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null,
+    "etablissement": "Télécom Paris",
+    "formation": "Cycle ingénieur",
+    "logos": [
+      "telecom-paris"
+    ]
+  },
+  {
+    "nom": "Tomasz EVESQUE",
+    "photo": null,
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null,
+    "etablissement": "CentraleSupélec",
+    "formation": "Cycle ingénieur",
+    "logos": [
+      "centrale-supelec"
+    ]
+  },
+  {
+    "nom": "Rémi FAISSE",
+    "photo": null,
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null,
+    "etablissement": "EDHEC",
+    "formation": "Programme grande école",
+    "logos": [
+      "edhec"
+    ]
+  },
+  {
+    "nom": "Clément FRITSCH-VIDAL",
+    "photo": null,
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null,
+    "etablissement": "EDHEC",
+    "formation": "Programme grande école",
+    "logos": [
+      "edhec"
+    ]
+  },
+  {
+    "nom": "Charlotte GASPALOU",
+    "photo": null,
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null,
+    "etablissement": "Institut Polytechnique de Paris (IPP)",
+    "formation": "Master Sociologie Quantitative et Démographie (SQD)",
+    "logos": [
+      "ip-paris"
+    ]
+  },
+  {
+    "nom": "Margot LESAGE",
+    "photo": "/assets/etudiants/margotlesage.webp",
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": "https://www.linkedin.com/in/margot-lesage-586b62415",
+    "contact": null,
+    "etablissement": "CentraleSupélec",
+    "formation": "Cycle ingénieur",
+    "logos": [
+      "centrale-supelec"
+    ]
+  },
+  {
+    "nom": "Violette MARIN",
+    "photo": null,
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null,
+    "etablissement": "Institut Polytechnique de Paris (IPP)",
+    "formation": "Master Sociologie Quantitative et Démographie (SQD)",
+    "logos": [
+      "ip-paris"
+    ]
+  },
+  {
+    "nom": "Tristan PAILLOT",
+    "photo": null,
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null,
+    "etablissement": "CentraleSupélec",
+    "formation": "Cycle ingénieur",
+    "logos": [
+      "centrale-supelec"
+    ]
+  },
+  {
+    "nom": "Victor RANCHET",
+    "photo": null,
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null,
+    "etablissement": "IMT Atlantique",
+    "formation": "Cycle ingénieur",
+    "logos": [
+      "imt-atlantique"
+    ]
+  },
+  {
+    "nom": "Lily-Mei THIBAULT",
+    "photo": null,
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null,
+    "etablissement": "CentraleSupélec",
+    "formation": "Cycle ingénieur",
+    "logos": [
+      "centrale-supelec"
+    ]
   }
 ]

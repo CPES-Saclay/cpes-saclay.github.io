@@ -1,7 +1,38 @@
 ---
 import CarteEleve from './CarteEleve.astro';
 import etudiants from '../data/etudiants.json';
+import { logosDebouches } from '../data/logosDebouches';
 import { getLangFromUrl } from '../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+
+// Traduction EN des formations (l'établissement, nom propre, reste inchangé).
+const formationEn: Record<string, string> = {
+  "Cycle ingénieur": "Engineering programme",
+  "Santé publique": "Public Health",
+  "Programme grande école (MiM)": "Grande École programme (MiM)",
+  "Programme grande école": "Grande École programme",
+  "Master Sociologie Quantitative et Démographie (SQD)": "Master in Quantitative Sociology and Demography (SQD)",
+  "Master IA et Société": "Master in AI and Society",
+  "Master Informatique pour la Data Science (ISD), voie alternance": "Master in Computer Science for Data Science (ISD), apprenticeship track",
+  "Master Data Science and Business Analytics": "Master in Data Science and Business Analytics",
+  "Master Data Driven Health": "Master in Data Driven Health",
+};
+const trFormation = (f?: string | null): string | undefined => {
+  if (!f) return undefined;
+  return lang === 'en' ? (formationEn[f] ?? f) : f;
+};
+
+const buildLogos = (e: any) => {
+  const etab = (e.etablissement as string | undefined) ?? '';
+  const formation = trFormation(e.formation as string | undefined) ?? '';
+  const label = formation ? `${etab} · ${formation}` : etab;
+  return ((e.logos as string[] | undefined) ?? []).map((name) => ({
+    src: `/assets/debouches/${name}.webp`,
+    ratio: logosDebouches[name] ?? 2,
+    label,
+  }));
+};
 
 interface Props {
   mode?: 'etudiants' | 'alumnis';
@@ -10,7 +41,17 @@ interface Props {
 const { mode = 'etudiants' } = Astro.props;
 
 const isAlumni = (e: { annee: string }) => e.annee.startsWith('CPES');
-const liste = etudiants.filter(e => (mode === 'alumnis' ? isAlumni(e) : !isAlumni(e)));
+const cmpNom = (a: { nom: string }, b: { nom: string }) =>
+  a.nom.localeCompare(b.nom, 'fr', { sensitivity: 'base' });
+const ordreAnnee = ['L1', 'L2', 'L3'];
+
+const liste = etudiants
+  .filter(e => (mode === 'alumnis' ? isAlumni(e) : !isAlumni(e)))
+  .sort((a, b) =>
+    mode === 'alumnis'
+      ? b.annee.localeCompare(a.annee) || cmpNom(a, b)
+      : (ordreAnnee.indexOf(a.annee) - ordreAnnee.indexOf(b.annee)) || cmpNom(a, b)
+  );
 
 const anneeOptions = mode === 'alumnis'
   ? [...new Set(liste.map(e => e.annee))].sort().reverse()
@@ -21,7 +62,6 @@ const showAnnee = anneeOptions.length > 1;
 
 const promoParAnnee: Record<string, string> = { L1: 'CPES29', L2: 'CPES28', L3: 'CPES27' };
 
-const lang = getLangFromUrl(Astro.url);
 const t = {
   annee: mode === 'alumnis'
     ? (lang === 'fr' ? 'Promotion' : 'Class')
@@ -74,11 +114,14 @@ const t = {
       nom={e.nom}
       photo={e.photo ?? undefined}
       annee={e.annee}
-      parcours={e.parcours as 'sante' | 'societe'}
+      parcours={(e.parcours ?? 'societe') as 'sante' | 'societe'}
       showParcours={showParcours}
       promo={mode === 'alumnis' ? undefined : promoParAnnee[e.annee]}
       linkedin={e.linkedin}
-      contact={e.contact}
+      contact={mode === 'alumnis' ? null : e.contact}
+      logos={mode === 'alumnis' ? buildLogos(e) : undefined}
+      etablissement={(e as any).etablissement ?? undefined}
+      formation={trFormation((e as any).formation)}
     />
   ))}
 </div>

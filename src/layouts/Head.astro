@@ -23,7 +23,9 @@ const ogLocale = Astro.url.pathname.startsWith('/en') ? 'en_US' : 'fr_FR';
 
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon_d.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon_d.svg" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon_l.svg" media="(prefers-color-scheme: dark)" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />

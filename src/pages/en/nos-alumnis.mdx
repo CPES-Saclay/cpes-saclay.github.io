@@ -9,7 +9,7 @@ order: 1
 
 import EtudiantsGrid from '../../components/EtudiantsGrid.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
-import Button from '../../components/Button.astro';
+import ButtonsBox from '../../components/ButtonsBox.astro';
 
 # Our alumni
 
@@ -19,8 +19,10 @@ The CPES Paris-Saclay alumni are the former students who have completed their st
 
 <EtudiantsGrid mode="alumnis" />
 
-<div class="not-prose mt-10 flex flex-wrap gap-3">
-  <Button href="https://www.instagram.com/alumni_cpesparissaclay/" target="_blank" rel="noopener noreferrer" icon="ri:instagram-line" iconPosition="left" class="mb-0">Alumni Instagram</Button>
-  <Button href="https://www.linkedin.com/company/alumni-cpes-paris-saclay" target="_blank" rel="noopener noreferrer" icon="ri:linkedin-box-fill" iconPosition="left" class="mb-0">Alumni LinkedIn</Button>
-</div>
+<ButtonsBox
+  links={[
+    { href: "https://www.instagram.com/alumni_cpesparissaclay/", icon: "ri:instagram-line", title: "Alumni Instagram", target: "_blank", rel: "noopener noreferrer" },
+    { href: "https://www.linkedin.com/company/alumni-cpes-paris-saclay", icon: "ri:linkedin-box-fill", title: "Alumni LinkedIn", target: "_blank", rel: "noopener noreferrer" },
+  ]}
+/>
 
