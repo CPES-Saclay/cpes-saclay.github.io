@@ -8,6 +8,7 @@ order: 1
 ---
 
 import ResultatsPromo from '../components/ResultatsPromo.astro';
+import Button from '../components/Button.astro';
 
 # Débouchés
 
@@ -22,6 +23,10 @@ Les diplômés peuvent poursuivre leurs études supérieures aussi bien dans des
 La première promotion (CPES26) compte **33 diplômés**. Leurs poursuites d'études couvrent universités, grandes écoles d'ingénieurs et de commerce, instituts de recherche et masters sélectifs, en France comme à l'international.
 
 <ResultatsPromo />
+
+<div class="not-prose mt-8">
+  <Button href="/nos-alumnis" icon="ri:arrow-right-line" iconPosition="right">Voir nos alumni</Button>
+</div>
 
 <div class="not-prose mt-12">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
