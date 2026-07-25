@@ -51,7 +51,8 @@ const t = content[lang];
 <script is:inline>
   (function () {
     var KEY = "cpes29_banner_dismissed";
-    var TTL = 48 * 60 * 60 * 1000;
+    var TTL = 48 * 60 * 60; // durée du cookie, en secondes
+    var DELAY = 15000; // masquage automatique après 15 s
     var el = document.getElementById("cpes29-banner");
     if (!el) return;
 
@@ -62,19 +63,29 @@ const t = content[lang];
       if (stack && main) main.style.paddingTop = stack.offsetHeight + GAP + "px";
     }
 
-    try {
-      var ts = parseInt(localStorage.getItem(KEY) || "0", 10);
-      if (ts && Date.now() - ts < TTL) el.style.display = "none";
-    } catch (e) {}
+    function isDismissed() {
+      return document.cookie.split("; ").indexOf(KEY + "=1") !== -1;
+    }
+    function dismiss() {
+      el.style.display = "none";
+      try {
+        document.cookie = KEY + "=1; max-age=" + TTL + "; path=/; SameSite=Lax";
+      } catch (e) {}
+      syncPad();
+    }
+
+    var timer;
+    if (isDismissed()) {
+      el.style.display = "none";
+    } else {
+      timer = setTimeout(dismiss, DELAY);
+    }
 
     var btn = document.getElementById("cpes29-banner-close");
     if (btn)
       btn.addEventListener("click", function () {
-        el.style.display = "none";
-        try {
-          localStorage.setItem(KEY, String(Date.now()));
-        } catch (e) {}
-        syncPad();
+        if (timer) clearTimeout(timer);
+        dismiss();
       });
 
     document.addEventListener("DOMContentLoaded", syncPad);
