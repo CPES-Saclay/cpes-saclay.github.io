@@ -10,7 +10,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class="flex flex-col bg-primary xl:flex-row xl:items-center min-h-full xl:min-h-0 w-full xl:w-max py-10 px-6 xl:px-0 xl:py-0 gap-6 xl:justify-center z-10">
+<div class="flex flex-col bg-primary xl:flex-row xl:items-center min-h-full xl:min-h-0 w-full xl:w-max py-10 px-6 xl:px-0 xl:py-0 nav-row xl:justify-center z-10">
   <div class="flex xl:hidden justify-between items-center w-full mb-6">
     <p class="font-bold text-2xl" data-i18n="siteTitle">CPES Paris-Saclay</p>
     <label for="mobile_drawer" class="hover:cursor-pointer">
@@ -64,3 +64,22 @@ const t = useTranslations(lang);
     <span class="xl:hidden text-base" data-i18n="mode">Mode</span>
   </div>
 </div>
+
+<style>
+  /* Mobile : espacement vertical fixe. */
+  .nav-row {
+    gap: 1.5rem;
+  }
+  /* Desktop : le conteneur est plafonné par paliers (1280 puis 1536),
+     donc le gap suit ces paliers pour toujours rentrer. */
+  @media (min-width: 1280px) {
+    .nav-row {
+      gap: 0.25rem;
+    }
+  }
+  @media (min-width: 1536px) {
+    .nav-row {
+      gap: 1rem;
+    }
+  }
+</style>
