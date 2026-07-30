@@ -36,12 +36,37 @@ export interface Props {
   annee: string;
   lang: string;
   showAnneeBadge?: boolean;
+  anneeInline?: boolean;
   showEtablissement?: boolean;
+  showEctsBadge?: boolean;
   electif?: boolean;
 }
 
-const { matiere, annee, lang, showAnneeBadge, showEtablissement = true, electif = false } = Astro.props;
+const { matiere, annee, lang, showAnneeBadge, anneeInline = false, showEtablissement = true, showEctsBadge = true, electif = false } = Astro.props;
 const t = useTranslations(lang as 'fr' | 'en');
+
+// Logo de l'établissement affiché dans le badge de l'item (à la place du nom).
+const etablissementLogos: Record<string, string> = {
+  'Lycée International de Palaiseau Paris-Saclay': '/assets/partenaires/logo_lipps.png',
+  'ENS Paris-Saclay': '/assets/partenaires/logo_ens-paris-saclay.svg',
+  'Université Paris-Saclay': '/assets/partenaires/logo_universite-paris-saclay.svg',
+  'Institut Polytechnique de Paris': '/assets/partenaires/logo_ipparis.svg',
+  'HEC Paris': '/assets/partenaires/logo_hecparis.svg',
+  'École Polytechnique': '/assets/partenaires/composante_ecole-polytechnique.webp',
+  'ENSAE': '/assets/partenaires/composante_ensae.png',
+  'ENSAE Paris': '/assets/partenaires/composante_ensae.png',
+  'Télécom Paris': '/assets/partenaires/composante_telecom-paris.webp',
+};
+// Un cours peut être rattaché à un établissement et sa composante : "Principal (Composante)".
+// On affiche alors la composante à gauche et l'établissement principal à droite.
+function parseEtablissements(str: string): string[] {
+  const m = str.match(/^(.*?)\s*\((.*?)\)\s*$/);
+  if (m) return [m[2].trim(), m[1].trim()]; // [composante, principal]
+  return str.split(' / ').map((s) => s.trim()).filter(Boolean);
+}
+const etablissements = matiere.etablissement ? parseEtablissements(matiere.etablissement) : [];
+const etablissementLogoList = etablissements.map((nom) => ({ nom, logo: etablissementLogos[nom] }));
+const tousLogosDisponibles = etablissementLogoList.length > 0 && etablissementLogoList.every((e) => e.logo);
 
 const getSemestreText = (s1: boolean, s2: boolean): string => {
   if (lang === 'fr') {
@@ -134,15 +159,30 @@ const showDescription = false;
 ---
 
 <div id={matiere.id} class="collapse collapse-arrow rounded-box bg-secondary/5 mb-4">
-  <input type="checkbox" id={`chk-${matiere.id}`} />
-  <label for={`chk-${matiere.id}`} class="collapse-title flex flex-col md:flex-row md:items-center justify-between gap-1 p-4 font-medium cursor-pointer">
-    <span class="text-secondary leading-tight">{matiere.intitule}</span>
-    <div class="mr-8 flex flex-wrap gap-1">
-      {showAnneeBadge && <span class="bg-(--annee) px-1 py-0.5 text-[10px] md:text-[14px] text-primary leading-none">L{annee.slice(-1)}</span>}
-      {matiere.entite && <span class="border-(--entite) border text-(--entite) px-1 py-0.5 text-[10px] md:text-[14px] leading-none">{matiere.entite}</span>}
-      {showEtablissement && matiere.etablissement && <span class="border-(--etablissement) border text-(--etablissement) px-1 py-0.5 text-[10px] md:text-[14px] leading-none">{matiere.etablissement}</span>}
-      <span class="bg-(--ects) px-1 py-0.5 text-[10px] md:text-[14px] text-primary leading-none">{matiere.ects} ECTS</span>
+  <input type="checkbox" id={`chk-${matiere.id}`} class="min-h-0! p-0!" />
+  <label for={`chk-${matiere.id}`} class="collapse-title flex flex-row items-center justify-between gap-3 px-4 py-2 font-medium cursor-pointer">
+    <div class="flex flex-col gap-1 min-w-0">
+      <span class="text-secondary leading-tight max-md:text-sm">
+        {matiere.intitule}
+        {showAnneeBadge && anneeInline && <span class="bg-(--annee) px-1 py-0.5 text-[10px] md:text-[14px] text-primary leading-none align-middle ml-2 inline-block whitespace-nowrap">L{annee.slice(-1)}</span>}
+      </span>
+      {((showAnneeBadge && !anneeInline) || matiere.entite || showEctsBadge) && (
+        <div class="flex flex-wrap items-center gap-1">
+          {showAnneeBadge && !anneeInline && <span class="bg-(--annee) px-1 py-0.5 text-[10px] md:text-[14px] text-primary leading-none">L{annee.slice(-1)}</span>}
+          {matiere.entite && <span class="border-(--entite) border text-(--entite) px-1 py-0.5 text-[10px] md:text-[14px] leading-none">{matiere.entite}</span>}
+          {showEctsBadge && <span class="bg-(--ects) px-1 py-0.5 text-[10px] md:text-[14px] text-primary leading-none">{matiere.ects} ECTS</span>}
+        </div>
+      )}
     </div>
+    {showEtablissement && etablissements.length > 0 && (
+      tousLogosDisponibles
+        ? <div class="flex items-center gap-4 shrink-0 mr-6">
+            {etablissementLogoList.map((e) => (
+              <img src={e.logo} alt={e.nom} loading="lazy" class="h-[1.6rem] md:h-8 w-auto object-contain my-0! dark:brightness-0 dark:invert" />
+            ))}
+          </div>
+        : <span class="border-(--etablissement) border text-(--etablissement) px-1 py-0.5 text-[10px] md:text-[14px] leading-none mr-6">{matiere.etablissement}</span>
+    )}
   </label>
   
   <div class="collapse-content">

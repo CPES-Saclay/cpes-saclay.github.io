@@ -137,7 +137,8 @@
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
             "description": [],
-            "categorie": "Santé"
+            "categorie": "Santé",
+            "groupe": "parcours"
           },
           {
             "id": "parcours-societe",
@@ -155,7 +156,8 @@
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
             "description": [],
-            "categorie": "Société"
+            "categorie": "Société",
+            "groupe": "parcours"
           },
           {
             "id": "data-science-exploration-visualisation",
@@ -169,10 +171,9 @@
             "heuresCours": 0,
             "heuresTdTp": 30,
             "ects": 2.5,
-            "etablissement": "Institut Polytechnique de Paris",
+            "etablissement": "Institut Polytechnique de Paris (Télécom Paris)",
             "mode": "Travaux pratiques",
             "description": [],
-            "entite": "Telecom Paris",
             "categorie": "Sciences des données"
           }
         ]
@@ -237,7 +238,7 @@
           },
           {
             "id": "projet-solidaire-l1",
-            "intitule": "Séminaires",
+            "intitule": "Séminaires/Conférences",
             "semestre1": false,
             "semestre2": true,
             "heuresHebdo": null,
@@ -246,7 +247,7 @@
             "heuresCours": null,
             "heuresTdTp": null,
             "ects": 0,
-            "etablissement": "Lycée International de Palaiseau Paris-Saclay",
+            "etablissement": "HEC Paris",
             "mode": "-",
             "description": [],
             "categorie": "Projets & Entrepreneuriat"
@@ -410,7 +411,8 @@
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
             "description": [],
-            "categorie": "Santé"
+            "categorie": "Santé",
+            "groupe": "parcours"
           },
           {
             "id": "parcours-societe-l2",
@@ -428,7 +430,8 @@
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
             "description": [],
-            "categorie": "Société"
+            "categorie": "Société",
+            "groupe": "parcours"
           },
           {
             "id": "sciences-des-donnees-1",
@@ -442,10 +445,9 @@
             "heuresCours": 15,
             "heuresTdTp": 15,
             "ects": 2,
-            "etablissement": "Institut Polytechnique de Paris",
+            "etablissement": "Institut Polytechnique de Paris (École Polytechnique)",
             "mode": "Cours magistral + Travaux dirigés",
             "description": [],
-            "entite": "École Polytechnique",
             "categorie": "Sciences des données"
           },
           {
@@ -460,10 +462,9 @@
             "heuresCours": 15,
             "heuresTdTp": 15,
             "ects": 2,
-            "etablissement": "Institut Polytechnique de Paris",
+            "etablissement": "Institut Polytechnique de Paris (École Polytechnique)",
             "mode": "Cours magistral + Travaux dirigés",
             "description": [],
-            "entite": "École Polytechnique",
             "categorie": "Sciences des données"
           },
           {
@@ -567,7 +568,8 @@
             "ects": 1,
             "etablissement": "HEC Paris",
             "mode": "Cours magistral",
-            "description": []
+            "description": [],
+            "groupe": "electif-hec"
           },
           {
             "id": "opt-politique-crises-communication",
@@ -585,7 +587,8 @@
             "ects": 1,
             "etablissement": "HEC Paris",
             "mode": "Cours magistral",
-            "description": []
+            "description": [],
+            "groupe": "electif-hec"
           },
           {
             "id": "opt-storytelling-marketing",
@@ -603,7 +606,8 @@
             "ects": 1,
             "etablissement": "HEC Paris",
             "mode": "Cours magistral",
-            "description": []
+            "description": [],
+            "groupe": "electif-hec"
           },
           {
             "id": "opt-industrie-pharmaceutique",
@@ -621,7 +625,8 @@
             "ects": 1,
             "etablissement": "HEC Paris",
             "mode": "Cours magistral",
-            "description": []
+            "description": [],
+            "groupe": "electif-hec"
           }
         ]
       },
@@ -856,10 +861,9 @@
             "heuresCours": 24,
             "heuresTdTp": 0,
             "ects": 2,
-            "etablissement": "Institut Polytechnique de Paris",
+            "etablissement": "Institut Polytechnique de Paris (ENSAE)",
             "mode": "Cours magistral",
             "description": [],
-            "entite": "ENSAE",
             "categorie": "Société"
           },
           {
@@ -874,10 +878,9 @@
             "heuresCours": 12,
             "heuresTdTp": 0,
             "ects": 1,
-            "etablissement": "Institut Polytechnique de Paris",
+            "etablissement": "Institut Polytechnique de Paris (ENSAE)",
             "mode": "Cours magistral",
             "description": [],
-            "entite": "ENSAE",
             "categorie": "Société"
           },
           {
@@ -912,7 +915,8 @@
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
             "description": [],
-            "categorie": "Santé"
+            "categorie": "Santé",
+            "groupe": "parcours"
           },
           {
             "id": "parcours-societe-l3",
@@ -930,7 +934,8 @@
             "etablissement": "Lycée International de Palaiseau Paris-Saclay",
             "mode": "Cours magistral",
             "description": [],
-            "categorie": "Société"
+            "categorie": "Société",
+            "groupe": "parcours"
           },
           {
             "id": "analyse-donnees-modelisation-sciences",
@@ -965,7 +970,8 @@
             "ects": 3,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": []
+            "description": [],
+            "groupe": "opt-l3-s1"
           },
           {
             "id": "opt-sante-publique-epidemiologie",
@@ -983,7 +989,8 @@
             "ects": 3,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral",
-            "description": []
+            "description": [],
+            "groupe": "opt-l3-s1"
           },
           {
             "id": "opt-biologie-s5",
@@ -1001,7 +1008,8 @@
             "ects": 3,
             "etablissement": "Université Paris-Saclay",
             "mode": "Travaux pratiques",
-            "description": []
+            "description": [],
+            "groupe": "opt-l3-s1"
           },
           {
             "id": "opt-analyse-info-donnees-biologiques",
@@ -1019,7 +1027,8 @@
             "ects": 3,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": []
+            "description": [],
+            "groupe": "opt-l3-s2"
           },
           {
             "id": "opt-fairness-ia",
@@ -1037,7 +1046,8 @@
             "ects": 3,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": []
+            "description": [],
+            "groupe": "opt-l3-s2"
           },
           {
             "id": "opt-informatique-theorique",
@@ -1055,7 +1065,8 @@
             "ects": 3,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": []
+            "description": [],
+            "groupe": "opt-l3-s2"
           },
           {
             "id": "opt-ia-symbolique",
@@ -1073,7 +1084,8 @@
             "ects": 3,
             "etablissement": "Université Paris-Saclay",
             "mode": "Cours magistral + Travaux dirigés",
-            "description": []
+            "description": [],
+            "groupe": "opt-l3-s2"
           },
           {
             "id": "opt-biologie-s6",
@@ -1091,7 +1103,8 @@
             "ects": 3,
             "etablissement": "Université Paris-Saclay",
             "mode": "Travaux pratiques",
-            "description": []
+            "description": [],
+            "groupe": "opt-l3-s2"
           }
         ]
       },

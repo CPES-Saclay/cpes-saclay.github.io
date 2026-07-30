@@ -185,6 +185,17 @@ button,
   transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
+/* Dépliage / repliage animé des items de programme (collapse daisyUI) */
+.collapse {
+  transition: grid-template-rows 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.collapse > .collapse-content {
+  transition: content-visibility 0.32s allow-discrete, padding 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.collapse-arrow > .collapse-title:after {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
 .menu-link {
   position: relative;
 }

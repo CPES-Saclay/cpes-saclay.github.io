@@ -51,10 +51,18 @@ for (const annee of ANNEES) {
   ects[annee]   = {};
   heures[annee] = {};
 
+  // Les électifs « au choix » (parcours, options HEC, modules optionnels)
+  // ne comptent qu'une seule fois par groupe : on ne retient que le premier
+  // représentant rencontré pour ne pas gonfler le total (un seul cours suivi).
+  const seenGroupes = new Set<string>();
+
   for (const blocData of Object.values((programme as any)[annee].blocs) as any[]) {
     for (const m of blocData.matieres) {
       const normCat = normalizeCategorie(m.categorie ?? 'Ouverture');
-      if (m.electif && normCat === 'Société') continue;
+      if (m.electif && m.groupe) {
+        if (seenGroupes.has(m.groupe)) continue;
+        seenGroupes.add(m.groupe);
+      }
       const dk = displayKey(normCat);
       if (dk === null) continue;
 
@@ -127,6 +135,8 @@ const L = lang as 'fr' | 'en';
   </table>
 </TableBorder>
 <p class="text-xs text-base-content italic mt-1">* {t('Un seul parcours au choix (Santé ou Société)', 'One track only (Health or Society)')}</p>
+
+<slot />
 
 <p class="text-base font-semibold text-secondary mt-8 mb-3">{t('Volume horaire hebdomadaire', 'Weekly course hours')}</p>
 <TableBorder>
