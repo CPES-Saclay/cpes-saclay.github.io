@@ -36,6 +36,7 @@ const anneeLabel = lang === 'fr' ? `Licence ${annee.slice(1)}` : `Bachelor ${ann
         <>
             <h4 class="pt-0 mt-0">{lang === 'fr' ? 'Tableau récapitulatif de la' : 'Summary table for the'} {data.titre.toLowerCase()} {lang === 'fr' ? 'du CPES Paris-Saclay' : 'of CPES Paris-Saclay'}</h4>
             <ProgrammeTable annee={annee} />
+            <slot name="apres-tableau" />
         </>
     )}
 

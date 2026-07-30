@@ -112,11 +112,11 @@ const totalGeneral = {
                 </td>
                 <td>{matiere.semestre1 ? <Icon name="ri:check-line" class="text-secondary min-w-fit mx-auto text-lg"/> : ''}</td>
                 <td>{matiere.semestre2 ? <Icon name="ri:check-line" class="text-secondary min-w-fit mx-auto text-lg"/> : ''}</td>
-                <td class="text-center">{matiere.heuresHebdo ?? ""}</td>
-                <td class="text-center">{matiere.nombreSemaines ?? ""}</td>
-                <td class="text-center">{matiere.totalHeures ?? ""}</td>
-                <td class="text-center">{matiere.heuresCours ?? ""}</td>
-                <td class="text-center">{matiere.heuresTdTp ?? ""}</td>
+                <td class="text-center">{matiere.heuresHebdo || ""}</td>
+                <td class="text-center">{matiere.nombreSemaines || ""}</td>
+                <td class="text-center">{matiere.totalHeures || ""}</td>
+                <td class="text-center">{matiere.heuresCours || ""}</td>
+                <td class="text-center">{matiere.heuresTdTp || ""}</td>
                 <td class="text-center">{matiere.ects ?? ""}</td>
               </tr>
             ))}
@@ -127,9 +127,9 @@ const totalGeneral = {
               <td />
               <td />
               <td />
-              <td class="text-center font-bold">{bloc.totalHeures}</td>
-              <td class="text-center font-bold">{bloc.totalCours}</td>
-              <td class="text-center font-bold">{bloc.totalTdTp}</td>
+              <td class="text-center font-bold">{bloc.totalHeures || ""}</td>
+              <td class="text-center font-bold">{bloc.totalCours || ""}</td>
+              <td class="text-center font-bold">{bloc.totalTdTp || ""}</td>
               <td class="text-center font-bold">{bloc.ects}</td>
             </tr>
           </>
@@ -141,9 +141,9 @@ const totalGeneral = {
         <td></td>
         <td></td>
         <td></td>
-        <td class="text-center">{totalGeneral.heures}</td>
-        <td class="text-center">{totalGeneral.cours}</td>
-        <td class="text-center">{totalGeneral.tdTp}</td>
+        <td class="text-center">{totalGeneral.heures || ""}</td>
+        <td class="text-center">{totalGeneral.cours || ""}</td>
+        <td class="text-center">{totalGeneral.tdTp || ""}</td>
         <td class="text-center">{totalGeneral.ects}</td>
       </tr>
     </tbody>

@@ -364,7 +364,7 @@
   },
   {
     "nom": "Charlotte GASPALOU",
-    "photo": null,
+    "photo": "/assets/etudiants/charlottegaspalou.webp",
     "annee": "CPES26",
     "parcours": null,
     "linkedin": null,
@@ -403,7 +403,7 @@
   },
   {
     "nom": "Tristan PAILLOT",
-    "photo": null,
+    "photo": "/assets/etudiants/tristanpaillot.webp",
     "annee": "CPES26",
     "parcours": null,
     "linkedin": null,
@@ -438,6 +438,19 @@
     "formation": "Cycle ingénieur",
     "logos": [
       "centrale-supelec"
+    ]
+  },
+  {
+    "nom": "Charlotte RAVELOMANANA GONZALO",
+    "photo": "/assets/etudiants/charlotteravelomananagonzalo.webp",
+    "annee": "CPES26",
+    "parcours": null,
+    "linkedin": "https://www.linkedin.com/in/charlotte-ravelomanana-gonzalo-1b974830b",
+    "contact": null,
+    "etablissement": "KTH Royal Institute of Technology",
+    "formation": "Biostatistics & Data Science",
+    "logos": [
+      "kth"
     ]
   }
 ]

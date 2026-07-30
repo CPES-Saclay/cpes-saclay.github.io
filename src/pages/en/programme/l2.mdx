@@ -18,7 +18,9 @@ import Disclaimer from '../../../components/Disclaimer.astro';
 ## Distribution of courses in year 2 (L2)
 <ProportionBar lipps={50} esr={50} />
 
-<ProgrammeAnnee annee="L2" />
+<ProgrammeAnnee annee="L2">
+  <Disclaimer slot="apres-tableau">The second year totals 63 ECTS credits. This slight excess over the standard 60 ECTS is normal.</Disclaimer>
+</ProgrammeAnnee>
 
 <CardsBox
     title='Other views of the programme'
