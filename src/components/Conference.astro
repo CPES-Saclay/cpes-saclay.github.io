@@ -10,7 +10,26 @@ interface Props {
   image?: string;
 }
 
+import { getLangFromUrl } from '../i18n';
+
 const { titre, intervenant, partenaire, date, description, youtube, linkedin, image } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = lang === 'fr'
+  ? {
+      consent: "Autoriser le dépôt de cookies par les services tiers (YouTube, LinkedIn)",
+      accept: "Accepter",
+      refuse: "Refuser",
+      refused: "Nous ne pouvons pas afficher le contenu de cette vidéo car vous avez refusé les cookies tiers.",
+      by: "par",
+    }
+  : {
+      consent: "Allow third-party services to set cookies (YouTube, LinkedIn)",
+      accept: "Accept",
+      refuse: "Decline",
+      refused: "We can't display this video because you declined third-party cookies.",
+      by: "by",
+    };
 
 function getYoutubeEmbedUrl(url: string): string {
   const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/);
@@ -31,18 +50,18 @@ const embedProvider = youtube ? 'youtube' : linkedin ? 'linkedin' : null;
       {embedUrl ? (
         <div class="conf-embed w-full h-full" data-embed-url={embedUrl}>
           <div class="conf-embed-consent w-full h-full flex flex-col items-center justify-center gap-3 p-4 text-center max-w-xs mx-auto">
-            <span class="text-sm text-black">Autoriser le dépôt de cookies par les services tiers (YouTube, LinkedIn)</span>
+            <span class="text-sm text-black">{t.consent}</span>
             <div class="flex gap-2">
               <button class="conf-embed-accept px-3 py-1.5 text-sm font-medium bg-black text-white border border-black cursor-pointer hover:bg-white hover:text-black transition-colors">
-                Accepter
+                {t.accept}
               </button>
               <button class="conf-embed-refuse px-3 py-1.5 text-sm font-medium bg-white text-black border border-black cursor-pointer hover:bg-black hover:text-white transition-colors">
-                Refuser
+                {t.refuse}
               </button>
             </div>
           </div>
           <div class="conf-embed-refused w-full h-full items-center justify-center p-4 text-center max-w-xs mx-auto" style="display:none;">
-            <span class="text-sm font-bold text-black">Nous ne pouvons pas afficher le contenu de cette vidéo car vous avez refusé les cookies tiers.</span>
+            <span class="text-sm font-bold text-black">{t.refused}</span>
           </div>
           <iframe class="conf-embed-iframe w-full h-full border-0" style="display:none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -55,7 +74,7 @@ const embedProvider = youtube ? 'youtube' : linkedin ? 'linkedin' : null;
     <span class="text-base font-bold text-secondary">{titre}</span>
     {(date || intervenant || partenaire) && (
       <div class="text-sm text-secondary">
-        {date && <><span>{date}</span>{intervenant && <> par</>}</>}{intervenant && <> <span class="font-medium">{intervenant}</span></>}{partenaire && <> <em class="opacity-70">{partenaire}</em></>}
+        {date && <><span>{date}</span>{intervenant && <> {t.by}</>}</>}{intervenant && <> <span class="font-medium">{intervenant}</span></>}{partenaire && <> <em class="opacity-70">{partenaire}</em></>}
       </div>
     )}
     {description && (

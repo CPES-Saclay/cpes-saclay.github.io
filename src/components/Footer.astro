@@ -18,7 +18,7 @@ const t = useTranslations(lang);
   <div class="container mx-auto px-6 py-12">
     <div class="flex flex-col md:flex-row gap-8 justify-between">
       <div class="flex flex-col items-start gap-4">
-        <img loading="lazy" src="/assets/logo_cpes-paris-saclay.svg" alt="Logo du CPES Paris-Saclay" class="h-14 md:h-18 mt-2.5 dark:invert"/>
+        <img loading="lazy" src="/assets/logo_cpes-paris-saclay.svg" alt={lang === 'en' ? 'CPES Paris-Saclay logo' : 'Logo du CPES Paris-Saclay'} class="h-14 md:h-18 mt-2.5 dark:invert"/>
         <p class="text-sm mb-4 max-w-[20rem]">
             {t('footerDescription')}
         </p>

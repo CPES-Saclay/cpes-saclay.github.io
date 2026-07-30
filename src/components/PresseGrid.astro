@@ -5,6 +5,7 @@ import { getLangFromUrl } from '../i18n';
 
 const lang = getLangFromUrl(Astro.url);
 const tr = (b: { fr: string; en: string }) => b[lang] ?? b.fr;
+const txt = (fr: string, en?: string) => (lang === 'en' && en ? en : fr);
 
 const categories = [
   { id: 'presse', label: { fr: 'Articles de presse', en: 'Press articles' } },
@@ -31,8 +32,8 @@ const categories = [
               {p.logo && (
                 <img src={p.logo} alt={p.source} loading="lazy" draggable="false" class="presse-logo h-7 w-auto max-w-[150px] object-contain object-left self-start" />
               )}
-              <span class="font-bold text-secondary leading-snug pr-6">{p.titre}</span>
-              <span class="text-sm text-secondary leading-normal">{p.description}</span>
+              <span class="font-bold text-secondary leading-snug pr-6">{txt(p.titre, p.titre_en)}</span>
+              <span class="text-sm text-secondary leading-normal">{txt(p.description, p.description_en)}</span>
               <Icon
                 name={p.categorie === 'video' ? 'ri:play-circle-line' : 'ri:external-link-line'}
                 class="absolute top-6 right-5 text-base text-secondary opacity-40 group-hover:opacity-100"

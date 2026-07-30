@@ -6,7 +6,9 @@
     "date": "2026-03-24",
     "url": "https://thotismedia.com/institut-polytechnique-de-paris-dans-la-course-mondiale-aux-cotes-du-mit-et-de-lepfl/",
     "categorie": "presse",
-    "logo": "/assets/presse/thotis.webp"
+    "logo": "/assets/presse/thotis.webp",
+    "titre_en": "The CPES named by IP Paris's president among the programmes of the future",
+    "description_en": "In an interview with Thotis, Thierry Coulhon discusses the CPES and its strong female representation."
   },
   {
     "titre": "Le Figaro Étudiant retient le CPES Paris-Saclay parmi les pépites de Parcoursup",
@@ -15,7 +17,9 @@
     "date": "2025-12-09",
     "url": "https://etudiant.lefigaro.fr/article/etudes/les-pepites-de-l-universite-francaise-que-vous-trouverez-sur-parcoursup-20251209/",
     "categorie": "presse",
-    "logo": "/assets/presse/lefigaro-etudiant.webp"
+    "logo": "/assets/presse/lefigaro-etudiant.webp",
+    "titre_en": "Le Figaro Étudiant lists the CPES Paris-Saclay among Parcoursup's hidden gems",
+    "description_en": "The outlet ranks the CPES Paris-Saclay in its selection of university programmes to watch."
   },
   {
     "titre": "Les CPES en sciences des données décryptés",
@@ -24,7 +28,9 @@
     "date": "",
     "url": "https://www.letudiant.fr/etudes/classes-prepa/des-cpes-s-ouvrent-dans-le-secteur-des-sciences-des-donnees.html",
     "categorie": "presse",
-    "logo": "/assets/presse/letudiant.webp"
+    "logo": "/assets/presse/letudiant.webp",
+    "titre_en": "Data-science CPES programmes explained",
+    "description_en": "L'Étudiant looks at these programmes blending mathematics, computer science and societal issues."
   },
   {
     "titre": "Le CPES Paris-Saclay présenté en détail",
@@ -33,7 +39,9 @@
     "date": "",
     "url": "https://azimut-orientation.com/le-cpes-sciences-des-donnees-sante-societe-de-palaiseau-paris-saclay/",
     "categorie": "presse",
-    "logo": "/assets/presse/azimut-orientation.webp"
+    "logo": "/assets/presse/azimut-orientation.webp",
+    "titre_en": "The CPES Paris-Saclay presented in detail",
+    "description_en": "Azimut details the programme, its two tracks and the profiles it looks for."
   },
   {
     "titre": "L'ENS Paris-Saclay, partenaire du CPES Paris-Saclay",
@@ -42,7 +50,9 @@
     "date": "2023-02-06",
     "url": "https://ens-paris-saclay.fr/actualite/lens-paris-saclay-partenaire-du-nouveau-cpes-paris-saclay",
     "categorie": "partenaires",
-    "logo": "/assets/presse/ens-paris-saclay.webp"
+    "logo": "/assets/presse/ens-paris-saclay.webp",
+    "titre_en": "ENS Paris-Saclay, partner of the CPES Paris-Saclay",
+    "description_en": "The school presents its role in the programme and how the three years are organised."
   },
   {
     "titre": "IP Paris annonce l'ouverture du CPES Paris-Saclay",
@@ -51,7 +61,9 @@
     "date": "2023-02-08",
     "url": "https://www.ip-paris.fr/communiques-et-dossiers-de-presse/ouverture-dune-nouvelle-formation-post-bac-dexcellence-le-cycle-pluridisciplinaire-detudes",
     "categorie": "partenaires",
-    "logo": "/assets/presse/ip-paris.webp"
+    "logo": "/assets/presse/ip-paris.webp",
+    "titre_en": "IP Paris announces the launch of the CPES Paris-Saclay",
+    "description_en": "The launch press release from Institut Polytechnique de Paris, with its press kit."
   },
   {
     "titre": "L'Université Paris-Saclay annonce l'ouverture du CPES Paris-Saclay",
@@ -60,7 +72,9 @@
     "date": "",
     "url": "https://www.universite-paris-saclay.fr/actualites/ouverture-dune-nouvelle-formation-post-bac-dexcellence",
     "categorie": "partenaires",
-    "logo": "/assets/presse/universite-paris-saclay.webp"
+    "logo": "/assets/presse/universite-paris-saclay.webp",
+    "titre_en": "Université Paris-Saclay announces the launch of the CPES Paris-Saclay",
+    "description_en": "The programme's launch announcement on the University's website."
   },
   {
     "titre": "Le CPES Paris-Saclay dans le catalogue de l'Université Paris-Saclay",
@@ -69,7 +83,9 @@
     "date": "",
     "url": "https://www.universite-paris-saclay.fr/formation/cycle-pluridisciplinaire-detudes-superieures",
     "categorie": "partenaires",
-    "logo": "/assets/presse/universite-paris-saclay.webp"
+    "logo": "/assets/presse/universite-paris-saclay.webp",
+    "titre_en": "The CPES Paris-Saclay in the Université Paris-Saclay course catalogue",
+    "description_en": "The official programme page: curriculum, bachelor's degree grade and further studies."
   },
   {
     "titre": "La promotion CPES28 visite la bibliothèque de l'X",
@@ -78,7 +94,9 @@
     "date": "",
     "url": "https://www.polytechnique.edu/bibliotheque/actualites/visite-des-etudiants-de-cpes-de-premiere-annee-du-lipps",
     "categorie": "partenaires",
-    "logo": "/assets/presse/ecole-polytechnique.webp"
+    "logo": "/assets/presse/ecole-polytechnique.webp",
+    "titre_en": "The CPES28 cohort visits the library of l'X",
+    "description_en": "The CPES28 cohort discovers the library of École Polytechnique, its history and its collections, to which CPES Paris-Saclay students have access."
   },
   {
     "titre": "Thierry Coulhon (IP Paris), Parole d'Université",
@@ -87,7 +105,9 @@
     "date": "2026-03-24",
     "url": "https://www.youtube.com/watch?v=LF-Q-IFH4u0",
     "categorie": "video",
-    "logo": "/assets/presse/thotis.webp"
+    "logo": "/assets/presse/thotis.webp",
+    "titre_en": "Thierry Coulhon (IP Paris), Parole d'Université",
+    "description_en": "The video interview with the president of Institut Polytechnique de Paris, who describes the CPES Paris-Saclay as a programme of the future."
   },
   {
     "titre": "Claire Lartigues présente le CPES Paris-Saclay",
@@ -96,6 +116,8 @@
     "date": "",
     "url": "https://www.youtube.com/watch?v=iWkRkNIzHLE",
     "categorie": "video",
-    "logo": "/assets/presse/thotis.webp"
+    "logo": "/assets/presse/thotis.webp",
+    "titre_en": "Claire Lartigues introduces the CPES Paris-Saclay",
+    "description_en": "The vice-president of Université Paris-Saclay introduces this Cycle Pluridisciplinaire d'Études Supérieures in data science, health and society, in partnership with the Académie de Versailles, ENS Paris-Saclay, Institut Polytechnique de Paris and HEC Paris."
   }
 ]

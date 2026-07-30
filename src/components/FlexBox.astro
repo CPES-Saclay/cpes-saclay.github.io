@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import Button from "./Button.astro";
+import { getLangFromUrl } from '../i18n';
 
 interface Props {
     title?: string;
@@ -13,6 +14,8 @@ interface Props {
 }
 
 const { links, title } = Astro.props as Props;
+const lang = getLangFromUrl(Astro.url);
+const seeList = lang === 'fr' ? 'Voir la liste' : 'See the list';
 ---
 
 <div>
@@ -38,7 +41,7 @@ const { links, title } = Astro.props as Props;
                     <span class="text-[0.875rem] p-0 text-secondary m-0">
                         {description}
                     </span>
-                    <Button href={href} icon="ri:arrow-right-line" iconPosition="right" size="sm" class="mt-2 mb-0 w-fit">Voir la liste</Button>
+                    <Button href={href} icon="ri:arrow-right-line" iconPosition="right" size="sm" class="mt-2 mb-0 w-fit">{seeList}</Button>
                 </div>
             ))
         }
