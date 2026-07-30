@@ -235,7 +235,24 @@ const legendItems = [
     .legend-list {
       max-height: none !important;
       flex-wrap: nowrap;
-      gap: 0.15rem;
+      gap: 0.35rem;
+      width: 100%;
+    }
+
+    /* Sur mobile, la légende passe pleine largeur : le texte doit revenir
+       à la ligne au lieu d'être tronqué. */
+    .legend-item {
+      align-items: flex-start;
+    }
+
+    .legend-circle {
+      margin-top: 0.28rem;
+    }
+
+    .legend-name {
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
     }
   }
 </style>
