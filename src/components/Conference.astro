@@ -74,7 +74,7 @@ const embedProvider = youtube ? 'youtube' : linkedin ? 'linkedin' : null;
     <span class="text-base font-bold text-secondary">{titre}</span>
     {(date || intervenant || partenaire) && (
       <div class="text-sm text-secondary">
-        {date && <><span>{date}</span>{intervenant && <> {t.by}</>}</>}{intervenant && <> <span class="font-medium">{intervenant}</span></>}{partenaire && <> <em class="opacity-70">{partenaire}</em></>}
+        {date && <><span>{date}</span>{intervenant && <>{' '}{t.by}</>}</>}{intervenant && <>{' '}<span class="font-medium">{intervenant}</span></>}{partenaire && <>{' '}<em class="opacity-70">{partenaire}</em></>}
       </div>
     )}
     {description && (
