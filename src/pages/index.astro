@@ -8,7 +8,7 @@ import { Icon } from "astro-icon/components";
 ---
 
 <DefaultLayout
-  fullTitle="CPES Paris-Saclay – Cycle Pluridisciplinaire d'Études Supérieures"
+  fullTitle="CPES Paris-Saclay"
   description="Le CPES Paris-Saclay (Cycle Pluridisciplinaire d'Études Supérieures) : une formation d'excellence en 3 ans en sciences des données, société et santé, portée par cinq établissements du plateau de Saclay."
 >
   <section class="py-7 md:py-14 pb-16 flex flex-col-reverse md:flex-row md:items-stretch gap-8 md:gap-12">
@@ -17,34 +17,24 @@ import { Icon } from "astro-icon/components";
       <h1 class="text-4xl md:text-6xl font-black text-secondary leading-[1.05] tracking-[-0.02em] mb-2">
         CPES Paris-Saclay
       </h1>
-      <p class="text-base font-semibold text-secondary mb-5">Sciences des données, société et santé</p>
-      <div class="grid grid-cols-[auto_auto_auto_auto] w-fit mb-8">
-        <div class="flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b border-r border-secondary/20">
-          <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">3 ans</span>
-          <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">de formation</span>
-        </div>
-        <div class="flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b border-r border-secondary/20">
-          <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">180</span>
-          <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">crédits ECTS</span>
-        </div>
-        <div class="flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b sm:border-r border-secondary/20">
-          <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">5</span>
-          <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">établissements</span>
-        </div>
-        <div class="hidden sm:flex flex-col gap-[0.1rem] px-2.5 sm:px-[1.1rem] py-[0.4rem] border-b border-secondary/20">
-          <span class="text-[0.9rem] sm:text-[1rem] font-black text-secondary leading-[1.2]">48</span>
-          <span class="text-[0.58rem] sm:text-[0.65rem] text-secondary font-medium uppercase tracking-[0.05em]">étudiants/promo</span>
-        </div>
-      </div>
+      <p class="text-base font-semibold text-secondary mb-3">Sciences des données, société et santé</p>
+      <p class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[0.8rem] sm:text-[0.85rem] text-secondary mb-8">
+        <span>48 étudiants<span class="hidden sm:inline"> par promotion</span></span>
+        <span class="w-px h-3 bg-secondary/25 shrink-0" aria-hidden="true"></span>
+        <span>5 établissements</span>
+        <span class="w-px h-3 bg-secondary/25 shrink-0" aria-hidden="true"></span>
+        <span>3 ans</span>
+      </p>
       <p class="text-base text-secondary leading-[1.75] max-w-prose sm:max-w-[65ch] mb-8">
         Diplôme pluridisciplinaire et interdisciplinaire en 3 ans construit en partenariat entre 
         l'ENS Paris-Saclay, HEC Paris, l'Institut Polytechnique de Paris, le Lycée International de Palaiseau Paris-Saclay et l'Université Paris-Saclay. Le Cycle Pluridisciplinaire d'Études Supérieures (CPES) forme des profils pluridisciplinaires maîtrisant les sciences des données et l'IA (mathématiques, informatique) et capables d'interpréter ces données dans le domaine de la santé ou de la société selon le parcours choisi.
       </p>
-      <div class="flex flex-wrap gap-3">
-        <Button href="/programme" variant="primary" iconPosition="right" class="mb-0! mt-0!">Programme</Button>
-        <Button href="/partenaires" variant="outline" iconPosition="right" class="mb-0! mt-0!">Partenaires</Button>
-        <Button href="/a-propos" variant="outline" iconPosition="right" class="mb-0! mt-0!">Tous les éléments essentiels</Button>
+      <div class="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
+        <Button href="/programme" variant="primary" iconPosition="right" class="mb-0! mt-0! col-span-2 sm:col-auto" triggerClass="w-full sm:w-auto max-sm:px-3">Programme</Button>
+        <Button href="/partenaires" variant="outline" iconPosition="right" class="mb-0! mt-0!" triggerClass="w-full sm:w-auto max-sm:px-3">Partenaires</Button>
+        <Button href="/debouches" variant="outline" iconPosition="right" class="mb-0! mt-0!" triggerClass="w-full sm:w-auto max-sm:px-3">Débouchés</Button>
       </div>
+      <a href="/nos-alumnis" class="inline-flex items-center gap-[0.3rem] text-[0.8rem] font-semibold text-secondary no-underline mt-4 hover:opacity-60 transition-opacity">Que deviennent nos diplômés ? <Icon name="ri:arrow-right-line" /></a>
     </div>
     <div class="md:w-[40%] shrink-0 h-42 md:h-auto bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/environnement/cpes_paris-saclay_environnement_20.webp');" role="img" aria-label="Campus CPES Paris-Saclay"></div>
   </section>

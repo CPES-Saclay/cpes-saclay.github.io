@@ -37,7 +37,7 @@
     "annee": "L2",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/maxence-pauzies-bab65a374/",
-    "contact": "maxence.pauzies@universite-paris-saclay.fr"
+    "contact": "maxence.pauzies@hec.edu"
   },
   {
     "nom": "Maxence SYLVESTRE",
@@ -45,7 +45,7 @@
     "annee": "L2",
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/maxencesylvestre/",
-    "contact": "maxence.sylvestre@universite-paris-saclay.fr"
+    "contact": "maxence.sylvestre@hec.edu"
   },
   {
     "nom": "Pablo MARTINEZ",
@@ -92,7 +92,7 @@
     "photo": "/assets/etudiants/evaellechomard.webp",
     "annee": "L3",
     "parcours": "societe",
-    "linkedin": "https://www.linkedin.com/in/eva%C3%ABlle-chomard-8b0907352?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    "linkedin": "https://www.linkedin.com/in/eva%C3%ABlle-chomard-8b0907352/",
     "contact": "evaelle.chomard@universite-paris-saclay.fr"
   },
   {
@@ -124,7 +124,7 @@
     "photo": "/assets/etudiants/sarradamak.webp",
     "annee": "L3",
     "parcours": "societe",
-    "linkedin": "https://www.linkedin.com/in/sarra-damak-0a8345313?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    "linkedin": "https://www.linkedin.com/in/sarra-damak-0a8345313/",
     "contact": "damaksarra06@icloud.com"
   },
   {
@@ -452,5 +452,45 @@
     "logos": [
       "kth"
     ]
+  },
+  {
+    "nom": "Mahaut CHAUVET",
+    "photo": "/assets/etudiants/mahautchauvet.webp",
+    "annee": "L1",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null
+  },
+  {
+    "nom": "Flore DA SILVA",
+    "photo": "/assets/etudiants/floredasilva.webp",
+    "annee": "L1",
+    "parcours": null,
+    "linkedin": null,
+    "contact": null
+  },
+  {
+    "nom": "Serena HOUNDETON",
+    "photo": "/assets/etudiants/serenahoundeton.webp",
+    "annee": "L3",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/s%C3%A9r%C3%A9na-hound%C3%A9ton-87630a3a9/",
+    "contact": "serena.hndtn@gmail.com"
+  },
+  {
+    "nom": "Raphaël ARRABAL",
+    "photo": "/assets/etudiants/raphaelarrabal.webp",
+    "annee": "L2",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/raphael-arrabal/",
+    "contact": "raphael.arrabal@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Leila ZEMMOURI",
+    "photo": "/assets/etudiants/leilazemmouri.webp",
+    "annee": "L1",
+    "parcours": null,
+    "linkedin": null,
+    "contact": "leila.zemmouri@universite-paris-saclay.fr"
   }
 ]

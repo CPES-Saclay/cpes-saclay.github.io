@@ -86,7 +86,7 @@ const t = {
       nom={e.nom}
       photo={e.photo ?? undefined}
       annee={e.annee}
-      parcours={(e.parcours ?? 'societe') as 'sante' | 'societe'}
+      parcours={e.parcours as 'sante' | 'societe' | null}
       showParcours={showParcours}
       promo={mode === 'alumnis' ? undefined : promoParAnnee[e.annee]}
       linkedin={e.linkedin}

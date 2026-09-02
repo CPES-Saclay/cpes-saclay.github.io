@@ -373,9 +373,9 @@
       },
       "applicatifs": {
         "nom": "Bloc des domaines applicatifs et de spécialisation",
-        "ects": 24,
-        "totalHeures": 354,
-        "totalCours": 312,
+        "ects": 22,
+        "totalHeures": 324,
+        "totalCours": 282,
         "totalTdTp": 42,
         "matieres": [
           {
@@ -483,23 +483,6 @@
             "mode": "Cours magistral + Travaux dirigés",
             "description": [],
             "categorie": "Sciences des données"
-          },
-          {
-            "id": "enjeux-societaux-sante-biologie",
-            "code": "AP219",
-            "intitule": "Innovation et Enjeux sociétaux en Santé et Biologie",
-            "semestre1": true,
-            "semestre2": false,
-            "heuresHebdo": 3,
-            "nombreSemaines": 10,
-            "totalHeures": 30,
-            "heuresCours": 30,
-            "heuresTdTp": 0,
-            "ects": 2,
-            "etablissement": "Université Paris-Saclay",
-            "mode": "Cours magistral",
-            "description": [],
-            "categorie": "Santé"
           },
           {
             "id": "data-modeling",
