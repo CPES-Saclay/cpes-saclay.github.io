@@ -3,7 +3,7 @@ import Head from "./Head.astro";
 import "../assets/app.css";
 import "../assets/callouts.css";
 import Navbar from "../components/Navbar.astro";
-import AnnouncementBanner from "../components/AnnouncementBanner.astro";
+// import AnnouncementBanner from "../components/AnnouncementBanner.astro";
 import Navigation from "../components/Navigation.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import Footer from "../components/Footer.astro";
@@ -37,7 +37,7 @@ const banner = `
       <input id="mobile_drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content">
         <div id="top-stack" class="fixed top-0 left-0 w-full z-10">
-          <AnnouncementBanner lang={lang} />
+          {/* <AnnouncementBanner lang={lang} /> -- suspendue */}
           <Navbar />
         </div>
         <main class="pt-32 md:pt-40 pb-14 container mx-auto px-6 py-8 min-h-[35vh]">
