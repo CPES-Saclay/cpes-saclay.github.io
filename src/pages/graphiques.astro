@@ -1,0 +1,86 @@
+---
+import DefaultLayout from "../layouts/Default.astro";
+import ImageShowcase from "../components/ImageShowcase.astro";
+---
+
+<DefaultLayout
+    title="Éléments graphiques et kit de presse du CPES Paris-Saclay"
+    description="Vue d'ensemble du CPES Paris-Saclay, ou Cycle Pluridisciplinaire d'Études Supérieures : programme sur 3 ans, parcours santé et société, admission Parcoursup et débouchés."
+    showBreadcrumbs={true}
+>
+    <h1
+        class="text-4xl font-black text-secondary tracking-tight leading-[1.1] mb-4"
+    >
+        Éléments graphiques et kit de presse du CPES Paris-Saclay
+    </h1>
+
+    <p class="text-secondary leading-[1.75] mb-8 max-w-[90ch]">
+        Si vous souhaitez mentioner le CPES Paris-Saclay dans une publication ou
+        un artiste de presse, vous pouvez utiliser les éléments graphiques
+        unique au CPES disponibles si dessous :
+    </p>
+
+    <h3
+        class="text-3xl font-black text-secondary tracking-tight leading-[1.1] mb-4"
+    >
+        Logo Carré
+    </h3>
+
+    <p class="text-secondary leading-[1.75] mb-8 max-w-[70ch]">...</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pb-8">
+        <ImageShowcase imageName="kit-presse/Favicon Noire" class="" />
+        <ImageShowcase
+            darkMode
+            imageName="kit-presse/Favicon Blanche"
+            class=""
+        />
+        <ImageShowcase
+            imageName="kit-presse/Logo BDE"
+            class="bg-[#70020F] bg-none"
+        />
+        <ImageShowcase
+            imageName="kit-presse/Logo Alumni"
+            class="bg-[#0D0057] bg-none"
+        />
+    </div>
+
+    <h3
+        class="text-3xl font-black text-secondary tracking-tight leading-[1.1] mb-4"
+    >
+        Bannières
+    </h3>
+
+    <p class="text-secondary leading-[1.75] mb-8 max-w-[70ch]">...</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-8">
+        <ImageShowcase imageName="kit-presse/Bannière Blanche" class="" />
+        <ImageShowcase
+            darkMode
+            imageName="kit-presse/Bannière Noire"
+            class=""
+        />
+        <ImageShowcase
+            imageName="kit-presse/Bannière BDE"
+            class="bg-[#70020F] bg-none"
+        />
+        <ImageShowcase
+            imageName="kit-presse/Bannière Alumni"
+            class="bg-[#0D0057] bg-none"
+        />
+    </div>
+
+    <h3
+        class="text-3xl font-black text-secondary tracking-tight leading-[1.1] mb-4"
+    >
+        Images diverses
+    </h3>
+
+    <p class="text-secondary leading-[1.75] mb-8 max-w-[70ch]">
+        Arrière-plan des slides du BDE
+    </p>
+    <ImageShowcase
+        imageName="kit-presse/Fond BDE"
+        class="bg-[#70020F] bg-none"
+    />
+</DefaultLayout>

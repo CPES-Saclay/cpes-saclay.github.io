@@ -1,111 +1,110 @@
-@import url('https://tetunori.github.io/fluent-emoji-webfont/dist/FluentEmojiColor.css');
+@import url("https://tetunori.github.io/fluent-emoji-webfont/dist/FluentEmojiColor.css");
 @import "tailwindcss";
-
 
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-  themes: false;
-  logs: false;
-};
-
-
-@plugin "daisyui/theme" {
-  name: "cpes-paris-saclay-light";
-  default: true;
-  prefersdark: false;
-  color-scheme: "light";
-  --color-base-100: oklch(100% 0 0);
-  --color-base-200: oklch(96.27% 0 0);
-  --color-base-300: oklch(89.8% 0 0);
-  --color-base-content: oklch(0% 0 0);
-  --color-primary: oklch(100% 0 0);
-  --color-primary-content: oklch(0% 0 0);
-  --color-secondary: oklch(0% 0 0);
-  --color-secondary-content: oklch(100% 0 0);
-  --color-accent: oklch(0% 0 0);
-  --color-accent-content: oklch(100% 0 0);
-  --color-neutral: oklch(0% 0 0);
-  --color-neutral-content: oklch(100% 0 0);
-  --color-info: oklch(71% 0.143 215.221);
-  --color-info-content: oklch(98% 0.019 200.873);
-  --color-success: oklch(72% 0.219 149.579);
-  --color-success-content: oklch(98% 0.018 155.826);
-  --color-warning: oklch(70% 0.213 47.604);
-  --color-warning-content: oklch(98% 0.016 73.684);
-  --color-error: oklch(63% 0.237 25.331);
-  --color-error-content: oklch(97% 0.013 17.38);
-  --radius-selector: 0rem;
-  --radius-field: 0rem;
-  --radius-box: 0rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1.5px;
-  --depth: 0;
-  --noise: 0;
+    themes: false;
+    logs: false;
 }
 
+@plugin "daisyui/theme" {
+    name: "cpes-paris-saclay-light";
+    default: true;
+    prefersdark: false;
+    color-scheme: "light";
+    --color-base-100: oklch(100% 0 0);
+    --color-base-200: oklch(96.27% 0 0);
+    --color-base-300: oklch(89.8% 0 0);
+    --color-base-content: oklch(0% 0 0);
+    --color-primary: oklch(100% 0 0);
+    --color-primary-content: oklch(0% 0 0);
+    --color-secondary: oklch(0% 0 0);
+    --color-secondary-content: oklch(100% 0 0);
+    --color-accent: oklch(0% 0 0);
+    --color-accent-content: oklch(100% 0 0);
+    --color-neutral: oklch(0% 0 0);
+    --color-neutral-content: oklch(100% 0 0);
+    --color-info: oklch(71% 0.143 215.221);
+    --color-info-content: oklch(98% 0.019 200.873);
+    --color-success: oklch(72% 0.219 149.579);
+    --color-success-content: oklch(98% 0.018 155.826);
+    --color-warning: oklch(70% 0.213 47.604);
+    --color-warning-content: oklch(98% 0.016 73.684);
+    --color-error: oklch(63% 0.237 25.331);
+    --color-error-content: oklch(97% 0.013 17.38);
+    --radius-selector: 0rem;
+    --radius-field: 0rem;
+    --radius-box: 0rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1.5px;
+    --depth: 0;
+    --noise: 0;
+}
 
 @plugin "daisyui/theme" {
-  name: "cpes-paris-saclay-dark";
-  default: false;
-  prefersdark: true;
-  color-scheme: "dark";
-  --color-base-100: oklch(0% 0 0);
-  --color-base-200: oklch(3.92% 0 0);
-  --color-base-300: oklch(7.84% 0 0);
-  --color-base-content: oklch(100% 0 0);
-  --color-primary: oklch(0% 0 0);
-  --color-primary-content: oklch(100% 0 0);
-  --color-secondary: oklch(100% 0 0);
-  --color-secondary-content: oklch(0% 0 0);
-  --color-accent: oklch(100% 0 0);
-  --color-accent-content: oklch(0% 0 0);
-  --color-neutral: oklch(100% 0 0);
-  --color-neutral-content: oklch(0% 0 0);
-  --color-info: oklch(87.8% 0.143 149.100);
-  --color-info-content: oklch(98% 0.019 200.873);
-  --color-success: oklch(53.4% 0.219 149.579);
-  --color-success-content: oklch(98% 0.018 155.826);
-  --color-warning: oklch(90.5% 0.195 47.604);
-  --color-warning-content: oklch(98% 0.016 73.684);
-  --color-error: oklch(63% 0.237 25.331);
-  --color-error-content: oklch(97% 0.013 17.38);
-  --radius-selector: 0rem;
-  --radius-field: 0rem;
-  --radius-box: 0rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1.5px;
-  --depth: 0;
-  --noise: 0;
+    name: "cpes-paris-saclay-dark";
+    default: false;
+    prefersdark: true;
+    color-scheme: "dark";
+    --color-base-100: oklch(0% 0 0);
+    --color-base-200: oklch(3.92% 0 0);
+    --color-base-300: oklch(7.84% 0 0);
+    --color-base-content: oklch(100% 0 0);
+    --color-primary: oklch(0% 0 0);
+    --color-primary-content: oklch(100% 0 0);
+    --color-secondary: oklch(100% 0 0);
+    --color-secondary-content: oklch(0% 0 0);
+    --color-accent: oklch(100% 0 0);
+    --color-accent-content: oklch(0% 0 0);
+    --color-neutral: oklch(100% 0 0);
+    --color-neutral-content: oklch(0% 0 0);
+    --color-info: oklch(87.8% 0.143 149.1);
+    --color-info-content: oklch(98% 0.019 200.873);
+    --color-success: oklch(53.4% 0.219 149.579);
+    --color-success-content: oklch(98% 0.018 155.826);
+    --color-warning: oklch(90.5% 0.195 47.604);
+    --color-warning-content: oklch(98% 0.016 73.684);
+    --color-error: oklch(63% 0.237 25.331);
+    --color-error-content: oklch(97% 0.013 17.38);
+    --radius-selector: 0rem;
+    --radius-field: 0rem;
+    --radius-box: 0rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1.5px;
+    --depth: 0;
+    --noise: 0;
 }
 
 @custom-variant light (&:where([data-theme=cpes-paris-saclay-light], [data-theme=cpes-paris-saclay-light] *));
 
 @custom-variant dark (&:where([data-theme=cpes-paris-saclay-dark], [data-theme=cpes-paris-saclay-dark] *));
 
-
 .html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 :root {
-  --default-font-family: 'Montserrat', 'Fluent Emoji Color', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --astro-code-foreground: var(--color-base-content);
-  --astro-code-background: var(--color-base-300);
-  --astro-code-token-constant: var(--color-info);
-  --astro-code-token-string: var(--color-success);
-  --astro-code-token-comment: var(--color-success);
-  --astro-code-token-keyword: var(--color-error);
-  --astro-code-token-parameter: #ffa657;
-  --astro-code-token-function: var(--color-error);
-  --astro-code-token-string-expression: var(--color-success);
-  --astro-code-token-punctuation: #8b949e;
-  --astro-code-token-link: var(--color-info);
-  --ects: #0077ff;
-  --annee: #f83660;
-  --etablissement: var(--color-secondary);
-  --entite: var(--color-secondary);
+    --default-font-family:
+        "Montserrat", "Fluent Emoji Color", ui-sans-serif, system-ui,
+        sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    --astro-code-foreground: var(--color-base-content);
+    --astro-code-background: var(--color-base-300);
+    --astro-code-token-constant: var(--color-info);
+    --astro-code-token-string: var(--color-success);
+    --astro-code-token-comment: var(--color-success);
+    --astro-code-token-keyword: var(--color-error);
+    --astro-code-token-parameter: #ffa657;
+    --astro-code-token-function: var(--color-error);
+    --astro-code-token-string-expression: var(--color-success);
+    --astro-code-token-punctuation: #8b949e;
+    --astro-code-token-link: var(--color-info);
+    --ects: #0077ff;
+    --annee: #f83660;
+    --etablissement: var(--color-secondary);
+    --entite: var(--color-secondary);
 }
 
 button:focus,
@@ -114,18 +113,18 @@ button:active,
 .btn:active,
 [role="button"]:focus,
 [role="button"]:active {
-  background-color: transparent !important;
-  outline: none !important;
+    background-color: transparent !important;
+    outline: none !important;
 }
 
 .menu li > *:focus,
 .menu li > *:active {
-  background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 * {
-  transition: none !important;
-  animation: none !important;
+    transition: none !important;
+    animation: none !important;
 }
 
 .dropdown-arrow,
@@ -135,7 +134,7 @@ button:active,
 .lang-switcher,
 .menu-link,
 .submenu-arrow {
-  transition: all 0.3s ease !important;
+    transition: all 0.3s ease !important;
 }
 
 /* Transitions de survol pour les liens et boutons (couleur/fond/bordure/opacité/transform),
@@ -143,157 +142,236 @@ button:active,
 a,
 button,
 [role="button"] {
-  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease !important;
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        opacity 0.2s ease,
+        transform 0.2s ease !important;
 }
 
 .btn-fade {
-  transition: all 0.2s ease !important;
-  animation: btn-fade-in 0.4s ease-out both !important;
+    transition: all 0.2s ease !important;
+    animation: btn-fade-in 0.4s ease-out both !important;
 }
 @keyframes btn-fade-in {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .drawer-side {
-  transition: opacity 0.25s ease-out, visibility 0.35s ease-out allow-discrete !important;
+    transition:
+        opacity 0.25s ease-out,
+        visibility 0.35s ease-out allow-discrete !important;
 }
 .drawer-side > *:not(.drawer-overlay) {
-  transition: translate 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transition: translate 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 .drawer-overlay {
-  transition: opacity 0.35s ease-out !important;
+    transition: opacity 0.35s ease-out !important;
 }
 
 @media (max-width: 1279px) {
-  details.group {
-    interpolate-size: allow-keywords;
-  }
-  details.group::details-content {
-    block-size: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: block-size 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, content-visibility 0.35s allow-discrete !important;
-  }
-  details.group[open]::details-content {
-    block-size: auto;
-    opacity: 1;
-  }
+    details.group {
+        interpolate-size: allow-keywords;
+    }
+    details.group::details-content {
+        block-size: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition:
+            block-size 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.3s ease,
+            content-visibility 0.35s allow-discrete !important;
+    }
+    details.group[open]::details-content {
+        block-size: auto;
+        opacity: 1;
+    }
 }
 
 .dropdown-panel {
-  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 /* Dépliage / repliage animé des items de programme (collapse daisyUI) */
 .collapse {
-  transition: grid-template-rows 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transition: grid-template-rows 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 .collapse > .collapse-content {
-  transition: content-visibility 0.32s allow-discrete, padding 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transition:
+        content-visibility 0.32s allow-discrete,
+        padding 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 .collapse-arrow > .collapse-title:after {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .menu-link {
-  position: relative;
+    position: relative;
 }
 
 @media (min-width: 1280px) {
-  .menu-link::after {
-    content: "";
-    position: absolute;
-    left: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.12rem;
-    height: 1.5px;
-    background-color: var(--color-secondary);
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  }
-  .menu-link:hover::after {
-    transform: scaleX(1);
-  }
+    .menu-link::after {
+        content: "";
+        position: absolute;
+        left: 0.75rem;
+        right: 0.75rem;
+        bottom: 0.12rem;
+        height: 1.5px;
+        background-color: var(--color-secondary);
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .menu-link:hover::after {
+        transform: scaleX(1);
+    }
 }
 
 .submenu .menu-link::after {
-  display: none;
+    display: none;
 }
 .submenu .menu-link::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 2px;
-  height: 1.05rem;
-  background-color: var(--color-secondary);
-  transform: translateY(-50%) scaleY(0);
-  transform-origin: center;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 2px;
+    height: 1.05rem;
+    background-color: var(--color-secondary);
+    transform: translateY(-50%) scaleY(0);
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 .submenu .menu-link:hover {
-  padding-left: 1.25rem;
+    padding-left: 1.25rem;
 }
 .submenu .menu-link:hover::before {
-  transform: translateY(-50%) scaleY(1);
+    transform: translateY(-50%) scaleY(1);
 }
 
 table {
-  @apply table;
-  padding: 0;
-  margin: 0;
-  max-width: 100%;
+    @apply table;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
 }
 
-table thead tr{
-  border-bottom-color: var(--color-secondary) !important;
-  border-width: 3px !important;
+table thead tr {
+    border-bottom-color: var(--color-secondary) !important;
+    border-width: 3px !important;
 }
 
-table tr, table thead tr {
-  border-bottom-color: (var(--color-secondary) / 0.1) !important;
+table tr,
+table thead tr {
+    border-bottom-color: (var(--color-secondary) / 0.1) !important;
 }
 
 .prose {
-  --tw-prose-body: var(--color-secondary);
-  --tw-prose-headings: var(--color-secondary);
-  --tw-prose-bold: var(--color-secondary);
-  --tw-prose-links: var(--color-secondary);
+    --tw-prose-body: var(--color-secondary);
+    --tw-prose-headings: var(--color-secondary);
+    --tw-prose-bold: var(--color-secondary);
+    --tw-prose-links: var(--color-secondary);
 }
 
 .prose ul {
-  list-style: none;
-  padding-left: 0;
+    list-style: none;
+    padding-left: 0;
 }
 
 .prose ul > li {
-  padding-left: 1.25em;
-  position: relative;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+    padding-left: 1.25em;
+    position: relative;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
 }
 
 .prose ul > li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
+    content: "—";
+    position: absolute;
+    left: 0;
 }
 
-.prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-  @apply text-3xl font-bold pt-8 pb-7 my-0 text-secondary;
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    @apply text-3xl font-bold pt-8 pb-7 my-0 text-secondary;
 }
 
 .prose .intermediate-title {
-  @apply text-2xl font-semibold pt-0 pb-5 my-0 text-secondary;
+    @apply text-2xl font-semibold pt-0 pb-5 my-0 text-secondary;
 }
 
 @media (max-width: 640px) {
-  .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-    @apply text-2xl;
-  }
-  .prose .intermediate-title {
-    @apply text-xl;
-  }
+    .prose h2,
+    .prose h3,
+    .prose h4,
+    .prose h5,
+    .prose h6 {
+        @apply text-2xl;
+    }
+    .prose .intermediate-title {
+        @apply text-xl;
+    }
+}
+
+.png-grid {
+    background-color: #fff;
+    background-image:
+        linear-gradient(
+            45deg,
+            #d3d5dc 25%,
+            #0000 0,
+            #0000 75%,
+            #d3d5dc 0,
+            #d3d5dc
+        ),
+        linear-gradient(
+            45deg,
+            #d3d5dc 25%,
+            #0000 0,
+            #0000 75%,
+            #d3d5dc 0,
+            #d3d5dc
+        );
+    background-size: 16px 16px;
+    background-position:
+        0 0,
+        8px 8px;
+}
+
+.dark-png-grid {
+    background-color: #000000;
+    background-image:
+        linear-gradient(
+            45deg,
+            #1f1f1f 25%,
+            #0000 0,
+            #0000 75%,
+            #1f1f1f 0,
+            #1f1f1f
+        ),
+        linear-gradient(
+            45deg,
+            #1f1f1f 25%,
+            #0000 0,
+            #0000 75%,
+            #1f1f1f 0,
+            #1f1f1f
+        );
+        background-size: 16px 16px;
+        background-position:
+            0 0,
+            8px 8px;
 }
