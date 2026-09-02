@@ -492,5 +492,13 @@
     "parcours": null,
     "linkedin": null,
     "contact": "leila.zemmouri@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Manon JEANMAIRE ROUALDES",
+    "photo": "/assets/etudiants/manonjeanmaire.webp",
+    "annee": "L3",
+    "parcours": "societe",
+    "linkedin": null,
+    "contact": "manon.jeanmaire@universite-paris-saclay.fr"
   }
 ]
