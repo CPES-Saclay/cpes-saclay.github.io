@@ -3,7 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import remarkCallout from "@r4ai/remark-callout";
+//import remarkCallout from "@r4ai/remark-callout";
 
 export default defineConfig({
   site: 'https://cpes-paris-saclay.fr',
@@ -18,7 +18,7 @@ export default defineConfig({
     }
   },
   markdown: {
-    remarkPlugins: [remarkCallout],
+    //remarkPlugins: [remarkCallout],
     shikiConfig: {
       theme: "css-variables"
     }

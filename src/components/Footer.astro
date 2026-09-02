@@ -1,83 +1,224 @@
 ---
 import { localizeHref } from "../utils/locale";
-import { getLangFromUrl, useTranslations } from '../i18n';
+import { getLangFromUrl, useTranslations } from "../i18n";
 const l = (href: string) => localizeHref(href, Astro.url);
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <footer class="bg-primary">
-  <div class="bg-linear-to-r from-[#0a0e2a] via-[#0047ab] to-[#0be7ff]">
-    <div class="bg-black/10">
-      <div class="text-white container mx-auto px-6 w-full flex flex-col items-left justify-center py-12 md:py-16 gap-2">
-        <p class="text-2xl md:text-3xl font-bold">{t('footerTitre1')}</p>
-        <p class="text-base md:text-lg opacity-90">{t('footerTitre2')}</p>
-      </div>
-    </div>
-  </div>
-  <div class="container mx-auto px-6 py-12">
-    <div class="flex flex-col md:flex-row gap-8 justify-between">
-      <div class="flex flex-col items-start gap-4">
-        <img loading="lazy" src="/assets/logo_cpes-paris-saclay.svg" alt={lang === 'en' ? 'CPES Paris-Saclay logo' : 'Logo du CPES Paris-Saclay'} class="h-14 md:h-18 mt-2.5 dark:invert"/>
-        <p class="text-sm mb-4 max-w-[20rem]">
-            {t('footerDescription')}
-        </p>
-      </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-                <p class="font-bold text-lg mb-4" data-i18n="formation">{t('formation')}</p>
-                <div class="flex flex-col space-y-2 text-sm">
-                    <a href={l("/a-propos")} class="hover:font-medium transition-all" data-i18n="apropos">{t('apropos')}</a>
-                    <a href={l("/partenaires/ens-paris-saclay")} class="hover:font-medium transition-all" data-i18n="ens">{t('ens')}</a>
-                    <a href={l("/partenaires/hec-paris")} class="hover:font-medium transition-all" data-i18n="hec">{t('hec')}</a>
-                    <a href={l("/partenaires/institut-polytechnique-de-paris")} class="hover:font-medium transition-all" data-i18n="ipp">{t('ipp')}</a>
-                    <a href={l("/partenaires/lycee-international-de-palaiseau")} class="hover:font-medium transition-all" data-i18n="lipps">{t('lipps')}</a>
-                    <a href={l("/partenaires/universite-paris-saclay")} class="hover:font-medium transition-all" data-i18n="ups">{t('ups')}</a>
-                </div>
-            </div>
-            <div>
-                <p class="font-bold text-lg mb-4" data-i18n="informations">{t('informations')}</p>
-                <div class="flex flex-col space-y-2 text-sm">
-                    <a href={l("/programme")} class="hover:font-medium transition-all" data-i18n="programme">{t('programme')}</a>
-                    <a href={l("/debouches")} class="hover:font-medium transition-all" data-i18n="debouches">{t('debouches')}</a>
-                    <a href={l("/boursiers")} class="hover:font-medium transition-all" data-i18n="boursiers">{t('boursiers')}</a>
-                    <a href={l("/internat")} class="hover:font-medium transition-all" data-i18n="internat">{t('internat')}</a>
-                    <a href={l("/faq")} class="hover:font-medium transition-all" data-i18n="faq">{t('faq')}</a>
-                    <a href={l("/documents-officiels")} class="hover:font-medium transition-all" data-i18n="documentsOfficiels">{t('documentsOfficiels')}</a>
-                </div>
-            </div>
-            <div>
-                <p class="font-bold text-lg mb-4" data-i18n="ouvertures">{t('ouvertures')}</p>
-                <div class="flex flex-col space-y-2 text-sm">
-                    <a href={l("/langues-sports-ateliers")} class="hover:font-medium transition-all" data-i18n="languesSportsAteliers">{t('languesSportsAteliers')}</a>
-                    <a href={l("/conferences")} class="hover:font-medium transition-all" data-i18n="conferences">{t('conferences')}</a>
-                    <a href={l("/visites")} class="hover:font-medium transition-all" data-i18n="visites">{t('visites')}</a>
-                    <a href={l("/projets-et-entrepreneuriat")} class="hover:font-medium transition-all" data-i18n="projets">{t('projets')}</a>
-                    <a href={l("/initiation-a-la-recherche")} class="hover:font-medium transition-all" data-i18n="recherches">{t('recherches')}</a>
-                    <a href={l("/capstone")} class="hover:font-medium transition-all" data-i18n="capstone">{t('capstone')}</a>
-                </div>
-            </div>
-            <div>
-                <p class="font-bold text-lg mb-4" data-i18n="vieEtAdmissions">{t('vieEtAdmissions')}</p>
-                <div class="flex flex-col space-y-2 text-sm">
-                    <a href={l("/nos-etudiants")} class="hover:font-medium transition-all" data-i18n="etudiants">{t('etudiants')}</a>
-                    <a href={l("/nos-alumnis")} class="hover:font-medium transition-all" data-i18n="alumnis">{t('alumnis')}</a>
-                    <a href={l("/partenaires")} class="hover:font-medium transition-all" data-i18n="partenaires">{t('partenaires')}</a>
-                    <a href={l("/presse")} class="hover:font-medium transition-all" data-i18n="presse">{t('presse')}</a>
-                    <a href={l("/admission")} class="hover:font-medium transition-all" data-i18n="admissions">{t('admissions')}</a>
-                    <a href={l("/contact")} class="hover:font-medium transition-all" data-i18n="contact">{t('contact')}</a>
-                </div>
+    <div class="bg-linear-to-r from-[#0a0e2a] via-[#0047ab] to-[#0be7ff]">
+        <div class="bg-black/10">
+            <div
+                class="text-white container mx-auto px-6 w-full flex flex-col items-left justify-center py-12 md:py-16 gap-2"
+            >
+                <p class="text-2xl md:text-3xl font-bold">
+                    {t("footerTitre1")}
+                </p>
+                <p class="text-base md:text-lg opacity-90">
+                    {t("footerTitre2")}
+                </p>
             </div>
         </div>
     </div>
-    <div class="mt-16 flex flex-col md:flex-row justify-between md:items-center gap-4 text-sm">
-      <div class="text-left md:text-left">
-        <p>© CPES Paris-Saclay</p>
-      </div>
-      <div class="flex flex-wrap md:justify-center gap-x-6 gap-y-2">
-        <a href={l("/mentions-legales")} class="hover:font-medium transition-all">{t('mentionsLegales')}</a>
-        <a href={l("/politique-confidentialite")} class="hover:font-medium transition-all">{t('politiqueConfidentialite')}</a>
-      </div>
+    <div class="container mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row gap-8 justify-between">
+            <div class="flex flex-col items-start gap-4">
+                <img
+                    loading="lazy"
+                    src="/assets/logo_cpes-paris-saclay.svg"
+                    alt={lang === "en"
+                        ? "CPES Paris-Saclay logo"
+                        : "Logo du CPES Paris-Saclay"}
+                    class="h-14 md:h-18 mt-2.5 dark:invert"
+                />
+                <p class="text-sm mb-4 max-w-[20rem]">
+                    {t("footerDescription")}
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <p class="font-bold text-lg mb-4" data-i18n="formation">
+                        {t("formation")}
+                    </p>
+                    <div class="flex flex-col space-y-2 text-sm">
+                        <a
+                            href={l("/a-propos")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="apropos">{t("apropos")}</a
+                        >
+                        <a
+                            href={l("/partenaires/ens-paris-saclay")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="ens">{t("ens")}</a
+                        >
+                        <a
+                            href={l("/partenaires/hec-paris")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="hec">{t("hec")}</a
+                        >
+                        <a
+                            href={l(
+                                "/partenaires/institut-polytechnique-de-paris",
+                            )}
+                            class="hover:font-medium transition-all"
+                            data-i18n="ipp">{t("ipp")}</a
+                        >
+                        <a
+                            href={l(
+                                "/partenaires/lycee-international-de-palaiseau",
+                            )}
+                            class="hover:font-medium transition-all"
+                            data-i18n="lipps">{t("lipps")}</a
+                        >
+                        <a
+                            href={l("/partenaires/universite-paris-saclay")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="ups">{t("ups")}</a
+                        >
+                    </div>
+                </div>
+                <div>
+                    <p class="font-bold text-lg mb-4" data-i18n="informations">
+                        {t("informations")}
+                    </p>
+                    <div class="flex flex-col space-y-2 text-sm">
+                        <a
+                            href={l("/programme")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="programme">{t("programme")}</a
+                        >
+                        <a
+                            href={l("/debouches")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="debouches">{t("debouches")}</a
+                        >
+                        <a
+                            href={l("/boursiers")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="boursiers">{t("boursiers")}</a
+                        >
+                        <a
+                            href={l("/internat")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="internat">{t("internat")}</a
+                        >
+                        <a
+                            href={l("/faq")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="faq">{t("faq")}</a
+                        >
+                        <a
+                            href={l("/documents-officiels")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="documentsOfficiels"
+                            >{t("documentsOfficiels")}</a
+                        >
+                        <a
+                            href={l("/graphiques")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="graphiques">{t("graphiques")}</a
+                        >
+                    </div>
+                </div>
+                <div>
+                    <p class="font-bold text-lg mb-4" data-i18n="ouvertures">
+                        {t("ouvertures")}
+                    </p>
+                    <div class="flex flex-col space-y-2 text-sm">
+                        <a
+                            href={l("/langues-sports-ateliers")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="languesSportsAteliers"
+                            >{t("languesSportsAteliers")}</a
+                        >
+                        <a
+                            href={l("/conferences")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="conferences">{t("conferences")}</a
+                        >
+                        <a
+                            href={l("/visites")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="visites">{t("visites")}</a
+                        >
+                        <a
+                            href={l("/projets-et-entrepreneuriat")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="projets">{t("projets")}</a
+                        >
+                        <a
+                            href={l("/initiation-a-la-recherche")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="recherches">{t("recherches")}</a
+                        >
+                        <a
+                            href={l("/capstone")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="capstone">{t("capstone")}</a
+                        >
+                    </div>
+                </div>
+                <div>
+                    <p
+                        class="font-bold text-lg mb-4"
+                        data-i18n="vieEtAdmissions"
+                    >
+                        {t("vieEtAdmissions")}
+                    </p>
+                    <div class="flex flex-col space-y-2 text-sm">
+                        <a
+                            href={l("/nos-etudiants")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="etudiants">{t("etudiants")}</a
+                        >
+                        <a
+                            href={l("/nos-alumnis")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="alumnis">{t("alumnis")}</a
+                        >
+                        <a
+                            href={l("/partenaires")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="partenaires">{t("partenaires")}</a
+                        >
+                        <a
+                            href={l("/presse")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="presse">{t("presse")}</a
+                        >
+                        <a
+                            href={l("/admission")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="admissions">{t("admissions")}</a
+                        >
+                        <a
+                            href={l("/contact")}
+                            class="hover:font-medium transition-all"
+                            data-i18n="contact">{t("contact")}</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="mt-16 flex flex-col md:flex-row justify-between md:items-center gap-4 text-sm"
+        >
+            <div class="text-left md:text-left">
+                <p>© CPES Paris-Saclay</p>
+            </div>
+            <div class="flex flex-wrap md:justify-center gap-x-6 gap-y-2">
+                <a
+                    href={l("/mentions-legales")}
+                    class="hover:font-medium transition-all"
+                    >{t("mentionsLegales")}</a
+                >
+                <a
+                    href={l("/politique-confidentialite")}
+                    class="hover:font-medium transition-all"
+                    >{t("politiqueConfidentialite")}</a
+                >
+            </div>
+        </div>
     </div>
-  </div>
 </footer>

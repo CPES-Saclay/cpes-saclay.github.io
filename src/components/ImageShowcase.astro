@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    class?: string;
+    alt?: string;
+    darkMode?: boolean;
+    imageName: string;
+}
+
+const { imageName, darkMode = false, alt, class: className } = Astro.props;
+
+// Determine whether to apply grid styles based on whether className already has a background ("bg")
+const hasBg = className?.includes("bg");
+const gridClass = !hasBg ? (darkMode ? "dark-png-grid" : "png-grid") : "";
+---
+
+<div
+    class={`overflow-hidden relative w-full max-h-64 flex items-center justify-center p-2 ${gridClass} ${className || ""}`}
+>
+    <img
+        src={"/assets/" + imageName + ".svg"}
+        alt={alt}
+        class="h-full w-auto"
+    />
+
+    <div class="absolute right-2 bottom-2">
+        <a
+            class="btn btn-neutral"
+            href={"/assets/" + imageName + ".svg"}
+            download
+        >
+            <Icon name="ri:download-line" />
+            SVG
+        </a>
+
+        <a
+            class="btn btn-neutral"
+            href={"/assets/" + imageName + ".png"}
+            download
+        >
+            <Icon name="ri:download-line" />
+            PNG
+        </a>
+    </div>
+</div>
