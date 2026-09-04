@@ -500,5 +500,13 @@
     "parcours": "societe",
     "linkedin": null,
     "contact": "manon.jeanmaire@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Ulysse GRELIER",
+    "photo": "/assets/etudiants/ulyssegrelier.webp",
+    "annee": "L2",
+    "parcours": "sante",
+    "linkedin": null,
+    "contact": "ulysse.grelier@universite-paris-saclay.fr"
   }
 ]
