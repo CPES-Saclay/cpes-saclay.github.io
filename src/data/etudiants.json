@@ -508,5 +508,13 @@
     "parcours": "sante",
     "linkedin": null,
     "contact": "ulysse.grelier@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Adonis FREM-MARDANLI",
+    "photo": "/assets/etudiants/adonisfremmardanli.webp",
+    "annee": "L2",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/adonis-frem-mardanli-875745310/",
+    "contact": "adonis.frem-mardanli@universite-paris-saclay.fr"
   }
 ]
