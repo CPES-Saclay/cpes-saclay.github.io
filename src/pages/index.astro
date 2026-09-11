@@ -4,6 +4,7 @@ import Partenaires from "../components/Partenaires.astro";
 import Temoignage from "../components/Temoignage.astro";
 import Button from "../components/Button.astro";
 import AlumniSlider from "../components/AlumniSlider.astro";
+import VideoPlayer from "../components/VideoPlayer.astro";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -136,6 +137,35 @@ import { Icon } from "astro-icon/components";
       <div class="h-56 md:h-72 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/environnement/cpes_paris-saclay_environnement_17.webp');" role="img" aria-label="Campus CPES Paris-Saclay"></div>
       <div class="h-56 md:h-72 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/environnement/cpes_paris-saclay_environnement_3.webp');" role="img" aria-label="Campus CPES Paris-Saclay"></div>
       <div class="h-56 md:h-72 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/environnement/cpes_paris-saclay_environnement_18.webp');" role="img" aria-label="Campus CPES Paris-Saclay"></div>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">Le CPES vu par ses partenaires</h2>
+    <p class="text-[0.9375rem] text-secondary leading-[1.75] mb-8 max-w-[70ch]">
+      La rectrice de l'Académie de Versailles et les responsables des établissements partenaires présentent le Cycle Pluridisciplinaire d'Études Supérieures : son ambition scientifique, sa sélectivité et son ouverture sociale.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <VideoPlayer
+        src="/assets/videos/academiedeversailles_rectrice_cpes-paris-saclay"
+        title="Charline Avenel"
+        subtitle="Rectrice de l'Académie de Versailles (maintenant Directrice Générale Adjointe de la Région Île-de-France)"
+      />
+      <VideoPlayer
+        src="/assets/videos/academiedeversailles_ip-paris_cpes-paris-saclay"
+        title="Dominique Rossin"
+        subtitle="Directeur de l'enseignement et de la recherche de l'École Polytechnique (membre fondateur de l'Institut Polytechnique de Paris)"
+      />
+      <VideoPlayer
+        src="/assets/videos/academiedeversailles_hec-paris_cpes-paris-saclay"
+        title="Kristine de Valck"
+        subtitle="Doyenne des Programmes Diplômants à HEC Paris"
+      />
+      <VideoPlayer
+        src="/assets/videos/academiedeversailles_universite-paris-saclay_cpes-paris-saclay"
+        title="Isabelle Demachy"
+        subtitle="Vice-présidente Affaires académiques de l'Université Paris-Saclay"
+      />
     </div>
   </section>
 

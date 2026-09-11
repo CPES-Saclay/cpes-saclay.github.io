@@ -1,0 +1,269 @@
+---
+import { Icon } from "astro-icon/components";
+import { getLangFromUrl } from "../i18n/index";
+
+export interface Props {
+  /** Chemin sans extension : le composant cherche .webm (AV1), .mp4 (H.264) et .webp (poster). */
+  src: string;
+  /** Libellé accessible et titre affiché sous la vidéo. */
+  title: string;
+  /** Sous-titre affiché sous le titre (fonction de l'intervenant). */
+  subtitle?: string;
+  class?: string;
+}
+
+const { src, title, subtitle, class: className } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = lang === "fr"
+  ? { lire: `Lire la vidéo : ${title}`, progression: "Progression", pause: "Pause",
+      lecture: "Lecture", couper: "Couper le son", activer: "Activer le son", plein: "Plein écran" }
+  : { lire: `Play video: ${title}`, progression: "Progress", pause: "Pause",
+      lecture: "Play", couper: "Mute", activer: "Unmute", plein: "Fullscreen" };
+---
+
+<figure class:list={["m-0 not-prose", className]}>
+  <div
+    class="video-player relative w-full aspect-square bg-secondary/5 overflow-hidden rounded-2xl select-none"
+    data-video
+    data-src={src}
+    data-label={title}
+    data-l-pause={t.pause}
+    data-l-lecture={t.lecture}
+    data-l-couper={t.couper}
+    data-l-activer={t.activer}
+  >
+    <img
+      src={`${src}.webp`}
+      alt=""
+      loading="lazy"
+      decoding="async"
+      class="absolute inset-0 w-full h-full object-cover my-0!"
+      data-poster
+    />
+
+    <button
+      type="button"
+      class="absolute inset-0 flex items-center justify-center bg-secondary/0 hover:bg-secondary/10 cursor-pointer"
+      data-play
+      aria-label={t.lire}
+    >
+      <span
+        class="flex items-center justify-center w-16 h-16 bg-secondary text-primary text-3xl shadow-lg"
+      >
+        <Icon name="ri:play-fill" />
+      </span>
+    </button>
+
+    <div
+      class="video-controls absolute bottom-0 left-0 right-0 hidden flex-col gap-1 bg-secondary/70 px-3 py-2 text-primary"
+      data-controls
+    >
+      <div
+        class="relative h-1 w-full bg-primary/30 cursor-pointer"
+        data-seek
+        role="slider"
+        tabindex="0"
+        aria-label={t.progression}
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+      >
+        <div class="absolute inset-y-0 left-0 w-0 bg-primary" data-progress></div>
+      </div>
+      <div class="flex items-center gap-3 text-[0.8rem]">
+        <button type="button" class="cursor-pointer text-xl leading-none" data-toggle aria-label={t.pause}>
+          <Icon name="ri:pause-fill" class="block" data-icon-pause />
+          <Icon name="ri:play-fill" class="hidden" data-icon-play />
+        </button>
+        <span class="tabular-nums" data-time>0:00 / 0:00</span>
+        <button type="button" class="ml-auto cursor-pointer text-xl leading-none" data-mute aria-label={t.couper}>
+          <Icon name="ri:volume-up-fill" class="block" data-icon-sound />
+          <Icon name="ri:volume-mute-fill" class="hidden" data-icon-muted />
+        </button>
+        <button type="button" class="cursor-pointer text-xl leading-none" data-fullscreen aria-label={t.plein}>
+          <Icon name="ri:fullscreen-line" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <figcaption class="mt-3">
+    <span class="block text-[0.95rem] font-bold text-secondary leading-tight">{title}</span>
+    {subtitle && <span class="block text-[0.85rem] text-secondary leading-snug mt-0.5">{subtitle}</span>}
+  </figcaption>
+</figure>
+
+<style>
+  /* En plein écran, on conserve le ratio natif de la vidéo (1:1) au lieu de
+     l'étirer : le conteneur perd son aspect carré, la vidéo est contenue. */
+  .video-player:fullscreen {
+    aspect-ratio: auto;
+    background: #000;
+    border-radius: 0;
+  }
+  /* La balise <video> est créée en JS : elle n'a pas l'attribut de scope Astro,
+     il faut donc viser globalement pour l'atteindre. */
+  .video-player:fullscreen :global(video) {
+    object-fit: contain !important;
+  }
+  /* Le reset global neutralise les transitions : on la réactive ici. */
+  .video-controls {
+    transition: opacity 0.25s ease !important;
+  }
+  .video-controls.is-idle {
+    opacity: 0;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  // Partagé par tous les lecteurs de la page : sert à n'en laisser qu'un seul
+  // en lecture à la fois.
+  const allVideos: HTMLVideoElement[] = [];
+
+  const fmt = (s: number) => {
+    if (!isFinite(s)) return "0:00";
+    const m = Math.floor(s / 60);
+    return `${m}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+  };
+
+  document.querySelectorAll<HTMLElement>("[data-video]").forEach((root) => {
+    const playBtn = root.querySelector<HTMLButtonElement>("[data-play]")!;
+    const poster = root.querySelector<HTMLImageElement>("[data-poster]")!;
+    const controls = root.querySelector<HTMLElement>("[data-controls]")!;
+    const bar = root.querySelector<HTMLElement>("[data-progress]")!;
+    const seek = root.querySelector<HTMLElement>("[data-seek]")!;
+    const timeEl = root.querySelector<HTMLElement>("[data-time]")!;
+    const toggle = root.querySelector<HTMLButtonElement>("[data-toggle]")!;
+    const muteBtn = root.querySelector<HTMLButtonElement>("[data-mute]")!;
+    const fsBtn = root.querySelector<HTMLButtonElement>("[data-fullscreen]")!;
+    const iconPause = root.querySelector<HTMLElement>("[data-icon-pause]")!;
+    const iconPlay = root.querySelector<HTMLElement>("[data-icon-play]")!;
+    const iconSound = root.querySelector<HTMLElement>("[data-icon-sound]")!;
+    const iconMuted = root.querySelector<HTMLElement>("[data-icon-muted]")!;
+
+    let video: HTMLVideoElement | null = null;
+
+    // Rien n'est téléchargé tant que l'utilisateur n'a pas cliqué : la balise
+    // <video> n'est créée qu'au premier play.
+    const build = () => {
+      const src = root.dataset.src!;
+      video = document.createElement("video");
+      video.className = "absolute inset-0 w-full h-full object-cover bg-black cursor-pointer";
+      video.playsInline = true;
+      video.preload = "auto";
+      video.setAttribute("aria-label", root.dataset.label ?? "");
+      for (const [ext, type] of [
+        ["webm", 'video/webm; codecs="av01.0.05M.08,opus"'],
+        ["mp4", 'video/mp4; codecs="avc1.64001f,mp4a.40.2"'],
+      ] as const) {
+        const s = document.createElement("source");
+        s.src = `${src}.${ext}`;
+        s.type = type;
+        video.appendChild(s);
+      }
+      root.insertBefore(video, controls);
+      const el = video;
+      allVideos.push(el);
+
+      // Un clic sur l'image bascule lecture / pause (les clics sur la barre de
+      // contrôles ne remontent pas jusqu'ici, elle est au-dessus).
+      el.addEventListener("click", () => (el.paused ? el.play() : el.pause()));
+
+      // Démarrer une vidéo met les autres en pause.
+      el.addEventListener("play", () => {
+        for (const other of allVideos) if (other !== el) other.pause();
+      });
+
+      video.addEventListener("loadedmetadata", () => sync());
+      video.addEventListener("timeupdate", () => sync());
+      video.addEventListener("play", () => { setPlaying(true); showControls(); });
+      video.addEventListener("pause", () => { setPlaying(false); showControls(); });
+      video.addEventListener("ended", () => setPlaying(false));
+      return video;
+    };
+
+    const sync = () => {
+      if (!video) return;
+      const pct = video.duration ? (video.currentTime / video.duration) * 100 : 0;
+      bar.style.width = `${pct}%`;
+      seek.setAttribute("aria-valuenow", String(Math.round(pct)));
+      timeEl.textContent = `${fmt(video.currentTime)} / ${fmt(video.duration)}`;
+    };
+
+    const setPlaying = (playing: boolean) => {
+      iconPause.classList.toggle("hidden", !playing);
+      iconPause.classList.toggle("block", playing);
+      iconPlay.classList.toggle("hidden", playing);
+      iconPlay.classList.toggle("block", !playing);
+      toggle.setAttribute("aria-label", playing ? root.dataset.lPause! : root.dataset.lLecture!);
+    };
+
+    // La barre s'efface après quelques secondes de lecture, et revient au
+    // survol ou dès que la vidéo est en pause.
+    let idleTimer: number | undefined;
+    const showControls = () => {
+      controls.classList.remove("is-idle");
+      clearTimeout(idleTimer);
+      if (video && !video.paused) idleTimer = window.setTimeout(hideControls, 2600);
+    };
+    const hideControls = () => {
+      if (video && !video.paused) controls.classList.add("is-idle");
+    };
+    root.addEventListener("pointerenter", showControls);
+    root.addEventListener("pointermove", showControls);
+    root.addEventListener("pointerleave", hideControls);
+    root.addEventListener("focusin", showControls);
+
+    playBtn.addEventListener("click", () => {
+      const v = video ?? build();
+      poster.classList.add("hidden");
+      playBtn.classList.add("hidden");
+      controls.classList.remove("hidden");
+      controls.classList.add("flex");
+      v.play();
+      showControls();
+    });
+
+    toggle.addEventListener("click", () => (video?.paused ? video.play() : video?.pause()));
+
+    muteBtn.addEventListener("click", () => {
+      if (!video) return;
+      video.muted = !video.muted;
+      iconSound.classList.toggle("hidden", video.muted);
+      iconSound.classList.toggle("block", !video.muted);
+      iconMuted.classList.toggle("hidden", !video.muted);
+      iconMuted.classList.toggle("block", video.muted);
+      muteBtn.setAttribute("aria-label", video.muted ? root.dataset.lActiver! : root.dataset.lCouper!);
+    });
+
+    // Filet de sécurité : on bascule aussi object-fit en JS, pour ne pas
+    // dépendre du seul CSS (la vidéo est créée hors du scope Astro).
+    document.addEventListener("fullscreenchange", () => {
+      if (!video) return;
+      const fs = document.fullscreenElement === root;
+      video.classList.toggle("object-contain", fs);
+      video.classList.toggle("object-cover", !fs);
+    });
+
+    fsBtn.addEventListener("click", () => {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else root.requestFullscreen?.();
+    });
+
+    const seekTo = (clientX: number) => {
+      if (!video || !video.duration) return;
+      const r = seek.getBoundingClientRect();
+      video.currentTime = Math.min(1, Math.max(0, (clientX - r.left) / r.width)) * video.duration;
+    };
+    seek.addEventListener("click", (e) => seekTo((e as MouseEvent).clientX));
+    seek.addEventListener("keydown", (e) => {
+      if (!video) return;
+      const k = (e as KeyboardEvent).key;
+      if (k === "ArrowRight") video.currentTime += 5;
+      else if (k === "ArrowLeft") video.currentTime -= 5;
+      else return;
+      e.preventDefault();
+    });
+  });
+</script>

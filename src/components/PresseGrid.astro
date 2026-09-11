@@ -1,11 +1,25 @@
 ---
 import { Icon } from 'astro-icon/components';
+import VideoPlayer from './VideoPlayer.astro';
 import presse from '../data/presse.json';
 import { getLangFromUrl } from '../i18n';
 
 const lang = getLangFromUrl(Astro.url);
 const tr = (b: { fr: string; en: string }) => b[lang] ?? b.fr;
 const txt = (fr: string, en?: string) => (lang === 'en' && en ? en : fr);
+
+const V = '/assets/videos/academiedeversailles_';
+const temoignages = [
+  { src: `${V}rectrice_cpes-paris-saclay`, nom: 'Charline Avenel',
+    role: { fr: "Rectrice de l'Académie de Versailles (maintenant Directrice Générale Adjointe de la Région Île-de-France)", en: 'Rector of the Académie de Versailles (now Deputy Director General of the Île-de-France Region)' } },
+  { src: `${V}ip-paris_cpes-paris-saclay`, nom: 'Dominique Rossin',
+    role: { fr: "Directeur de l'enseignement et de la recherche de l'École Polytechnique (membre fondateur de l'Institut Polytechnique de Paris)",
+            en: 'Director of Education and Research at École Polytechnique (founding member of Institut Polytechnique de Paris)' } },
+  { src: `${V}hec-paris_cpes-paris-saclay`, nom: 'Kristine de Valck',
+    role: { fr: 'Doyenne des Programmes Diplômants à HEC Paris', en: 'Dean of Degree Programmes at HEC Paris' } },
+  { src: `${V}universite-paris-saclay_cpes-paris-saclay`, nom: 'Isabelle Demachy',
+    role: { fr: "Vice-présidente Affaires académiques de l'Université Paris-Saclay", en: 'Vice-President for Academic Affairs at Université Paris-Saclay' } },
+];
 
 const categories = [
   { id: 'presse', label: { fr: 'Articles de presse', en: 'Press articles' } },
@@ -21,6 +35,13 @@ const categories = [
     return (
       <div>
         <h2 class="text-xl font-bold text-secondary mb-5 mt-0">{tr(cat.label)}</h2>
+        {cat.id === 'video' && (
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            {temoignages.map((v) => (
+              <VideoPlayer src={v.src} title={v.nom} subtitle={tr(v.role)} />
+            ))}
+          </div>
+        )}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {items.map((p) => (
             <a
@@ -51,7 +72,6 @@ const categories = [
     background-color: color-mix(in srgb, var(--color-secondary) 5%, transparent);
   }
 
-  /* Fond blanc sous les logos en thème sombre pour rester visibles. */
   :global(:root[data-theme="cpes-paris-saclay-dark"]) .presse-logo {
     background-color: #fff;
     border-radius: 4px;
