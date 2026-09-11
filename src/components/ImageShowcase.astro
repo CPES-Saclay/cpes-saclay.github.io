@@ -6,9 +6,11 @@ interface Props {
     alt?: string;
     darkMode?: boolean;
     imageName: string;
+    /** Certains visuels n'existent qu'en PNG (pas de source vectorielle). */
+    hasSvg?: boolean;
 }
 
-const { imageName, darkMode = false, alt, class: className } = Astro.props;
+const { imageName, darkMode = false, alt, class: className, hasSvg = true } = Astro.props;
 
 // Determine whether to apply grid styles based on whether className already has a background ("bg")
 const hasBg = className?.includes("bg");
@@ -19,12 +21,13 @@ const gridClass = !hasBg ? (darkMode ? "dark-png-grid" : "png-grid") : "";
     class={`overflow-hidden relative w-full max-h-64 flex items-center justify-center p-2 ${gridClass} ${className || ""}`}
 >
     <img
-        src={"/assets/" + imageName + ".svg"}
+        src={"/assets/" + imageName + (hasSvg ? ".svg" : ".png")}
         alt={alt}
         class="h-full w-auto"
     />
 
     <div class="absolute right-2 bottom-2">
+        {hasSvg && (
         <a
             class="btn btn-neutral"
             href={"/assets/" + imageName + ".svg"}
@@ -33,6 +36,7 @@ const gridClass = !hasBg ? (darkMode ? "dark-png-grid" : "png-grid") : "";
             <Icon name="ri:download-line" />
             SVG
         </a>
+        )}
 
         <a
             class="btn btn-neutral"

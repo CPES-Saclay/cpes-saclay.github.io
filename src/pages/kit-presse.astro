@@ -1,0 +1,128 @@
+---
+import DefaultLayout from "../layouts/Default.astro";
+import ImageShowcase from "../components/ImageShowcase.astro";
+---
+
+<DefaultLayout
+    title="Kit de presse du CPES Paris-Saclay"
+    description="Kit de presse du CPES Paris-Saclay : emblème, bannières et logos officiels du Cycle Pluridisciplinaire d'Études Supérieures, à télécharger en SVG et PNG pour toute publication ou article de presse."
+    showBreadcrumbs={true}
+>
+    <h1 class="text-4xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
+        Kit de presse du CPES Paris-Saclay
+    </h1>
+
+    <p class="text-secondary leading-[1.75] mb-4">
+        Vous souhaitez mentionner le CPES Paris-Saclay dans un article de presse,
+        une publication ou une présentation ? Les éléments graphiques officiels
+        du Cycle Pluridisciplinaire d'Études Supérieures Paris-Saclay sont réunis
+        ici, téléchargeables au format vectoriel (SVG) ou image (PNG).
+    </p>
+
+    <p class="text-secondary leading-[1.75] mb-8">
+        Merci de les reproduire sans les modifier : ni déformation, ni recadrage,
+        ni changement de couleur. Chaque visuel est proposé dans une version
+        adaptée aux fonds clairs et une version adaptée aux fonds sombres.
+    </p>
+
+    <h2 class="text-3xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
+        Emblème et logos carrés
+    </h2>
+
+    <p class="text-secondary leading-[1.75] mb-8">
+        L'emblème circulaire du CPES Paris-Saclay, décliné pour fond clair et
+        pour fond sombre. S'y ajoutent les logos du Bureau des Étudiants (BDE)
+        et de l'association des alumni, présentés sur leurs couleurs
+        respectives. Leur format carré convient aux avatars, aux vignettes et
+        aux réseaux sociaux.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pb-8">
+        <ImageShowcase
+            imageName="kit-presse/icone_noire_cpes-paris-saclay"
+            alt="Emblème carré du CPES Paris-Saclay"
+            class=""
+        />
+        <ImageShowcase
+            darkMode
+            imageName="kit-presse/icone_blanche_cpes-paris-saclay"
+            alt="Emblème carré du CPES Paris-Saclay, version inversée"
+            class=""
+        />
+        <ImageShowcase
+            imageName="kit-presse/logo_bde_cpes-paris-saclay"
+            alt="Logo du Bureau des Étudiants du CPES Paris-Saclay"
+            class="bg-[#70020F] bg-none"
+        />
+        <ImageShowcase
+            imageName="kit-presse/logo_alumni_cpes-paris-saclay"
+            alt="Logo de l'association des alumni du CPES Paris-Saclay"
+            class="bg-[#0D0057] bg-none"
+        />
+    </div>
+
+    <h2 class="text-3xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
+        Bannières horizontales
+    </h2>
+
+    <p class="text-secondary leading-[1.75] mb-8">
+        Le logotype complet : l'emblème, le nom du CPES Paris-Saclay et les cinq
+        établissements partenaires. À privilégier en en-tête d'article, de
+        document ou de présentation. Chaque bannière existe en version pleine et
+        en version détourée (les contours seuls), ainsi qu'en déclinaisons BDE
+        et alumni.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-8">
+        <ImageShowcase
+            imageName="kit-presse/banniere_blanche_cpes-paris-saclay"
+            alt="Bannière du CPES Paris-Saclay"
+            class=""
+        />
+        <ImageShowcase
+            darkMode
+            imageName="kit-presse/banniere_noire_cpes-paris-saclay"
+            alt="Bannière du CPES Paris-Saclay, version inversée"
+            class=""
+        />
+        <ImageShowcase
+            imageName="kit-presse/banniere_vide_noire_cpes-paris-saclay"
+            alt="Bannière du CPES Paris-Saclay, version détourée"
+            class=""
+        />
+        <ImageShowcase
+            darkMode
+            imageName="kit-presse/banniere_vide_blanche_cpes-paris-saclay"
+            alt="Bannière du CPES Paris-Saclay, version détourée inversée"
+            class=""
+        />
+        <ImageShowcase
+            imageName="kit-presse/banniere_bde_cpes-paris-saclay"
+            alt="Bannière du Bureau des Étudiants du CPES Paris-Saclay"
+            class="bg-[#70020F] bg-none"
+        />
+        <ImageShowcase
+            imageName="kit-presse/banniere_alumni_cpes-paris-saclay"
+            alt="Bannière de l'association des alumni du CPES Paris-Saclay"
+            class="bg-[#0D0057] bg-none"
+        />
+    </div>
+
+    <h2 class="text-3xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
+        Fonds de présentation
+    </h2>
+
+    <p class="text-secondary leading-[1.75] mb-8">
+        L'arrière-plan officiel des présentations du Bureau des Étudiants du
+        CPES Paris-Saclay.
+    </p>
+
+    <div class="max-w-2xl">
+        <ImageShowcase
+            imageName="kit-presse/fond_bde_cpes-paris-saclay"
+            hasSvg={false}
+            alt="Arrière-plan de présentation du Bureau des Étudiants du CPES Paris-Saclay"
+            class="bg-[#70020F] bg-none max-h-96!"
+        />
+    </div>
+</DefaultLayout>

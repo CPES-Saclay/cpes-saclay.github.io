@@ -56,7 +56,7 @@ export const translations = {
     electif: "Électif",
     notFoundTitle: "404 - Page non trouvée",
     notFoundDescription: "",
-    graphiques: "Charte Graphique"
+    kitPresse: "Kit de presse"
   },
   en: {
     home: "Home",
@@ -108,6 +108,6 @@ export const translations = {
     electif: "Elective",
     notFoundTitle: "404 - Page not found",
     notFoundDescription: "",
-    graphiques: "Media Assets"
+    kitPresse: "Press kit"
   }
 } as const;

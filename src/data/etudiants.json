@@ -516,5 +516,37 @@
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/adonis-frem-mardanli-875745310/",
     "contact": "adonis.frem-mardanli@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Stefan ROTARIU",
+    "photo": "/assets/etudiants/stefanrotariu.webp",
+    "annee": "L3",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/stefan-rotariu-5a59412a9/",
+    "contact": "stefan-catalin.rotariu@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Nolann CALLEJA",
+    "photo": "/assets/etudiants/nolanncalleja.webp",
+    "annee": "L3",
+    "parcours": "sante",
+    "linkedin": null,
+    "contact": "nolann.calleja@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Titouan FAYARD-WAAST",
+    "photo": "/assets/etudiants/titouanfayardwaast.webp",
+    "annee": "L3",
+    "parcours": "societe",
+    "linkedin": null,
+    "contact": "titouan.fayard-waast@hec.edu"
+  },
+  {
+    "nom": "Julie GUYOT",
+    "photo": "/assets/etudiants/julieguyot.webp",
+    "annee": "L1",
+    "parcours": null,
+    "linkedin": "https://www.linkedin.com/in/julie-guyot-235733273/",
+    "contact": "julie.guyot2@universite-paris-saclay.fr"
   }
 ]

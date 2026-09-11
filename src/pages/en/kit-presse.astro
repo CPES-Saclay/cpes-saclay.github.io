@@ -1,0 +1,127 @@
+---
+import DefaultLayout from "../../layouts/Default.astro";
+import ImageShowcase from "../../components/ImageShowcase.astro";
+---
+
+<DefaultLayout
+    title="CPES Paris-Saclay press kit"
+    description="CPES Paris-Saclay press kit: official emblem, banners and logos of the Cycle Pluridisciplinaire d'Études Supérieures, available in SVG and PNG for any publication or press article."
+    showBreadcrumbs={true}
+>
+    <h1 class="text-4xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
+        CPES Paris-Saclay press kit
+    </h1>
+
+    <p class="text-secondary leading-[1.75] mb-4">
+        Would you like to mention CPES Paris-Saclay in a press article, a
+        publication or a presentation? The official graphic assets of the Cycle
+        Pluridisciplinaire d'Études Supérieures Paris-Saclay are gathered here,
+        available for download in vector (SVG) or image (PNG) format.
+    </p>
+
+    <p class="text-secondary leading-[1.75] mb-8">
+        Please reproduce them without alteration: no distortion, no cropping, no
+        colour changes. Each asset comes in a version for light backgrounds and
+        a version for dark backgrounds.
+    </p>
+
+    <h2 class="text-3xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
+        Emblem and square logos
+    </h2>
+
+    <p class="text-secondary leading-[1.75] mb-8">
+        The circular emblem of CPES Paris-Saclay, available for light and dark
+        backgrounds. Alongside it are the logos of the student union (BDE) and
+        of the alumni association, shown on their respective colours. Their
+        square format suits avatars, thumbnails and social media.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pb-8">
+        <ImageShowcase
+            imageName="kit-presse/icone_noire_cpes-paris-saclay"
+            alt="Square emblem of CPES Paris-Saclay"
+            class=""
+        />
+        <ImageShowcase
+            darkMode
+            imageName="kit-presse/icone_blanche_cpes-paris-saclay"
+            alt="Square emblem of CPES Paris-Saclay, inverted version"
+            class=""
+        />
+        <ImageShowcase
+            imageName="kit-presse/logo_bde_cpes-paris-saclay"
+            alt="Logo of the CPES Paris-Saclay student union"
+            class="bg-[#70020F] bg-none"
+        />
+        <ImageShowcase
+            imageName="kit-presse/logo_alumni_cpes-paris-saclay"
+            alt="Logo of the CPES Paris-Saclay alumni association"
+            class="bg-[#0D0057] bg-none"
+        />
+    </div>
+
+    <h2 class="text-3xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
+        Horizontal banners
+    </h2>
+
+    <p class="text-secondary leading-[1.75] mb-8">
+        The full logotype: the emblem, the CPES Paris-Saclay name and the five
+        partner institutions. Best used at the top of an article, a document or
+        a presentation. Each banner exists in a solid version and an outlined
+        version (contours only), as well as in student union and alumni
+        variants.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-8">
+        <ImageShowcase
+            imageName="kit-presse/banniere_blanche_cpes-paris-saclay"
+            alt="CPES Paris-Saclay banner"
+            class=""
+        />
+        <ImageShowcase
+            darkMode
+            imageName="kit-presse/banniere_noire_cpes-paris-saclay"
+            alt="CPES Paris-Saclay banner, inverted version"
+            class=""
+        />
+        <ImageShowcase
+            imageName="kit-presse/banniere_vide_noire_cpes-paris-saclay"
+            alt="CPES Paris-Saclay banner, outlined version"
+            class=""
+        />
+        <ImageShowcase
+            darkMode
+            imageName="kit-presse/banniere_vide_blanche_cpes-paris-saclay"
+            alt="CPES Paris-Saclay banner, inverted outlined version"
+            class=""
+        />
+        <ImageShowcase
+            imageName="kit-presse/banniere_bde_cpes-paris-saclay"
+            alt="Banner of the CPES Paris-Saclay student union"
+            class="bg-[#70020F] bg-none"
+        />
+        <ImageShowcase
+            imageName="kit-presse/banniere_alumni_cpes-paris-saclay"
+            alt="Banner of the CPES Paris-Saclay alumni association"
+            class="bg-[#0D0057] bg-none"
+        />
+    </div>
+
+    <h2 class="text-3xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
+        Presentation backgrounds
+    </h2>
+
+    <p class="text-secondary leading-[1.75] mb-8">
+        The official background for CPES Paris-Saclay student union
+        presentations.
+    </p>
+
+    <div class="max-w-2xl">
+        <ImageShowcase
+            imageName="kit-presse/fond_bde_cpes-paris-saclay"
+            hasSvg={false}
+            alt="Presentation background of the CPES Paris-Saclay student union"
+            class="bg-[#70020F] bg-none max-h-96!"
+        />
+    </div>
+</DefaultLayout>
