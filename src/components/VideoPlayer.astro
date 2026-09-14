@@ -172,6 +172,8 @@ const t = lang === "fr"
 
       // Démarrer une vidéo met les autres en pause.
       el.addEventListener("play", () => {
+        clearTimeout(endTimer);
+        el.classList.remove("hidden");
         for (const other of allVideos) if (other !== el) other.pause();
       });
 
@@ -179,7 +181,12 @@ const t = lang === "fr"
       video.addEventListener("timeupdate", () => sync());
       video.addEventListener("play", () => { setPlaying(true); showControls(); });
       video.addEventListener("pause", () => { setPlaying(false); showControls(); });
-      video.addEventListener("ended", () => setPlaying(false));
+      video.addEventListener("ended", () => {
+        setPlaying(false);
+        showControls();
+        clearTimeout(endTimer);
+        endTimer = window.setTimeout(restorePoster, 5000);
+      });
       return video;
     };
 
@@ -199,24 +206,43 @@ const t = lang === "fr"
       toggle.setAttribute("aria-label", playing ? root.dataset.lPause! : root.dataset.lLecture!);
     };
 
-    // La barre s'efface après quelques secondes de lecture, et revient au
-    // survol ou dès que la vidéo est en pause.
+    // La barre s'efface après un délai, jamais instantanément : au repos
+    // pendant la lecture, comme lorsque le pointeur quitte la vidéo.
     let idleTimer: number | undefined;
+    const scheduleHide = (delay: number) => {
+      clearTimeout(idleTimer);
+      if (video && !video.paused) idleTimer = window.setTimeout(hideControls, delay);
+    };
     const showControls = () => {
       controls.classList.remove("is-idle");
-      clearTimeout(idleTimer);
-      if (video && !video.paused) idleTimer = window.setTimeout(hideControls, 2600);
+      scheduleHide(2600);
     };
     const hideControls = () => {
       if (video && !video.paused) controls.classList.add("is-idle");
     };
     root.addEventListener("pointerenter", showControls);
     root.addEventListener("pointermove", showControls);
-    root.addEventListener("pointerleave", hideControls);
+    root.addEventListener("pointerleave", () => scheduleHide(2000));
     root.addEventListener("focusin", showControls);
+
+    // Cinq secondes après la fin, on revient à la page de couverture.
+    // La vidéo reste chargée : la relancer ne retélécharge rien.
+    let endTimer: number | undefined;
+    const restorePoster = () => {
+      if (!video) return;
+      video.currentTime = 0;
+      video.classList.add("hidden");
+      poster.classList.remove("hidden");
+      playBtn.classList.remove("hidden");
+      controls.classList.add("hidden");
+      controls.classList.remove("flex", "is-idle");
+      sync();
+    };
 
     playBtn.addEventListener("click", () => {
       const v = video ?? build();
+      clearTimeout(endTimer);
+      v.classList.remove("hidden");
       poster.classList.add("hidden");
       playBtn.classList.add("hidden");
       controls.classList.remove("hidden");
