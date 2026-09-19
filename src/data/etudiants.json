@@ -100,7 +100,7 @@
     "photo": "/assets/etudiants/ludivinequartier.webp",
     "annee": "L3",
     "parcours": "societe",
-    "linkedin": "https://www.linkedin.com/in/ludivine-quartier-228a51315",
+    "linkedin": "https://www.linkedin.com/in/ludivine-quartier-228a51315/",
     "contact": "ludivine.quartier@hec.edu"
   },
   {
@@ -548,5 +548,53 @@
     "parcours": null,
     "linkedin": "https://www.linkedin.com/in/julie-guyot-235733273/",
     "contact": "julie.guyot2@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Marcel HOUDAILLE",
+    "photo": "/assets/etudiants/marcelhoudaille.webp",
+    "annee": "L2",
+    "parcours": "sante",
+    "linkedin": null,
+    "contact": "marcel.houdaille@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Tiago POULLAIN",
+    "photo": "/assets/etudiants/tiagopoullain.webp",
+    "annee": "L1",
+    "parcours": null,
+    "linkedin": "https://www.linkedin.com/in/tiago-poullain-62399b299/",
+    "contact": "tiago.poullain@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Shabbar KASSIM BANDJEE",
+    "photo": "/assets/etudiants/shabbarkassimbandjee.webp",
+    "annee": "L1",
+    "parcours": null,
+    "linkedin": null,
+    "contact": "shabbar.kassim-bandjee@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Jordan RAZAFINDRABEZA",
+    "photo": "/assets/etudiants/jordanrazafindrabeza.webp",
+    "annee": "L1",
+    "parcours": null,
+    "linkedin": "https://www.linkedin.com/in/razafinjordan/",
+    "contact": "jordan.razafindrabeza@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Louise DULCIRE",
+    "photo": "/assets/etudiants/louisedulcire.webp",
+    "annee": "L1",
+    "parcours": null,
+    "linkedin": "https://www.linkedin.com/in/louise-dulcire-185a68413/",
+    "contact": "louise.dulcire@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Margot GUILLOT",
+    "photo": "/assets/etudiants/margotguillot.webp",
+    "annee": "L1",
+    "parcours": null,
+    "linkedin": "https://www.linkedin.com/in/margot-guillot-337134438/",
+    "contact": "margot.guillot@universite-paris-saclay.fr"
   }
 ]
