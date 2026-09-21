@@ -596,5 +596,13 @@
     "parcours": null,
     "linkedin": "https://www.linkedin.com/in/margot-guillot-337134438/",
     "contact": "margot.guillot@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Noémie COIFFET",
+    "photo": "/assets/etudiants/noemiecoiffet.webp",
+    "annee": "L2",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/no%C3%A9mie-coiffet-387691392/",
+    "contact": "noemie.coiffet@universite-paris-saclay.fr"
   }
 ]
