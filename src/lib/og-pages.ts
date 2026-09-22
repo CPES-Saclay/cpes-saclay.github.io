@@ -35,10 +35,17 @@ function slugIsEnglish(slug: string): boolean {
   return slug === 'en' || slug.startsWith('en/');
 }
 
+// Only the opening <DefaultLayout ...> tag carries the page metadata: reading
+// attributes from the whole file would pick up any `title="…"` passed to a
+// component further down the page.
+function extractLayoutTag(content: string): string {
+  return content.match(/<DefaultLayout\b[^>]*>/)?.[0] ?? '';
+}
+
 function extractAttr(content: string, name: string): string | undefined {
-  const re = new RegExp(`\\b${name}\\s*=\\s*"([^"]+)"`);
+  const re = new RegExp(`(?:^|[\\s])${name}\\s*=\\s*"([^"]*)"`);
   const m = content.match(re);
-  return m?.[1];
+  return m?.[1] || undefined;
 }
 
 export function getOgPages(): OgPage[] {
@@ -59,9 +66,13 @@ export function getOgPages(): OgPage[] {
   for (const [path, raw] of Object.entries(astroSources)) {
     const slug = fileToSlug(path);
     if (pages.has(slug)) continue;
-    const title = extractAttr(raw, 'title') ?? SITE_NAME;
+    const layoutTag = extractLayoutTag(raw);
+    const title =
+      extractAttr(layoutTag, 'fullTitle') ??
+      extractAttr(layoutTag, 'title') ??
+      SITE_NAME;
     const description =
-      extractAttr(raw, 'description') ??
+      extractAttr(layoutTag, 'description') ??
       (slugIsEnglish(slug) ? DEFAULT_DESCRIPTION_EN : DEFAULT_DESCRIPTION);
     pages.set(slug, { slug, title, description });
   }

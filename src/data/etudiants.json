@@ -604,5 +604,45 @@
     "parcours": "sante",
     "linkedin": "https://www.linkedin.com/in/no%C3%A9mie-coiffet-387691392/",
     "contact": "noemie.coiffet@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Alexis TRAN",
+    "photo": "/assets/etudiants/alexistran.webp",
+    "annee": "L2",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/alexis-tran-b2a0b13b4/",
+    "contact": "alexis.tran@hec.edu"
+  },
+  {
+    "nom": "Simon VIGUIER",
+    "photo": "/assets/etudiants/simonviguier.webp",
+    "annee": "L2",
+    "parcours": "societe",
+    "linkedin": null,
+    "contact": "simon.viguier@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Sirine HASROURI-LEBLANC",
+    "photo": "/assets/etudiants/sirinehasrourileblanc.webp",
+    "annee": "L2",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/sirine-hasrouri-leblanc/",
+    "contact": "sirine.hasrouri@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Manon AUBOUY",
+    "photo": "/assets/etudiants/manonaubouy.webp",
+    "annee": "L3",
+    "parcours": "societe",
+    "linkedin": "https://www.linkedin.com/in/manon-aubouy-9816472ab/",
+    "contact": null
+  },
+  {
+    "nom": "Aminata SARR",
+    "photo": "/assets/etudiants/aminatasarr.webp",
+    "annee": "L1",
+    "parcours": "sante",
+    "linkedin": "https://www.linkedin.com/in/aminata-sarr-063972397/",
+    "contact": "aminata.sarr@universite-paris-saclay.fr"
   }
 ]
