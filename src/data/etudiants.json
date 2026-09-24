@@ -644,5 +644,13 @@
     "parcours": null,
     "linkedin": "https://www.linkedin.com/in/aminata-sarr-063972397/",
     "contact": "aminata.sarr@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Elisa DU SOUICH",
+    "photo": "/assets/etudiants/elisadusouich.webp",
+    "annee": "L1",
+    "parcours": null,
+    "linkedin": null,
+    "contact": "elisa.du-souich@universite-paris-saclay.fr"
   }
 ]
