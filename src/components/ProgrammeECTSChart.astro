@@ -12,78 +12,150 @@ const { annee, lang, height = 240 } = Astro.props;
 const programme = lang === 'fr' ? programmeFr : programmeEn;
 const data = (programme as any)[annee];
 
-const PALETTE = [
-  '#0055ff', '#ff2040', '#00cc55', '#ff7700',
-  '#9900ff', '#00bbff', '#ffcc00', '#ff0088',
-  '#00ffaa', '#ff3300', '#5500ff', '#00ddbb',
-  '#ffaa00', '#dd00ff', '#33ff00',
-];
-const SPEC_COLOR = '#ff2040';
+/* Palette : une teinte par bloc, déclinée en rampe ordinale pour les matières
+   de ce bloc. Teintes de bloc et rampes validées avec scripts/validate_palette.js
+   du skill dataviz, dans les deux modes (surfaces #ffffff et #0a0a0a) :
+   - 3 teintes de bloc, toutes paires : CVD ΔE 9.2 clair / 9.4 sombre, vision
+     normale 24.0 / 20.9 ;
+   - 6 rampes ordinales de 8 pas : monotones, ΔL ≈ 0.063 par pas, extrémité
+     claire au-dessus du plancher de 2:1 sur la surface.
+   L'aqua clair est à 2.82:1 sur blanc : la règle de relief est satisfaite par la
+   légende nommée et par le tableau récapitulatif de la même page. */
+const BLOCS = ['fondamentaux', 'applicatifs', 'transverse'] as const;
+
+const BLOC_TEINTE: Record<string, { light: string; dark: string }> = {
+  fondamentaux: { light: '#2a78d6', dark: '#3987e5' },
+  applicatifs:  { light: '#eb6834', dark: '#d95926' },
+  transverse:   { light: '#1baf7a', dark: '#199e70' },
+};
+
+const BLOC_RAMPE: Record<string, { light: string[]; dark: string[] }> = {
+  fondamentaux: {
+    light: ['#7ab4ff', '#539fff', '#3e8aea', '#2977d5', '#0f63c0', '#0152a3', '#004185', '#013167'],
+    dark:  ['#aed1ff', '#8abdfe', '#65a8ff', '#4693f3', '#327fde', '#1b6cc9', '#0059b2', '#014892'],
+  },
+  applicatifs: {
+    light: ['#ff8d64', '#f4703d', '#de5c26', '#c84805', '#ac3c01', '#8f3102', '#742602', '#5a1b00'],
+    dark:  ['#ffbca3', '#ff9c78', '#fe7946', '#e86531', '#d25117', '#b84102', '#9b3602', '#802a00'],
+  },
+  transverse: {
+    light: ['#48cc95', '#2cb882', '#00a470', '#018e61', '#027952', '#026443', '#025035', '#023d28'],
+    dark:  ['#6aeab2', '#52d59e', '#39c18b', '#15ad78', '#019767', '#028258', '#026d4a', '#02593b'],
+  },
+};
+
 const SPEC_LABEL = lang === 'fr' ? 'Parcours Santé ou Société' : 'Health or Society Track';
 
-const EN_TO_FR_CAT: Record<string, string> = {
-  'Mathematics':              'Mathématiques',
-  'Computer Science':         'Informatique',
-  'Economics':                'Économie',
-  'Data Science':             'Sciences des données',
-  'Health':                   'Santé',
-  'Society':                  'Société',
-  'Languages':                'Langues',
-  'Languages & Culture':      'Langues & Culture',
-  'General Education':        'Ouverture',
-  'Open Courses':             'Ouverture',
-  'Projects & Entrepreneurship': 'Projets & Entrepreneuriat',
-};
-const normCat = (cat: string) => EN_TO_FR_CAT[cat] ?? cat;
-const baseMatieres: any[] = [];
-let specEcts = 0;
+/* Les électifs « au choix » (parcours, options HEC, modules optionnels) ne comptent
+   qu'une seule fois par groupe : l'étudiant n'en suit qu'un. Les deux branches du
+   parcours sont en plus fondues sous un libellé commun, étant exclusives. */
+interface Part { nom: string; ects: number; bloc: string; rang: number }
+const parts: Part[] = [];
 
-for (const bloc of Object.values(data.blocs) as any[]) {
+for (const blocKey of BLOCS) {
+  const bloc = (data.blocs as any)[blocKey];
+  if (!bloc) continue;
+  const seenGroupes = new Set<string>();
+  const duBloc: Part[] = [];
   for (const m of bloc.matieres) {
-    const cat = normCat(m.categorie ?? '');
-    if (cat === 'Société') continue;
-    if (cat === 'Santé') { specEcts += m.ects; continue; }
-    baseMatieres.push(m);
+    if (m.electif && m.groupe) {
+      if (seenGroupes.has(m.groupe)) continue;
+      seenGroupes.add(m.groupe);
+    }
+    duBloc.push({
+      nom: m.groupe === 'parcours' ? SPEC_LABEL : m.intitule,
+      ects: m.ects,
+      bloc: blocKey,
+      rang: 0,
+    });
   }
+  duBloc.sort((a, b) => b.ects - a.ects);
+  duBloc.forEach((p, i) => { p.rang = i; });
+  parts.push(...duBloc);
 }
-baseMatieres.sort((a, b) => b.ects - a.ects);
 
-const paletteNonSpec = PALETTE.filter(c => c !== SPEC_COLOR);
-const chartData = [
-  ...baseMatieres.map((m, i) => ({
-    name: m.intitule,
-    value: m.ects,
-    itemStyle: { color: paletteNonSpec[i % paletteNonSpec.length] },
-  })),
-  ...(specEcts > 0 ? [{ name: SPEC_LABEL, value: specEcts, itemStyle: { color: SPEC_COLOR } }] : []),
-];
+/* Les matières restent groupées par bloc et triées par ECTS : l'anneau des
+   matières se lit alors comme trois arcs, un par bloc, et recoupe visuellement
+   l'anneau des blocs. */
+const teinte = (p: Part, mode: 'light' | 'dark') => {
+  const rampe = BLOC_RAMPE[p.bloc][mode];
+  return rampe[Math.min(p.rang, rampe.length - 1)];
+};
 
-const legendItems = [
-  ...baseMatieres.map((m, i) => ({
-    name: m.intitule,
-    ects: m.ects,
-    color: paletteNonSpec[i % paletteNonSpec.length],
-  })),
-  ...(specEcts > 0 ? [{ name: SPEC_LABEL, ects: specEcts, color: SPEC_COLOR }] : []),
-];
+const serieMatieres = (mode: 'light' | 'dark') =>
+  parts.map(p => ({ name: p.nom, value: p.ects, itemStyle: { color: teinte(p, mode) } }));
+
+const blocsPresents = BLOCS.filter(b => (data.blocs as any)[b]);
+const serieBlocs = (mode: 'light' | 'dark') =>
+  blocsPresents.map(b => ({
+    name: (data.blocs as any)[b].nom,
+    value: (data.blocs as any)[b].ects,
+    itemStyle: { color: BLOC_TEINTE[b][mode] },
+  }));
+
+const legendeMatieres = parts.map(p => ({
+  name: p.nom,
+  ects: p.ects,
+  light: teinte(p, 'light'),
+  dark: teinte(p, 'dark'),
+}));
+
+const legendeBlocs = blocsPresents.map(b => ({
+  name: (data.blocs as any)[b].nom,
+  ects: (data.blocs as any)[b].ects,
+  light: BLOC_TEINTE[b].light,
+  dark: BLOC_TEINTE[b].dark,
+}));
+
+const tUnite = lang === 'fr' ? 'ECTS' : 'ECTS';
+const tParBloc = lang === 'fr' ? 'Par bloc' : 'By block';
+const tParMatiere = lang === 'fr' ? 'Par matière' : 'By subject';
 ---
 
-<div class="chart-layout">
-  <div
-    id={`echarts-${annee}`}
-    class="pie-area"
-    style={`width:${height}px;height:${height}px`}
-    data-series={JSON.stringify(chartData)}
-  ></div>
+<div class="charts-wrap">
+  <section class="chart-card chart-blocs">
+    <p class="chart-caption">{tParBloc}</p>
+    <div class="chart-layout">
+      <div
+        id={`echarts-blocs-${annee}`}
+        class="pie-area"
+        style={`width:${height}px;height:${height}px`}
+        data-series-light={JSON.stringify(serieBlocs('light'))}
+        data-series-dark={JSON.stringify(serieBlocs('dark'))}
+      ></div>
 
-  <ul class="legend-list" style={`max-height:${height}px`}>
-    {legendItems.map(item => (
-      <li class="legend-item" title={`${item.name} · ${item.ects} ECTS`}>
-        <span class="legend-circle" style={`background:${item.color}`}></span>
-        <span class="legend-name">{item.name}</span>
-      </li>
-    ))}
-  </ul>
+      <ul class="legend-list legend-inline">
+        {legendeBlocs.map(item => (
+          <li class="legend-item">
+            <span class="legend-circle" style={`--c-light:${item.light};--c-dark:${item.dark}`}></span>
+            <span class="legend-name">{item.name}<span class="legend-ects">{item.ects} {tUnite}</span></span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="chart-card chart-matieres">
+    <p class="chart-caption">{tParMatiere}</p>
+    <div class="chart-layout">
+      <div
+        id={`echarts-${annee}`}
+        class="pie-area"
+        style={`width:${height}px;height:${height}px`}
+        data-series-light={JSON.stringify(serieMatieres('light'))}
+        data-series-dark={JSON.stringify(serieMatieres('dark'))}
+      ></div>
+
+      <ul class="legend-list legend-colonnes" style={`max-height:${height}px`}>
+        {legendeMatieres.map(item => (
+          <li class="legend-item" title={`${item.name} · ${item.ects} ${tUnite}`}>
+            <span class="legend-circle" style={`--c-light:${item.light};--c-dark:${item.dark}`}></span>
+            <span class="legend-name">{item.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
 </div>
 
 <script>
@@ -118,7 +190,7 @@ const legendItems = [
         {
           type: 'pie' as const,
           center: ['50%', '50%'],
-          radius: '88%',
+          radius: ['54%', '92%'],
           label: { show: false },
           labelLine: { show: false },
           itemStyle: {
@@ -145,8 +217,8 @@ const legendItems = [
       instances.delete(id);
     }
 
-    const series = JSON.parse(el.dataset.series || '[]');
     const isDark = document.documentElement.getAttribute('data-theme')?.includes('dark') ?? false;
+    const series = JSON.parse((isDark ? el.dataset.seriesDark : el.dataset.seriesLight) || '[]');
 
     const chart = echarts.init(el);
     const option = buildOption(isDark);
@@ -159,7 +231,7 @@ const legendItems = [
   }
 
   function initAll() {
-    document.querySelectorAll<HTMLElement>('.pie-area[data-series]').forEach(initChart);
+    document.querySelectorAll<HTMLElement>('.pie-area[data-series-light]').forEach(initChart);
   }
 
   initAll();
@@ -171,10 +243,62 @@ const legendItems = [
 </script>
 
 <style>
+  /* Sur grand écran les deux graphiques partagent une ligne et s'alignent sur
+     la même hauteur ; en dessous ils repassent l'un sous l'autre. */
+  .charts-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 2rem 2.5rem;
+  }
+
+  /* Les deux anneaux ont la même taille et, par align-items: stretch, les deux
+     cartes la même hauteur. La carte des matières prend en revanche la largeur
+     restante : sa légende a besoin de deux colonnes pour ne pas s'allonger. */
+  .chart-blocs {
+    flex: 0 1 auto;
+  }
+
+  .chart-matieres {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .legend-inline {
+    max-width: 11rem;
+  }
+
+  .chart-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
   .chart-layout {
     display: flex;
     align-items: center;
     gap: 1.75rem;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .chart-caption {
+    margin: 0 0 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+  }
+
+  /* Les noms de bloc sont longs : on borne la colonne pour que l'anneau des
+     matières garde la place de déployer sa légende sur deux colonnes. */
+  .legend-inline .legend-name {
+    white-space: normal;
+  }
+
+  .legend-ects {
+    display: block;
+    font-size: 0.62rem;
+    color: color-mix(in srgb, var(--color-secondary) 55%, transparent);
   }
 
   .pie-area {
@@ -187,12 +311,23 @@ const legendItems = [
     padding: 0;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-content: flex-start;
-    gap: 10px;
+    gap: 6px;
     flex: 1;
     min-width: 0;
     overflow: hidden;
+  }
+
+  /* La légende s'empile en colonnes : sans largeur bornée, une colonne prend la
+     largeur de son plus long libellé et la suivante déborde du cadre. La borne
+     déclenche l'ellipsis, le nom complet restant dans l'attribut title. */
+  .legend-colonnes {
+    flex-wrap: wrap;
+  }
+
+  .legend-colonnes .legend-item {
+    max-width: 13rem;
   }
 
   .legend-item {
@@ -200,6 +335,7 @@ const legendItems = [
     align-items: center;
     gap: 0.4rem;
     min-width: 0;
+    max-width: 100%;
     cursor: default;
     margin: 0;
     padding: 0 1rem 0 0;
@@ -209,11 +345,18 @@ const legendItems = [
     content: none;
   }
 
+  /* La pastille porte les deux valeurs : la variante sombre n'est pas un
+     basculement automatique, c'est un pas choisi pour la surface sombre. */
   .legend-circle {
     width: 7px;
     height: 7px;
     border-radius: 50%;
     flex-shrink: 0;
+    background: var(--c-light);
+  }
+
+  :global(:root[data-theme="cpes-paris-saclay-dark"]) .legend-circle {
+    background: var(--c-dark);
   }
 
   .legend-name {
@@ -226,6 +369,26 @@ const legendItems = [
     text-overflow: ellipsis;
   }
 
+  /* Empilés, les graphiques disposent de toute la largeur : la légende repasse
+     en colonne unique et les bornes qui servaient à faire tenir deux colonnes
+     côte à côte n'ont plus lieu d'être. */
+  @media (max-width: 1200px) {
+    .charts-wrap {
+      flex-direction: column;
+    }
+
+    .legend-colonnes {
+      max-height: none !important;
+      flex-wrap: nowrap;
+    }
+
+    .legend-inline,
+    .legend-colonnes .legend-item,
+    .legend-item {
+      max-width: none;
+    }
+  }
+
   @media (max-width: 560px) {
     .chart-layout {
       flex-direction: column;
@@ -233,16 +396,16 @@ const legendItems = [
     }
 
     .legend-list {
-      max-height: none !important;
-      flex-wrap: nowrap;
       gap: 0.35rem;
       width: 100%;
     }
 
     /* Sur mobile, la légende passe pleine largeur : le texte doit revenir
-       à la ligne au lieu d'être tronqué. */
+       à la ligne au lieu d'être tronqué, et la gouttière de colonne disparaît. */
     .legend-item {
       align-items: flex-start;
+      max-width: none;
+      padding-right: 0;
     }
 
     .legend-circle {

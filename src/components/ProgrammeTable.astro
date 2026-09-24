@@ -17,10 +17,41 @@ const t = useTranslations(lang);
 const programme = lang === "fr" ? programmeFr : programmeEn;
 const data = programme[annee];
 
+// Logos affichés en petit dans la colonne « Opérateur ».
+const partenaireLogos: Record<string, string> = {
+  "Lycée International de Palaiseau Paris-Saclay": "/assets/partenaires/logo_lipps.png",
+  "ENS Paris-Saclay": "/assets/partenaires/logo_ens-paris-saclay.svg",
+  "Université Paris-Saclay": "/assets/partenaires/logo_universite-paris-saclay.svg",
+  "Institut Polytechnique de Paris": "/assets/partenaires/logo_ipparis.svg",
+  "HEC Paris": "/assets/partenaires/logo_hecparis.svg",
+};
+const composanteLogos: Record<string, string> = {
+  "École Polytechnique": "/assets/partenaires/composante_ecole-polytechnique.webp",
+  "ENSAE": "/assets/partenaires/composante_ensae.png",
+  "ENSAE Paris": "/assets/partenaires/composante_ensae.png",
+  "Télécom Paris": "/assets/partenaires/composante_telecom-paris.webp",
+};
+
+// Un cours noté "Principal (Composante)" affiche les deux logos, composante à gauche,
+// comme dans le détail du cours. Les lockups de composante sont verticaux : à la hauteur
+// du logo principal ils ne seraient plus lisibles, d'où une hauteur double.
+interface OperateurLogo { nom: string; logo?: string; composante: boolean }
+function operateurLogos(etablissement: string | null): OperateurLogo[] {
+  if (!etablissement) return [];
+  const m = etablissement.match(/^(.*?)\s*\((.*?)\)\s*$/);
+  const principal = (m ? m[1] : etablissement).trim();
+  const composante = m ? m[2].trim() : null;
+  const out: OperateurLogo[] = [];
+  if (composante) out.push({ nom: composante, logo: composanteLogos[composante], composante: true });
+  out.push({ nom: principal, logo: partenaireLogos[principal], composante: false });
+  return out;
+}
+
 const labels =
   lang === "fr"
     ? {
         matieres: "Matières",
+        operateur: "Opérateur",
         semestre1:
           annee === "L1"
             ? "Semestre 1"
@@ -44,6 +75,7 @@ const labels =
       }
     : {
         matieres: "Subjects",
+        operateur: "Operator",
         semestre1:
           annee === "L1"
             ? "Semester 1"
@@ -79,6 +111,7 @@ const totalGeneral = {
     <thead>
       <tr class="bg-secondary">
         <th class="text-left font-bold text-primary">{labels.matieres}</th>
+        <th class="text-center font-bold text-primary">{labels.operateur}</th>
         <th class="text-center font-bold text-primary">{labels.semestre1}</th>
         <th class="text-center font-bold text-primary">{labels.semestre2}</th>
         <th class="text-center font-bold text-primary">{labels.heuresHebdo}</th>
@@ -96,7 +129,7 @@ const totalGeneral = {
           return (
           <>
             <tr class="bg-primary font-bold">
-              <td colspan="9" class="text-secondary">
+              <td colspan="10" class="text-secondary">
                 {bloc.nom}
               </td>
             </tr>
@@ -109,6 +142,15 @@ const totalGeneral = {
                       ÉLECTIF
                     </span>
                   )}
+                </td>
+                <td class="text-center">
+                  <span class="inline-flex items-center justify-center gap-1.5">
+                    {operateurLogos(matiere.etablissement).map((o) => (
+                      o.logo
+                        ? <img src={o.logo} alt={o.nom} title={o.nom} loading="lazy" class:list={["w-auto max-w-[3.25rem] object-contain my-0! dark:brightness-0 dark:invert", o.composante ? "h-6" : "h-3.5"]} />
+                        : <span class="text-[11px] text-secondary/70 leading-none">{o.nom}</span>
+                    ))}
+                  </span>
                 </td>
                 <td>{matiere.semestre1 ? <Icon name="ri:check-line" class="text-secondary min-w-fit mx-auto text-lg"/> : ''}</td>
                 <td>{matiere.semestre2 ? <Icon name="ri:check-line" class="text-secondary min-w-fit mx-auto text-lg"/> : ''}</td>
@@ -127,6 +169,7 @@ const totalGeneral = {
               <td />
               <td />
               <td />
+              <td />
               <td class="text-center font-bold">{bloc.totalHeures || ""}</td>
               <td class="text-center font-bold">{bloc.totalCours || ""}</td>
               <td class="text-center font-bold">{bloc.totalTdTp || ""}</td>
@@ -137,6 +180,7 @@ const totalGeneral = {
     }
       <tr class="bg-primary text-primary-content font-bold">
         <td>{labels.total}</td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
