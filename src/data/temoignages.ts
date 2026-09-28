@@ -16,6 +16,25 @@ export interface Temoignage {
 
 export const temoignages: Temoignage[] = [
   {
+    id: 'lia-biscafe-park',
+    auteur: 'Lia BISCAFÉ-PARK',
+    photo: '/assets/etudiants/liabiscafepark.webp',
+    promo: 'CPES26',
+    ecole: { nom: 'École Polytechnique', logos: ['ecole-polytechnique'] },
+    trajectoire: {
+      fr: "Du lycée Notre-Dame de Bellegarde, à Neuville-sur-Saône près de Lyon, à l'École Polytechnique, école d'ingénieurs de l'Institut Polytechnique de Paris",
+      en: 'From Lycée Notre-Dame de Bellegarde in Neuville-sur-Saône near Lyon to École Polytechnique, an engineering school of the Institut Polytechnique de Paris',
+    },
+    citation: {
+      fr: [
+        "Ce que je retiens du CPES, c'est l'ouverture disciplinaire sur les débouchés : la possibilité de passer les écoles de commerce, les ENS, les écoles d'ingénieurs ou les masters.",
+      ],
+      en: [
+        'What I take away from the CPES is how wide it leaves your options: the possibility of sitting the entrance exams for business schools, the ENS or engineering schools, or going on to a master’s.',
+      ],
+    },
+  },
+  {
     id: 'othmane-nammous',
     auteur: 'Othmane NAMMOUS',
     photo: '/assets/etudiants/othmanenammous.webp',
@@ -35,25 +54,6 @@ export const temoignages: Temoignage[] = [
         'The breadth of the courses and the number of institutions where I was able to study gave me an immediate capacity to adapt.',
         'The mathematics courses in measure theory, probability and analysis meant I arrived at engineering school with every foundation I needed. The projects I carried out at the CPES, in computer science, the solidarity project and above all the Capstone, taught me to run a substantial project from start to finish, to deliver results and to work as a team.',
         'I gained an operational maturity and an ease with complex projects that I would never have acquired in a conventional theoretical course.',
-      ],
-    },
-  },
-  {
-    id: 'lia-biscafe-park',
-    auteur: 'Lia BISCAFÉ-PARK',
-    photo: '/assets/etudiants/liabiscafepark.webp',
-    promo: 'CPES26',
-    ecole: { nom: 'École Polytechnique', logos: ['ecole-polytechnique'] },
-    trajectoire: {
-      fr: "Du lycée Notre-Dame de Bellegarde, à Neuville-sur-Saône près de Lyon, à l'École Polytechnique, école d'ingénieurs de l'Institut Polytechnique de Paris",
-      en: 'From Lycée Notre-Dame de Bellegarde in Neuville-sur-Saône near Lyon to École Polytechnique, an engineering school of the Institut Polytechnique de Paris',
-    },
-    citation: {
-      fr: [
-        "Ce que je retiens du CPES, c'est l'ouverture disciplinaire sur les débouchés : la possibilité de passer les écoles de commerce, les ENS, les écoles d'ingénieurs ou les masters.",
-      ],
-      en: [
-        'What I take away from the CPES is how wide it leaves your options: the possibility of sitting the entrance exams for business schools, the ENS or engineering schools, or going on to a master’s.',
       ],
     },
   },
@@ -111,6 +111,25 @@ export const temoignages: Temoignage[] = [
       ],
       en: [
         'The CPES gave me real ease and a strong capacity to adapt, moving between different worlds, the hard sciences as much as economics and the social sciences, and it opened up opportunities I would not have thought possible had I taken another route.',
+      ],
+    },
+  },
+  {
+    id: 'noreen-troispoux',
+    auteur: 'Noreen TROISPOUX',
+    photo: '/assets/etudiants/noreentroispoux.webp',
+    promo: 'CPES26',
+    ecole: { nom: 'KTH Royal Institute of Technology', logos: ['kth'] },
+    trajectoire: {
+      fr: "Du lycée Notre-Dame des Aydes, à Blois, au master Data Driven Health du KTH Royal Institute of Technology, à Stockholm",
+      en: "From Lycée Notre-Dame des Aydes in Blois to the Data Driven Health master's at KTH Royal Institute of Technology in Stockholm",
+    },
+    citation: {
+      fr: [
+        "Je viens d'un lycée de province, loin de Paris, et je voulais travailler dans la santé en partant à l'étranger. Les partenaires du CPES et la richesse de son enseignement m'ont permis d'atteindre ces deux objectifs et de poursuivre à KTH, à Stockholm. C'est le projet Capstone qui a confirmé mon ambition : une immersion professionnelle qui m'a fait mesurer à quel point on peut être concrètement utile au système de santé grâce aux sciences des données.",
+      ],
+      en: [
+        'I come from a secondary school in the provinces, far from Paris, and I wanted to work in health while going abroad. The CPES partners and the breadth of its teaching let me meet both goals and go on to KTH in Stockholm. It was the Capstone project that confirmed my ambition: a professional immersion that made me realise how concretely useful data science can be to the health system.',
       ],
     },
   },
