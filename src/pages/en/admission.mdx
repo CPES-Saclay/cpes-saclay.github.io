@@ -7,7 +7,7 @@ description: "Applying to the CPES Paris-Saclay on Parcoursup: requirements, spe
 order: 1
 ---
 
-import Button from '../../components/Button.astro';
+import ButtonsBox from '../../components/ButtonsBox.astro';
 import AdmissionCriteriaGrid from '../../components/AdmissionCriteriaGrid.astro';
 import AdmissionTimeline from '../../components/AdmissionTimeline.astro';
 
@@ -43,4 +43,9 @@ If you are a foreign national, do not hold a French baccalaureate, are not a cit
 
 ###### Apply
 
-<Button href="https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39487" icon="ri:external-link-line">View the programme on Parcoursup</Button>
+<ButtonsBox
+  links={[
+    { href: "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=39487", icon: "ri:external-link-line", title: "View the programme on Parcoursup" },
+    { href: "/en/temoignages", icon: "ri:arrow-right-line", title: "Read the testimonials", iconPosition: "right" },
+  ]}
+/>

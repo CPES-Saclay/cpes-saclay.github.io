@@ -1,0 +1,23 @@
+---
+layout: ../layouts/Default.astro
+proseMode: true
+showBreadcrumbs: true
+title: Témoignages
+description: "Ce qu'en disent les diplômés du CPES Paris-Saclay : d'anciens étudiants racontent ce que la formation leur a apporté et où elle les a menés."
+order: 1
+---
+
+import TemoignagesGrid from '../components/TemoignagesGrid.astro';
+import ButtonsBox from '../components/ButtonsBox.astro';
+
+# Ce qu'en disent les diplômés
+
+Des diplômés du CPES Paris-Saclay, dans leurs propres mots.
+
+<TemoignagesGrid />
+
+<ButtonsBox
+  links={[
+    { href: "/nos-alumnis", icon: "ri:arrow-right-line", title: "Voir nos alumni", iconPosition: "right" },
+  ]}
+/>

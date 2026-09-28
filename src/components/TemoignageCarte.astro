@@ -1,0 +1,104 @@
+---
+import { logosDebouches } from '../data/logosDebouches';
+import type { Temoignage } from '../data/temoignages';
+import { getLangFromUrl } from '../i18n';
+
+interface Props {
+  item: Temoignage;
+  class?: string;
+  /* Les attributs restants (aria-hidden pour les doublons du slider, par
+     exemple) sont reportés sur la figure. */
+  [key: string]: unknown;
+}
+
+const { item, class: className, ...rest } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const citation = lang === 'en' ? item.citation.en : item.citation.fr;
+const trajectoire = lang === 'en' ? item.trajectoire.en : item.trajectoire.fr;
+---
+
+<figure {...rest} class:list={['flex flex-col gap-5 m-0', className]}>
+  <div
+    role="img"
+    aria-label={item.auteur}
+    style={`background-image: url('${item.photo}')`}
+    class="temoignage-photo w-14 h-14 rounded-full shrink-0 bg-cover bg-center"
+  ></div>
+
+  <blockquote class="citation flex flex-col gap-4 m-0 text-[0.9375rem] leading-[1.75] text-secondary">
+    {citation.map((p) => <p class="m-0">{p}</p>)}
+  </blockquote>
+
+  <figcaption class="flex flex-col gap-1">
+    <p class="m-0 flex flex-wrap items-center gap-x-1 text-[0.875rem] font-bold leading-tight text-secondary">
+      <span>{item.auteur}, {item.promo}</span>
+      <span class="ecoles" role="img" aria-label={item.ecole.nom} title={item.ecole.nom}>
+        {item.ecole.logos.map((logo) => (
+          <span class="ecole-logo">
+            <span
+              class="ecole-logo-img"
+              style={`aspect-ratio: ${logosDebouches[logo] ?? 1}; background-image: url('/assets/debouches/${logo}.webp')`}
+            ></span>
+          </span>
+        ))}
+      </span>
+    </p>
+    <p class="trajectoire m-0 text-[0.8rem] leading-[1.5] text-secondary">{trajectoire}</p>
+  </figcaption>
+</figure>
+
+<style>
+  /* La trajectoire tient sur une colonne plus étroite que la citation : pleine
+     largeur sur mobile, 75 % au-delà. */
+  .trajectoire {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .trajectoire {
+      width: 75%;
+    }
+  }
+
+  /* Photos et logos passent par une image de fond plutôt que par <img>, comme
+     sur les cartes étudiants : rien à moissonner dans le balisage, en plus du
+     Disallow de robots.txt sur /assets/etudiants/ et /assets/debouches/. */
+  .temoignage-photo {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Les logos d'établissement sont sombres : en thème sombre ils reçoivent une
+     pastille blanche, comme sur les cartes alumni. */
+  /* Un diplôme co-délivré porte plusieurs logos, comme sur les cartes alumni. */
+  .ecoles {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 0.4rem;
+  }
+
+  .ecole-logo {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .ecole-logo-img {
+    display: block;
+    height: 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  :global(:root[data-theme="cpes-paris-saclay-dark"]) .ecole-logo {
+    background-color: #fff;
+    padding: 0.15rem 0.35rem;
+    border-radius: 4px;
+  }
+
+  /* Les guillemets encadrent la citation entière, pas chaque paragraphe. */
+  .citation > p:first-child::before { content: "«\00a0"; }
+  .citation > p:last-child::after { content: "\00a0»"; }
+</style>

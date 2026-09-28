@@ -1,0 +1,339 @@
+---
+import { temoignages } from '../data/temoignages';
+import TemoignageCarte from './TemoignageCarte.astro';
+import Button from './Button.astro';
+import { Icon } from 'astro-icon/components';
+import { getLangFromUrl } from '../i18n';
+import { localizeHref } from '../utils/locale';
+
+interface Props {
+  /* Témoignages repris dans le slider ; tous par défaut. */
+  limite?: number;
+  /* Nombre de témoignages affichés simultanément, au-delà de 768 px. */
+  parVue?: number;
+  /* Secondes entre deux changements. */
+  intervalle?: number;
+  cta?: boolean;
+}
+
+const { limite, parVue = 2, intervalle = 4, cta = true } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const liste = limite ? temoignages.slice(0, limite) : temoignages;
+
+/* La fenêtre avance d'un témoignage à la fois : il faut un jeu de doublons pour
+   qu'elle reste remplie jusqu'au rebouclage. */
+const boucle = [...liste, ...liste];
+
+const t = {
+  cta: lang === 'fr' ? 'Voir tous les témoignages' : 'Read all testimonials',
+  region: lang === 'fr' ? 'Témoignages de diplômés' : 'Graduate testimonials',
+  precedent: lang === 'fr' ? 'Témoignage précédent' : 'Previous testimonial',
+  suivant: lang === 'fr' ? 'Témoignage suivant' : 'Next testimonial',
+};
+---
+
+<div
+  class="temoignages-slider not-prose"
+  style={`--par-vue:${parVue}`}
+  role="region"
+  aria-label={t.region}
+  data-slider
+  data-originaux={liste.length}
+  data-intervalle={intervalle}
+>
+  <div class="temoignages-piste" data-piste>
+    {boucle.map((item, i) => (
+      <TemoignageCarte
+        item={item}
+        class="temoignage-vue"
+        aria-hidden={i >= liste.length ? 'true' : undefined}
+      />
+    ))}
+  </div>
+</div>
+
+<div class="temoignages-pied not-prose">
+  {cta ? (
+    <Button
+      href={localizeHref('/temoignages', Astro.url)}
+      icon="ri:arrow-right-line"
+      iconPosition="right"
+      class="mb-0!"
+    >
+      {t.cta}
+    </Button>
+  ) : <span />}
+
+  <div class="temoignages-fleches">
+    <button type="button" class="fleche" aria-label={t.precedent} data-precedent>
+      <Icon name="ri:arrow-left-s-line" />
+    </button>
+    <button type="button" class="fleche" aria-label={t.suivant} data-suivant>
+      <Icon name="ri:arrow-right-s-line" />
+    </button>
+  </div>
+</div>
+
+<style>
+  /* Le pied porte le lien vers la page et la navigation. Sur mobile les deux
+     s'empilent, flèches au-dessus : column-reverse suffit, l'ordre du balisage
+     gardant le lien avant la navigation pour le clavier. */
+  .temoignages-pied {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .temoignages-pied {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+  }
+
+  .temoignages-fleches {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .fleche {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .fleche:hover {
+    opacity: 0.55;
+  }
+
+  .fleche:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+  }
+
+  .temoignages-slider {
+    overflow: hidden;
+  }
+
+  .temoignages-piste {
+    display: flex;
+    gap: 2.5rem;
+    will-change: transform;
+    /* Le geste horizontal revient au slider, le vertical à la page. */
+    touch-action: pan-y;
+    cursor: grab;
+  }
+
+  .temoignages-piste.glisse {
+    cursor: grabbing;
+    user-select: none;
+  }
+
+  /* Une carte par vue jusqu'à 768 px, puis --par-vue. L'écart est retranché de
+     la largeur pour que le compte tombe juste. */
+  .temoignages-piste :global(.temoignage-vue) {
+    flex: 0 0 100%;
+  }
+
+  @media (min-width: 768px) {
+    .temoignages-piste :global(.temoignage-vue) {
+      flex-basis: calc((100% - (var(--par-vue) - 1) * 2.5rem) / var(--par-vue));
+    }
+  }
+
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-slider]').forEach((slider) => {
+    const piste = slider.querySelector<HTMLElement>('[data-piste]');
+    if (!piste) return;
+
+    const originaux = Number(slider.dataset.originaux) || 0;
+    const intervalle = (Number(slider.dataset.intervalle) || 8) * 1000;
+    if (originaux < 2) return;
+
+    /* app.css coupe toutes les transitions par « * { transition: none
+       !important } » et ne les rouvre que pour une liste de sélecteurs. La
+       nôtre doit donc être posée en important, sans quoi elle est ignorée. */
+    const GLISSEMENT = 'transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)';
+    const poserTransition = (valeur: string) =>
+      piste.style.setProperty('transition', valeur, 'important');
+    const anime = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let index = 0;
+    let enPause = false;
+    let visible = true;
+    let minuteur: number | undefined;
+
+    /* Pas d'un cran : distance entre deux cartes voisines. */
+    const pas = () => {
+      const a = piste.children[0] as HTMLElement | undefined;
+      const b = piste.children[1] as HTMLElement | undefined;
+      if (!a || !b) return 0;
+      return b.offsetLeft - a.offsetLeft;
+    };
+
+    const placer = (glisse: boolean) => {
+      const cible = `translate3d(${-index * pas()}px, 0, 0)`;
+
+      /* Cas animé : on ne touche qu'à transform. Modifier la transition dans la
+         même passe de style que la propriété animée ne déclenche rien — c'est
+         ce qui faisait sauter le slider d'un cran à l'autre. */
+      if (glisse && anime) {
+        piste.style.transform = cible;
+        return;
+      }
+
+      /* Cas instantané : on coupe la transition, on repositionne, on force un
+         calcul de style, puis on la remet en vigueur avant tout déplacement
+         animé ultérieur. */
+      poserTransition('none');
+      piste.style.transform = cible;
+      piste.getBoundingClientRect();
+      poserTransition(anime ? GLISSEMENT : 'none');
+      piste.getBoundingClientRect();
+    };
+
+    const avancer = () => {
+      if (enPause || !visible) return;
+      index += 1;
+      placer(true);
+      /* Arrivé sur le premier doublon, on revient à l'original sans animation :
+         l'image affichée est identique, le saut ne se voit pas. */
+      if (index >= originaux) {
+        window.setTimeout(() => {
+          /* On retranche un tour plutôt que de revenir à zéro : un glissé peut
+             partir du doublon et dépasser d'un cran, remettre l'index à zéro
+             sauterait alors un témoignage. */
+          index %= originaux;
+          placer(false);
+        }, 700);
+      }
+    };
+
+    const relancer = () => {
+      window.clearInterval(minuteur);
+      minuteur = window.setInterval(avancer, intervalle);
+    };
+
+    /* Navigation manuelle : le compte à rebours repart de zéro pour ne pas
+       enchaîner un changement automatique juste après un clic. */
+    const aller = (sens: number) => {
+      if (sens < 0 && index === 0) {
+        /* Reculer depuis le début : on se pose d'abord sur le doublon
+           équivalent, sans animation, puis on anime le cran en arrière. */
+        index = originaux;
+        placer(false);
+      }
+      index += sens;
+      placer(true);
+      if (index >= originaux) {
+        window.setTimeout(() => {
+          /* On retranche un tour plutôt que de revenir à zéro : un glissé peut
+             partir du doublon et dépasser d'un cran, remettre l'index à zéro
+             sauterait alors un témoignage. */
+          index %= originaux;
+          placer(false);
+        }, 700);
+      }
+      relancer();
+    };
+
+    slider.parentElement
+      ?.querySelector('[data-precedent]')
+      ?.addEventListener('click', () => aller(-1));
+    slider.parentElement
+      ?.querySelector('[data-suivant]')
+      ?.addEventListener('click', () => aller(1));
+
+    placer(false);
+    relancer();
+
+    /* Navigation au doigt (et à la souris) : on suit le geste, puis on change
+       de témoignage si la course dépasse le seuil, sinon on revient en place. */
+    let geste: { x: number; y: number; base: number; axe: 'x' | 'y' | null } | null = null;
+
+    piste.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      /* Depuis le premier témoignage, tirer vers la droite ne révélerait rien :
+         on se pose d'abord sur le doublon, dont le contenu est identique. */
+      if (index === 0) {
+        index = originaux;
+        placer(false);
+      }
+      geste = { x: e.clientX, y: e.clientY, base: -index * pas(), axe: null };
+    });
+
+    piste.addEventListener('pointermove', (e) => {
+      if (!geste) return;
+      const dx = e.clientX - geste.x;
+      const dy = e.clientY - geste.y;
+      if (geste.axe === null) {
+        /* Tant que la direction n'est pas tranchée, on ne bouge pas : un geste
+           vertical doit rester un défilement de page. */
+        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+        geste.axe = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+        if (geste.axe === 'x') {
+          enPause = true;
+          piste.classList.add('glisse');
+          piste.setPointerCapture?.(e.pointerId);
+        }
+      }
+      if (geste.axe !== 'x') return;
+      poserTransition('none');
+      piste.style.transform = `translate3d(${geste.base + dx}px, 0, 0)`;
+    });
+
+    const relacher = (e: PointerEvent) => {
+      if (!geste) return;
+      const { axe, x } = geste;
+      const dx = e.clientX - x;
+      geste = null;
+      piste.classList.remove('glisse');
+      enPause = false;
+      poserTransition(anime ? GLISSEMENT : 'none');
+      piste.getBoundingClientRect();
+
+      if (axe !== 'x') {
+        relancer();
+        return;
+      }
+      const seuil = Math.max(40, pas() * 0.15);
+      if (dx <= -seuil) aller(1);
+      else if (dx >= seuil) aller(-1);
+      else {
+        placer(true);
+        relancer();
+      }
+    };
+
+    piste.addEventListener('pointerup', relacher);
+    piste.addEventListener('pointercancel', relacher);
+
+    slider.addEventListener('mouseenter', () => { enPause = true; });
+    slider.addEventListener('mouseleave', () => { enPause = false; });
+    slider.addEventListener('focusin', () => { enPause = true; });
+    slider.addEventListener('focusout', () => { enPause = false; });
+
+    new IntersectionObserver(
+      ([e]) => { visible = e.isIntersecting; },
+      { threshold: 0.1 },
+    ).observe(slider);
+
+    window.addEventListener('resize', () => placer(false));
+  });
+</script>

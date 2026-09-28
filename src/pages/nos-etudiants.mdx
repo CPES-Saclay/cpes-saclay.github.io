@@ -9,7 +9,7 @@ order: 1
 
 import EtudiantsGrid from '../components/EtudiantsGrid.astro';
 import Disclaimer from '../components/Disclaimer.astro';
-import Button from '../components/Button.astro';
+import ButtonsBox from '../components/ButtonsBox.astro';
 
 # Nos étudiants
 
@@ -19,6 +19,9 @@ Vous avez encore des questions sur le CPES Paris-Saclay ? N'hésitez pas à cont
 
 <EtudiantsGrid />
 
-<div class="not-prose mt-10">
-  <Button href="/nos-alumnis" icon="ri:arrow-right-line" iconPosition="right">Voir nos alumni</Button>
-</div>
+<ButtonsBox
+  links={[
+    { href: "/temoignages", icon: "ri:arrow-right-line", title: "Lire les témoignages", iconPosition: "right" },
+    { href: "/nos-alumnis", icon: "ri:arrow-right-line", title: "Voir nos alumni", iconPosition: "right" },
+  ]}
+/>

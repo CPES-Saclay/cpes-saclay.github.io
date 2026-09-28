@@ -1,0 +1,45 @@
+---
+import { temoignages } from '../data/temoignages';
+import TemoignageCarte from './TemoignageCarte.astro';
+
+interface Props {
+  /* Nombre de témoignages affichés ; tous par défaut. */
+  limite?: number;
+}
+
+const { limite } = Astro.props;
+const liste = limite ? temoignages.slice(0, limite) : temoignages;
+
+/* Jamais plus de colonnes que de cartes, sinon la dernière colonne reste vide. */
+const colonnes = `--cols-md:${Math.min(liste.length, 2)};--cols-xl:${Math.min(liste.length, 3)}`;
+---
+
+<div class="temoignages-masonry not-prose" style={colonnes}>
+  {liste.map((item) => <TemoignageCarte item={item} class="temoignage-carte" />)}
+</div>
+
+<style>
+  /* Mise en page en maçonnerie : les colonnes s'équilibrent d'elles-mêmes et
+     chaque carte garde la hauteur de sa citation, sans blanc de remplissage. */
+  .temoignages-masonry {
+    column-count: 1;
+    column-gap: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .temoignages-masonry {
+      column-count: var(--cols-md, 2);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .temoignages-masonry {
+      column-count: var(--cols-xl, 3);
+    }
+  }
+
+  .temoignages-masonry :global(.temoignage-carte) {
+    break-inside: avoid;
+    margin-bottom: 3.5rem;
+  }
+</style>

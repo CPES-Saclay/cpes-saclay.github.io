@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from "../../layouts/Default.astro";
 import Partenaires from "../../components/Partenaires.astro";
+import TemoignagesSlider from "../../components/TemoignagesSlider.astro";
 import Temoignage from "../../components/Temoignage.astro";
 import Button from "../../components/Button.astro";
 import AlumniSlider from "../../components/AlumniSlider.astro";
@@ -226,6 +227,14 @@ import { Icon } from "astro-icon/components";
         <p class="text-[0.875rem] text-secondary leading-[1.6] m-0">The CPES targets a cohort that is <strong>50% women</strong>, contributing to gender parity in elite scientific programmes.</p>
       </div>
     </div>
+  </section>
+
+  <section class="py-16">
+    <h2 class="text-[clamp(1.5rem,2.5vw,2rem)] font-extrabold text-secondary mb-3 leading-[1.2] tracking-[-0.01em]">In the words of our graduates</h2>
+    <p class="text-[0.9375rem] text-secondary leading-[1.75] mb-8 max-w-[70ch]">
+      CPES Paris-Saclay graduates, in their own words: what the Cycle Pluridisciplinaire d’Études Supérieures gave them and where it took them.
+    </p>
+    <TemoignagesSlider />
   </section>
 
   <section class="py-16 hidden">

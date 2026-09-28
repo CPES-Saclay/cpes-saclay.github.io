@@ -1,0 +1,23 @@
+---
+layout: ../../layouts/Default.astro
+proseMode: true
+showBreadcrumbs: true
+title: Testimonials
+description: "In the words of CPES Paris-Saclay graduates: former students describe what the programme gave them and where it took them."
+order: 1
+---
+
+import TemoignagesGrid from '../../components/TemoignagesGrid.astro';
+import ButtonsBox from '../../components/ButtonsBox.astro';
+
+# In the words of our graduates
+
+CPES Paris-Saclay graduates, in their own words.
+
+<TemoignagesGrid />
+
+<ButtonsBox
+  links={[
+    { href: "/en/nos-alumnis", icon: "ri:arrow-right-line", title: "See our alumni", iconPosition: "right" },
+  ]}
+/>

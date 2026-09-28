@@ -6,7 +6,7 @@ export const formationEn: Record<string, string> = {
   "Santé publique": "Public Health",
   "Programme grande école (MiM)": "Grande École programme (MiM)",
   "Programme grande école": "Grande École programme",
-  "Master Sociologie Quantitative et Démographie (SQD)": "Master in Quantitative Sociology and Demography (SQD)",
+  "Master Sociologie Quantitative et Démographie (SQD), avec l'expertise de l'ENSAE, de l'UVSQ et de l'ENS Paris-Saclay": "Master in Quantitative Sociology and Demography (SQD), drawing on the expertise of ENSAE, UVSQ and ENS Paris-Saclay",
   "Master IA et Société": "Master in AI and Society",
   "Master Informatique pour la Data Science (ISD), voie alternance": "Master in Computer Science for Data Science (ISD), apprenticeship track",
   "Master Data Science and Business Analytics": "Master in Data Science and Business Analytics",
