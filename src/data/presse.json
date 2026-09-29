@@ -1,5 +1,16 @@
 [
   {
+    "titre": "Le CPES cité par IP Paris parmi les voies d'accès à l'excellence",
+    "description": "IP Paris veut diversifier les profils de ses étudiants, et notamment attirer davantage de jeunes femmes vers les sciences. Le cycle pluridisciplinaire d'études supérieures (CPES) Paris-Saclay, auquel l'Institut contribue, en est un bon exemple. Sa première promotion a décroché 33 intégrations dans des formations de très haut niveau, dont l'X, Télécom Paris et HEC Paris.",
+    "source": "Studyrama Grandes Écoles",
+    "date": "2026-09-29",
+    "url": "https://grandes-ecoles.studyrama.com/ecoles-ingenieurs/actualites/formations-defense-ia-robotique-international-ip-paris-devoile-nouvelle-feuille-strategique",
+    "categorie": "presse",
+    "logo": "/assets/presse/studyrama.webp",
+    "titre_en": "The CPES cited by IP Paris among the routes to excellence",
+    "description_en": "IP Paris wants to diversify its student profiles, and in particular to attract more young women to science. The Cycle Pluridisciplinaire d'Études Supérieures (CPES) Paris-Saclay, to which the Institute contributes, is a good example. Its first cohort secured 33 placements on courses of the very highest level, including École polytechnique, Télécom Paris and HEC Paris."
+  },
+  {
     "titre": "Le CPES cité par le président d'IP Paris parmi les cursus d'avenir",
     "description": "Dans un entretien à Thotis, Thierry Coulhon évoque le CPES et sa forte féminisation.",
     "source": "Thotis",
@@ -42,6 +53,17 @@
     "logo": "/assets/presse/azimut-orientation.webp",
     "titre_en": "The CPES Paris-Saclay presented in detail",
     "description_en": "Azimut details the programme, its two tracks and the profiles it looks for."
+  },
+  {
+    "titre": "IP Paris dévoile sa feuille de route stratégique et cite le CPES",
+    "description": "Dans son communiqué, l'Institut présente le CPES Paris-Saclay comme une voie de diversification vers l'excellence, avec 33 intégrations dont l'École polytechnique, Télécom Paris, HEC Paris, CentraleSupélec et KTH. Ces intégrations montrent la capacité du dispositif à préparer les étudiants à rejoindre des formations françaises et internationales de très haut niveau.",
+    "source": "Institut Polytechnique de Paris",
+    "date": "2026-09-29",
+    "url": "https://www.ip-paris.fr/communiques-et-dossiers-de-presse/ip-paris-accelere-son-developpement-et-devoile-sa-nouvelle-feuille-de-route-strategique",
+    "categorie": "partenaires",
+    "logo": "/assets/presse/ip-paris.webp",
+    "titre_en": "IP Paris unveils its strategic roadmap and cites the CPES",
+    "description_en": "In its press release, the Institute presents the CPES Paris-Saclay as a route to widening access to excellence, with 33 placements including École polytechnique, Télécom Paris, HEC Paris, CentraleSupélec and KTH. These placements show the programme's ability to prepare students to join French and international courses of the very highest level."
   },
   {
     "titre": "L'ENS Paris-Saclay, partenaire du CPES Paris-Saclay",
