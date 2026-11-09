@@ -1,11 +1,12 @@
 ---
 import DefaultLayout from "../../layouts/Default.astro";
 import ImageShowcase from "../../components/ImageShowcase.astro";
+import KitPressePhotos from "../../components/KitPressePhotos.astro";
 ---
 
 <DefaultLayout
     title="CPES Paris-Saclay press kit"
-    description="CPES Paris-Saclay press kit: official emblem, banners and logos of the Cycle Pluridisciplinaire d'Études Supérieures, available in SVG and PNG for any publication or press article."
+    description="CPES Paris-Saclay press kit: official emblem, banners and logos of the Cycle Pluridisciplinaire d'Études Supérieures in SVG and PNG, and photos of the campus and the programme, available to download for any publication or press article."
     showBreadcrumbs={true}
 >
     <h1 class="text-4xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
@@ -16,13 +17,14 @@ import ImageShowcase from "../../components/ImageShowcase.astro";
         Would you like to mention CPES Paris-Saclay in a press article, a
         publication or a presentation? The official graphic assets of the Cycle
         Pluridisciplinaire d'Études Supérieures Paris-Saclay are gathered here,
-        available for download in vector (SVG) or image (PNG) format.
+        available for download in vector (SVG) or image (PNG) format, along with
+        a selection of photos.
     </p>
 
     <p class="text-secondary leading-[1.75] mb-8">
-        Please reproduce them without alteration: no distortion, no cropping, no
-        colour changes. Each asset comes in a version for light backgrounds and
-        a version for dark backgrounds.
+        Please reproduce the logos without alteration: no distortion, no
+        cropping, no colour changes. Each logo comes in a version for light
+        backgrounds and a version for dark backgrounds.
     </p>
 
     <h2 class="text-3xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
@@ -67,9 +69,8 @@ import ImageShowcase from "../../components/ImageShowcase.astro";
     <p class="text-secondary leading-[1.75] mb-8">
         The full logotype: the emblem, the CPES Paris-Saclay name and the five
         partner institutions. Best used at the top of an article, a document or
-        a presentation. Each banner exists in a solid version and an outlined
-        version (contours only), as well as in student union and alumni
-        variants.
+        a presentation. The banner comes in a light version and an inverted
+        version, as well as in student union and alumni variants.
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-8">
@@ -85,17 +86,6 @@ import ImageShowcase from "../../components/ImageShowcase.astro";
             class=""
         />
         <ImageShowcase
-            imageName="kit-presse/banniere_vide_noire_cpes-paris-saclay"
-            alt="CPES Paris-Saclay banner, outlined version"
-            class=""
-        />
-        <ImageShowcase
-            darkMode
-            imageName="kit-presse/banniere_vide_blanche_cpes-paris-saclay"
-            alt="CPES Paris-Saclay banner, inverted outlined version"
-            class=""
-        />
-        <ImageShowcase
             imageName="kit-presse/banniere_bde_cpes-paris-saclay"
             alt="Banner of the CPES Paris-Saclay student union"
             class="bg-[#70020F] bg-none"
@@ -106,6 +96,18 @@ import ImageShowcase from "../../components/ImageShowcase.astro";
             class="bg-[#0D0057] bg-none"
         />
     </div>
+
+    <h2 class="text-3xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
+        Photos
+    </h2>
+
+    <p class="text-secondary leading-[1.75] mb-8">
+        A selection of photos of the Paris-Saclay campus, the premises and
+        student life at the CPES, to illustrate an article or a presentation.
+        Please credit “CPES Paris-Saclay”.
+    </p>
+
+    <KitPressePhotos />
 
     <h2 class="text-3xl font-black text-secondary tracking-tight leading-[1.1] mb-4">
         Presentation backgrounds

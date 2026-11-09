@@ -117,6 +117,13 @@ button:active,
     outline: none !important;
 }
 
+/* Les boutons pleins (téléchargements du kit presse) gardent leur fond au
+   focus et au clic, sinon leur texte blanc devient illisible sur la page. */
+.btn-neutral:focus,
+.btn-neutral:active {
+    background-color: var(--color-neutral) !important;
+}
+
 .menu li > *:focus,
 .menu li > *:active {
     background-color: transparent !important;

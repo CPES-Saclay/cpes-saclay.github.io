@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+import { getLangFromUrl } from "../i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const tr = (b: { fr: string; en: string }) => b[lang] ?? b.fr;
+
+// Fichiers générés à partir de /assets/environnement : photos/*.jpg (téléchargement),
+// photos/miniatures/*.webp (aperçu) et photos_cpes-paris-saclay.zip (lot complet).
+const BASE = "/assets/kit-presse/photos";
+const ZIP = "/assets/kit-presse/photos_cpes-paris-saclay.zip";
+
+const alts = [
+  { fr: "Le campus Paris-Saclay", en: "The Paris-Saclay campus" },
+  { fr: "Bâtiments du campus Paris-Saclay", en: "Buildings on the Paris-Saclay campus" },
+  { fr: "Salle de cours du CPES Paris-Saclay", en: "A CPES Paris-Saclay classroom" },
+  { fr: "Le campus Paris-Saclay sous la neige", en: "The Paris-Saclay campus under snow" },
+  { fr: "Bâtiments éclairés à la tombée de la nuit", en: "Buildings lit up at nightfall" },
+  { fr: "Façade du Lycée International de Palaiseau Paris-Saclay", en: "Façade of the Lycée International de Palaiseau Paris-Saclay" },
+  { fr: "Une autre salle de cours du CPES Paris-Saclay", en: "Another CPES Paris-Saclay classroom" },
+  { fr: "Le campus Paris-Saclay enneigé, vu d'en haut", en: "The snow-covered Paris-Saclay campus seen from above" },
+  { fr: "Étudiants du CPES Paris-Saclay pendant une conférence", en: "CPES Paris-Saclay students during a conference" },
+  { fr: "Photo de groupe d'une promotion du CPES Paris-Saclay", en: "Group photo of a CPES Paris-Saclay cohort" },
+  { fr: "Étudiants du CPES Paris-Saclay pendant un cours", en: "CPES Paris-Saclay students during a class" },
+  { fr: "Intervention devant les étudiants du CPES Paris-Saclay", en: "A talk given to CPES Paris-Saclay students" },
+  { fr: "Étudiants du CPES Paris-Saclay pendant une présentation", en: "CPES Paris-Saclay students during a presentation" },
+];
+
+const photos = alts.map((alt, i) => {
+  const name = `photo_${String(i + 1).padStart(2, "0")}_cpes-paris-saclay`;
+  return { alt: tr(alt), jpg: `${BASE}/${name}.jpg`, miniature: `${BASE}/miniatures/${name}.webp` };
+});
+
+const t = {
+  zip: lang === "en" ? "Download all photos (ZIP, 4.1 MB)" : "Télécharger toutes les photos (ZIP, 4,1 Mo)",
+};
+---
+
+<div class="mb-6">
+    <a class="btn btn-neutral" href={ZIP} download>
+        <Icon name="ri:download-line" />
+        {t.zip}
+    </a>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 pb-8">
+    {photos.map((p) => (
+        <div class="relative overflow-hidden aspect-video bg-secondary/5">
+            <img src={p.miniature} alt={p.alt} loading="lazy" draggable="false" class="w-full h-full object-cover" />
+            <div class="absolute right-2 bottom-2">
+                <a class="btn btn-neutral btn-sm" href={p.jpg} download>
+                    <Icon name="ri:download-line" />
+                    JPG
+                </a>
+            </div>
+        </div>
+    ))}
+</div>

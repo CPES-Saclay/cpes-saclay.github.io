@@ -2,23 +2,28 @@
 import { getLangFromUrl } from '../i18n/index';
 const lang = getLangFromUrl(Astro.url);
 
+// Session Parcoursup 2027 (rentrée de septembre 2027), source : https://www.parcoursup.gouv.fr/calendrier
 const steps = lang === 'en'
   ? [
-      { label: "Opening of applications", periode: "January" },
-      { label: "Closing of applications", periode: "March" },
-      { label: "Results",                 periode: "June" },
-      { label: "Confirmation",            periode: "July" },
+      { label: "Programmes online",      periode: "17 Dec 2026" },
+      { label: "Applications open",      periode: "18 Jan 2027" },
+      { label: "Applications close",     periode: "11 Mar 2027" },
+      { label: "Confirmation deadline",  periode: "1 Apr 2027" },
+      { label: "First admission offers", periode: "1 Jun 2027" },
+      { label: "End of the main phase",  periode: "10 Jul 2027" },
     ]
   : [
-      { label: "Ouverture des vœux", periode: "Janvier" },
-      { label: "Clôture des vœux",   periode: "Mars" },
-      { label: "Résultats",          periode: "Juin" },
-      { label: "Confirmation",       periode: "Juillet" },
+      { label: "Formations visibles sur Parcoursup", periode: "17 déc. 2026" },
+      { label: "Ouverture des vœux",                 periode: "18 janv. 2027" },
+      { label: "Clôture des vœux",                   periode: "11 mars 2027" },
+      { label: "Confirmation des vœux",              periode: "1er avril 2027" },
+      { label: "Premières propositions",             periode: "1er juin 2027" },
+      { label: "Fin de la phase principale",         periode: "10 juil. 2027" },
     ];
 ---
 
 <div class="not-prose my-8">
-  <div class="hidden sm:block">
+  <div class="hidden lg:block">
     <div class="flex items-center">
       {steps.map((step, i) => (
         <>
@@ -39,8 +44,8 @@ const steps = lang === 'en'
         const align   = isFirst ? 'text-left' : isLast ? 'text-right' : 'text-center';
         return (
           <>
-            <div class="relative w-6 shrink-0 h-8">
-              <div class={`absolute whitespace-nowrap ${anchor}`}>
+            <div class="relative w-6 shrink-0 h-14">
+              <div class={`absolute w-32 ${anchor}`}>
                 <p class={`text-xs font-semibold uppercase tracking-wider text-secondary ${align}`}>{step.periode}</p>
                 <p class={`text-xs text-secondary/55 mt-0.5 ${align}`}>{step.label}</p>
               </div>
@@ -52,7 +57,7 @@ const steps = lang === 'en'
     </div>
   </div>
 
-  <div class="flex flex-col sm:hidden">
+  <div class="flex flex-col lg:hidden">
     {steps.map((step, i) => (
       <div class="flex gap-4">
         <div class="flex flex-col items-center">
