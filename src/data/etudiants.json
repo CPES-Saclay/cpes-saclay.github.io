@@ -676,5 +676,13 @@
     "parcours": "societe",
     "linkedin": "https://www.linkedin.com/in/emilien-coussé-458248407/",
     "contact": "emilien.cousse@universite-paris-saclay.fr"
+  },
+  {
+    "nom": "Camille VOINSON-KERGROHENNE",
+    "photo": "/assets/etudiants/camillevoinsonkergrohenne.webp",
+    "annee": "L1",
+    "parcours": "sante",
+    "linkedin": null,
+    "contact": "camille.voinson-kergrohenne@universite-paris-saclay.fr"
   }
 ]
