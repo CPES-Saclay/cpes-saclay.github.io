@@ -85,6 +85,16 @@
     scroll-behavior: smooth;
 }
 
+/* Les cibles d'ancre (#semaine-type, cours…) ne passent pas sous la barre de navigation fixe. */
+[id] {
+    scroll-margin-top: 8rem;
+}
+@media (min-width: 48rem) {
+    [id] {
+        scroll-margin-top: 10rem;
+    }
+}
+
 :root {
     --default-font-family:
         "Montserrat", "Fluent Emoji Color", ui-sans-serif, system-ui,

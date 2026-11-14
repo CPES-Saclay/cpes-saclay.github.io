@@ -1,0 +1,360 @@
+---
+import { getLangFromUrl } from '../i18n/index';
+import Disclaimer from './Disclaimer.astro';
+import programmeFr from '../data/programme-fr.json';
+import programmeEn from '../data/programme-en.json';
+import { emploisDuTemps, type Creneau, JOURS, minutes, heure as formatHeure, horaire as formatHoraire, etiquettes as etiquettesDe } from '../data/emploisDuTemps';
+
+export interface Props {
+  annee: 'L1' | 'L2' | 'L3';
+}
+
+const { annee } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const fr = lang === 'fr';
+const creneaux: Creneau[] = emploisDuTemps[annee] ?? [];
+
+// Intitulés et établissements repris du programme (mêmes libellés que la maquette).
+const programme: any = fr ? programmeFr : programmeEn;
+const matieres: any[] = Object.values(programme[annee].blocs).flatMap((b: any) => b.matieres);
+const parId = new Map<string, any>(matieres.map((m) => [m.id, m]));
+for (const c of creneaux) {
+  for (const id of c.cours) {
+    if (!parId.has(id)) throw new Error(`EmploiDuTemps ${annee} : cours inconnu « ${id} »`);
+  }
+}
+
+const logos: Record<string, string> = {
+  'Lycée International de Palaiseau Paris-Saclay': '/assets/partenaires/logo_lipps.png',
+  'ENS Paris-Saclay': '/assets/partenaires/logo_ens-paris-saclay.svg',
+  'Université Paris-Saclay': '/assets/partenaires/logo_universite-paris-saclay.svg',
+  'Institut Polytechnique de Paris': '/assets/partenaires/logo_ipparis.svg',
+  'HEC Paris': '/assets/partenaires/logo_hecparis.svg',
+  'École Polytechnique': '/assets/partenaires/composante_ecole-polytechnique.webp',
+  'ENSAE': '/assets/partenaires/composante_ensae.png',
+  'ENSAE Paris': '/assets/partenaires/composante_ensae.png',
+  'Télécom Paris': '/assets/partenaires/composante_telecom-paris.webp',
+};
+const LIPPS = 'Lycée International de Palaiseau Paris-Saclay';
+
+// "Principal (Composante)" : on affiche le logo de la composante quand il existe.
+function logoDe(etablissement: string) {
+  const m = etablissement.match(/^(.*?)\s*\((.*?)\)\s*$/);
+  const noms = m ? [m[2].trim(), m[1].trim()] : [etablissement];
+  const nom = noms.find((n) => logos[n]);
+  // Les logos des composantes d'IP Paris sont verticaux : on les affiche plus haut.
+  return nom ? { src: logos[nom], alt: nom, vertical: logos[nom].includes('/composante_') } : null;
+}
+
+const DEBUT = 8 * 60;
+const FIN = 18 * 60;
+const PX_PAR_HEURE = 64;
+const hauteur = ((FIN - DEBUT) / 60) * PX_PAR_HEURE;
+const px = (min: number) => (min / 60) * PX_PAR_HEURE;
+
+interface Bloc {
+  c: Creneau;
+  titre: string;
+  infobulle: string;
+  horaire: string;
+  etiquettes: string[];
+  /** Ancre vers le détail du (premier) cours ; `cours` liste tous les cours à ouvrir. */
+  lien: string;
+  cours: string;
+  lipps: boolean;
+  logo: { src: string; alt: string; vertical: boolean } | null;
+  lane: number;
+  lanes: number;
+}
+
+function bloc(c: Creneau): Bloc {
+  const ms = c.cours.map((id) => parId.get(id));
+  const intitules = [...new Set(ms.map((m) => m.intitule as string))];
+  const titre = c.libelle ? c.libelle[lang] : intitules.join(' / ');
+  const etablissement: string = ms[0].etablissement ?? '';
+  const horaire = formatHoraire(c, lang);
+  const etiquettes = etiquettesDe(c);
+  const infobulle = [
+    c.libelle ? `${titre} : ${intitules.join(', ')}` : titre,
+    horaire,
+    etiquettes.join(' · '),
+    etablissement,
+  ].filter(Boolean).join(' · ');
+  return { c, titre, infobulle, horaire, etiquettes, lien: `#${c.cours[0]}`, cours: c.cours.join(' '), lipps: etablissement === LIPPS, logo: logoDe(etablissement), lane: 0, lanes: 1 };
+}
+
+// Vue unique des deux semestres : les créneaux qui se chevauchent (S1 / S2, périodes)
+// sont placés côte à côte, et un jour s'élargit selon le nombre de colonnes nécessaires.
+const parJour: Bloc[][] = [];
+for (let j = 0; j < 5; j++) {
+  const jour = creneaux
+    .filter((c) => c.jour === j)
+    .sort((a, b) => minutes(a.debut) - minutes(b.debut) || minutes(b.fin) - minutes(a.fin))
+    .map(bloc);
+  let groupe: Bloc[] = [];
+  let finGroupe = -1;
+  const vider = () => {
+    const fins: number[] = [];
+    for (const b of groupe) {
+      const debut = minutes(b.c.debut);
+      let lane = fins.findIndex((f) => f <= debut);
+      if (lane === -1) {
+        lane = fins.length;
+        fins.push(0);
+      }
+      fins[lane] = minutes(b.c.fin);
+      b.lane = lane;
+    }
+    groupe.forEach((b) => (b.lanes = fins.length));
+    groupe = [];
+    finGroupe = -1;
+  };
+  for (const b of jour) {
+    if (groupe.length && minutes(b.c.debut) >= finGroupe) vider();
+    groupe.push(b);
+    finGroupe = Math.max(finGroupe, minutes(b.c.fin));
+  }
+  if (groupe.length) vider();
+  parJour.push(jour);
+}
+const largeurs = parJour.map((blocs) => Math.max(1.2, ...blocs.map((b) => b.lanes)));
+const colonnes = `3rem ${largeurs.map((l) => `minmax(0, ${l}fr)`).join(' ')}`;
+
+const jours = JOURS[lang];
+const heures = Array.from({ length: (FIN - DEBUT) / 60 + 1 }, (_, i) => DEBUT / 60 + i);
+
+const periodes = [...new Set(creneaux.flatMap((c) => (c.periode ? [c.periode] : [])))].sort();
+const avecPartiel = creneaux.some((c) => c.partiel);
+
+// Cours de l'année absents de la semaine type (SPOC, projet, activités…).
+const presents = new Set(creneaux.flatMap((c) => c.cours));
+const absents = [...new Set(matieres.filter((m) => !presents.has(m.id)).map((m) => m.intitule as string))];
+
+const t = fr
+  ? {
+      lipps: 'Lycée International de Palaiseau Paris-Saclay',
+      esr: 'Établissements Supérieurs de Recherche',
+      semestres: "cours du premier ou du second semestre uniquement (sans mention : toute l'année)",
+      periodes: 'période du semestre pendant laquelle le cours a lieu',
+      partiel: 'Certaines semaines seulement',
+      avertissement: "Semaine type indicative, établie d'après l'emploi du temps 2026-2027 d'un groupe : les horaires varient selon les groupes, les semaines et les périodes.",
+      absents: 'Ne figurent pas sur cette semaine type :',
+    }
+  : {
+      lipps: 'Lycée International de Palaiseau Paris-Saclay',
+      esr: 'Higher Education & Research Institutions',
+      semestres: 'first or second semester only (no mention: all year)',
+      periodes: 'period of the semester during which the course takes place',
+      partiel: 'Some weeks only',
+      avertissement: "Indicative typical week, based on a group's 2026-2027 timetable: times vary between groups, weeks and periods.",
+      absents: 'Not shown in this typical week:',
+    };
+const note = absents.length ? `${t.absents} ${absents.join(', ')}.` : '';
+---
+
+{creneaux.length > 0 && (
+<div class="edt not-prose mt-6">
+  <Disclaimer>{t.avertissement}</Disclaimer>
+  <div class="h-4"></div>
+  <div class="edt-grille hidden xl:grid" style={`grid-template-columns:${colonnes}`}>
+    <div></div>
+    {jours.map((nom) => (
+      <div class="text-xs font-bold uppercase text-secondary text-center pb-2">{nom}</div>
+    ))}
+
+    <div class="relative" style={`height:${hauteur}px`}>
+      {heures.map((h) => (
+        <span class="absolute right-2 -translate-y-1/2 text-[11px] text-secondary/60 tabular-nums" style={`top:${px(h * 60 - DEBUT)}px`}>
+          {fr ? `${h}h` : `${h}:00`}
+        </span>
+      ))}
+    </div>
+
+    {parJour.map((blocs) => (
+      <div class="edt-jour relative" style={`height:${hauteur}px;--edt-pas:${PX_PAR_HEURE}px`}>
+        {blocs.map((b) => {
+          return (
+          <a
+            href={b.lien}
+            data-cours={b.cours}
+            class:list={['edt-bloc', { 'edt-lipps': b.lipps, 'edt-partiel': b.c.partiel, 'edt-etroit': b.lanes > 1 }]}
+            title={b.infobulle}
+            style={`top:${px(minutes(b.c.debut) - DEBUT)}px;height:${px(minutes(b.c.fin) - minutes(b.c.debut))}px;left:calc(${(b.lane / b.lanes) * 100}% + 2px);width:calc(${100 / b.lanes}% - 4px)`}
+          >
+            {b.etiquettes.length > 0 && <span class="edt-etiquettes">{b.etiquettes.join(' · ')}</span>}
+            <p class="edt-titre">{b.titre}</p>
+            <div class="edt-meta">
+              <span class="tabular-nums">{b.horaire}</span>
+              {b.logo && (
+                <img
+                  src={b.logo.src}
+                  alt={b.logo.alt}
+                  loading="lazy"
+                  draggable="false"
+                  class:list={['dark:brightness-0 dark:invert', { 'edt-logo-vertical': b.logo.vertical && minutes(b.c.fin) - minutes(b.c.debut) >= 120 }]}
+                />
+              )}
+            </div>
+          </a>
+          );
+        })}
+      </div>
+    ))}
+  </div>
+
+  <div class="xl:hidden flex flex-col gap-5">
+    {jours.map((nom, j) => {
+      const liste = [...parJour[j]].sort((a, b) => minutes(a.c.debut) - minutes(b.c.debut));
+      return liste.length > 0 && (
+        <div>
+          <p class="text-xs font-bold uppercase text-secondary mb-2">{nom}</p>
+          <div class="flex flex-col gap-1.5">
+            {liste.map((b) => {
+              return (
+              <a href={b.lien} data-cours={b.cours} class:list={['edt-ligne', { 'edt-lipps': b.lipps, 'edt-partiel': b.c.partiel }]} title={b.infobulle}>
+                <span class="text-xs text-secondary/70 w-24 shrink-0 tabular-nums leading-snug">{b.horaire}</span>
+                <span class="flex-1 min-w-0 leading-snug">
+                  <span class="text-sm text-secondary font-medium">{b.titre}</span>
+                  {b.etiquettes.length > 0 && <span class="edt-etiquettes ml-1.5">{b.etiquettes.join(' · ')}</span>}
+                </span>
+                {b.logo && <img src={b.logo.src} alt={b.logo.alt} loading="lazy" draggable="false" class:list={['w-auto max-w-24 object-contain shrink-0 dark:brightness-0 dark:invert', b.logo.vertical ? 'h-11' : 'h-7']} />}
+              </a>
+              );
+            })}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <div class="flex flex-col gap-1.5 mt-4 text-xs text-secondary">
+    <span class="flex items-center gap-2"><span class="edt-pastille edt-lipps"></span><span><strong>LIPPS</strong> : {t.lipps}</span></span>
+    <span class="flex items-center gap-2"><span class="edt-pastille"></span><span><strong>ESR</strong> : {t.esr}</span></span>
+    <span><strong>S1</strong>, <strong>S2</strong> : {t.semestres}</span>
+    {periodes.length > 0 && (
+      <span>{periodes.map((p, i) => <>{i > 0 && ', '}<strong>{p}</strong></>)} : {t.periodes}</span>
+    )}
+    {avecPartiel && (
+      <span class="flex items-center gap-2"><span class="edt-pastille edt-partiel"></span><span>{t.partiel}</span></span>
+    )}
+  </div>
+  {note && <p class="text-xs text-base-content italic mt-3">{note}</p>}
+</div>
+)}
+
+<style>
+  .edt {
+    --edt-lipps: #ff3300;
+    --edt-esr: #0026ff;
+    --edt-ligne: color-mix(in srgb, var(--color-secondary) 10%, transparent);
+  }
+
+  .edt-jour {
+    border-left: 1px solid var(--edt-ligne);
+    border-bottom: 1px solid var(--edt-ligne);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      var(--edt-ligne) 0 1px,
+      transparent 1px var(--edt-pas)
+    );
+  }
+  .edt-jour:last-child {
+    border-right: 1px solid var(--edt-ligne);
+  }
+
+  .edt-bloc,
+  .edt-ligne,
+  .edt-pastille {
+    --c: var(--edt-esr);
+    background: color-mix(in srgb, var(--c) 9%, var(--color-primary));
+    border-left: 3px solid var(--c);
+  }
+  .edt-lipps {
+    --c: var(--edt-lipps);
+  }
+  .edt-bloc,
+  .edt-ligne {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .edt-bloc:hover,
+  .edt-ligne:hover {
+    background: color-mix(in srgb, var(--c) 20%, var(--color-primary));
+  }
+  .edt-partiel {
+    border: 1px dashed var(--c);
+    border-left: 3px solid var(--c);
+  }
+
+  .edt-bloc {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 4px 6px;
+    overflow: hidden;
+  }
+  .edt-titre {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--color-secondary);
+    hyphens: auto;
+    overflow-wrap: break-word;
+  }
+  .edt-meta {
+    flex: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2px 4px;
+    font-size: 10px;
+    color: color-mix(in srgb, var(--color-secondary) 70%, transparent);
+  }
+  .edt-meta > span {
+    white-space: nowrap;
+  }
+  .edt-meta img {
+    height: 22px;
+    width: auto;
+    max-width: 65%;
+    object-fit: contain;
+    object-position: right bottom;
+  }
+  .edt-meta img.edt-logo-vertical {
+    height: 40px;
+  }
+  .edt-etroit {
+    padding: 4px 5px;
+  }
+  .edt-etroit .edt-titre {
+    font-size: 10px;
+  }
+
+  .edt-etiquettes {
+    flex: none;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    color: color-mix(in srgb, var(--color-secondary) 55%, transparent);
+  }
+
+  .edt-ligne {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .edt-pastille {
+    display: inline-block;
+    width: 1.25rem;
+    height: 0.75rem;
+    flex: none;
+  }
+</style>

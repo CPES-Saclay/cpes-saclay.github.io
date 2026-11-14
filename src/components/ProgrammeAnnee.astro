@@ -3,6 +3,7 @@ import { getLangFromUrl, useTranslations } from '../i18n/index';
 import ProgrammeTable from './ProgrammeTable.astro';
 import CourseDetail from './CourseDetail.astro';
 import ProgrammeECTSChart from './ProgrammeECTSChart.astro';
+import { Icon } from 'astro-icon/components';
 import programmeFr from '../data/programme-fr.json';
 import programmeEn from '../data/programme-en.json';
 
@@ -31,20 +32,20 @@ const blocConfig = lang === 'fr' ? {
 
 const anneeLabel = lang === 'fr' ? `Licence ${annee.slice(1)}` : `Bachelor ${annee.slice(1)}`;
 ---
-<div>
+<div class="mb-14 md:mb-20">
     {showTable && (
         <>
-            <h4 class="pt-0 mt-0">{lang === 'fr' ? 'Tableau récapitulatif de la' : 'Summary table for the'} {data.titre.toLowerCase()} {lang === 'fr' ? 'du CPES Paris-Saclay' : 'of CPES Paris-Saclay'}</h4>
+            <h4 class="mt-14! md:mt-20! mb-6!">{lang === 'fr' ? 'Tableau récapitulatif de la' : 'Summary table for the'} {data.titre.toLowerCase()} {lang === 'fr' ? 'du CPES Paris-Saclay' : 'of CPES Paris-Saclay'}</h4>
             <ProgrammeTable annee={annee} />
             <slot name="apres-tableau" />
         </>
     )}
 
-    <h4 class="mt-12 mb-6">{lang === 'fr' ? 'Répartition des ECTS de la' : 'ECTS distribution for the'} {data.titre.toLowerCase()} {lang === 'fr' ? 'du CPES Paris-Saclay' : 'of CPES Paris-Saclay'}</h4>
+    <h4 class="mt-14! md:mt-20! mb-6!">{lang === 'fr' ? 'Répartition des ECTS de la' : 'ECTS distribution for the'} {data.titre.toLowerCase()} {lang === 'fr' ? 'du CPES Paris-Saclay' : 'of CPES Paris-Saclay'}</h4>
     <ProgrammeECTSChart annee={annee} lang={lang} />
 
     {showCourses && (
-        <h4 class="mt-12 mb-6">
+        <h4 class="mt-14! md:mt-20! mb-6!">
         {lang === 'fr' ? 'Cours de la' : 'Courses for'} {data.titre.toLowerCase()} {lang === 'fr' ? 'du CPES Paris-Saclay' : 'of CPES Paris-Saclay'}
         </h4>
     )}
@@ -52,16 +53,20 @@ const anneeLabel = lang === 'fr' ? `Licence ${annee.slice(1)}` : `Bachelor ${ann
     {showCourses && Object.entries(data.blocs).map(([blocKey, blocData]: [string, any]) => {
         const config = blocConfig[blocKey as keyof typeof blocConfig];
         const sortedMatieres = [...blocData.matieres].sort((a: any, b: any) => b.ects - a.ects);
+        const nombre = sortedMatieres.length;
         return (
-        <>
-            <div class="flex flex-col-reverse md:flex-row gap-1 md:gap-3 md:items-center mb-3">
+        <details class="bloc-cours group border-b border-secondary/15">
+            <summary class="flex flex-wrap items-center gap-x-3 gap-y-1 py-4 cursor-pointer list-none">
                 <span class="text-secondary text-xl md:text-2xl font-semibold">{config.suffix}</span>
-                <div class="flex gap-3 items-center">
+                <span class="flex gap-3 items-center">
                     <span class="bg-(--annee) px-1.5 py-1 text-[15px] text-primary leading-none">L{annee.slice(1)}</span>
                     <span class="bg-(--ects) px-1.5 py-1 text-[15px] text-primary leading-none">{blocData.ects} ECTS</span>
-                </div>
-            </div>
-            
+                    <span class="text-sm text-secondary/60">{nombre} {lang === 'fr' ? 'cours' : nombre > 1 ? 'courses' : 'course'}</span>
+                </span>
+                <Icon name="ri:arrow-down-s-line" class="ml-auto text-2xl text-secondary group-open:rotate-180" />
+            </summary>
+
+            <div class="pb-4">
             {sortedMatieres.map((matiere: any) => (
             <CourseDetail
                 matiere={matiere}
@@ -71,9 +76,13 @@ const anneeLabel = lang === 'fr' ? `Licence ${annee.slice(1)}` : `Bachelor ${ann
                 electif={matiere.electif}
             />
             ))}
-
-            {blocKey !== 'transverse' && <div class="h-6" />}
-        </>
+            </div>
+        </details>
         );
     })}
 </div>
+<style>
+  .bloc-cours > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

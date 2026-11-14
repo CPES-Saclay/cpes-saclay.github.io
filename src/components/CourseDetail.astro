@@ -207,33 +207,34 @@ const showDescription = false;
 </div>
 
 <script>
+  // Ouvre le cours ciblé par une ancre, et le bloc replié qui le contient.
+  function ouvrir(hash: string): HTMLElement | null {
+    let element: HTMLElement | null = null;
+    try {
+      element = document.querySelector(hash);
+    } catch {
+      return null;
+    }
+    if (!element) return null;
+    const bloc = element.closest('details');
+    if (bloc) bloc.open = true;
+    const checkbox = element.querySelector('input[type="checkbox"]') as HTMLInputElement | null;
+    if (checkbox) checkbox.checked = true;
+    return element;
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     const hash = window.location.hash;
-    if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        const checkbox = element.querySelector('input[type="checkbox"]') as HTMLInputElement;
-        if (checkbox) {
-          checkbox.checked = true;
-        }
-      }
-    }
+    if (hash) ouvrir(hash)?.scrollIntoView();
   });
   document.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-    if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
-      const hash = target.getAttribute('href');
-      if (hash) {
-        const element = document.querySelector(hash);
-        if (element) {
-          setTimeout(() => {
-            const checkbox = element.querySelector('input[type="checkbox"]') as HTMLInputElement;
-            if (checkbox) {
-              checkbox.checked = true;
-            }
-          }, 100);
-        }
-      }
-    }
+    const lien = (e.target as HTMLElement).closest('a');
+    const hash = lien?.getAttribute('href');
+    if (!hash?.startsWith('#') || hash.length < 2) return;
+    // Ouverture avant la navigation, pour que le navigateur défile jusqu'au cours visible.
+    // Un créneau de l'emploi du temps peut porter plusieurs cours (parcours, options) : on les ouvre tous.
+    const cours = lien?.dataset.cours?.split(' ').filter(Boolean);
+    if (cours?.length) cours.forEach((id) => ouvrir(`#${id}`));
+    else ouvrir(hash);
   });
 </script>

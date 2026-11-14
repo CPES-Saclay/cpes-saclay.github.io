@@ -10,6 +10,7 @@ import ProgrammeAnnee from '../../components/ProgrammeAnnee.astro';
 import ProportionBar from '../../components/ProportionBar.astro';
 import CardsBox from '../../components/CardsBox.astro';
 import Disclaimer from '../../components/Disclaimer.astro';
+import EmploiDuTemps from '../../components/EmploiDuTemps.astro';
 
 # Programme détaillé de la première année du CPES Paris-Saclay
 
@@ -17,6 +18,9 @@ import Disclaimer from '../../components/Disclaimer.astro';
 
 ## Répartition des enseignements en L1
 <ProportionBar lipps={80} esr={20} />
+
+<h2 id="semaine-type">Une semaine type en L1</h2>
+<EmploiDuTemps annee="L1" />
 
 <ProgrammeAnnee annee="L1" />
 
