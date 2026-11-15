@@ -7,6 +7,7 @@ import Button from "../components/Button.astro";
 import AlumniSlider from "../components/AlumniSlider.astro";
 import VideoPlayer from "../components/VideoPlayer.astro";
 import { Icon } from "astro-icon/components";
+import { annonce, annonceActive } from "../data/annonce";
 ---
 
 <DefaultLayout
@@ -15,6 +16,28 @@ import { Icon } from "astro-icon/components";
 >
   <section class="py-7 md:py-14 pb-16 flex flex-col-reverse md:flex-row md:items-stretch gap-8 md:gap-12">
     <div class="flex-1 min-w-0">
+      {annonceActive() && (
+        <a
+          href={annonce.lien}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-fin={annonce.fin}
+          class="annonce-hero inline-flex items-center gap-2.5 bg-[#0026ff] px-3.5 py-2.5 mb-6 text-white no-underline hover:bg-[#001fcc] transition-colors"
+        >
+          <Icon name="ri:calendar-event-line" class="text-lg shrink-0" />
+          <span class="flex flex-col sm:flex-row sm:items-center sm:gap-2.5 leading-tight">
+            <span class="text-[0.8rem] font-bold">{annonce.fr.court}</span>
+            <span class="hidden sm:inline-block w-px h-3 bg-current opacity-50" aria-hidden="true"></span>
+            <span class="text-[0.8rem]">{annonce.fr.date}</span>
+          </span>
+          <Icon name="ri:arrow-right-up-line" class="shrink-0" />
+        </a>
+      )}
+      <script is:inline>
+        document.querySelectorAll(".annonce-hero").forEach(function (e) {
+          if (Date.now() >= new Date(e.dataset.fin).getTime()) e.remove();
+        });
+      </script>
       <p class="text-[0.62rem] sm:text-[0.75rem] font-bold uppercase tracking-[0.08em] text-secondary mb-2">Cycle Pluridisciplinaire d'Études Supérieures</p>
       <h1 class="text-4xl md:text-6xl font-black text-secondary leading-[1.05] tracking-[-0.02em] mb-2">
         CPES Paris-Saclay
