@@ -87,10 +87,14 @@ const getDureeText = (semaines: number | null): string => {
   return lang === 'fr' ? `${semaines} semaines` : `${semaines} weeks`;
 };
 
+// Nombres d'heures au format de la langue (2,5 en français).
+const nombre = (n: number) => (lang === 'fr' ? String(n).replace('.', ',') : String(n));
+
 const getHeuresText = (hebdo: number | null, total: number | null): string => {
+  if (!hebdo && total) return lang === 'fr' ? `${nombre(total)} heures sur l'année` : `${total} hours per year`;
   if (!hebdo || !total) return lang === 'fr' ? 'Non spécifiées' : 'Not specified';
   return lang === 'fr' 
-    ? `${hebdo} heures par semaine, soit ${total} heures sur l'année`
+    ? `${nombre(hebdo)} heures par semaine, soit ${nombre(total)} heures sur l'année`
     : `${hebdo} hours per week, ${total} hours per year`;
 };
 

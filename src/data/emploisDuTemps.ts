@@ -108,7 +108,7 @@ export const emploisDuTemps: Partial<Record<'L1' | 'L2' | 'L3', Creneau[]>> = {
     { jour: 2, debut: '14:00', fin: '17:00', cours: ['theorie-information-optimisation'], semestres: ['S1'] },
     {
       jour: 2, debut: '13:30', fin: '17:30', semestres: ['S2'],
-      cours: ['opt-analyse-info-donnees-biologiques', 'opt-fairness-ia', 'opt-informatique-theorique', 'opt-ia-symbolique', 'opt-biologie-s6'],
+      cours: ['opt-analyse-info-donnees-biologiques', 'opt-fairness-ia', 'opt-informatique-theorique', 'opt-ia-symbolique'],
       libelle: { fr: 'Option Université Paris-Saclay (au choix)', en: 'Université Paris-Saclay option (one to choose)' },
     },
     // Jeudi

@@ -15,6 +15,7 @@ const CATEGORIES = [
   { key: 'Sciences des données',      label: { fr: 'Sciences des données',        en: 'Data Science' } },
   { key: 'Économie',                  label: { fr: 'Économie',                    en: 'Economics' } },
   { key: 'SPEC',                      label: { fr: 'Parcours Santé ou Société',   en: 'Health or Society Track' }, note: true },
+  { key: 'SANTE_SOCIETE',             label: { fr: 'Santé et sciences sociales',  en: 'Health & Social Sciences' } },
   { key: 'Langues',                   label: { fr: 'Langues',                     en: 'Languages' } },
   { key: 'Langues & Culture',         label: { fr: 'Langues & Culture',           en: 'Languages & Culture' } },
   { key: 'Ouverture',                 label: { fr: 'Ouverture',                   en: 'Open Courses' } },
@@ -39,8 +40,11 @@ function normalizeCategorie(cat: string): string {
   return EN_TO_FR_CAT[cat] ?? cat;
 }
 
-function displayKey(cat: string): string | null {
-  if (cat === 'Santé' || cat === 'Société') return 'SPEC';
+// Seule la spécialisation (groupe « parcours ») compte dans la ligne Parcours, comme dans les
+// contrats pédagogiques ; les autres cours classés Santé ou Société vont dans leur propre ligne.
+function displayKey(cat: string, groupe?: string): string | null {
+  if (groupe === 'parcours') return 'SPEC';
+  if (cat === 'Santé' || cat === 'Société') return 'SANTE_SOCIETE';
   return cat;
 }
 
@@ -63,7 +67,7 @@ for (const annee of ANNEES) {
         if (seenGroupes.has(m.groupe)) continue;
         seenGroupes.add(m.groupe);
       }
-      const dk = displayKey(normCat);
+      const dk = displayKey(normCat, m.groupe);
       if (dk === null) continue;
 
       ects[annee][dk] = (ects[annee][dk] ?? 0) + (m.ects ?? 0);
